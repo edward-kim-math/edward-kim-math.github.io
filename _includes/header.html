@@ -41,7 +41,9 @@
                     <li class="active"><a href="{{ site.baseurl }}/resources.html">Resources</a></li>
                     <li class="active"><a href="{{ site.baseurl }}/posts.html">Posts</a></li>
                     <li class="active"><a href="{{ site.baseurl }}/about.html">About</a></li>
+                    {% if site.rssfeed != '' %}
                     <li class="active"><a href="{{ site.baseurl }}/feed.xml">RSS</a></li>
+                    {% endif %}
                     {% if site.github != '' %}
                       <li class="active"><a href="https://github.com/{{ site.github }}">Github</a></li>
                     {% endif %}
