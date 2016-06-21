@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Redesigned site"
-date: 2016-06-22 20:45:06 -0700
+date: 2016-06-20 20:45:06 -0600
 comments: false
 ---
 
