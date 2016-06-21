@@ -2,20 +2,6 @@
 layout: default
 title: Function Grapher
 ---
-<script src="http://aleph.sagemath.org/static/jquery.min.js?v=b8d64"></script>
-<script src="http://aleph.sagemath.org/static/embedded_sagecell.js?v=20b0a"></script>
-<script>
-$(function () {
-sagecell.makeSagecell({inputLocation: '#sagecell',
-languages: sagecell.allLanguages,
-autoeval: true,
-defaultLanguage: 'sage' ,
-hide: ["editor", "editorToggle", "language","evalButton"],
-//Focus the editor
-callback: function() {$('#sagecell').find(".CodeMirror").get(0).CodeMirror.focus();}});
-});
-</script>
-
 <div id="sagecell">
 <script type="text/x-sage">
 var('x')
