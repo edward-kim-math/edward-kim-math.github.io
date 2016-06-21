@@ -1,0 +1,80 @@
+---
+layout: default
+title: Undergraduate Research
+---
+
+<div class="well">
+    <h1>Undergraduate Research</h1>
+    
+    <p>
+I'm looking for motivated undergraduates who would like to do research in mathematics leading towards a senior thesis. Read below for an idea of what kinds of things I'd like to work on with you. As a brief summary, the research work I do is in optimization and combinatorics. Many of the problems I look at have a geometric or a topological flavor.  If you have any questions, please come and ask! If you'd like to look into undergraduate research, it would be ideal if you have taken linear algebra, discrete mathematics, and multivariable calculus. I also welcome students who have an interest in computer programming and would like to incorporate this into projects. As far as funding your research, more details will be posted as soon as I know them!
+</p>
+
+<h2>Linear Optimization and variants of the Hirsch Conjecture</h2>
+
+<a name="what-is-linear-programming"></a>
+<div class="explain">
+<img src="img/transportationLP.200x200.png" alt="The geometry of linear programming" class="explain_img" />
+Linear optimization (also known as linear programming) is a classic model of mathematical optimization which has many real-world applications. Examples include applications in
+<a href="http://ir.library.oregonstate.edu/xmlui/bitstream/handle/1957/20201/em8779-e.pdf">transportation problems</a>,
+<a href="http://www.optimization-online.org/DB_FILE/2002/02/444.pdf">computational biology</a>,
+<a href="http://www.jstor.org/stable/170708">radiotherapy treatment design</a>,
+<a href="http://www.amazon.com/Methods-Mathematical-Economics-Programming-Fixed-Point/dp/0898715091">economics</a>,
+<a href="http://www.jstor.org/stable/3149369">marketing</a>,
+<a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1995.tb00911.x/abstract">spatial interaction modeling</a>,
+<a href="http://link.springer.com/article/10.1007%2FBF02885865">criminal justice administration</a>,
+<a href="http://www.jstor.org/stable/2155632">archaeology modeling</a>,
+<a href="http://smallbusiness.chron.com/restaurants-use-linear-programming-menu-planning-37132.html">business</a>,
+<a href="http://www.opticsinfobase.org/josa/abstract.cfm?uri=josa-67-8-1039">optics</a>,
+<a href="http://ieeexplore.ieee.org/xpl/articleDetails.jsp?reload=true&arnumber=6170859">resource allocation</a>,
+<a href="http://link.springer.com/chapter/10.1007%2F978-3-642-30200-8_20">production planning</a>,
+<a href="http://citeseer.uark.edu:8080/citeseerx/viewdoc/summary;jsessionid=51A1464A9C441FDCF0C9409FC534EB10?doi=10.1.1.137.2811">sparse reconstruction of data</a>,
+<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.120.197&rep=rep1&type=pdf">coding theory</a>,
+<a href="http://connection.ebscohost.com/c/articles/10099815/marketing-strategy-optimization-using-linear-programming-establish-optimal-marketing-mixture">marketing strategy</a>,
+among others.
+The solutions of linear optimization problems are often used to solve more intricate optimization problems. As in all optimization problems, one hopes to determine the optimal solution among a collection of candidate solutions (called feasible solutions) which must satisfy a collection of restrictions (known as the constraints). What differentiates linear optimization from general optimization problems is that constraints in linear optimization are defined by linear inequalities. More concretely, a generic linear program with \(n\) variables \(x_1,\dots,x_n\) is defined by \(m\) inequality constraints of the form
+\[
+a_{1}x_1 + \dots + a_{n}x_n \leq b.\\
+\]
+</div>
+
+<a name="polytopes-and-linear-programming"></a>
+<div class="explain">
+<img src="img/polytopes-on-desk.150x150.png" alt="Polytopes on my desk (well, they shouldn't be 'see-through'...)" class="explain_img" />
+To understand how to solve linear optimization problems, one must first understand the set of feasible solutions from a geometric perspective. Because the constraints of linear optimization problems are given by linear formulas, the boundaries of the region are flat. More specifically, the set of feasible solutions is a called a <a href="http://books.google.com/books/about/Lectures_on_Polytopes.html?id=xd25TXSSUcgC">polytope</a>, which is the high-dimensional analogue of a convex polyhedron. (The beautiful study of the <a href="http://books.google.com/books/about/A_Course_in_Convexity.html?id=o64VLcMRr_AC">geometry of convex bodies</a> is a key prerequisite to <a href="http://www.stanford.edu/~boyd/cvxbook/">convex optimization</a>.)
+A polytope is an object from Euclidean geometry determined by cutting \(n\)-dimensional space, and the resulting flat sides are themselves polytopes of dimension \(n-1\), known as facets.
+To finish the link between the optimization setting and the geometric picture, we describe the correspondences of the relevant quantities: the number \(n\) of variables from the linear optimization problem turns into the dimension \(n\) of the polytope and the number \(m\) of inequalities turns into the number \(m\) of facets of the polytope.
+In the context of linear optimization, the graph of the polytope is the most significant object to analyze. Like polyhedra in dimension \(3\), polytopes in any dimension have corners known as vertices and connections between them known as edges. The graph of a polytope (which is a graph in the sense of graph theory) is simply the vertices and edges of the polytope.
+</div>
+
+<a name="simplex-method"></a>
+<div class="explain">
+<img src="img/klee-minty.150x150.png" alt="The simplex algorithm running on the Klee-Minty cube" class="explain_img" />
+Developed by Dantzig in 1947, the simplex algorithm still remains the most popular procedure used to solve linear optimization problems. It is considered one of the top algorithms of the 20th century. While it is complicated to describe how industrial computer software packages (such as <a href="http://www-01.ibm.com/software/commerce/optimization/cplex-optimizer/">IBM's CPLEX optimizer</a>)
+implement the algorithm, it is easy to give a geometric interpretation of what the simplex algorithm does when one keeps in mind that the set of feasible solutions is a polytope. The simplex algorithm starts at a vertex, then iteratively moves to another vertex related to the current one according to the edges in the graph of the polytope. The algorithm stops once it is able to prove that the current vertex is the solution for the linear optimization problem.
+<br/><br/>
+Because of this geometric description of the simplex algorithm, which traverses the graph of the polytope from vertex to vertex along edges of the graph, the diameter of a polytope is the crucial quantity to study. The diameter of the polytope is the smallest number of edges needed to travel between any two vertices of the polytope traveling along edges of its graph. Having a short diameter means that there are short paths between vertices, and thus increases the likelihood that the simplex algorithm quickly solves the associated linear program. Since the simplex algorithm runs quickly in practice, it is natural to conjecture that the diameters of polytopes is small.
+</div>
+
+<a name="hirsch-conjecture"></a>
+<div class="explain">
+<img src="img/polytope-graph.150x150.png" alt="Graph of a polytope" class="explain_img" />
+Posed in 1957 by Warren Hirsch and first recorded in <a href="http://www.amazon.com/Linear-Programming-Extensions-George-Dantzig/dp/0691059136">Dantzig's monograph on linear optimization</a>, the Hirsch Conjecture stated that the diameter of every \(n\)-dimensional polytope with \(m\) facets is at most \(m-n\). If the Hirsch Conjecture were true, it would increase the likelihood that every linear optimization problem could be solved quickly using the simplex algorithm, since the conjecture supposes that the diameters of polytopes are small. Because of its ramifications in the efficiency of the simplex algorithm, the Hirsch Conjecture and related questions about the diameters of polytopes has been an extremely active area of study among researchers in discrete mathematics and optimization.
+
+While many researchers attempted to prove or disprove the Hirsch Conjecture, it remained open for over fifty years. In 2010, <a href="http://annals.math.princeton.edu/2012/176-1/p07">Santos</a> proved that there is a \(43\)-dimensional polytope with \(86\) facets that is a counterexample to the Hirsch Conjecture. More recently <a href="http://arxiv.org/abs/1202.4701">Matschke, Santos, and Weibel</a> proved there is a \(20\)-dimensional polytope with \(40\) facets that is a counterexample to the Hirsch Conjecture. The status of the Hirsch Conjecture remains open for polytopes of dimension \(4\) through \(19\).
+</div>
+
+<a name="asymptotic-hirsch-conjectures"></a>
+<div class="explain">
+<img src="img/polytope-wedge.150x150.png" alt="Wedging, the procedure 'almost' used in Santos' main lemma" class="explain_img" />
+Now that the Hirsch Conjecture is known to be false, there are many new conjectures which should be considered. One can guess new upper bound formulas, but what is potentially more interesting than studying whether a specific exact formula is an upper bound is determining the asymptotic growth of the diameter. In other words, the questions one can ask are about the trend of the diameter when compared to the number \(m\) of facets. The first asymptotic variant is known as the Linear Hirsch Conjecture, which asks if the relationship between the diameter and the number \(m\) of facets is linear in \(m\). There is also a Quadratic Hirsch Conjecture (which has the definition you think it does) and a Polynomial Hirsch Conjecture. The Polynomial Hirsch Conjecture is the subject of an active <a href="http://gilkalai.wordpress.com/2010/09/29/polymath-3-polynomial-hirsch-conjecture/">worldwide online mathematical collaboration</a> known as Polymath3.
+</div>
+
+<a name="subset-partition-graphs"></a>
+<div class="explain">
+<img src="img/spg-web.150x150.jpg" alt="Subset partition graphs " class="explain_img" />
+Since the 1970s, well before the Hirsch Conjecture was proved false, researchers in mathematical optimization and discrete geometry noticed that there are three key properties which were always satisified by the graphs of polytopes. Though all three of these properties are satisfied by polytope graphs, any number of these properties can be studied on their own (or as a collection) to analyze the behavior of graph diameters. This produces a rich theory of graphs in abstract polytopes and has been an extremely popular research approach in polytope theory recently due to Santos' counter-example to the Hirsch Conjecture. For instance, in 2010 <a href="http://mor.journal.informs.org/content/35/4/786.abstract">Eisenbrand et al.</a> proved that graphs corresponding to \(n\)-dimensional polytopes satisfying the hardest of the three properties have a diameter which grows on the order of \(n^2 / \ln n\). This abstract polytope construction was the first evidence that the Linear Hirsch Conjecture may be false for polytopes. More recently, <a href="http://link.springer.com/article/10.1007%2Fs10107-012-0611-2">I proved</a> that graphs corresponding to \(n\)-dimensional polytopes satisfying the remaining two properties have a diameter which grows on the order of \(n^2\). This bound was recently improved by <a href="http://arxiv.org/abs/1203.1525">H&auml;hnle</a>.
+</div>
+
+    
+</div>
