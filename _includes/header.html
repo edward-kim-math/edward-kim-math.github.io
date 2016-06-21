@@ -11,11 +11,26 @@
     <link href="{{ site.baseurl }}/css/theme.css" rel="stylesheet" type="text/css">
     <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet" type="text/css">
 {% include isso-comments.html %}
+
     <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<script src="http://aleph.sagemath.org/static/jquery.min.js?v=b8d64"></script>
+<script src="http://aleph.sagemath.org/static/embedded_sagecell.js?v=20b0a"></script>
+<script>
+$(function () {
+sagecell.makeSagecell({inputLocation: '#sagecell',
+languages: sagecell.allLanguages,
+autoeval: true,
+defaultLanguage: 'sage' ,
+hide: ["editor", "editorToggle", "language","evalButton"],
+//Focus the editor
+callback: function() {$('#sagecell').find(".CodeMirror").get(0).CodeMirror.focus();}});
+});
+</script>
 
 </head>
 
-<body>
+<body id="sagecell_main">
 
 <div class="container-fluid">
     <div class="row-fluid">
