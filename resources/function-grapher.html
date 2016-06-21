@@ -1,0 +1,47 @@
+---
+layout: default
+title: Function Grapher
+---
+<script src="http://aleph.sagemath.org/static/jquery.min.js?v=b8d64"></script>
+<script src="http://aleph.sagemath.org/static/embedded_sagecell.js?v=20b0a"></script>
+<script>
+$(function () {
+sagecell.makeSagecell({inputLocation: '#sagecell',
+languages: sagecell.allLanguages,
+autoeval: true,
+defaultLanguage: 'sage' ,
+hide: ["editor", "editorToggle", "language","evalButton"],
+//Focus the editor
+callback: function() {$('#sagecell').find(".CodeMirror").get(0).CodeMirror.focus();}});
+});
+</script>
+
+<div id="sagecell">
+<script type="text/x-sage">
+var('x')
+f = x^2-1
+xleft = -10
+xright = 10
+ybottom = -10
+ytop = 10
+
+@interact
+def _(
+	f = input_box(f, label="$f(x)$ = ",type=SR),
+	xleft = input_box(xleft, label="$x$ min = ",type=SR),
+	xright = input_box(xright, label="$x$ max = ",type=SR),
+	ybottom = input_box(ybottom, label="$y$ min = ",type=SR),
+	ytop = input_box(ytop, label="$y$ max = ",type=SR),
+):
+	# Plot function
+	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
+	pretty_print(html('The graph of $f(x)=%s$. The $x$ range is from $%s$ to $%s$. The $y$ range is from $%s$ to $%s$.'%( latex(f), xleft, xright, ybottom, ytop )))
+	show(fPlot)
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>This is a tool that graphs a function $y=f(x)$.</p>
