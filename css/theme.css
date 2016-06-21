@@ -50,6 +50,8 @@ body {
     color: #ee4444;
 }
 
+.explain_img {border: 1px solid #000000; float: left; width: 150px; height: 150px; margin-right:13px;}
+
 .explain_about_img {border: 1px solid #000000; float: left; width: 100px; height: 100px; margin-right:13px;}
 
 img.logo_img {
