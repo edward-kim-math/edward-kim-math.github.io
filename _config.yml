@@ -12,6 +12,9 @@ url: http://edward-kim-math.github.io/
 #     run it like so: jekyll serve --baseurl=''
 baseurl: ''
 
+# blank to hide rss feed in top nav bar
+rssfeed: ''
+
 # This can be '' to hide the Github nav button
 github: ''
 
