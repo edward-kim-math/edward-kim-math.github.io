@@ -1,7 +1,7 @@
 # Jekyll configuration
 
 name: Edward D. Kim
-description: I am an assistant professor in the <a href="https://www.uwlax.edu/mathematics/">Department of Mathematics and Statistics</a> at the <a href="https://www.uwlax.edu/">University of Wisconsin-La Crosse</a> since Fall 2013. Here is my <a href="http://websites.uwlax.edu/ekim/edward_d_kim_cv.pdf">CV</a>.
+description: I am an assistant professor in the <a href="https://www.uwlax.edu/mathematics/">Department of Mathematics and Statistics</a> at the <a href="https://www.uwlax.edu/">University of Wisconsin-La Crosse</a> since Fall 2013. Here is my <a href="/edward_d_kim_cv.pdf">CV</a>.
 
 # url is currently only used only for the RSS feed in feed.xml
 url: http://edward-kim-math.github.io/
