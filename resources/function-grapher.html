@@ -13,11 +13,11 @@ ytop = 10
 
 @interact
 def _(
-	f = input_box(f, label="$f(x)$ = ",type=SR),
-	xleft = input_box(xleft, label="$x$ min = ",type=SR),
-	xright = input_box(xright, label="$x$ max = ",type=SR),
-	ybottom = input_box(ybottom, label="$y$ min = ",type=SR),
-	ytop = input_box(ytop, label="$y$ max = ",type=SR),
+	f = input_box(f, label="\(f(x)\) = ",type=SR),
+	xleft = input_box(xleft, label="\(x\) min = ",type=SR),
+	xright = input_box(xright, label="\(x\) max = ",type=SR),
+	ybottom = input_box(ybottom, label="\(y\) min = ",type=SR),
+	ytop = input_box(ytop, label="\(y\) max = ",type=SR),
 ):
 	# Plot function
 	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
@@ -30,4 +30,4 @@ def _(
 
 <h2>Comments, instructions, links to other resources, etc.</h2>
 
-<p>This is a tool that graphs a function $y=f(x)$.</p>
+<p>This is a tool that graphs a function \(y=f(x)\).</p>
