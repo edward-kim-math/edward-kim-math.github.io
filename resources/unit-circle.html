@@ -27,8 +27,6 @@ def _(
 	x_is_not_simplified = latex(x)[0:4] == '\\cos'
 	y_is_not_simplified = latex(y)[0:4] == '\\sin'
 
-	pretty_print(html('The angle chosen was \(%s\).' % (latex(t)) ))
-
 	if (x==0):
 
 		if x_is_not_simplified:
