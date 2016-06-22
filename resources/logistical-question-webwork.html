@@ -1,0 +1,88 @@
+---
+layout: default
+title: WeBWorK Logistical Question Problem Generator
+---
+<h1>{{ page.title }}</h1>
+
+<script language="JavaScript">
+
+function reconstruct() {
+  userinput = textinput.value;
+
+  pgheader = "DOCUMENT();\n\nloadMacros(\"PG.pl\",\"PGbasicmacros.pl\",\"MathObjects.pl\",\"PGanswermacros.pl\");\n\n";
+  pgmid = "TEXT(beginproblem());\n\$showPartialCorrectAnswers = 1;\n\nBEGIN_TEXT\n";
+
+  var answersarray = [];
+  var stringsarray = [];
+  
+  pgbody = "";
+  while (userinput.indexOf("[") >= 0) { // while there are still ANSWERS to process
+    bracketLindex = userinput.indexOf("[");
+    bracketRindex = userinput.indexOf("]");
+    answer = userinput.substring(bracketLindex+1,bracketRindex); // store correct answer
+	if (isNaN(answer)) {
+	  answersarray.push(answer);
+	  stringsarray.push(answer);
+	} else {
+	  answersarray.push(answer);
+	}
+	pgbody = pgbody + userinput.substring(0,bracketLindex) + "\\{ans_rule(5)\\}";
+	userinput = userinput.substring(bracketRindex+1);
+  }
+  pgend = "\nEND_TEXT\n\n";
+
+  stringstext = "";
+  for (index = 0; index < stringsarray.length; index++) {
+    if (stringsarray.indexOf(stringsarray[index])==index) { // detect first occurrence
+      stringstext += "Context()->strings->add(" + stringsarray[index] + "=>{});\n";
+	}
+  }
+  
+  // Set up code section with correct answers
+  answerstext = "";
+  for (index = 0; index < answersarray.length; index++) { 
+    answerstext += "ANS(Compute(\"" + answersarray[index] + "\")->cmp);\n";
+  }
+
+  pgfooter = "\nENDDOCUMENT();";
+  
+  // Write the complete PG file in the textarea block
+  outputpg.value = pgheader + stringstext + "\n" + pgmid + pgbody.replace(/\n/g,"\$BR\n") + pgend + answerstext + pgfooter;
+}
+
+</script>
+
+<form id="inputform">
+Your logistical questions, with blanks formed by square brackets.<br />
+<textarea id="textinput" rows=20 cols=150 onChange="reconstruct()">
+Please refer to the syllabus to answer these questions.
+
+According to the syllabus, Dr. Kim's office is [1018] Cowley Hall
+Office hours on Monday are from [10]:[00]am to [11]:[30]am and from [2]:[00]pm to [3]:[00]pm.
+Office hours on Tuesday are from [10]:[30]am to [11]:[30]am.
+Office hours on Wednesday are from [4]:[00]pm to [5]:[30]pm.
+Office hours on Thursday are from [2]:[00]pm to [4]:[00]pm.
+
+Exam 1 is on June [18] and covers material from the beginning of class up to the end of class on June [11].
+If we are on time, this is through the end of Section [4.4] in the book.
+
+Exam 2 is on June [30] and covers material from the beginning of class up to the end of class on June [23].
+If we are on time, this is through the end of Section [6.2] in the book.
+Is Exam 2 cumulative? [yes]
+
+The final exam is on July [16] and covers material from the beginning of class up to the end of class on July [15].
+If we are on time, this is through the end of Section [7.3] in the book.
+Is the final exam cumulative? [yes]
+</textarea>
+<br />
+Though I haven't tested it, I believe that non-numerical answers (e.g., "yes") are limited to one word.
+
+<br /><br />
+Your PG code for WeBWorK:<br>
+<textarea id="outputpg" rows=20 cols=150>
+</textarea>
+<br />
+Designed by E. Kim
+
+</form>
+
