@@ -1,0 +1,81 @@
+---
+layout: default
+title: Unit Circle
+---
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('t')
+t = pi / 6
+
+@interact
+def _(
+	t = input_box(t, label="$t$ = ",type=SR)
+):
+
+	x = cos(t)
+	y = sin(t)
+
+	dotOrigin = point( (0,0) ,pointsize=80, rgbcolor=(0,0,0))
+	dotA = point( (1,0), pointsize=80, rgbcolor=(32/256, 230/256, 230/256) )
+	textA = text("$A(1,0)$", (1.15,0.1), rgbcolor=(32/256, 230/256, 230/256))
+	dotP = point( (x,y), pointsize=80, rgbcolor=(32/256, 230/256, 230/256) )
+	textP = text("$P(x,y)$", (x*1.15,y*1.15), rgbcolor=(32/256, 230/256, 230/256))
+	triangle = polygon([(0,0), (x,0), (x,y)], rgbcolor=(1,0,0), fill=False)
+	highlightedarc = arc((0,0), 1, sector=(0,t), rgbcolor=(32/256, 230/256, 230/256))
+
+	x_is_algebraic = x in QQbar
+	x_is_not_simplified = latex(x)[0:4] == '\\cos'
+	y_is_not_simplified = latex(y)[0:4] == '\\sin'
+
+	html('The angle chosen was $%s$.' % (latex(t)) )
+
+	if (x==0):
+
+		if x_is_not_simplified:
+			effective_x = x.n(digits=4)
+			html('Since cosine is adjacent over hypotenuse, $\\cos(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) )
+		else:
+			effective_x = x
+			html('Since cosine is adjacent over hypotenuse, $\\cos(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) )
+
+		if y_is_not_simplified:
+			effective_y = y.n(digits=4)
+			html('Since sine is opposite over hypotenuse, $\\sin(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) )
+		else:
+			effective_y = y
+			html('Since sine is opposite over hypotenuse, $\\sin(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) )
+
+		html('Tangent is opposite over adjacent, and since the "adjacent" side length is $0$, $\\tan(%s)$ is undefined.' %  ( latex(t) ))
+
+	else:
+
+		if x_is_not_simplified:
+			effective_x = x.n(digits=4)
+			html('Since cosine is adjacent over hypotenuse, $\\cos(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) )
+		else:
+			effective_x = x
+			html('Since cosine is adjacent over hypotenuse, $\\cos(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) )
+
+		if y_is_not_simplified:
+			effective_y = y.n(digits=4)
+			html('Since sine is opposite over hypotenuse, $\\sin(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) )
+		else:
+			effective_y = y
+			html('Since sine is opposite over hypotenuse, $\\sin(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) )
+
+		if x_is_not_simplified or y_is_not_simplified:
+			html('Tangent is opposite over adjacent, thus $\\tan(%s) \\approx \\frac{%s}{%s}$.' %  ( latex(t), latex(effective_y), latex(effective_x) ))
+		else:
+			html('Tangent is opposite over adjacent, thus $\\tan(%s) = \\frac{%s}{%s} = %s$.' %  ( latex(t), latex(effective_y), latex(effective_x) , latex(expand(y/x)) ))
+
+	show(dotOrigin + circle((0,0),1, rgbcolor=(0,0,0)) + dotA + textA + dotP + textP + triangle + highlightedarc)
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>This is a tool that graphs a function \(y=f(x)\).</p>
