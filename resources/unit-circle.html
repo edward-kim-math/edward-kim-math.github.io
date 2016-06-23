@@ -10,7 +10,7 @@ t = pi / 6
 
 @interact
 def _(
-	t = input_box(t, label="$t$ = ",type=SR)
+	t = input_box(t, label="\(t\) = ",type=SR)
 ):
 
 	x = cos(t)
@@ -78,4 +78,4 @@ def _(
 
 <h2>Comments, instructions, links to other resources, etc.</h2>
 
-<p>This is a tool that graphs a function \(y=f(x)\).</p>
+<p>Your choice for \(t\) doesn't have to be an integer multiple of \(\frac{\pi}{3}\) or \(\frac{\pi}{4}\). Try \(t = 1\). Try \(t=1000\). (Hey! Why not?) What does it mean when \(t\) is bigger than \(2\pi\)? For what values of \(t\) does the triangle get really small and thin? Hint: try \(t = 1.4\). If you pick the "right" value of \(t\), then you'll get the "adjacent" value (which is the \(x\) value) to be \(0\). What happens to \(\tan(t)\) in that situation? Notation follows Swokowski and Cole's Algebra and Trigonometry with Analytic Geometry (Classic 12th Edition) as closely as possible.</p>
