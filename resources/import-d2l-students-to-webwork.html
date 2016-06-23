@@ -1,0 +1,81 @@
+---
+layout: default
+title: import-d2l-students-to-webwork.py
+---
+<h1>{{ page.title }}</h1>
+
+This Python script takes a list of students from D2L and produces a classlist file which can be used to import many students into WeBWorK quickly. You will need to modify several variables which appear at the top.
+{% highlight python linenos %}
+# This Python script takes a list of students from D2L and produces a classlist file which can be used to
+# import many students into WeBWorK quickly.
+# Filename: import-d2l-students-to-webwork.py
+# Author: Edward D. Kim, UW-La Crosse
+
+# INSTRUCTIONS
+# From the D2L grades module, choose 'Export'.
+# Export all three user details (Last Name, First Name, Email).
+# All other boxes (for specific assignments) should be unchecked.
+# Export to CSV, download the file, and record the name of that file in "studentsfilename" below
+# Set all of the other options below, then run in Python.
+# Upload the LST file to WeBWork in the File Manager.
+# From the Classlist Editor, import users from the file just uploaded
+
+#######################################
+
+# A full path name to the WebWork score file
+studentsfilename = 'C:/Users/ekim/Downloads/PreCalculusGradesExport_2015-01-06-13-09.csv' # Forward slashes because of \U
+
+# A full path name to the file to create
+outputfilename = 'C:/Users/ekim/Downloads/upload-to-webwork.lst' # must end in ".lst"
+
+# The recitation field will be set to the string below (can be left blank)
+recitation = 'spr2015'
+
+# The section field will be set to the string below (can be left blank)
+section = ''
+
+# The comment field will be set to the string below (can be left blank)
+comment = ''
+
+######################################
+######################################
+######################################
+######################################
+
+import csv
+import os
+ 
+with open(studentsfilename, 'rt') as csvfile:
+	csvreaderobject = csv.reader(csvfile, delimiter=',')
+	# No use of quotechar='' needed
+
+	outputfile = open(outputfilename, 'w')
+
+	column_to_setname_dictionary = {}
+	passed_student_id = 0
+
+	rownum = 0
+	
+	for row in csvreaderobject:
+		if rownum > 0: # We have passed the header row
+
+			# Data from the D2L file
+			DtwoL_username_pre = row[0].strip()
+			lastname = row[1].strip()
+			firstname = row[2].strip()
+			email = row[3].strip()
+			
+			# Set up data from D2L file
+			studentid = DtwoL_username_pre.strip('#')
+			userid = studentid
+			
+			# Other data
+			status = 'C' # C is for current. See http://webwork.maa.org/wiki/Classlist_Files#.VKw0tCvF98E
+
+			# The list of columns for 'lineout' are as in http://webwork.maa.org/wiki/Classlist_Files#.VKw0tCvF98E
+			# Columns 10 (aka J) and 11 (aka K) are blank
+			lineout = studentid+','+lastname+','+firstname+','+status+','+comment+','+section+','+recitation+','+email+','+userid
+			print(lineout)
+			outputfile.write(lineout+'\n')
+		rownum = rownum + 1
+{% endhighlight %}
