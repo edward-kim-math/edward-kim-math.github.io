@@ -28,46 +28,46 @@ def _(
 	x_is_not_simplified = latex(x)[0:4] == '\\cos'
 	y_is_not_simplified = latex(y)[0:4] == '\\sin'
 
-	html('The angle chosen was $%s$.' % (latex(t)) )
+	pretty_print(html('The angle chosen was $%s$.' % (latex(t)) ))
 
 	if (x==0):
 
 		if x_is_not_simplified:
 			effective_x = x.n(digits=4)
-			html('Since cosine is adjacent over hypotenuse, $\\cos(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) )
+			pretty_print(html('Since cosine is adjacent over hypotenuse, $\\cos(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) ))
 		else:
 			effective_x = x
-			html('Since cosine is adjacent over hypotenuse, $\\cos(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) )
+			pretty_print(html('Since cosine is adjacent over hypotenuse, $\\cos(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) ))
 
 		if y_is_not_simplified:
 			effective_y = y.n(digits=4)
-			html('Since sine is opposite over hypotenuse, $\\sin(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) )
+			pretty_print(html('Since sine is opposite over hypotenuse, $\\sin(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) ))
 		else:
 			effective_y = y
-			html('Since sine is opposite over hypotenuse, $\\sin(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) )
+			pretty_print(html('Since sine is opposite over hypotenuse, $\\sin(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) ))
 
-		html('Tangent is opposite over adjacent, and since the "adjacent" side length is $0$, $\\tan(%s)$ is undefined.' %  ( latex(t) ))
+		pretty_print(html('Tangent is opposite over adjacent, and since the "adjacent" side length is $0$, $\\tan(%s)$ is undefined.' %  ( latex(t) )))
 
 	else:
 
 		if x_is_not_simplified:
 			effective_x = x.n(digits=4)
-			html('Since cosine is adjacent over hypotenuse, $\\cos(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) )
+			pretty_print(html('Since cosine is adjacent over hypotenuse, $\\cos(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) ))
 		else:
 			effective_x = x
-			html('Since cosine is adjacent over hypotenuse, $\\cos(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) )
+			pretty_print(html('Since cosine is adjacent over hypotenuse, $\\cos(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_x), latex(effective_x)) ))
 
 		if y_is_not_simplified:
 			effective_y = y.n(digits=4)
-			html('Since sine is opposite over hypotenuse, $\\sin(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) )
+			pretty_print(html('Since sine is opposite over hypotenuse, $\\sin(%s) \\approx \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) ))
 		else:
 			effective_y = y
-			html('Since sine is opposite over hypotenuse, $\\sin(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) )
+			pretty_print(html('Since sine is opposite over hypotenuse, $\\sin(%s) = \\frac{%s}{1} = %s$.' % (latex(t), latex(effective_y), latex(effective_y)) ))
 
 		if x_is_not_simplified or y_is_not_simplified:
-			html('Tangent is opposite over adjacent, thus $\\tan(%s) \\approx \\frac{%s}{%s}$.' %  ( latex(t), latex(effective_y), latex(effective_x) ))
+			pretty_print(html('Tangent is opposite over adjacent, thus $\\tan(%s) \\approx \\frac{%s}{%s}$.' %  ( latex(t), latex(effective_y), latex(effective_x) )))
 		else:
-			html('Tangent is opposite over adjacent, thus $\\tan(%s) = \\frac{%s}{%s} = %s$.' %  ( latex(t), latex(effective_y), latex(effective_x) , latex(expand(y/x)) ))
+			pretty_print(html('Tangent is opposite over adjacent, thus $\\tan(%s) = \\frac{%s}{%s} = %s$.' %  ( latex(t), latex(effective_y), latex(effective_x) , latex(expand(y/x)) )))
 
 	show(dotOrigin + circle((0,0),1, rgbcolor=(0,0,0)) + dotA + textA + dotP + textP + triangle + highlightedarc)
 {% endraw %}
