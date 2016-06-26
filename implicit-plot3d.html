@@ -1,0 +1,42 @@
+---
+layout: default
+title: Implicit Plot (3D)
+---
+<h1>{{page.title}}</h1>
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x','y','z')
+f = cos(x)*sin(x) + cos(y)*sin(y) + cos(z-1)*sin(z-1)
+xleft = -10
+xright = 10
+ybottom = -10
+ytop = 10
+zbottom = -10
+ztop = 10
+accuracy = 50
+
+@interact
+def _(
+	f = input_box(f, label="$f(x,y,z)$ = ",type=SR),
+	xleft = input_box(xleft, label="$x$ min = ",type=SR),
+	xright = input_box(xright, label="$x$ max = ",type=SR),
+	ybottom = input_box(ybottom, label="$y$ min = ",type=SR),
+	ytop = input_box(ytop, label="$y$ max = ",type=SR),
+	zbottom = input_box(zbottom, label="$z$ min = ",type=SR),
+	ztop = input_box(ztop, label="$z$ max = ",type=SR),
+	accuracy = input_box(accuracy, label="accuracy = ",type=SR),
+):
+	# Plot function
+	fPlot = implicit_plot3d(f == 0,(x,xleft,xright), (y,ybottom,ytop), (z,zbottom,ztop), plot_points=accuracy, thickness=2, aspect_ratio='automatic')
+	pretty_print(html('A plot of $f(x,y,z)=%s=0$.'%( latex(f))))
+	show(fPlot)
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>This is a tool that graphs an implicit equation $f(x,y,z)=0$.</p>
