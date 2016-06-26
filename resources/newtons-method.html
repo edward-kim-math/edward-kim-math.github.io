@@ -1,0 +1,55 @@
+---
+layout: default
+title: Newton's Method
+---
+<h1>{{page.title}}</h1>
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x')
+f = x^3-x-1
+xleft = .9
+xright = 1.6
+ybottom = -1
+ytop = 1
+x1 = 1.0
+
+@interact
+def _(
+	f = input_box(f, label="$f(x)$ = ",type=SR),
+	xleft = input_box(xleft, label="$x$ min = ",type=SR),
+	xright = input_box(xright, label="$x$ max = ",type=SR),
+	ybottom = input_box(ybottom, label="$y$ min = ",type=SR),
+	ytop = input_box(ytop, label="$y$ max = ",type=SR),
+	iter = selector([(1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'),(6,'6'),(7,'7')]),
+	x1 = input_box(x1, label="$x_1$ = ",type=SR),
+):
+	# Plot function
+	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
+	df = f.diff()
+	lPlots = fPlot
+
+	currentx = x1
+	iterationnumber = 1
+	pretty_print(html('The starting $x$-value is $x_1 = %s$.'%(latex(currentx))))
+	lPlots += line([(currentx,0),(currentx,f.subs({x:currentx}))], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+	while iterationnumber <= iter:
+		if iterationnumber > 1:
+			oldx = currentx
+			currentx = oldx - f.subs({x:oldx})/df.subs({x:oldx})
+			pretty_print(html('In iteration number $%s$, the $x$-value is $x_{%s} = x_{%s} - \\frac{f(x_{%s})}{f\'(x_{%s})} \\approx %s$.'%(latex(iterationnumber),latex(iterationnumber),latex(iterationnumber-1),latex(iterationnumber-1),latex(iterationnumber-1),latex(currentx))))
+			lPlots += line([(currentx,0),(oldx,f.subs({x:oldx}))], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+			lPlots += line([(currentx,0),(currentx,f.subs({x:currentx}))], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+		iterationnumber = iterationnumber + 1
+
+	#html('The graph of $f(x)=%s$ is shown in blue. Shown in red is the graph $y = L(x)$ of the linearization at $a$, where $L(x) = %s + %s(x-%s)$. The $x$ range is from $%s$ to $%s$. The $y$ range is from $%s$ to $%s$.'%( latex(f), latex(fa), latex(dfa), latex(a), xleft, xright, ybottom, ytop ))
+	show(lPlots)
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>This is a tool that graphs a function $y=f(x)$ and applies "iter" number of iterations of Newton's Method starting with an initial approximation of $x_1$.</p>
