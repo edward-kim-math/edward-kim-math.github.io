@@ -1,0 +1,62 @@
+---
+layout: default
+title: Taylor Polynomials
+---
+<h1>{{page.title}}</h1>
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x')
+a = 0
+f = sin(x)
+
+xwidth = 26
+ywidth = 26
+xleft = a - xwidth/2
+xright = a + xwidth/2
+ybottom = f.substitute({x:a}) - ywidth/2
+ytop = f.substitute({x:a}) + ywidth/2
+
+p   = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
+dot = point((a,f.substitute({x:a})),pointsize=80,rgbcolor=(0,0,1))
+
+@interact
+def _(f = input_box(f, label="f",type=SR) , 
+      a = input_box(a, label="center",type=SR), 
+      order=(0..30),
+      xwidth = input_box(xwidth, label="x width",type=SR),
+      ywidth = input_box(ywidth, label="y width", type=SR)):
+  dot = point((a,f.substitute({x:a})),pointsize=80,rgbcolor=(0,0,1))
+  TaylorPolynomial = f.taylor(x,a,order)
+
+  xleft = a - xwidth/2
+  xright = a + xwidth/2
+  ybottom = f.substitute({x:a}) - ywidth/2
+  ytop = f.substitute({x:a}) + ywidth/2
+  fPlot  = plot(f, (x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
+  TaylorPlot = plot(TaylorPolynomial, (x,xleft,xright), ymin=ybottom, ymax=ytop, color='green', thickness=2,aspect_ratio='automatic')
+
+  pretty_print(html('For the function $f(x)\;=\;%s$, the $%s$-degree Taylor polynomial with center at $a=%s$ is $T_{%s}(x)\;=\;%s$' % ( latex(f), order, a, order, latex(TaylorPolynomial) )))
+  pretty_print(html('Graph of $f$ in blue and its Taylor polynomial $T_{%s}(x)$ of order $%s$ in green in the window $%s \leq x \leq %s$ and $%s \leq y \leq %s'%(order, order, latex(xleft),latex(xright),latex(ybottom),latex(ytop))))
+  show(dot + fPlot + TaylorPlot)
+  
+  pretty_print(html('How was the Taylor polynomial $T_{%s}(x)$ with center at $a=%s$ computed?'  % ( order, a )))
+  pretty_print(html('$\\bullet$ $T_{%s}(x) = \\sum_{i=0}^{%s} c_i (x-(%s))^i$' % (order, order, a)))
+  pretty_print(html('$\\bullet$ Now we just have to find $c_i$ for $i=0$ all the way up to $i=%s$' % (order)))
+
+  for i in range(order+1):
+	fi = derivative(f,x,i)
+	pretty_print(html('$\\bullet$ The $%s$-th derivative of $f$ is $f^{(%s)}(x)=%s$. We evaluate the $%s$-th derivative at $x=%s$ to get $f^{(%s)}(%s)=%s$. Then $c_{%s} = \\frac{f^{(%s)}(%s)}{%s!} = \\frac{%s}{%s!} = %s' % (i, i, latex(fi), i, a, i, a, latex(fi.subs(x=a)) , i, i, a, i, latex(fi.subs(x=a)) , i, latex(fi.subs(x=a)/factorial(i) ) )))
+  
+  
+  pretty_print(html('Notation follows Stewart: Early Transcendentals (7th Edition) as closely as possible.'))
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>
+</p>
