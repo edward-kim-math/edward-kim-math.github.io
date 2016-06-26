@@ -1,0 +1,130 @@
+---
+layout: default
+title: First and Second Derivative Test
+---
+<h1>{{page.title}}</h1>
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x')
+var('h')
+f = 3*x^4-4*x^3-12*x^2+1
+a = -2
+b = 3
+ybottom = -10
+ytop = 10
+dist = .05
+
+@interact
+def _(
+	f = input_box(f, label="$f(x)$ = ",type=SR),
+	a = input_box(a, label="$a$ = ",type=SR),
+	b = input_box(b, label="$b$ = ",type=SR),
+	dist = input_box(dist, label="dist = ",type=SR),
+):
+
+	#ytop = 1 + find_local_maximum(f, a, b)
+
+	df = f.diff(x)
+	ddf = df.diff(x)
+	html('Under the assumption that $f$ is differentiable, this tool will find the absolute maximum and absolute minimum of $f(x)=%s$ on the closed interval $[%s,%s]$ by using the First and Second Derivative Tests. The derivative of $f(x)$ is $f\'(x)=%s$ and the second derivative of $f$ is $f\'\'(x)=%s$. We will use this to find the $x$-values which are critical numbers by solving for $x$ in the equation $%s=0$.'%(latex(f),latex(a),latex(b),latex(df),latex(ddf),latex(df)))
+
+	html('&nbsp;')
+
+	critical_numbers = []
+	solutions_with_dictionary = solve([df==0],x)
+	for solution_with_dictionary in solutions_with_dictionary:
+		candidate_critical_number = solution_with_dictionary.rhs()
+		#html('$%s$ is imaginary part'%(latex(candidate_critical_number.imag())))
+		if candidate_critical_number in RR:
+			# The candidate critical number is NOT complex.
+			if candidate_critical_number >= a and candidate_critical_number <= b:
+				#html('$%s$ is real'%(latex(candidate_critical_number)))
+				critical_numbers.append(candidate_critical_number)
+		#else:
+		#	html('$%s$ is complex'%(latex(candidate_critical_number)))
+
+	if len(critical_numbers) == 0:
+		html('Under the assumption that $f(x)=%s$ is differentiable in the interval $(%s,%s)$, the function $f(x)$ has no critical points.'%( latex(f), latex(a), latex(b) ))
+	elif len(critical_numbers) == 1:
+		html('Under the assumption that $f(x)=%s$ is differentiable in the interval $(%s,%s)$, the function $f(x)$ has one critical point.'%( latex(f), latex(a), latex(b) ))
+	else:
+		html('Under the assumption that $f(x)=%s$ is differentiable in the interval $(%s,%s)$, the function $f(x)$ has $%s$ critical points.'%( latex(f), latex(a), latex(b), len(critical_numbers) ))
+
+	considered_points = []
+	considered_values = []
+
+	if len(critical_numbers) > 0:
+		for critical_number in critical_numbers:
+			html('$\\bullet\\,\\,$The number $x=%s$ is a critical number for $f(x)$. Evaluating the function, $f(%s)=%s$, which will be considered a candidate for absolute minimum and absolute maximum.'%(latex(critical_number),latex(critical_number),latex(f.subs({x:critical_number}))))
+			considered_points.append( (critical_number, f.subs({x:critical_number}) ) )
+			considered_values.append( f.subs({x:critical_number}) )
+
+	html('WARNING: One limitation of this software is that it cannot find points where $f(x)$ is not differentiable. As long as $f$ is differentiable, the list above of critical points is correct. If $f$ is not differentiable, then the list of critical numbers may be larger.')
+
+	html('&nbsp;')
+
+	html('Now we will check the endpoints $x=a$ and $x=b$.')
+	#
+	html('$\\bullet\\,\\,$At the left endpoint $x=%s$, we have $f(%s)=%s$, which will be considered a candidate for absolute minimum and absolute maximum.'%(latex(a),latex(a),latex(f.subs({x:a}))))
+	considered_points.append( (a, f.subs({x:a}) ) )
+	considered_values.append( f.subs({x:a}) )
+
+	#
+	html('$\\bullet\\,\\,$At the right endpoint $x=%s$, we have $f(%s)=%s$, which will be considered a candidate for absolute minimum and absolute maximum.'%(latex(b),latex(b),latex(f.subs({x:b}))))
+	considered_points.append( (b, f.subs({x:b}) ) )
+	considered_values.append( f.subs({x:b}) )
+
+	html('&nbsp;')
+
+	html('The full list of $y$-values being considered for absolute maxmimum and absolute minimum are: $%s$'%(latex(considered_values)))
+
+	first = 1
+	largest_y_at = []
+	smallest_y_at = []
+	for point in considered_points:
+		px = point[0]
+		py = point[1]
+		if first == 1:
+			largest_y = py
+			smallest_y = py
+			largest_y_at.append(px)
+			smallest_y_at.append(px)
+			first = 0
+		else:
+			if py == largest_y:
+				largest_y_at.append(px)
+			elif py > largest_y:
+				# new largest value, so trash the old data
+				largest_y = py
+				largest_y_at = [px]
+
+			if py == smallest_y:
+				smallest_y_at.append(px)
+			elif py < smallest_y:
+				# new
+				smallest_y = py
+				smallest_y_at = [px]
+	if len(largest_y_at) > 1:
+		html('$\\bullet\\,\\,$The largest of these $y$-values is $%s$. Thus the absolute maximum of $f$ is $%s$, which occurs at the $x$-values $%s$.'%( latex(largest_y),latex(largest_y),latex(largest_y_at) ))
+	else:
+		html('$\\bullet\\,\\,$The largest of these $y$-values is $%s$. Thus the absolute maximum of $f$ is $%s$, which occurs at the $x$-value $%s$.'%( latex(largest_y),latex(largest_y),latex(largest_y_at[0]) ))
+	if len(smallest_y_at) > 1:
+		html('$\\bullet\\,\\,$The smallest of these $y$-values is $%s$. Thus the absolute minimum of $f$ is $%s$, which occurs at the $x$-values $%s$.'%( latex(smallest_y),latex(smallest_y),latex(smallest_y_at) ))
+	else:
+		html('$\\bullet\\,\\,$The smallest of these $y$-values is $%s$. Thus the absolute minimum of $f$ is $%s$, which occurs at the $x$-value $%s$.'%( latex(smallest_y),latex(smallest_y),latex(smallest_y_at[0]) ))
+
+	# Plot function
+	fPlot = plot(f,(x,a,b), ymin=smallest_y-1, ymax=largest_y+1, thickness=2,aspect_ratio='automatic')
+	#html('The graph of $f(x)=%s$. The $x$ range is from $%s$ to $%s$. The $y$ range is from $%s$ to $%s$.'%( latex(f), xleft, xright, ybottom, ytop ))
+	show(fPlot)
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>
+</p>
