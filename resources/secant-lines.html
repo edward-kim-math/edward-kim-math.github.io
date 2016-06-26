@@ -1,0 +1,65 @@
+---
+layout: default
+title: Secant Lines
+---
+<h1>{{page.title}}</h1>
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x')
+f = x^3 - 5*x
+a = -2
+h = 4.5
+scale = 7
+
+@interact
+def _(
+	f = input_box(f, label="$f(x)$ = ",type=SR),
+	a = input_box(a, label="$a$ = ",type=SR),
+	h = input_box(h.n(digits=2), label="$h$ = ",type=SR),
+	scale = input_box(scale, label="scale = ",type=SR)
+):
+	# Use the scale values to set up the viewing window
+	xleft = a - scale
+	xright = a + scale
+	ybottom = f.substitute({x:a}) - scale
+	ytop = f.substitute({x:a}) + scale
+
+	# h = h.n(digits=6)
+
+	pretty_print(html('The $x$-width value chosen was $h=%s$.'%(latex(h))))
+
+	# Plot function
+	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
+
+	if h != 0:
+		# Compute Secant Line
+		# SecantLineSegmentPlot = line( [(a,f.substitute({x:a})),(a+h,f.substitute({x:a+h}))], rgbcolor=(1,0,0) )
+		m = (f.substitute({x:a+h})-f.substitute({x:a})) / h
+		SecantLineFunction = f.substitute({x:a}) + m * (x-a)
+		SecantLinePlot = plot(SecantLineFunction,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic', rgbcolor=(1,0,0))
+
+	# Some dots helps show where things are anchored on the secant line
+	dot1 = point( (a,f.substitute({x:a})) ,pointsize=80,rgbcolor=(1,0,0))
+	dot2 = point( (a+h,f.substitute({x:a+h})) ,pointsize=80,rgbcolor=(1,0,0))
+
+	if h != 0:
+		pretty_print(html('The graph of $f(x)=%s$ and the line through the points $(a,f(a))=(%s,%s)$ and $(a+h,f(a+h))=(%s,%s)$.' %  ( latex(f) , latex(a), latex(f.substitute({x:a})), latex(a+h), latex(f.substitute({x:a+h})) )))
+		pretty_print(html('The secant line through the points $(a,f(a))$ and $(a+h,f(a+h))$ has slope $m=\\frac{(%s)-(%s)}{(%s)-(%s)}=%s$.' % ( latex(f.substitute({x:a+h})), latex(f.substitute({x:a})), latex(a+h), latex(a), latex(m))))
+	else:
+		pretty_print(html('The graph of $f(x)=%s$. Choose $h \\not=0$ to see the real power of this tool.' %  ( latex(f) )))
+
+	if h != 0 :
+		show(fPlot + SecantLinePlot + dot1 + dot2)
+	else:
+		show(fPlot + dot1)
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>
+</p>
