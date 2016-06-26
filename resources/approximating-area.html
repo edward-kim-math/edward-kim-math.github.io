@@ -1,0 +1,87 @@
+---
+layout: default
+title: Approximating Area
+---
+<h1>{{page.title}}</h1>
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x')
+@interact
+def _(f = input_box(default = sin(x^2) - x/20 + 2, type = SR),
+    interval=range_slider(0, 30, 1, default=(0, 4), label="Interval"),
+    number_of_subdivisions = slider(1, 50, 1, default=4, label="Number of boxes"),
+    #endpoint_rule = selector(['Midpoint', 'Left', 'Right', 'Upper', 'Lower'], nrows=1, label="Endpoint rule")):
+    endpoint_rule = selector(['Midpoint','Left endpoint', 'Right endpoint', 'Upper', 'Lower'], nrows=1, label="Rule")):
+
+    a, b = map(QQ, interval)
+    t = sage.calculus.calculus.var('t')
+    func = fast_callable(f(x=t), RDF, vars=[t])
+    dx = ZZ(b-a)/ZZ(number_of_subdivisions)
+
+    xs = []
+    ys = []
+    for q in range(number_of_subdivisions):
+        if endpoint_rule == 'Left endpoint':
+            xs.append(q*dx + a)
+        elif endpoint_rule == 'Midpoint':
+            xs.append(q*dx + a + dx/2)
+        elif endpoint_rule == 'Right endpoint':
+            xs.append(q*dx + a + dx)
+        elif endpoint_rule == 'Upper':
+            absmax = find_maximum_on_interval(f, q*dx + a, q*dx + dx + a) # x = find_maximum_on_interval(func, q*dx + a, q*dx + dx + a)[1]
+            x = absmax[1]
+            xs.append(x)
+        elif endpoint_rule == 'Lower':
+            absmin = find_local_minimum(f, q*dx + a, q*dx + dx + a)  #x = find_minimum_on_interval(func, q*dx + a, q*dx + dx + a)[1]
+            x = absmin[1]
+            xs.append(x)
+    ys = [ func(x) for x in xs ]
+
+    rects = Graphics()
+    for q in range(number_of_subdivisions):
+        xm = q*dx + dx/2 + a
+        x = xs[q]
+        y = ys[q]
+        rects += line([[xm-dx/2,0],[xm-dx/2,y],[xm+dx/2,y],[xm+dx/2,0]], rgbcolor = (1,0,0))
+        rects += point((x, y), rgbcolor = (1,0,0))
+    min_y = min(0, find_local_minimum(func,a,b)[0])
+    max_y = max(0, find_local_maximum(func,a,b)[0])
+    #min_y = min(0, find_minimum_on_interval(func,a,b)[0])
+    #max_y = max(0, find_maximum_on_interval(func,a,b)[0])
+
+    # html('<h3>Numerical integrals with the midpoint rule</h3>')
+    show(plot(func,a,b) + rects, xmin = a, xmax = b, ymin = min_y, ymax = max_y, figsize=5)
+
+    def cap(x):
+        # print only a few digits of precision
+        if x < 1e-4:
+            return 0
+        return RealField(20)(x)
+    sum_html = "%s \cdot \\left[ %s \\right]" % (dx, ' + '.join([ "f(%s)" % cap(i) for i in xs ]))
+    num_html = "%s \cdot \\left[ %s \\right]" % (dx, ' + '.join([ str(cap(i)) for i in ys ]))
+
+    numerical_answer = integral_numerical(func,a,b,max_points = 200)[0]
+    estimated_answer = dx * sum([ ys[q] for q in range(number_of_subdivisions)])
+
+    pretty_print(html(r'''
+    <div class="math">
+    \begin{align*}
+      \text{area of rectangles } = \sum_{i=1}^{%s} {f(x_i) \, \Delta x}
+      & = %s \\\
+      & = %s \\\
+      & = %s .
+    \end{align*}
+    </div>
+    ''' % (number_of_subdivisions, sum_html, num_html, estimated_answer)))
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>. Adapted from an application by Nick Alexander (based on the work of Marshall Hampton).
+</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>
+</p>
