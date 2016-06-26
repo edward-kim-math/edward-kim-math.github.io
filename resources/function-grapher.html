@@ -4,6 +4,7 @@ title: Function Grapher
 ---
 <div class="sage">
 <script type="text/x-sage">
+{% raw %}
 var('x')
 f = x^2-1
 xleft = -10
@@ -23,6 +24,7 @@ def _(
 	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
 	pretty_print(html('The graph of $f(x)=%s$. The $x$ range is from $%s$ to $%s$. The $y$ range is from $%s$ to $%s$.'%( latex(f), xleft, xright, ybottom, ytop )))
 	show(fPlot)
+{% endraw %}	
 </script>
 </div>
 
