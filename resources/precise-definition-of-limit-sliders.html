@@ -1,0 +1,71 @@
+---
+layout: default
+title: The precise definition of a limit (with sliders)
+---
+<h1>{{page.title}}</h1>
+This tool is a slightly more convenient form of the <a href="precise-definition-of-limit.html">the precise definition of a limit tool</a> because of the sliders, but less powerful, because you can't pick \(\epsilon\) or \(\delta\) to be smaller than \(0.001\).
+
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x')
+f = 2^x-7
+xleft = -10
+xright = 10
+ybottom = -10
+ytop = 10
+a = 2
+L = 4
+epsilon = 3
+delta = 5
+
+@interact
+def _(
+	f = input_box(f, label="$f(x)$ = ",type=SR),
+	xleft = input_box(xleft, label="$x$ min = ",type=SR),
+	xright = input_box(xright, label="$x$ max = ",type=SR),
+	ybottom = input_box(ybottom, label="$y$ min = ",type=SR),
+	ytop = input_box(ytop, label="$y$ max = ",type=SR),
+	a = input_box(a, label="Fix $a$ = ",type=SR),
+	L = input_box(L, label="Guess $L$ = ",type=SR),
+	epsilon = slider(.001, 5, .001, default=epsilon, label="Pick $\epsilon$ = "),
+	delta = slider(.001, 5, .001, default=delta, label="Adjust $\delta$ = "),
+):
+
+	# Plot function
+	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
+	epsilon_line_1 = line([(xleft,L-epsilon),(xright,L-epsilon)], rgbcolor=(0.5,0.5,0.5),linestyle='--')
+	epsilon_line_2 = line([(xleft,L+epsilon),(xright,L+epsilon)], rgbcolor=(0.5,0.5,0.5),linestyle='--')
+	bad_region_1 = polygon([(a-delta,L+epsilon),(a-delta,ytop),(a+delta,ytop),(a+delta,L+epsilon)], rgbcolor=(1,0.6,0.6))
+	bad_region_2 = polygon([(a-delta,L-epsilon),(a-delta,ybottom),(a+delta,ybottom),(a+delta,L-epsilon)], rgbcolor=(1,0.6,0.6))
+	aL_point = point((a,L),rgbcolor=(1,0,0),pointsize=20)
+	delta_line_1 = line([(a-delta,ybottom),(a-delta,ytop)],rgbcolor=(0.5,0.5,0.5),linestyle='--')
+	delta_line_2 = line([(a+delta,ybottom),(a+delta,ytop)],rgbcolor=(0.5,0.5,0.5),linestyle='--')
+	horizontal_line = line([(xleft,L),(xright,L)], rgbcolor=(1,0,1),linestyle='-')
+	vertical_line = line([(a,ybottom),(a,ytop)],rgbcolor=(1,0,1),linestyle='-')
+
+	pretty_print(html('The graph of $f(x)=%s$ is shown in blue with $x$ range from $%s$ to $%s$ and $y$ range from $%s$ to $%s$.'%( latex(f), xleft, xright, ybottom, ytop )))
+	pretty_print(html('The purple vertical line is $x = a = %s$ and the purple horizontal line is $y = L = %s$.'%( a, L )))
+	pretty_print(html('The dotted horizontal lines are $y = L \pm \epsilon$. Based on your choices, these are $y = %s \pm %s$.'%( L,epsilon )))
+	pretty_print(html('The dotted vertical lines are $x = a \pm \delta$. Based on your choices, these are $x = %s \pm %s$.'%( a, delta )))
+	pretty_print(html('The shaded red regions are determined by the gray lines. If your guess that $\displaystyle\\lim_{x \\rightarrow %s} f(x) = %s$ is right, then no matter how small you pick $\epsilon > 0$ (even if you choose a value for $\epsilon$ that is smaller than $%s$, as long as it\'s positive), you should be able to pick a value for $\delta > 0$ so that the blue graph does not enter the two red regions. Therefore, once you\'re successful getting the blue graph to avoid the red region, pick a value for $\epsilon$ that is bigger than $0$ but smaller than $%s$ and adjust $\delta$.' % (a, L, epsilon, epsilon)))
+	show(fPlot + epsilon_line_1 + epsilon_line_2 + bad_region_1 + bad_region_2 + delta_line_1 + delta_line_2 + horizontal_line + vertical_line)
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>Input a function \(f(x)\).
+Then choose a value for \(a\), the fixed \(x\) value.
+Guess what the limit \(\displaystyle\lim_{x \rightarrow a} f(x)\) will be, and record your guess as \(L\) above.
+If your guess is correct, then the following thing should happen:
+Pick ANY positive number for \(\epsilon > 0\).
+Then, based on picking the number you did for \(\epsilon\), there should be a choice of \(\delta > 0\) (now, go find it!) so that the graph of the function avoids the red areas (with the exception of the line \(x=a\), where we don't care what happens).
+</p>
+
+<p>
+This task is will be easier to do when \(\epsilon\) is large, so try picking smaller positive values for \(\epsilon\) (maybe divide it by two). If \(\epsilon\) gets smaller and smaller, you'll have to adjust by choosing \(\delta\) to be smaller and smaller. If it becomes hard to see what's going on, adjust the scale by adjusting the \(x\) and \(y\) min and max values.
+</p>
