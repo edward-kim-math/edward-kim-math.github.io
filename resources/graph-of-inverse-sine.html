@@ -1,0 +1,94 @@
+---
+layout: default
+title: Graph of inverse sine
+---
+<h1>{{page.title}}</h1>
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x')
+xleft = -7
+xright = 7
+ybottom = -7
+ytop = 7
+fpmin = -pi/2
+fpmax = pi/2
+
+@interact
+def _(
+	angle = DiscreteSlider((-pi/2,-pi/3,-pi/4,-pi/6,0,pi/6,pi/4,pi/3,pi/2), default=0),
+	size = DiscreteSlider((1,2,3,4,5,6,7,8,9), default=7)
+):
+	# Plot function
+
+	f = sin(x)
+	fi = arcsin(x)
+
+	fxaxis = line([(xleft,0),(xright,0)], color='black')
+	ticklocation = -2*pi
+	fxtick = line([(ticklocation,-.2),(ticklocation,.2)], color='black')
+	while (ticklocation < xright - pi/2):
+		ticklocation += pi/2
+		fxtick += line([(ticklocation,-.2),(ticklocation,.2)], color='black')
+	fxtick += text("$-2\\pi$", (-2*pi,-.5), color='black')
+	fxtick += text("$-\\pi$", (-pi,-.5), color='black')
+	fxtick += text("$\\pi$", (pi,-.5), color='black')
+	fxtick += text("$2\\pi$", (2*pi,-.5), color='black')
+
+	fyaxis = line([(0,ybottom),(0,ytop)], color='black')
+	ticklocation = -6
+	fytick = line([(-.2,ticklocation),(.2,ticklocation)], color='black')
+	while (ticklocation < ytop - 1.1):
+		ticklocation += 1
+		fytick += line([(-.2,ticklocation),(.2,ticklocation)], color='black')
+	fytick += text("$-1$", (.5,-1), color='black')
+	fytick += text("$1$", (.5,1), color='black')
+
+	faxis = fxaxis + fxtick + fyaxis + fytick
+
+	fixaxis = line([(ybottom,0),(ytop,0)], color='black')
+	ticklocation = -6
+	fixtick = line([(ticklocation,-.2),(ticklocation,.2)], color='black')
+	while (ticklocation < ytop - 1.1):
+		ticklocation += 1
+		fixtick += line([(ticklocation,-.2),(ticklocation,.2)], color='black')
+	fixtick += text("$-1$", (-1,.5), color='black')
+	fixtick += text("$1$", (1,.5), color='black')
+
+	fiyaxis = line([(0,xleft),(0,xright)], color='black')
+	ticklocation = -2*pi
+	fiytick = line([(-.2,ticklocation),(.2,ticklocation)], color='black')
+	while (ticklocation < xright - pi/2):
+		ticklocation += pi/2
+		fiytick += line([(-.2,ticklocation),(.2,ticklocation)], color='black')
+	fiytick += text("$-2\\pi$", (.5,-2*pi), color='black')
+	fiytick += text("$-\\pi$", (.5,-pi), color='black')
+	fiytick += text("$\\pi$", (.5,pi), color='black')
+	fiytick += text("$2\\pi$", (.5,2*pi), color='black')
+
+	fiaxis = fixaxis + fixtick + fiyaxis + fiytick
+
+	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic', color='red')
+	fpPlot = plot(f,(x,fpmin,fpmax), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic', color='blue')
+	fiPlot = plot(fi,(x,-1,1), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic', color='blue')
+
+	fDot = point( (angle, f.subs({x:angle}) ), pointsize=80, color='blue' )
+	fDotText = text("$(%s,%s)$"%(latex(angle),latex(f.subs({x:angle}))), (angle+.6, f.subs({x:angle})-.7), color='blue')
+
+	fiDot = point( (f.subs({x:angle}), angle ), pointsize=80, color='blue' )
+	fiDotText = text("$(%s,%s)$"%(latex(f.subs({x:angle})),latex(angle)), (f.subs({x:angle})+.6,angle-.6), color='blue')
+
+	pretty_print(html('The first figure is the graph of $y=\\sin x$. The second figure shows the graph of $y=\\sin^{-1}x$.'))
+
+	show(faxis + fPlot + fpPlot + fDot, figsize=size, axes=False)
+	show(fiaxis + fiPlot + fiDot, xmin=xleft, xmax=xright, figsize=size, axes=False)
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>
+</p>
