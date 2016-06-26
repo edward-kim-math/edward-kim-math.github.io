@@ -1,0 +1,62 @@
+---
+layout: default
+title: Linearization
+---
+<h1>{{page.title}}</h1>
+<div class="sage">
+<script type="text/x-sage">
+{% raw %}
+var('x')
+f = x^2 + pi/2*sin(3*x)
+xleft = -3
+xright = 12
+ybottom = -2
+ytop = 15
+a = pi
+x0 = 3.8
+
+@interact
+def _(
+	f = input_box(f, label="$f(x)$ = ",type=SR),
+	a = input_box(a, label="$a$ = ",type=SR),
+	xleft = input_box(xleft, label="$x$ min = ",type=SR),
+	xright = input_box(xright, label="$x$ max = ",type=SR),
+	ybottom = input_box(ybottom, label="$y$ min = ",type=SR),
+	ytop = input_box(ytop, label="$y$ max = ",type=SR),
+	show_x = selector([(1,'no'),(2,'yes')]),
+	x0 = input_box(x0, label="$x$ = ",type=SR),
+):
+	# Plot function
+	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
+	fa = f.subs({x:a})
+	df = f.diff()
+	dfa = df.subs({x:a})
+	L = fa + dfa*(x-a)
+	La = L.subs({x:a})
+	LPlot = plot(L,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic',color='red')
+	pretty_print(html('The graph of $f(x)=%s$ is shown in blue. Shown in red is the graph $y = L(x)$ of the linearization at $a$, where $L(x) = %s + %s(x-%s)$. The $x$ range is from $%s$ to $%s$. The $y$ range is from $%s$ to $%s$.'%( latex(f), latex(fa), latex(dfa), latex(a), xleft, xright, ybottom, ytop )))
+	if show_x == 2:
+		if abs(x0-a) > 1:
+			pretty_print(html('Your choice of $x$ is too far away from $a$. Pick a value for $x$ which is closer.'))
+		else:
+			pretty_print(html('Notice how close together the horizontal lines are, which show the $y$-values of the function and the linearization at $x$.'))
+		hlinef = line([(0,f.subs({x:x0})),(x0,f.subs({x:x0}))], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+		hlineL = line([(0,L.subs({x:x0})),(x0,L.subs({x:x0}))], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+		#vlinea = line([(a,0),(a,La)], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+		#vlineaf = line([(a,0),(a,fa)], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+		vlinex0 = line([(x0,0),(x0,L.subs({x:x0}))], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+		vlinex0f = line([(x0,0),(x0,f.subs({x:x0}))], rgbcolor=(0.5,0.5,0.5),linestyle='-')
+		show(fPlot + LPlot+hlinef+hlineL+vlinex0+vlinex0f)
+	else:
+		show(fPlot + LPlot)
+
+	pretty_print(html('How was the linearization of $f(x)$ computed? We computed the derivative of $f$, which was$f\'(x)=%s$. Thus, $f\'(a)=f\'(%s)=%s$. Going back to the original function $f(x)$, we compute $f(a)=f(%s)=%s$. We use $a=%s$, $f(a)=%s$, and $f\'(a)=%s$ in the formula for linearization, which is $L(x)=f(a)+f\'(a)(x-a)$. Thus we obtain $L(x)=%s + %s(x-%s)$ as the linearization of $f(x)$ at $a=%s$.'%( latex(df), latex(a), latex(dfa), latex(a), latex(fa), latex(a), latex(fa), latex(dfa), latex(fa), latex(dfa), latex(a),latex(a) )))
+{% endraw %}
+</script>
+</div>
+
+<p>Powered by the <a href="http://aleph.sagemath.org/">Sage Cell Server</a> and inspired by the <a href="http://wiki.sagemath.org/interact">Sage Interact Wiki</a>.</p>
+
+<h2>Comments, instructions, links to other resources, etc.</h2>
+
+<p>This is a tool that graphs a function $y=f(x)$ together with its linearization at $a$. After turning on the "show x" feature, try choosing $x$ values which get closer and closer to $a$.</p>
