@@ -1,0 +1,109 @@
+---
+layout: default
+title: create-webwork-sets.py
+---
+<h1>{{ page.title }}</h1>
+
+This Python script creates WebWork sets with specified deadlines quickly. You will need to modify several variables which appear at the top.
+{% highlight python linenos %}
+# This Python script creates WebWork sets with specified deadlines quickly.
+# Filename: create-webwork-sets.py
+# Author: Edward D. Kim, UW-La Crosse
+
+# INSTRUCTIONS
+# Set the variables in the next section. The openDate is used for all sets.
+# To keep the sets in order, the open time matches the set's 2-digit number (in the minutes portion)
+# Pay attention especially to daylight versus standard time in setting the dueDT.
+# You do not have to have a set numbered '00'. I typically use this as a prerequisite review set.
+# I am using the due date/time as the answer date/time. This serves my needs, but this script is easily modified for other uses!
+
+# After setting all the due dates and running, many WeBWorK set definition files will be created.
+# These files should be put in a .tar (on Windows, you can use 7-Zip) and then uploaded to WeBWorK's file manager.
+# WeBWorK will automatically un-tar the files. They can then be imported in the Homework Sets Editor.
+
+#######################################
+
+# set prefixes
+setPrefix = 'fall2016-ww' # This text prepends all set names
+
+# Open date
+openDate = '07/01/2016' # Format MM/DD/YYYY
+
+# Due Date/Times (DTs) # use two-digit numbers
+dueDT = {}
+dueDT['00'] = '09/01/2016 at 11:59pm CDT'
+dueDT['01'] = '09/12/2016 at 11:59pm CDT'
+dueDT['02'] = '09/13/2016 at 11:59pm CDT'
+dueDT['03'] = '09/14/2016 at 11:59pm CDT'
+dueDT['04'] = '09/15/2016 at 11:59pm CDT'
+dueDT['05'] = '09/19/2016 at 11:59pm CDT'
+dueDT['06'] = '09/20/2016 at 11:59pm CDT'
+dueDT['07'] = '09/21/2016 at 11:59pm CDT'
+dueDT['08'] = '09/22/2016 at 11:59pm CDT'
+dueDT['09'] = '09/26/2016 at 11:59pm CDT'
+dueDT['10'] = '09/27/2016 at 11:59pm CDT'
+dueDT['11'] = '09/28/2016 at 11:59pm CDT'
+dueDT['12'] = '10/03/2016 at 11:59pm CDT'
+dueDT['13'] = '10/04/2016 at 11:59pm CDT'
+dueDT['14'] = '10/05/2016 at 11:59pm CDT'
+dueDT['15'] = '10/06/2016 at 11:59pm CDT'
+dueDT['16'] = '10/10/2016 at 11:59pm CDT'
+dueDT['17'] = '10/11/2016 at 11:59pm CDT'
+dueDT['18'] = '10/12/2016 at 11:59pm CDT'
+dueDT['19'] = '10/13/2016 at 11:59pm CDT'
+dueDT['20'] = '10/17/2016 at 11:59pm CDT'
+dueDT['21'] = '10/18/2016 at 11:59pm CDT'
+dueDT['22'] = '10/19/2016 at 11:59pm CDT'
+dueDT['23'] = '10/24/2016 at 11:59pm CDT'
+dueDT['24'] = '10/25/2016 at 11:59pm CDT'
+dueDT['25'] = '10/26/2016 at 11:59pm CDT'
+dueDT['26'] = '10/27/2016 at 11:59pm CDT'
+dueDT['27'] = '10/31/2016 at 11:59pm CDT'
+dueDT['28'] = '11/01/2016 at 11:59pm CDT'
+dueDT['29'] = '11/02/2016 at 11:59pm CDT'
+dueDT['30'] = '11/03/2016 at 11:59pm CDT'
+dueDT['31'] = '11/07/2016 at 11:59pm CST'
+dueDT['32'] = '11/08/2016 at 11:59pm CST'
+dueDT['33'] = '11/09/2016 at 11:59pm CST'
+dueDT['34'] = '11/14/2016 at 11:59pm CST'
+dueDT['35'] = '11/15/2016 at 11:59pm CST'
+dueDT['36'] = '11/16/2016 at 11:59pm CST'
+dueDT['37'] = '11/17/2016 at 11:59pm CST'
+dueDT['38'] = '11/21/2016 at 11:59pm CST'
+dueDT['39'] = '11/22/2016 at 11:59pm CST'
+dueDT['40'] = '11/28/2016 at 11:59pm CST'
+dueDT['41'] = '11/29/2016 at 11:59pm CST'
+dueDT['42'] = '11/30/2016 at 11:59pm CST'
+dueDT['43'] = '12/05/2016 at 11:59pm CST'
+dueDT['44'] = '12/06/2016 at 11:59pm CST'
+dueDT['45'] = '12/07/2016 at 11:59pm CST'
+dueDT['46'] = '12/08/2016 at 11:59pm CST'
+dueDT['47'] = '12/12/2016 at 11:59pm CST'
+dueDT['48'] = '12/13/2016 at 11:59pm CST'
+dueDT['49'] = '12/14/2016 at 11:59pm CST'
+dueDT['50'] = '12/15/2016 at 11:59pm CST'
+
+######################################
+######################################
+######################################
+######################################
+
+import os
+
+for (setName, setDueDT) in dueDT.items():
+    print(setPrefix + setName + " is due " + setDueDT)
+    setFileName = 'set' + setPrefix + setName + '.def'
+    outputfile = open(setFileName, 'w')
+    outputfile.write('assignmentType      = default'+'\n')
+    outputfile.write('openDate          = '+openDate+' at 01:'+setName+'pm CDT'+'\n')
+    outputfile.write('reducedScoringDate = 12/31/1969 at 06:00pm CST'+'\n')
+    outputfile.write('dueDate           = '+setDueDT+'\n')
+    outputfile.write('answerDate        = '+setDueDT+'\n')
+    outputfile.write('enableReducedScoring = N'+'\n')
+    outputfile.write('paperHeaderFile   = defaultHeader'+'\n')
+    outputfile.write('screenHeaderFile  = defaultHeader'+'\n')
+    outputfile.write('description       = '+'\n')
+    outputfile.write('restrictProbProgression = '+'\n')
+    outputfile.write('emailInstructor   = '+'\n')
+    outputfile.close()
+{% endhighlight %}
