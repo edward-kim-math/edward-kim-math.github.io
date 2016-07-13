@@ -21,15 +21,15 @@ delta = 5
 
 @interact
 def _(
-	f = input_box(f, label="$f(x)$ = ",type=SR),
-	xleft = input_box(xleft, label="$x$ min = ",type=SR),
-	xright = input_box(xright, label="$x$ max = ",type=SR),
-	ybottom = input_box(ybottom, label="$y$ min = ",type=SR),
-	ytop = input_box(ytop, label="$y$ max = ",type=SR),
-	a = input_box(a, label="Fix $a$ = ",type=SR),
-	L = input_box(L, label="Guess $L$ = ",type=SR),
-	epsilon = input_box(epsilon, label="Pick $\epsilon$ = ",type=SR),
-	delta = input_box(delta, label="Adjust $\delta$ = ",type=SR),
+	f = input_box(f, label="\(f(x)\) = ",type=SR),
+	xleft = input_box(xleft, label="\(x\) min = ",type=SR),
+	xright = input_box(xright, label="\(x\) max = ",type=SR),
+	ybottom = input_box(ybottom, label="\(y\) min = ",type=SR),
+	ytop = input_box(ytop, label="\(y\) max = ",type=SR),
+	a = input_box(a, label="Fix \(a\) = ",type=SR),
+	L = input_box(L, label="Guess \(L\) = ",type=SR),
+	epsilon = input_box(epsilon, label="Pick \(\epsilon\) = ",type=SR),
+	delta = input_box(delta, label="Adjust \(\delta\) = ",type=SR),
 ):
 	# Plot function
 	fPlot = plot(f,(x,xleft,xright), ymin=ybottom, ymax=ytop, thickness=2,aspect_ratio='automatic')
