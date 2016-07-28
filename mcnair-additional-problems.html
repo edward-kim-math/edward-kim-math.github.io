@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>McNair Scholars - Additional problems</title>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
+</head>
+<body>
+
+<h1>Quadratic Equations</h1>
+Equations which involve an $x^2$ are a little more work than ones that don't have $x^2$ in them. Unless the format is "$x^2$ plus or minus just a plain number equals zero" or the format is "$x^2$ equals a plain number", you will want to get everything on one side (so add or subtract on both sides as needed, until one side says $0$). This is crucial in those cases where you have a linear term such as $7x$ appear. Then, either factor or use the quadratic formula.
+
+<ul>
+
+<li><a href="#" onclick="toggle_visibility('q1');">[Explain]</a> Solve the equation $x^2-3x = 0$
+	<span id="q1" style="display:none"><ul><li><b>EXPLANATION:</b> Factor the left side to obtain the equation $x(x-3)=0$. To make this similar to other problems below, you might think of the first $x$ as $(x-0)$ instead. In any case, you can take $(x)(x-3)=0$ and since you have two factors multiplying to zero, each factor can be set equal to zero: $x=0$ and $x-3=0$ are your two equations. By adding three on both sides of the second equation, the solutions are $x=0$ and $x=3$.
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('q2');">[Explain]</a> Solve the equation $x^2+4x-21 = 0$
+	<span id="q2" style="display:none"><ul><li><b>EXPLANATION:</b> Factor the left side to obtain $\left(x-3\right)\left(x+7\right)=0$. Thus, $x-3=0$ and $x+7=0$ are the two equations. The solutions are $x=3$ and $x=-7$.
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('q2b');">[Explain]</a> Solve the equation $x^2-x=12$
+	<span id="q2b" style="display:none"><ul><li><b>EXPLANATION:</b> While the left side factors (like the first equation, you could factor out an $x$), this is actually unhelpful and a waste of time. The reason is the right side is not zero. First, subtract $12$ on both sides to get $x^2-x-12=0$. Now factor the left side to obtain $(x-4)(x+3)=0$. The solutions are $x=4$ and $x=-3$.
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('q3');">[Explain]</a> Solve the equation $x^2 = 144$
+	<span id="q3" style="display:none"><ul><li><b>EXPLANATION:</b> There are two ways to solve this. You can square root both sides (in which case you should remember that a $\pm$ sign is needed on one side or the other, your choice). You'd obtain $x = \pm \sqrt{144}$ which simplifies to $x=\pm 12$. The other option is to get one side to be zero and factor. To get the zero, subtract $144$ on both sides to get $x^2-144=0$. Then the left side factors to get the equation $(x+12)(x-12)=0$. Check this is correct by FOILing the left side. 
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('q4');">[Explain]</a> Solve the equation $x(3x+10)=77$
+	<span id="q4" style="display:none"><ul><li><b>EXPLANATION:</b> Again it is helpful to have a zero on one side, so subtract $77$ on both sides to get $x(3x+10)-77=0$. Actually, having the $x$ and the $(3x+10)$ separate is not so helpful, so let's distribute the $x$, but leave the $77$ alone to get $3x^2+10x-77=0$. This one looks like it'll be hard to see the factoring, so use the quadtratic formula: \[x=\frac{-10 \pm \sqrt{(10)^2-4(3)(-77)}}{2(3)}.\]
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('q5');">[Explain]</a> Solve the equation $2x(4x+15)=27$
+	<span id="q5" style="display:none"><ul><li><b>EXPLANATION:</b> Like the previous equation, it will help to distribute the $2x$ and subtract $27$ on both sides. The distributing step and the subtracting on both sides step can be done in any order. After both are done, you'd have $8x^2+30x-27=0$. Again, use the quadratic formula for the two solutions.
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('q6');">[Explain]</a> Solve the equation $x^2 - 5x = 36$
+	<span id="q6" style="display:none"><ul><li><b>EXPLANATION:</b> As with the other equations, subtract $36$ on both sides to obtain $x^2-5x-36=0$. The left side can be rewritten by factoring, so the new equation is $(x+4)(x-9)=0$. Thus $x+4=0$ and $x-9=0$ are the two equations. Finally to solve for $x$, our two solutions are $-4$ and $9$.
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('q8');">[Explain]</a> Solve the equation $x^2=58x$
+	<span id="q8" style="display:none"><ul><li><b>EXPLANATION:</b> Subtract $58x$ on both sides. The new equation is $x^2-58x=0$. Then the left side factors, though this is not a FOIL-style factoring, but rather a distributive law style factoring. The result is $x(x-58)=0$. For visual, I emphasize is that the left side is one thing $(x)$ multiplied by another $(x-58)$, so you can think of the left side as being $(x)(x-58)=0$. So we obtain the equations $x=0$ and $x-58=0$. The solutions are $x=0$ and $x=58$.
+	</li></ul></span>
+</li>
+
+</ul>
+
+<h1>Word Problems</h1>
+
+<ul>
+
+<li><a href="#" onclick="toggle_visibility('b1');">[Explain]</a> S
+	<span id="b1" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('b2');">[Explain]</a> S
+	<span id="b2" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('b3');">[Explain]</a> S
+	<span id="b3" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('b4');">[Explain]</a> S
+	<span id="b4" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('b5');">[Explain]</a> S
+	<span id="b5" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('b6');">[Explain]</a> S
+	<span id="b6" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('b7');">[Explain]</a> S
+	<span id="b7" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<!--
+<li><a href="#" onclick="toggle_visibility('b8');">[Explain]</a> S
+	<span id="b8" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('b9');">[Explain]</a> S
+	<span id="b9" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+-->
+
+</ul>
+
+
+<h1>Positivity / Negativity</h1>
+First, note that $x>0$ is just notation for "$x$ is positive". Similarly, $z<0$ is the same as "$z$ is negative".
+<br><br>
+For these types of problems, you will need to recall that a positive times a positive is positive, and that a negative times a negative is also positive.
+<br><br>
+In contrast, a negative times a positive (or a positive times a negative) is always negative.
+
+<ul>
+
+<li><a href="#" onclick="toggle_visibility('c1');">[Explain]</a> S
+	<span id="c1" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('c2');">[Explain]</a> S
+	<span id="c2" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('c3');">[Explain]</a> S
+	<span id="c3" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('c4');">[Explain]</a> S
+	<span id="c4" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('c5');">[Explain]</a> S
+	<span id="c5" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('c6');">[Explain]</a> S
+	<span id="c6" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('c7');">[Explain]</a> S
+	<span id="c7" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<!--
+<li><a href="#" onclick="toggle_visibility('c8');">[Explain]</a> S
+	<span id="c8" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+
+<li><a href="#" onclick="toggle_visibility('c9');">[Explain]</a> S
+	<span id="c9" style="display:none"><ul><li><b>EXPLANATION:</b> a
+	</li></ul></span>
+</li>
+-->
+
+</ul>
+
+
+
+
+</body>
+</html>
