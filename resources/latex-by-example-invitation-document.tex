@@ -1,0 +1,27 @@
+% Feel free to use/modify. If you change the latex-by-example.tex file, you will probably also want to redesign the shared URL. -- E. Kim
+\documentclass{article}
+
+\usepackage[margin=.5in]{geometry}
+\usepackage{minted}
+\usepackage{qrcode}
+\usepackage{url}
+\usepackage{color}
+\usepackage{hyperref}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\noindent
+\large{Get the LaTeX source at \url{http://tinyurl.com/latex-by-example} or use the QR code:}
+\hfill
+\qrcode[]{http://tinyurl.com/latex-by-example}%\qrcode[]{https://www.sharelatex.com/project/561fd4dd27acba654c59cde7}
+
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+\usemintedstyle{pastie}
+\inputminted[linenos,frame=single, bgcolor=bg, fontsize=\footnotesize, breaklines]{latex}{latex-by-example.tex} %bgcolor=bg,
+
+\end{document}
+
+% https://www.sharelatex.com/learn/Code_Highlighting_with_minted
+% Minted styles which color the dollar sign and have print-friendly colors: manni, perldoc, murphy, autumn, emacs, vim, pastie, friendly
