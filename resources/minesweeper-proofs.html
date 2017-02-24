@@ -1,0 +1,39 @@
+---
+layout: default
+title: Minesweeper Proofs
+---
+<h1>{{ page.title }}</h1>
+
+<img src="minesweeper-labeled.png">
+
+<p>
+The "raised" cells are unknowns.
+The more "indented" cells are knowns.
+(Intended cells without a number are zeros: none of the 8 surrounding cells are mines.)
+The cells which have a red triangular flag are marked by the game player to indicate that these are mines.
+</p>
+
+<p>
+To carefully understand, let us consider the following example.
+The cell labeled 2 to the right of Cell Y should have two mines.
+The cell to the upper right (with a 2), the cell to the right (with a 1), the cell to the lower right (blank, so a zero), and the cell below (the 1 to the right of Z) have all been cleared.
+The cell above the 2 is already marked as a mine. While that spot is "technically not known", the person playing felt confident enough to mark that spot a mine.
+In addition, Cell X, Cell Y, and Cell Z are unknowns.
+</p>
+
+<p>
+For an example of the language of proof that can be used, let us consider the same example.
+The cell labeled 2 to the right of Cell Y should have two mines.
+Since there is already one marked mine,
+among the three cells Cell X, Cell Y, and Cell Z, exactly one of these is a mine.
+</p>
+
+<h1>Tasks (in order of difficulty)</h1>
+<ul>
+<li>Prove: If the Minesweeper configuration is as given above, then Cell I is safe. (Hint: Proof by contradiction)</li>
+<li>Prove: If the Minesweeper configuration is as given above, then Cell N is safe. (Hint: Proof by cases)</li>
+<li>Prove: If the Minesweeper configuration is as given above, then Cell V is safe.</li>
+</ul>
+
+In case it's helpful to you, here's a "blank" copy of this Minesweeper game:<br>
+<img src="minesweeper-version2.png">
