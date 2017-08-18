@@ -58,9 +58,12 @@ body {
 
 
 
+th, td {
+    padding: 4px;
+    text-align: left;
+}
 
-
-
+.syllabus_campuswide_policies {color: blue;}
 
 .featured_photo {border: 1px solid #969696; background-color: #c9c9c9; width: 300px; float: left; margin: 20px; padding: 10px; min-height: 270px;}
 .featured_photos {width: 100%; margin-bottom:10px; clear: both; position: relative; top:0px;}
