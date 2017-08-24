@@ -5,6 +5,26 @@ title: MTH 150 (Fall 2017) Syllabus
 
 <div class="well">
 
+  <!-- https://github.com/davidshimjs/qrcodejs -->
+	<script type="text/javascript" src="/qrcode.js"></script>
+
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+	var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: window.location.href,
+	width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+	});
+	</script>
+	<!-- 
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+	new QRCode(document.getElementById("qrcode"), window.location.href);
+	</script> -->
+  
 Placeholder for online-only cohort until complete.
 
 </div>
