@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site.name }}{% if !page.title %}: {{ page.title }}{% endif %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ site.baseurl }}/js/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+    <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/css/theme.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet" type="text/css">
+{% include isso-comments.html %}
+
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>
+$(function () {
+sagecell.makeSagecell({inputLocation: '.sage',
+languages: sagecell.allLanguages,
+autoeval: true,
+defaultLanguage: 'sage' ,
+hide: ["editor", "editorToggle", "language","evalButton"],
+//Focus the editor
+callback: function() {$('#sagecell').find(".CodeMirror").get(0).CodeMirror.focus();}});
+});
+</script>
+
+</head>
+
+<body id="sagecell_main" onLoad="onLoadPage()">
