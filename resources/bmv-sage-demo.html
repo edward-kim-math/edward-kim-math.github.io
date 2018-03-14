@@ -7,6 +7,24 @@ title: BMV Sage demo
 <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
 <script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
 
+Given \(n \times n\) symmetric matrices \(A\) and \(B\), examine the coefficient of \(t^r\) in the polynomial
+\(p(t) = \operatorname{trace}[(A+tB)^m]\).
 <div class="sage">
-  <script type="text/x-sage">1+2</script>
+<script type="text/x-sage">
+n = 2; # Matrix size
+m = 4; # Power to raise
+
+U = random_matrix(ZZ,n,n)
+V = random_matrix(ZZ,n,n)
+A = U + U.transpose()
+B = V + V.transpose()
+C = A + t*B;
+
+print "A is"
+print A
+print "B is"
+print B
+p = (C^m).trace();
+print p
+</script>
 </div>
