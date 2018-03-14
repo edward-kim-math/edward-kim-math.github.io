@@ -13,6 +13,7 @@ Given \(n \times n\) symmetric matrices \(A\) and \(B\), examine the coefficient
 <script type="text/x-sage">
 n = 2; # Matrix size
 m = 4; # Power to raise
+var('t')
 
 U = random_matrix(ZZ,n,n)
 V = random_matrix(ZZ,n,n)
@@ -24,7 +25,26 @@ print "A is"
 print A
 print "B is"
 print B
-p = (C^m).trace();
+p = (C^m).trace().expand();
 print p
+</script>
+</div>
+
+How about multiple runs for the same \(n\) and \(m\)?
+<div class="sage">
+<script type="text/x-sage">
+n = 2; # Matrix size
+m = 4; # Power to raise
+var('t')
+
+for i in range(10):
+  U = random_matrix(ZZ,n,n)
+  V = random_matrix(ZZ,n,n)
+  A = U + U.transpose()
+  B = V + V.transpose()
+  C = A + t*B;
+
+  p = (C^m).trace().expand();
+  print p
 </script>
 </div>
