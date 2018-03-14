@@ -1,0 +1,25 @@
+---
+layout: default
+title: halfpagedoubler.py
+---
+<h1>{{ page.title }}</h1>
+
+{% highlight python linenos %}
+import sys
+import os
+import glob
+import base64
+
+os.chdir("C:\\Users\\ekim\\Documents\\pdf2writeLOCAL")
+
+pdfnames = sorted(glob.glob('*.pdf'))
+
+for pdfname in pdfnames:
+
+	outputfilename = pdfname[:-4] + "key.pdf"
+
+	print('Doubling ' + pdfname)
+	
+	#SAMPLE convert -density 600 quiz00.pdf quiz00.pdf -append quiz00double.pdf
+	os.system('convert -density 600 ' + pdfname + ' ' + pdfname + ' -append ' + outputfilename) # Use ImageMagick
+{% endhighlight %}
