@@ -33,8 +33,8 @@ print p
 How about multiple runs for the same \(n\) and \(m\)?
 <div class="sage">
 <script type="text/x-sage">
-n = 2; # Matrix size
-m = 4; # Power to raise
+n = 3; # Matrix size
+m = 7; # Power to raise
 var('t')
 
 for i in range(10):
@@ -46,5 +46,6 @@ for i in range(10):
 
   p = (C^m).trace().expand();
   print p
+  print '--------------------'
 </script>
 </div>
