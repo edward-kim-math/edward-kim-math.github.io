@@ -21,16 +21,14 @@ A = U + U.transpose()
 B = V + V.transpose()
 C = A + t*B;
 
-print "A is"
-print A
-print "B is"
-print B
+print "A is\n", A
+print "B is\n", B
 p = (C^m).trace().expand();
 print p
 </script>
 </div>
 
-How about multiple runs for the same \(n\) and \(m\)?
+How about multiple runs for the same \(n\) and \(m\)? What happens when \(m\) is even?
 <div class="sage">
 <script type="text/x-sage">
 n = 3; # Matrix size
