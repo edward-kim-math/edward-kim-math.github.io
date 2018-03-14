@@ -1,0 +1,51 @@
+---
+layout: default
+title: gradescope-to-d2l.py
+---
+<h1>{{ page.title }}</h1>
+
+{% highlight python linenos %}
+# This Python script converts a Gradescope grade file (for a *single* assignment) into D2L's import format
+# Author: Edward D. Kim, UW-La Crosse
+
+# A full path name to the WebWork score file
+browser_downloads = 'C:/Users/ekim/Downloads' # Forward slashes because of \U
+
+import csv
+import glob
+import os
+
+os.chdir(browser_downloads)
+
+csvnames = sorted(glob.glob('*_scores.csv'))
+
+for csvname in csvnames:
+    assignment_name = csvname[:len(csvname)-11].replace("_", " ")
+    outputfilename = csvname[:len(csvname)-11] + "-gradescope-to-D2L.csv"
+    print("Converting", csvname,"...");
+    #print(assignment_name)
+    #print(outputfilename)
+
+    with open(csvname, 'rt') as csvfile:
+        csvreaderobject = csv.reader(csvfile, delimiter=',')
+        outputfile = open(outputfilename, 'w')
+
+        rownum = 0
+
+        for row in csvreaderobject:
+            if rownum == 0:
+                lineout = 'Username,' + assignment_name + ' Points Grade,End-of-Line Indicator'
+                print("Assignment name in D2L assumed to be:", assignment_name)
+                outputfile.write(lineout+'\n')
+            else:
+                username = row[2]
+                score = row[4]
+                if score == '':
+                    print("Blank score for", username, "converted to zero.")
+                    score = "0"
+                lineout = username + ',' + score + ',#'
+                outputfile.write(lineout+'\n')
+            rownum = rownum + 1 # outputfile.write(lineout+'\n')
+        csvfile.close()
+        outputfile.close()
+{% endhighlight %}
