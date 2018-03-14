@@ -1,0 +1,55 @@
+---
+layout: default
+title: pdf2write.py
+---
+<h1>{{ page.title }}</h1>
+
+{% highlight python linenos %}
+import sys
+import os
+import glob
+import base64
+
+# os.chdir("C:\\Users\\ekim\\Google Drive\\math-documents-root\\pdf2write")
+os.chdir("C:\\Users\\ekim\\Documents\\my-python-scripts\\pdf2writeLOCAL")
+
+pdfnames = sorted(glob.glob('*.pdf'))
+
+for pdfname in pdfnames:
+
+	os.system('del *.png') # delete existing images
+	print('Converting PDF pages to PNG files...')
+	os.system('convert -density 600 ' + pdfname + ' -resize 25% output.png') # Use ImageMagick to convert PDF to PNG at specified dpi (density)
+
+	filenames = sorted(glob.glob('output*.png'))
+
+	outputfilename = pdfname[:-4] + ".html"
+	writehandle = open(outputfilename,'w')
+
+	initial = '<!DOCTYPE html PUBLIC \'-//W3C//DTD XHTML 1.0 Strict//EN\'\n  \'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\'>\n<html xmlns="http://www.w3.org/1999/xhtml">\n <head>\n  <title>Handwritten Document</title>\n  <script type="text/writeconfig">\n   <int name="pageColor" value="-1" />\n   <int name="pageNum" value="0" />\n   <int name="ruleColor" value="-16776961" />\n   <float name="marginLeft" value="0" />\n   <float name="pageHeight" value="1650" />\n   <float name="pageWidth" value="1275" />\n   <float name="xOffset" value="-6.94444" />\n   <float name="xRuling" value="0" />\n   <float name="yOffset" value="-180.833" />\n   <float name="yRuling" value="0" />\n  </script>\n </head>\n <body>\n\n' # pageNum sets the "last viewed page"
+	writehandle.write(initial)
+
+	pre1 = '<svg width=\'1275px\' height=\'1650px\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\'>\n<defs> <style type=\'text/css\'><![CDATA[ \n  path { stroke-linecap: round; stroke-linejoin: round; }\n  .ruleline { shape-rendering: crispEdges; }\n]]></style> </defs>\n<g id=\'page_'
+	pre2 = '\' width=\'1275.000\' height=\'1650.000\' xruling=\'0.000\' yruling=\'0.000\' marginLeft=\'0.000\' papercolor=\'#FFFFFF\' rulecolor=\'#FF0000FF\'>\n<image __timestamp=\'0x14dd9d6bfd2\' __comx=\'635.816\' __comy=\'827.107\' x=\'0.000\' y=\'0.000\' width=\'1275.000\' height=\'1650.000\' xlink:href=\'data:image/png;base64,'
+	post = '\'/>\n</g>\n</svg>\n'
+
+	pagecount = 1
+
+	for filename in filenames:
+		print(filename)
+		filehandle = open(filename,'rb') # read binary
+		filecontent = filehandle.read()
+		encoded = base64.standard_b64encode(filecontent).decode('ascii')
+		writehandle.write(pre1)
+		writehandle.write(str(pagecount))
+		writehandle.write(pre2)
+		writehandle.write(encoded)
+		writehandle.write(post)
+		filehandle.close()
+		pagecount = pagecount + 1
+
+	final = '\n </body>\n</html>'
+	writehandle.write(final)
+	writehandle.close()
+	os.system('del *.png') # delete existing images
+{% endhighlight %}
