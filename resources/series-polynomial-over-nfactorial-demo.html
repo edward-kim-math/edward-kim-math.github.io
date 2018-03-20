@@ -1,0 +1,29 @@
+---
+layout: plain
+title: sum of polynomial over n factorial
+---
+<h1>{{ page.title }}</h1>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
+
+We are considering an infinite series of the form \( \displaystyle\sum_{k=1}^\infty \frac{p(n)}{n!} \) where \(p(n)\) is a polynomial in \(n\).
+The code below will compute a partial sum (going up to the 90th term) and then "guess" at which multiple of \(e\) we have.
+<div class="sage">
+<script type="text/x-sage">
+var('n')
+term = (9*n^4 + 3*n^2 - 9)/factorial(n)
+totalup = 0
+for k in range(90):
+    if k > 0:
+        termtoadd = term.subs(n=k)
+        totalup = totalup + termtoadd
+partialsum = totalup
+multipleofe = totalup/e.n()
+#print "Approximate sum of series is ", totalup.n()
+#print "Above divided be e is ", totalup/e.n()
+print "$\sum_{n=1}^\infty " + latex(term) + "$ is approximately $" + latex(partialsum.n()) + "$ which is about $" + multipleofe + "e$."
+</script>
+</div>
+
+</div>
