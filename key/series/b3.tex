@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n^2}$
+diverge, converge absolutely, or converge conditionally?
+
+\begin{itemize}
+
+\item {\bf Solution.} The series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n^2}$ is alternating.
+
+Let $a_n = \frac{(-1)^n}{n^2}$. Then $b_n = |a_n| = \frac1{n^2}$. The sequence $b_n$ is decreasing and 
+\[ \lim_{n \rightarrow \infty} b_n = 0.\]
+
+By the Alternating Series Test, the series
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n^2}$
+converges.
+
+Does $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n^2}$ converge absolutely or conditionally?
+We study $\sum |a_n|$, namely $\displaystyle \sum_{n=1}^\infty \left|\frac{(-1)^n}{n^2}\right|$, which is the series 
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$, which converges by the $p$-seriee test, so 
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n^2}$ converges absolutely.
+
+\item {\bf Solution.}
+We study $\sum |a_n|$, namely $\displaystyle \sum_{n=1}^\infty \left|\frac{(-1)^n}{n^2}\right|$, which is the series 
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n^2}$, which converges by the $p$-series test, so by the Absolute Convergence Test,
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n^2}$
+converges.
+
+Since $\sum |a_n|$ converges, $\sum a_n$ converges absolutely.
+
+\end{itemize}
+
+\end{document}

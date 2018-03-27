@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}n$
+diverge, converge absolutely, or converge conditionally?
+
+\begin{itemize}
+
+\item {\bf Solution.} The series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}n$ is alternating.
+
+Let $a_n = \frac{(-1)^n}{n}$. Then $b_n = |a_n| = \frac1n$. The sequence $b_n$ is decreasing and 
+\[ \lim_{n \rightarrow \infty} b_n = 0.\]
+
+By the Alternating Series Test,
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}n$
+converges.
+
+Does $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}n$ converge absolutely or conditionally?
+We study $\sum |a_n|$, namely $\displaystyle \sum_{n=1}^\infty \left|\frac{(-1)^n}n\right|$, which is the series 
+$\displaystyle \sum_{n=1}^\infty \frac{1}n$, which diverges by the $p$-series test, so 
+$\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}n$ converges conditionally.
+
+\end{itemize}
+
+\end{document}

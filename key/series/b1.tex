@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac1n$
+diverge, converge absolutely, or converge conditionally?
+
+\begin{itemize}
+
+\item {\bf Solution.} The series $\displaystyle \sum_{n=1}^\infty \frac1n$ is the harmonic series, thus diverges.
+
+\item {\bf Solution.} Since $p=1$, the series $\displaystyle \sum_{n=1}^\infty \frac1n$ 
+diverges by the $p$-series test.
+
+\item {\bf Solution.} The function $f(x) = \frac1x$ is continuous, positive, and decreasing on $[1,\infty)$ and $f(n)=a_n$.
+
+Consider the integral $\displaystyle \int_1^\infty \frac1x\,dx$.
+This is an improper integral:
+\begin{align*}
+\int_1^\infty \frac1x\,dx
+&= \lim_{t \rightarrow \infty} \int_1^t \frac1x\,dx\\
+&= \lim_{t \rightarrow \infty} (\ln |t| - \ln |1|)\\
+&= \lim_{t \rightarrow \infty} (\ln |t| - 0)\\
+&= \infty
+\end{align*}
+
+Since the integral  $\displaystyle \int_1^\infty \frac1x\,dx$ diverges, the series $\displaystyle \sum_{n=1}^\infty \frac1n$ diverges.
+
+\end{itemize}
+
+\end{document}
