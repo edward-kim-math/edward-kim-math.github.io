@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=2}^\infty \frac{\ln n}{n}$
+diverge, converge absolutely, or converge conditionally?
+
+
+\subsection*{Solution 1}
+
+The function $f(x)=\frac{\ln x}{x}$ is continuous, positive, and decreasing on $[3,\infty)$. We consider the integral
+\[ \int_3^\infty \frac{\ln x}{x}\,dx = \lim_{t \to \infty} \int_3^t \frac{\ln x}{x}\,dx.\]
+We do the indefinite integral using the substitution $u= \ln x$, so $du = \frac1x\,dx$:
+\[
+\int \frac{\ln x}{x}\,dx
+= \int u\,du = \frac12u^2 + C = \frac12(\ln x)^2 + C
+\]
+so, back to the improper integral,
+\begin{align*}
+\int_3^\infty \frac{\ln x}{x}\,dx 
+&= \lim_{t \to \infty} \int_3^t \frac{\ln x}{x}\,dx\\
+&= \lim_{t \to \infty}\left[  \frac12(\ln t)^2 -  \frac12(\ln 3)^2 \right] \\
+&= \infty.
+\end{align*}
+Since the integral $\displaystyle \int_3^\infty \frac{\ln x}{x}\,dx$ diverges, the series  $\displaystyle \sum_{n=3}^\infty \frac{\ln n}{n}$ diverges by the Integral Test. So the series $\displaystyle \sum_{n=2}^\infty \frac{\ln n}{n}$ diverges as well (since we're only adding in one more term).
+
+\subsection*{Solution 2}
+
+Note that for $n \geq 3$, we have $\ln n \geq 1$. So,
+\[ \frac{\ln n}{n} \geq \frac{1}{n}\]
+Since the series $\displaystyle \sum_{n=3} \frac1n$ diverges by the $p$-series test (with $p=1$), the series 
+ $\displaystyle \sum_{n=3} \frac{\ln n}n$ diverges by the Direct Comparison Test. Adding on one more term does not change the convergence/divergence, so the series  $\displaystyle \sum_{n=2} \frac{\ln n}n$ also diverges.
+
+
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{5^n \ln 5}{5^n-1}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution 1}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \frac{5^n \ln 5}{5^n-1} \\
+&= \lim_{n \to \infty} \frac{5^n \ln 5 \ln 5}{5^n \ln 5} \quad\text{by L'Hopital} \\
+&= \lim_{n \to \infty} \frac{\ln 5}{1} \quad\text{by algebra cancellation} \\
+& = \ln 5
+\end{align*}
+so the series $\displaystyle \sum_{n=1}^\infty \frac{5^n \ln 5}{5^n-1}$ diverges by the Test for Divergence.
+
+\subsection*{Solution 2}
+
+The function $f(x)=\frac{5^x \ln 5}{5^x-1}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+We first find the indefinite integral by substitution $u=5^x-1$ so $du = 5^x \ln 5\,dx$:
+\begin{align*}
+\int \frac{5^x \ln 5}{5^x-1}\,dx
+&= \int \frac1u\,du\\
+&= \ln |u|+C\\
+&= \ln |5^x-1|+C.
+\end{align*}
+
+So, going to our definite (improper) integral,
+\begin{align*}
+\int_1^\infty  \frac{5^x \ln 5}{5^x-1}\,dx
+&= \lim_{t \to \infty} \int_1^t  \frac{5^x \ln 5}{5^x-1}\,dx\\
+&= \lim_{t \to \infty} ( \ln |5^t-1| - \ln |5^1-1| )\\
+&= \infty.
+\end{align*}
+Since the integral $\displaystyle \int_1^\infty \frac{5^x \ln 5}{5^x-1}\,dx$ diverges, the  series  $\displaystyle \sum_{n=1}^\infty \frac{5^n \ln 5}{5^n-1}$ diverges by the Integral Test.
+
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

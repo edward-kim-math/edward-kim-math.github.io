@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty n^7e^{-n^8}$
+diverge, converge absolutely, or converge conditionally?
+
+
+\subsection*{Solution}
+
+The function $f(x)=x^7e^{-x^8}=\frac{x^7}{e^{(x^8)}}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+Note that using the substitution $u=x^8$, we can do the indefinite integral
+\[ 
+\int \frac{x^7}{e^{(x^8)}}\,dx 
+= \int \frac{8}{e^u}\,du 
+= \int 8e^{-u}\,du 
+= -8e^{-u}+C = \frac{-8}{e^{(x^8)}}+C\]
+
+So
+\begin{align*}
+\int_1^\infty \frac{x^7}{e^{(x^8)}}\,dx 
+& = \lim_{t \to \infty} \int_1^t \frac{x^7}{e^{(x^8)}}\,dx \\
+& = \lim_{t \to \infty} \left( \frac{-8}{e^{(t^8)}} - \frac{-8}{e^{(1^8)}}\right) \\
+& = \frac{8}{e}
+\end{align*}
+Since the integral $\displaystyle \int_1^\infty \frac{x^7}{e^{(x^8)}}\,dx$ converges, the series $\displaystyle \sum_{n=1}^\infty n^7e^{-n^8}$ converges by the integral test.
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty n^7e^{-n^8}$ converges absolutely.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

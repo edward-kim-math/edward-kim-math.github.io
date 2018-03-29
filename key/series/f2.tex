@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+2)}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution 1}
+
+Rewrite $\frac1{n(n+2)}$ using partial fraction decomposition:
+\[ \frac1{n(n+2)} = \frac{A}{n} + \frac{B}{n+2}\]
+So
+\[ 1 = A(n+2) + Bn\]
+Using $n=0$, we get $A =\frac12$. Using $n=-2$, we get $B=-\frac12$. So
+\[ \frac1{n(n+2)} = \frac{\frac12}{n} - \frac{\frac12}{n+2}\]
+Therefore, our original series can be rewritten:
+$\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+2)} =  \displaystyle \sum_{n=1}^\infty \left( \frac{1/2}{n} - \frac{1/2}{n+2} \right)$
+
+\vskip20pt
+\noindent
+We appear to have a telescoping series. After cancellations, the $n$th term of the sequence of partial sums is:
+\[ s_n = \frac{1/2}{1} + \frac{1/2}{2} - \frac{1/2}{n+1} - \frac{1/2}{n+2}\]
+Thus,
+\begin{align*}
+\lim_{n \to \infty} s_n
+&=  \lim_{n \to \infty} \left( \frac{1/2}{1} + \frac{1/2}{2} - \frac{1/2}{n+1} - \frac{1/2}{n+2}\right) \\
+&=  \frac12 + \frac14 - 0 - 0\\
+&= \frac34
+\end{align*}
+So, (by definition), the series $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+2)}$ converges, and we furthermore know that the sum is $\frac34$. Recall that it is unusual that we get to know the value of a convergent series.
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+2)}$ converges absolutely.
+
+\subsection*{Solution 2}
+
+Note that $n(n+2) \geq n^2$ for all $n \geq 1$. So
+\[ \frac1{n(n+2)} \leq \frac{1}{n^2}\]
+The series $\displaystyle \sum_{n=1}^\infty  \frac{1}{n^2}$ converges by the $p$-test. Therefore, the series  $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+2)}$ converges by the Direct Comparison Test.
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty \frac{1}{n(n+2)}$ converges absolutely.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

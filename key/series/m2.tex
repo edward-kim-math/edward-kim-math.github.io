@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{n^n}{n!}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \frac{(n+1)^{n+1}}{(n+1)!} \cdot \frac{n!}{n^n}\right|\\
+&= \lim_{n \to \infty} \left| \left(\frac{n+1}{n}\right)^n\right|\\
+&= \lim_{n \to \infty}  \left(\frac{n+1}{n}\right)^n.
+\end{align*}
+This is an indeterminate form, so we let $y = \left(\frac{n+1}{n}\right)^n$. So $\ln y = n \ln \frac{n+1}{n}$. Applying limit to both sides, we have
+\[ \lim_{n \to \infty} \ln y =  \lim_{n \to \infty}  n \ln \frac{n+1}{n}.\]
+The limit on the right can be computed using L'Hopital's rule (with a chain rule and quotent rule).
+\begin{align*}
+&\lim_{n \to \infty}  n \ln \frac{n+1}{n} \text{, which was the limit on the right side above}\\
+&= \lim_{n \to \infty} \frac{ \ln \frac{n+1}{n}}{\frac1n}\\
+&= \lim_{n \to \infty} \frac{ \frac{n}{n+1} \cdot \frac{n \cdot 1 - (n+1) \cdot 1}{n^2}}{\frac{-1}{n^2}} \text{ by L'Hopital's}\\
+&= \lim_{n \to \infty} \frac{n}{n+1} \text{ after algebra simplification}\\
+&= \lim_{n \to \infty} \frac11\\
+&= 1.
+\end{align*}
+So, $\lim y = e^1 = e$. So $L=e$.
+
+Since $L>1$, the series $\displaystyle \sum_{n=1}^\infty \frac{n^n}{n!}$ diverges by the Ratio Test.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \right|\\
+\end{align*}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

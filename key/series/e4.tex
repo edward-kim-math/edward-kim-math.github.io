@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=2}^\infty \left( \frac{1}{\ln n} - \frac{1}{\ln(n+1)} \right)$
+diverge, converge absolutely, or converge conditionally?
+
+
+\subsection*{Solution}
+
+$\displaystyle \sum_{n=2}^\infty \left( \frac{1}{\ln n} - \frac{1}{\ln(n+1)} \right)$ appears to be a telescoping series. We look at the sequence of partial sums $s_n$, and note that after cancellation\footnote{This cancellation is much easier to describe in handwritten work than it is in typewritten work.... sorry!} we have
+\[ s_n = \frac{1}{\ln 2} - \frac{1}{\ln(n+1)}\]
+
+Then
+\begin{align*}
+\lim_{n \to \infty} s_n
+&= \lim_{n \to \infty} \left(\frac{1}{\ln 2} - \frac{1}{\ln(n+1)}\right)\\
+&= \frac{1}{\ln 2} - 0\\
+&= \frac{1}{\ln 2}.
+\end{align*}
+{\color{red} It is tempting to get confused here with the Test for Divergence, but note that we found the limit of the sequence of partial sums.} So, (by definition), the series  $\displaystyle \sum_{n=2}^\infty \left( \frac{1}{\ln n} - \frac{1}{\ln(n+1)}\right)$ converges, and we furthermore know that the sum is $\frac{1}{\ln 2}$. Recall that it is unusual that we get to know the value of a convergent series.
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=2}^\infty \left( \frac{1}{\ln n} - \frac{1}{\ln(n+1)} \right)$ converges absolutely.
+
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

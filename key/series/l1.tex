@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n+1}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Important Remark}
+
+{\color{red}If we were to use the Ratio Test, on this series, we would consider the limit
+\begin{align*}
+L=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|
+= \lim_{n \to \infty} \left| \frac{(-1)^{n+1}}{n+2} \cdot \frac{n+1}{(-1)^n}\right|
+= \lim_{n \to \infty} \left| \frac{(-1)(n+1)}{n+2}\right|
+= \lim_{n \to \infty} \frac{n+1}{n+2}
+= \lim_{n \to \infty} \frac{1}{1} 
+= 1
+\end{align*}
+with one use of L'Hopital's above. Since $L=1$, we get NO INFORMATION from the Ratio Test. (Note that later in the solution, we well get a limit of $1$, but since we're using the Limit Comparison Test, which has different requirements, we WILL get information.)}
+
+\subsection*{Solution}
+
+The series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n+1}$ is alternating, and $b_n = |a_n| = \frac1{n+1}$. The sequence $b_n$ is decreasing and has limit $0$. So by the Alternating Series Test, the series $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n+1}$ converges.
+
+To determine if $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n+1}$ converges absolutely or conditionally, we consider the series $\sum |a_n|$, which in this case is
+\[\sum_{n=1}^\infty \frac{1}{n+1}.\]
+This series can be shown to diverge using the Integral Test (with a substitution of $u=x+1$) or using the Direct Comparison Test, or using the Limit Comparison Test. We'll use the Limit Comparison Test here. Note that the series $\sum \frac1n$ diverges by the $p$-test. Let $a_n = \frac1{n+1}$ and let $b_n = \frac1n$.
+\[ \lim_{n \to \infty} \frac{a_n}{b_n} = \lim_{n \to \infty} \frac{n}{n+1} = \lim_{n \to \infty} \frac11 = 1.\]
+Therefore, the Limit Comparison Test applies and the series $\sum_{n=1}^\infty \frac{1}{n+1}$ diverges. Thus, the series  $\displaystyle \sum_{n=1}^\infty \frac{(-1)^n}{n+1}$  converges conditionally.
+
+\subsection*{Epiloque}
+
+{\color{blue} When using the Ratio Test, we got \[\displaystyle \lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|=1\] while with the Limit Comparison Test, we got \[\lim_{n \to \infty} \frac{a_n}{b_n} = 1.\]
+When the limit of the sequence $\left|\frac{a_{n+1}}{a_n}\right|$ is $1$ in the Ratio Test, we get NO information. However, as long as the limit of the sequence $\frac{a_n}{b_n}$ is a finite positive number (including $1$) we DO get to conclude something in the Limit Comparison Test, simply because the requirements of the two tests are different. Don't let this freak you out too much: in any case, the two tests made you study DIFFERENT sequences anyway!
+}
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

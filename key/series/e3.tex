@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=2}^\infty \frac{1}{n (\ln n)^{100}}$
+diverge, converge absolutely, or converge conditionally?
+
+
+\subsection*{Solution}
+
+The function $f(x)=\frac{1}{x (\ln x)^{100}}$ is continuous, positive, and decreasing on $[3,\infty)$.
+
+We do the following indefinite integral using the substitution $u= \ln x$, so $du = \frac1x\,dx$:
+\[
+\int \frac{1}{x (\ln x)^{100}}\,dx
+= \int u^{-100}\,du = \frac{-1}{99u^{99}} + C = \frac{-1}{99(\ln x)^{99}} + C
+\]
+so
+\begin{align*}
+\int_3^\infty \frac1{x (\ln x)^{100}}\,dx 
+&= \lim_{t \to \infty} \int_3^t \frac1{x(\ln x)^{100}}\,dx\\
+&= \lim_{t \to \infty}\left[   \frac{-1}{99(\ln t)^{99}} -  \frac{-1}{99(\ln 3)^{99}}  \right] \\
+&= \frac{1}{99(\ln 3)^{99}}
+\end{align*}
+Since the integral $\displaystyle  \int_3^\infty \frac{1}{x \ln x}\,dx$ converges, the series  $\displaystyle \sum_{n=3}^\infty \frac{1}{n (\ln n)^{100}}$ converges by the Integral Test. So the series $\displaystyle \sum_{n=2}^\infty \frac{1}{n \ln n}$ converges as well.
+
+Since all terms (except when $n=2$) are positive, we essentially have  $\sum |a_n| = \sum a_n$, so the series $\displaystyle \sum_{n=2}^\infty \frac{1}{n (\ln n)^{100}}$ converges absolutely.
+
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

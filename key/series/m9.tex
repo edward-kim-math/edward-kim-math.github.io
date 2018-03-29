@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{n!}{(2n)!}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution}
+
+\begin{align*}
+L
+&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&=\lim_{n \to \infty} \left|\frac{(n+1)!}{(2(n+1))!} \cdot \frac{(2n)!}{n!}\right|\\
+&=\lim_{n \to \infty} \left|\frac{(n+1)!}{(2n+2)!} \cdot \frac{(2n)!}{n!}\right|\\
+&=\lim_{n \to \infty} \left|\frac{(n+1) \cdot n!}{(2n+2) \cdot (2n+1) \cdot (2n)!} \cdot \frac{(2n)!}{n!}\right|\\
+&=\lim_{n \to \infty} \left|\frac{(n+1)}{(2n+2)(2n+1)}\right|\\
+&=\lim_{n \to \infty} \frac{n+1}{4n^2+6n+2}\\
+&=\lim_{n \to \infty} \frac{1}{8n+6} \text{ by L'hopital}\\
+&= 0
+\end{align*}
+
+Since $L< 1$, the series $\displaystyle \sum_{n=1}^\infty \frac{n!}{(2n)!}$ converges absolutely by the Ratio Test.
+
+
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \right|\\
+\end{align*}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

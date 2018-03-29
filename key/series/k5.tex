@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{2n+\cos n}{n^2+\sin n}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution}
+
+The function $f(x)=\frac{2x+\cos x}{x^2+\sin x}$ is continuous, positive, and decreasing. We do the following indefinite integral with the substitution $u = x^2+\sin x$ to get
+\[
+\int \frac{2x+\cos x}{x^2+\sin x}\,dx
+= \int \frac1u\,du
+= \ln |u| +C 
+= \ln |x^2+\sin x|+C.\]
+So the definite, improper integral evaluates
+\begin{align*}
+\int_1^\infty \frac{2x+\cos x}{x^2+\sin x}\,dx
+&= \lim_{t \to \infty} \int_1^t \frac{2x+\cos x}{x^2+\sin x}\,dx\\
+&= \lim_{t \to \infty} (\ln |t^2+\sin t| - \ln |1^2+\sin 1|)\\
+&= \infty
+\end{align*}
+Since the integral $\displaystyle \int \frac{2x+\cos x}{x^2+\sin x}\,dx$ diverges, the series $\displaystyle \sum_{n=1}^\infty \frac{2n+\cos n}{n^2+\sin n}$ diverges.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

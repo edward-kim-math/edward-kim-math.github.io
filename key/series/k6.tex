@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \left(\frac{2\pi+\cos n}{n}\right)^n$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution}
+
+We consider the Root Test, based on the shape of the terms. (Note that all terms are positive.)
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \left(\frac{2\pi+\cos n}{n}\right)^n \right|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left(\frac{2\pi+\cos n}{n}\right)^n }\\
+&= \lim_{n \to \infty}\frac{2\pi+\cos n}{n}
+\end{align*}
+We cannot evaluate the limit of the sequence above using L'Hopital's rule. (Note the numerator does not go to either $0$ or $\infty$.) Instead, we set up the following for the Squeeze Theorem. Note that
+\[ -1 \leq \cos n \leq 1\]
+so by adding $2\pi$ to all sides,
+\[ 2\pi-1 \leq 2\pi+\cos n \leq 2\pi+1\]
+and by dividing,
+\[ \frac{2\pi-1}{n} \leq \frac{2\pi+\cos n}{n} \leq \frac{2\pi+1}{n}\]
+Since
+\[ \lim_{n \to \infty} \frac{2\pi-1}{n}  = 0 \quad\text{and}\quad \lim_{n \to \infty} \frac{2\pi+1}{n}  = 0,\]
+by the Squeeze Theorem,
+\[\lim_{n \to \infty}\frac{2\pi+\cos n}{n}=0.\]
+Since $L < 1$, by the Root Test, the series $\displaystyle \sum_{n=1}^\infty \left(\frac{2\pi+\cos n}{n}\right)^n$ converges absolutely.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+
