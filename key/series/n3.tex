@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^3+7}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution 1}
+
+$\displaystyle \sum_{n=1}^\infty \frac1n$ is a $p$-series with $p=1$. Since $p \leq 1$, the series $\displaystyle \sum_{n=1}^\infty \frac1n$ diverges by the $p$-series test. If we use $a_n = \frac{n^2+1}{n^3+7}$ and $b_n = \frac1n$, then
+\begin{align*}
+\lim_{n \to \infty} \frac{a_n}{b_n}
+&= \lim_{n \to \infty} \frac{n^2+1}{n^3+7} \cdot \frac{n}{1}\\
+&= \lim_{n \to \infty} \frac{n^3+n}{n^3+7} \\
+&= \lim_{n \to \infty} \frac{3n^2+1}{3n^2} \text{ using L'hopital}\\
+&= \lim_{n \to \infty} \frac{6n}{6n} \text{ using L'hopital}\\
+&= \lim_{n \to \infty} 1\\
+&= 1
+\end{align*}
+So by the Limit Comparison Test, the series $\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^3+7}$ diverges.
+
+
+\subsection*{Solution 2}
+
+We are looking for a fixed $K > 0$ such that 
+\[ K \cdot  \frac{n^2+1}{n^3+7} \geq \frac1n\]
+By multiplying both sides by $n(n^3+7)$, we have
+\[ K(n^3 + n) \geq n^3+7\]
+so
+\[ Kn^3 + Kn \geq n^3+7\]
+so
+if we pick $K=8$, then we'd have
+\[ 8n^3 + 8n \geq n^3+7\]
+is likely true because 
+\[ n^3+ 7n^3 + 8n \geq n^3+7\]
+with the $n^3$'s compared together, and $7n^3$ is greater than $7$. So we are ready to present starting from true inequalities.
+
+With the scratch work above done, since $7n^3 \geq 7$ for $n \geq 1$, we have
+\[ n^3+ 7n^3 + 8n \geq n^3+7\]
+\[ 8n^3 + 8n \geq n^3+7\]
+\[ 8(n^3 + n) \geq n^3+7\]
+and dividing both sides by $8n(n^3+7)$ we get
+\[\frac{n^2+1}{n^3+7} \geq \frac1{8n}\]
+Since $\displaystyle \sum_{n=1}^\infty \frac1{8n} = \frac18\sum_{n=1}^\infty \frac1{n}$ diverges by the $p$-test, the series 
+$\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^3+7}$ diverges by the Direct Comparison Test.
+
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \right|\\
+\end{align*}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

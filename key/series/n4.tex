@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^4+7}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution 1}
+
+$\displaystyle \sum_{n=1}^\infty \frac1{n^2}$ is a $p$-series with $p=2$. Since $p > 1$, the series $\displaystyle \sum_{n=1}^\infty \frac1{n^2}$ converges by the $p$-series test. If we use $a_n = \frac{n^2+1}{n^4+7}$ and $b_n = \frac1{n^2}$, then
+\begin{align*}
+\lim_{n \to \infty} \frac{a_n}{b_n}
+&= \lim_{n \to \infty} \frac{n^2+1}{n^4+7} \cdot \frac{n^2}{1}\\
+&= \lim_{n \to \infty} \frac{n^4+n^2}{n^4+7} \\
+&= \lim_{n \to \infty} \frac{4n^3+2n}{4n^3} \text{ using L'hopital}\\
+&= \lim_{n \to \infty} \frac{12n^2+2}{12n^2} \text{ using L'hopital}\\
+&= \lim_{n \to \infty} \frac{24n}{24n} \text{ using L'hopital}\\
+&= \lim_{n \to \infty} 1\\
+&= 1
+\end{align*}
+So by the Limit Comparison Test, the series $\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^4+7}$ converges.
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^4+7}$ converges absolutely.
+
+\subsection*{Solution 2}
+
+We are looking for a fixed $K > 0$ such that 
+\[ \frac{n^2+1}{n^4+7} \leq \frac{K}{n^2}\]
+By multiplying both sides by $n^2(n^4+7)$, we have
+\[ n^4+n^2 \leq K(n^4+7)\]
+\[ n^4+n^2 \leq Kn^4+7K\]
+and it appears we can use $K=2$, because then we'd have
+\[ n^4+n^2 \leq 2n^4+14\]
+\[ n^4+n^2 \leq n^4+n^4+14\]
+and $n^2 \leq n^4$ (when comparing second terms).
+So we are ready to present starting from true inequalities.
+
+With the scratch work above done, since $n^2 \leq n^4$, we have
+\[ n^4+n^2 \leq n^4+n^4+14\]
+\[ n^4+n^2 \leq 2n^4+14\]
+\[ n^4+n^2 \leq 2(n^4+7)\]
+by dividing both sides by $n^2(n^4+7)$, we get
+\[ \frac{n^2+1}{n^4+7} \leq \frac{2}{n^2}\]
+
+Since $\displaystyle \sum_{n=1}^\infty \frac2{n^2} = 2\sum_{n=1}^\infty \frac1{n^2}$ converges by the $p$-test, the series 
+$\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^4+7}$ converges by the Direct Comparison Test.
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty \frac{n^2+1}{n^4+7}$ converges absolutely.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \right|\\
+\end{align*}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+
