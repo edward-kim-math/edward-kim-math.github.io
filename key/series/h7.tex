@@ -1,0 +1,72 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=2}^\infty \frac{\arctan n}{n^2+1}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution 1}
+
+The function $f(x)=\frac{\arctan x}{x^2+1}$ is continuous, positive, and decreasing. We find the following indefinite integral using the substitution $u = \arctan x$, so $du = \frac1{x^2+1}\,dx$:
+\begin{align*}
+\int \frac{\arctan x}{x^2+1}\,dx
+&= \int u \,du\\
+&= \frac12u^2 + C \\
+&= \frac12(\arctan x)^2+C
+\end{align*}
+So the definite, improper integral evaluates:
+\begin{align*}
+\int_2^\infty \frac{\arctan x}{x^2+1}\,dx
+&= \lim_{t \to \infty} \int_2^t \frac{\arctan x}{x^2+1}\,dx\\
+&= \lim_{t \to \infty} \left(  \frac12(\arctan t)^2 -   \frac12(\arctan 2)^2 \right)\\
+&= \left(  \frac12 \left( \frac{\pi}{2} \right)^2 -   \frac12(\arctan 2)^2 \right)\\
+\end{align*}
+which converges. Since the integral $\displaystyle \int_2^\infty \frac{\arctan x}{x^2+1}\,dx$ converges, the series $\displaystyle \sum_{n=2}^\infty \frac{\arctan n}{n^2+1}$ converges.
+Since all terms of the series are positive, the series  $\displaystyle \sum_{n=2}^\infty \frac{\arctan n}{n^2+1}$ converges absolutely.
+
+\subsection*{Solution 2}
+
+Note that $\arctan n \leq \frac{\pi}{2}$ for all positive $n$. In fact, since $\pi$ is just a little bigger than three and we divide by $2$, we could just state
+\[ \arctan n \leq 1.6\]
+By dividing both sides by $n^2+1$, we have
+\[ \frac{\arctan n}{n^2+1} \leq \frac{1.6}{n^2+1}\]
+and in fact, we also have
+\[ \frac{\arctan n}{n^2+1} \leq \frac{1.6}{n^2+1} \leq \frac{1.6}{n^2}\]
+so taking the outside two expressions (and skipping the expression in the middle), we have
+\[ \frac{\arctan n}{n^2+1} \leq \frac{1.6}{n^2}\]
+
+Since the series $\sum \frac{1.6}{n^2} = 1.6 \sum \frac1{n^2}$ converges by the $p$-test, the series $\sum \frac{\arctan n}{n^2+1}$ converges by the Direct Comparison Test.
+Since all terms of the series are positive, the series  $\displaystyle \sum_{n=2}^\infty \frac{\arctan n}{n^2+1}$ converges absolutely.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \right|\\
+\end{align*}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+
