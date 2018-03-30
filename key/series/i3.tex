@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{15n^4+4n^3+3n^2+2n+1}{3n^5+n^4+n^3+n^2+n+1}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution}
+
+The function $\displaystyle f(x)=\frac{15x^4+4x^3+3x^2+2x+1}{3x^5+x^4+x^3+x^2+x+1}$ is continuous, positive, and decreasing.
+
+We will apply the Integral Test, so we integrate $f(x)$ using the substitution $u=3x^5+x^4+x^3+x^2+x+1$ to get
+\begin{align*}
+\int \frac{15x^4+4x^3+3x^2+2x+1}{3x^5+x^4+x^3+x^2+x+1}\,dx 
+&= \int \frac1u\,du\\
+&= \ln|u|+C\\
+&= \ln|3x^5+x^4+x^3+x^2+x+1|+C.
+\end{align*}
+
+Thus the definite, improper integral is
+\begin{align*}
+\int_1^\infty  \frac{15x^4+4x^3+3x^2+2x+1}{3x^5+x^4+x^3+x^2+x+1}\,dx 
+&= \lim_{t \to \infty} \int_1^t  \frac{15x^4+4x^3+3x^2+2x+1}{3x^5+x^4+x^3+x^2+x+1}\,dx \\
+&= \lim_{t \to \infty} ( \ln|3t^5+t^4+t^3+t^2+t+1| -  \ln|8|)\\
+&= \infty.
+\end{align*}
+Since the integral $\displaystyle \int_1^\infty f(x)\,dx$ diverges, by the Integral Test, the series $\displaystyle \sum_{n=1}^\infty \frac{15n^4+4n^3+3n^2+2n+1}{3n^5+n^4+n^3+n^2+n+1}$ diverges.
+
+\subsection*{Comment}
+
+This series can be studied using the Limit Comparison Test, and would be rather awful (but possible!) using the Direct Comparison Test. However, the Integral Test (above) is probably going to be much shorter!
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \right|\\
+\end{align*}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

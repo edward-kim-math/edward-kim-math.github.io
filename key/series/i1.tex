@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{1}{3n-1}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution 1}
+
+$\displaystyle \sum_{n=1}^\infty \frac1{n}$ is a $p$-series which diverges by the $p$-series test. If we use $a_n = \frac{1}{3n-1}$ and $b_n = \frac1{n}$, then
+\begin{align*}
+\lim_{n \to \infty} \frac{a_n}{b_n}
+&= \lim_{n \to \infty} \frac{1}{3n-1} \cdot \frac{n}{1}\\
+&= \lim_{n \to \infty} \frac{n}{3n-1} \\
+&= \lim_{n \to \infty} \frac13 \text{ using L'hopital}\\
+&= \frac13
+\end{align*}
+So by the Limit Comparison Test, the series $\displaystyle \sum_{n=1}^\infty \frac{1}{3n-1}$ diverges.
+
+\subsection*{Solution 2}
+
+The Direct Comparison Test will also work, but will involve finding first finding a fixed value of $K > 0$ such that
+\[ K \cdot \frac{1}{3n-1} \geq \frac1n.\]
+Multiply both sides by $n(3n-1)$.
+\[ Kn \geq 3n-1\]
+This inequality will be true for all $n$ if we choose $K=3$.
+So we are done with the scratch work and instead begin our work:
+
+Note that
+\[ 3n \geq 3n-1\]
+Dividing both sides by $3n(3n-1)$, we get
+\[ \frac{1}{3n-1} \geq \frac1{3n}\]
+The series $\displaystyle \sum_{n=1}^\infty \frac1{3n} = \frac13\sum_{n=1}^\infty \frac1{n}$ is a $p$-series which diverges by the $p$-series test. So the series $\displaystyle \sum_{n=1}^\infty \frac1{3n-1}$ diverges by the Direct Comparison Test.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \right|\\
+\end{align*}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+

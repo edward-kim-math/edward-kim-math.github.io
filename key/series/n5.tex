@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+\begin{document}
+
+\noindent
+Does $\displaystyle \sum_{n=1}^\infty \frac{n^2-1}{n^3+7}$
+diverge, converge absolutely, or converge conditionally?
+
+\subsection*{Solution 1}
+
+$\displaystyle \sum_{n=1}^\infty \frac1{n}$ is a $p$-series which diverges by the $p$-series test. If we use $a_n = \frac{n^2-1}{n^3+7}$ and $b_n = \frac1{n}$, then
+\begin{align*}
+\lim_{n \to \infty} \frac{a_n}{b_n}
+&= \lim_{n \to \infty} \frac{n^2-1}{n^3+7} \cdot \frac{n}{1}\\
+&= \lim_{n \to \infty} \frac{n^3-n}{n^3+7} \\
+&= \lim_{n \to \infty} \frac{3n^2-1}{3n^2} \text{ using L'hopital}\\
+&= \lim_{n \to \infty} \frac{6n}{6n} \text{ using L'hopital}\\
+&= \lim_{n \to \infty} 1\\
+&= 1
+\end{align*}
+So by the Limit Comparison Test, the series $\displaystyle \sum_{n=1}^\infty \frac{n^2-1}{n^3+7}$ diverges.
+
+\subsection*{Solution 2 (comment of method)}
+
+The Direct Comparison Test will also work, but will involve finding first finding a fixed value of $K > 0$ such that
+\[ \frac{n^2-1}{n^3+7} \geq K \cdot \frac1n.\]
+As the previous several series have shown, this will involve a bit of work to the point that the Limit Comparison Test (solution 1) will be easier/quicker.
+
+\end{document}%%%%%%%%%%%%%%%%%
+
+\begin{align*}
+L&=\lim_{n \to \infty} \sqrt[n]{|a_n|}\\
+&= \lim_{n \to \infty} \sqrt[n]{\left| \right|}\\
+\end{align*}
+
+\begin{align*}
+L&=\lim_{n \to \infty} \left|\frac{a_{n+1}}{a_n}\right|\\
+&= \lim_{n \to \infty} \left| \right|\\
+\end{align*}
+
+\begin{align*}
+\lim_{n \to \infty} a_n
+&= \lim_{n \to \infty} \\
+\end{align*}
+
+
+Since $\sum |a_n| = \sum a_n$, the series $\displaystyle \sum_{n=1}^\infty AAAAAAAAAAAAAA$ converges absolutely.
+
+Since $|r| < 1$, the series ...  converges by the Geometric Series Test.
+
+Since $|r| \geq 1$, the series ...  diverges by the Geometric Series Test.
+
+The function $f(x)=\frac{}{}$ is continuous, positive, and decreasing on $[1,\infty)$.
+
+\subsection*{Solution}
+
