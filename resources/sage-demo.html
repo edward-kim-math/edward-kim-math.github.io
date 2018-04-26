@@ -1,0 +1,19 @@
+---
+layout: default
+title: Sage demo
+---
+<h1>{{ page.title }}</h1>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
+
+Sage can do <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/implicit_plot3d.html">three-dimensional implicit plots</a> and <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/plot3d.html">graphs of functions which require three dimensions</a>.
+The sage cell below shows a plot of \( z - 2.5 = 2 \sin(x) + 1.7 \cos(\frac{x}{3})\) for \(-20 \leq x \leq 20\) and \(-20 \leq y \leq 20\) and \(-8 \leq z \leq 8\)
+<div class="sage">
+<script type="text/x-sage">
+implicit_plot3d(z - 2.5 == 2*sin(x) +1.7*cos(x/3), [x,-20,20], [y,-20,20], [z,-8,8])
+</script>
+</div>
+
+{% highlight python linenos %}
+{% endhighlight %}
