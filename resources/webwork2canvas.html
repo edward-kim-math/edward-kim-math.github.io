@@ -1,0 +1,107 @@
+---
+layout: default
+title: webwork2canvas.py
+---
+<h1>{{ page.title }}</h1>
+
+This Python script takes a WebWork score file and produces a CSV file which can be imported into Canvas.
+You will need to modify several variables which appear at the top.
+{% highlight python linenos %}
+# This Python script takes a WebWork score file and produces a CSV file which can be imported into Canvas.
+# Filename: webwork2canvas.py
+# Author: Edward D. Kim, UW-La Crosse
+
+# A full path name to the WebWork score file
+webworkfilename = 'C:/Users/ekim/Downloads/MTH150-Kim_totals.csv' # Forward slashes because of \U
+
+# A full path name to the file to create
+outputfilename = 'C:/Users/ekim/Downloads/CanvasUpload.csv'
+
+# If this string is non-empty, filter the homework sets to keep ONLY those which start with the specified prefix string.
+setnameprefix = 'fall2018-'
+
+# If 'yes', the names of the assignments for D2L will have the prefix (set above) removed
+removesetnameprefix = 'yes'
+
+# If this string is non-empty, only include students whose recitation in WebWork is the specified string.
+recitationfilter = 'fall2018'
+
+# If this string is non-empty, only include students whose section in WebWork is the specified string.
+sectionfilter = ''
+
+# Delete the WebWork file once this script is complete? Use string 'yes' for yes, and anything else for no.
+deletewebworkfileoncomplete = 'yes'
+
+######################################
+######################################
+######################################
+######################################
+
+import csv
+import os
+ 
+with open(webworkfilename, 'rt') as csvfile:
+	csvreaderobject = csv.reader(csvfile, delimiter=',')
+	# No use of quotechar='' needed
+
+	outputfile = open(outputfilename, 'w')
+
+	column_to_setname_dictionary = {}
+	passed_student_id = 0
+	
+	for row in csvreaderobject:
+		if (row[0].strip() == "SET NAME"):
+			# This is the line with set names
+			#print(row)
+			for column in range(len(row)):
+				cell = row[column]
+				if (cell.find(setnameprefix)!=-1):
+					if (removesetnameprefix=='yes'):
+						systemsetname_pre = cell[len(setnameprefix):]
+					else:
+						systemsetname_pre = cell
+					d2lsetname = systemsetname_pre.strip()
+					column_to_setname_dictionary[column]=d2lsetname
+			lineout = ''
+			lineout = 'Student,ID,SIS User ID,SIS Login ID,Root Account,Section'
+			for column in column_to_setname_dictionary:
+				lineout = lineout + ',' + column_to_setname_dictionary[column]
+			lineout = lineout + ''
+			print(lineout)
+			outputfile.write(lineout+'\n')
+		else: # Consider a general row
+			if passed_student_id:
+				# We have passed all the header rows
+				lastname = row[2].strip()
+				firstname = row[3].strip()
+				section = row[4].strip()
+				recitation = row[5].strip()
+				if ((sectionfilter=='') or (sectionfilter==section)) and section!='0' and ((recitationfilter=='') or (recitationfilter==recitation)):
+
+					# The section and recitation filters passed
+					username = row[1].strip()
+
+					lineout = ''
+					lineout = '"' + lastname + ', ' + firstname + '",,,,,'
+					for column in column_to_setname_dictionary:
+						score = row[column].strip()
+						lineout = lineout + ',' + score
+					# lineout = lineout + ''
+					print(lineout)
+					outputfile.write(lineout+'\n')
+
+			else:
+				if (row[0].strip() == "STUDENT ID"):
+					passed_student_id = 1
+					
+if (deletewebworkfileoncomplete == 'yes'):
+	if os.path.isfile(webworkfilename):
+        	os.remove(webworkfilename)
+{% endhighlight %}
+
+The file produced is called CanvasUpload.csv, and is in this format (this example shows five webwork assignments, with two students).
+{% highlight text linenos %}
+Student,ID,SIS User ID,SIS Login ID,Root Account,Section,ww01,ww02,ww03,ww04,ww05
+"Kim, Edward",,,,,,20,20,20,20,20
+"Lastnameofstudent, Studentfirstname",,,,,,20,20,14,17,9
+{% endhighlight %}
