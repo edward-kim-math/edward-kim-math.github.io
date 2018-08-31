@@ -1,0 +1,59 @@
+---
+layout: default
+title: gradescope2canvas.py
+---
+<h1>{{ page.title }}</h1>
+
+This Python script takes a Gradescope score file and produces a CSV file which can be imported into Canvas.
+You will need to modify several variables which appear at the top.
+{% highlight python linenos %}
+# This Python script converts a Gradescope grade file (for a *single* assignment) into D2L's import format
+# Author: Edward D. Kim, UW-La Crosse
+
+# A full path name to the Gradescope score files
+browser_downloads = 'C:/Users/ekim/Downloads' # Forward slashes because of \U
+
+import csv
+import glob
+import os
+
+os.chdir(browser_downloads)
+
+csvnames = sorted(glob.glob('*_scores.csv'))
+
+for csvname in csvnames:
+    assignment_name = csvname[:len(csvname)-11].replace("_", " ")
+    outputfilename = csvname[:len(csvname)-11] + "-gradescope2canvas.csv"
+    if 1: #with open(csvname, 'rt') as csvfile:
+        csvfile = open(csvname, 'rt')
+        csvreaderobject = csv.reader(csvfile, delimiter=',')
+        outputfile = open(outputfilename, 'w')
+
+        rownum = 0
+
+        for row in csvreaderobject:
+            if rownum == 0:
+                lineout = 'Student,ID,SIS User ID,SIS Login ID,Root Account,Section,' + assignment_name
+                print("Assignment name in Canvas assumed to be:", assignment_name)
+                outputfile.write(lineout+'\n')
+            else:
+                firstname = row[0]
+                lastname = row[1]
+                username = row[2]
+                score = row[4]
+                if score == '':
+                    print("Blank score for", username, "converted to zero.")
+                    score = "0"
+                lineout = '"' + lastname + ', ' + firstname + '",,,,,' + ',' + score
+                outputfile.write(lineout+'\n')
+            rownum = rownum + 1 # outputfile.write(lineout+'\n')
+        csvfile.close()
+        outputfile.close()
+{% endhighlight %}
+
+The file produced is in this format (this example shows five webwork assignments, with two students).
+{% highlight text linenos %}
+Student,ID,SIS User ID,SIS Login ID,Root Account,Section,ww01,ww02,ww03,ww04,ww05
+"Kim, Edward",,,,,,20,20,20,20,20
+"Lastnameofstudent, Studentfirstname",,,,,,20,20,14,17,9
+{% endhighlight %}
