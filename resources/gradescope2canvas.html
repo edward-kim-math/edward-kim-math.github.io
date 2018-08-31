@@ -51,9 +51,9 @@ for csvname in csvnames:
         outputfile.close()
 {% endhighlight %}
 
-The file produced is in this format (this example shows five webwork assignments, with two students).
+The file produced is in this format (this example assumes that a file called Quiz_01_scores.csv was downloaded from Gradescope, with two students).
 {% highlight text linenos %}
-Student,ID,SIS User ID,SIS Login ID,Root Account,Section,ww01,ww02,ww03,ww04,ww05
+Student,ID,SIS User ID,SIS Login ID,Root Account,Section,Quiz 01
 "Kim, Edward",,,,,,20,20,20,20,20
-"Lastnameofstudent, Studentfirstname",,,,,,20,20,14,17,9
+"Lastnameofstudent, Studentfirstname",,,,,,20
 {% endhighlight %}
