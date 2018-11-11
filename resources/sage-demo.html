@@ -10,6 +10,15 @@ title: Sage demo
 Here are some demonstrations of things that SageMath can do. Any of the scripts can be run "live" on the web by clicking "Evaluate."
 Moreover, you can modify a script and click "Evaluate" again, and your code will run!
 
+<h2>Decimal approximation</h2>
+Sage can provide a decimal approximation of a number such as \(\sqrt{5}\).
+<div class="sage">
+<script type="text/x-sage">
+print sqrt(5)
+print sqrt(5).n()
+</script>
+</div>
+
 <h2>Expressions and special constants</h2>
 Sage will simplify expressions involving special constants such as \(\cos(\frac{\pi}{6})\) and \(\arccos(-\frac12)\).
 In addition, the value of an expression such as \(e^{\pi i}\) can be stored in a variable to be used later (or printed to screen).
@@ -20,6 +29,18 @@ print arccos(-1/2)
 
 eulersspecialnumber = e^(pi*i)
 print eulersspecialnumber
+</script>
+</div>
+
+<h2>Expressions and special constants</h2>
+Sage can expand the expression \((x-1)^8\) or factor the expression \(x^3+4x^2+8x+32\).
+<div class="sage">
+<script type="text/x-sage">
+powerofbinomial = (x-1)^8
+print powerofbinomial.expand()
+
+polynomial = x^3 + 4*x^2 + 8*x + 32
+print polynomial.factor()
 </script>
 </div>
 
