@@ -44,6 +44,17 @@ print g.diff()
 </script>
 </div>
 
+<h2>Differentiation</h2>
+Given \(f(x) = x^3 + 10x^6\), Sage can find the indefinite integral \( \displaystyle \int f(x)\,dx\) and the definite integral  \( \displaystyle \int_2^4 f(x)\,dx\).
+<div class="sage">
+<script type="text/x-sage">
+f = x^3 + 10*x^6
+
+print f.integral(x) # integrate with respect to x
+print f.integral(x,2,4) # definite integral
+</script>
+</div>
+
 <h2>Three-dimensional graphing</h2>
 Sage can do <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/implicit_plot3d.html">three-dimensional implicit plots</a> and <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/plot3d.html">graphs of functions which require three dimensions</a>.
 The sage cell below shows a plot of \( z - 2.5 = 2 \sin(x) + 1.7 \cos(\frac{y}{3})\) for \(-20 \leq x \leq 20\) and \(-20 \leq y \leq 20\) and \(-8 \leq z \leq 8\)
