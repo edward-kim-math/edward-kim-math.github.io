@@ -23,12 +23,22 @@ print diffquo.expand()
 </script>
 </div>
 
-<h2>Two-dimensional graphing</h2>
+<h2>Two-dimensional graphing: plot function</h2>
 Sage can <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot.html#sage.plot.plot.plot">plot</a> the graph the function \(f(x) = (x-3)^2 + 4\) for \(-30 \leq x \leq 30\) and \(-30 \leq y \leq 30\).
 <div class="sage">
 <script type="text/x-sage">
 f = (x-3)^2 + 4
 plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30)
+</script>
+</div>
+
+<h2>Two-dimensional graphing: plot equation in two variables</h2>
+Sage will provide an <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/contour_plot.html">implicit plot</a> of an equation in \(x\) and \(y\).
+For example, here we ask Sage to sketch the plot of the equation \((x-3)^2+(y+4)^2=7\), a circle centered at \(3,-4\) of radius \(\sqrt{7}\).
+<div class="sage">
+<script type="text/x-sage">
+var('x y') # declare variables
+implicit_plot((x-3)^2 + (y+4)^2 == 7, (x,-10,10), (y,-10,10)) # Notice the double equal sign
 </script>
 </div>
 
