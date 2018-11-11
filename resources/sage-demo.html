@@ -66,7 +66,7 @@ print f.integral(x,2,4) # definite integral
 </div>
 
 <h2>Partial Differentiation</h2>
-Sage will find \(\frac{\partial f}{\partial x}\) given \(f(x,y) = x^3*y + 7^x\sin(y)\).
+Sage will find \(\frac{\partial f}{\partial x}\) given \(f(x,y) = x^3y + 7^x\sin(y)\).
 Sage will also find \( \frac{\partial}{\partial y}( 5x + (xy)^4 - \cos(x+y+xy+x^5y^9) + 7^y)\).
 <div class="sage">
 <script type="text/x-sage">
@@ -77,7 +77,6 @@ print f.diff(x)
 print (5*x + (x*y)^4 - cos(x+y+x*y+x^5*y^9) + 7^y).diff(y)
 </script>
 </div>
-
 
 <h2>Three-dimensional graphing</h2>
 Sage can do <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/implicit_plot3d.html">three-dimensional implicit plots</a> and <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/plot3d.html">graphs of functions which require three dimensions</a>.
@@ -91,7 +90,23 @@ implicit_plot3d(z - 2.5 == 2*sin(x) +1.7*cos(y/3), [x,-20,20], [y,-20,20], [z,-8
 </script>
 </div>
 
-<h2>Linear algera</h2>
+<h2>Vector geometry</h2>
+Given vectors \({\bf u}=3{\bf i} + 4{\bf j} + 5{\bf k}\) and \({\bf v} = {\bf i} -3{\bf k}\), 
+Sage will compute the dot product \({\bf u} \cdot {\bf v}\),
+the cross product \({\bf u} \times {\bf v}\),
+and the linear combination \(10{\bf u} + 3{\bf v}\).
+<div class="sage">
+<script type="text/x-sage">
+u = vector([3,4,5])
+v = vector([1,0,-3])
+
+print "The dot product is", u.dot_product(v)
+print "The cross product is", u.cross_product(v)
+print "The vector", 10*u+3*v, "is a linear combination of u and v"
+</script>
+</div>
+
+<h2>Linear algera: construct random diagonalizeable matrix</h2>
 This example constructs a \(4 \times 4\) diagonalizable matrix with eigenvalues \(5\), and \(3\) with multiplicity \(1\), and eigenvalue \(-6\) with multiplicity \(2\), displaying the matrix in sage's standard output, followed by a LaTeX version.
 <div class="sage">
 <script type="text/x-sage">
