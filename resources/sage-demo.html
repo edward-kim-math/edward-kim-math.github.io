@@ -23,6 +23,18 @@ print diffquo.expand()
 </script>
 </div>
 
+<h2>Differentiation</h2>
+Sage will find the derivative of \(f(x) = x^3 + 7^x\) and \(g(x) = \sin(\sin(\sin(\sin(\sin(\sin(5x))))))\).
+<div class="sage">
+<script type="text/x-sage">
+f = x^3 + 7^x
+g = sin(sin(sin(sin(sin(sin(5*x))))))
+
+print f.diff()
+print g.diff()
+</script>
+</div>
+
 
 <h2>Two-dimensional graphing</h2>
 Sage can <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot.html#sage.plot.plot.plot">plot</a> the graph the function \(f(x) = (x-3)^2 + 4\) for \(-30 \leq x \leq 30\) and \(-30 \leq y \leq 30\).
