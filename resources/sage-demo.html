@@ -68,15 +68,19 @@ implicit_plot3d(z - 2.5 == 2*sin(x) +1.7*cos(y/3), [x,-20,20], [y,-20,20], [z,-8
 </div>
 
 <h2>Linear algera</h2>
-This example constructs a \(4 \times 4\) diagonalizable matrix with eigenvalues $5$, $3$, and $-6$ with multiplicity $2$, displaying the matrix in sage's standard output, followed by a LaTeX version.
+This example constructs a \(4 \times 4\) diagonalizable matrix with eigenvalues \(5\), and \(3\) with multiplicity \(1\), and eigenvalue \(-6\) with multiplicity \(2\), displaying the matrix in sage's standard output, followed by a LaTeX version.
 <div class="sage">
 <script type="text/x-sage">
 # Construct a random 4 by 4 diagonalizable matrix
 A = random_matrix(QQ, 4, algorithm='diagonalizable', eigenvalues=[5,3,-6],dimensions=[1,1,2]);
 var('t') # use t as a variable
 
+print A
+print "" # leave an extra line of space in the output
+
 # Set up how LaTeX code should look
 latex.matrix_delimiters(left='[', right=']')
 latex.matrix_column_alignment('c')
-</script>
+
+print latex(A)</script>
 </div>
