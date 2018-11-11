@@ -10,6 +10,16 @@ title: Sage demo
 Here are some demonstrations of things that SageMath can do. Any of the scripts can be run "live" on the web by clicking "Evaluate."
 Moreover, you can modify a script and click "Evaluate" again, and your code will run!
 
+
+<h2>Two-dimensional graphing</h2>
+Sage can <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot.html#sage.plot.plot.plot">plot</a> the graph the function \(f(x) = (x-3)^2 + 4\) for \(-30 \leq x \leq 30\) and \(-30 \leq y \leq 30\).
+<div class="sage">
+<script type="text/x-sage">
+f = (x-3)^2 + 4
+plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30)
+</script>
+</div>
+
 <h2>Three-dimensional graphing</h2>
 Sage can do <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/implicit_plot3d.html">three-dimensional implicit plots</a> and <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/plot3d.html">graphs of functions which require three dimensions</a>.
 The sage cell below shows a plot of \( z - 2.5 = 2 \sin(x) + 1.7 \cos(\frac{y}{3})\) for \(-20 \leq x \leq 20\) and \(-20 \leq y \leq 20\) and \(-8 \leq z \leq 8\)
@@ -20,6 +30,7 @@ var('y') # use y as a variable
 var('z') # use z as a variable
 implicit_plot3d(z - 2.5 == 2*sin(x) +1.7*cos(y/3), [x,-20,20], [y,-20,20], [z,-8,8])
 </script>
+</div>
 
 <h2>Linear algera</h2>
 This example constructs a \(4 \times 4\) diagonalizable matrix with eigenvalues $5$, $3$, and $-6$ with multiplicity $2$, displaying the matrix in sage's standard output, followed by a LaTeX version.
@@ -32,5 +43,5 @@ var('t') # use t as a variable
 # Set up how LaTeX code should look
 latex.matrix_delimiters(left='[', right=']')
 latex.matrix_column_alignment('c')
-
 </script>
+</div>
