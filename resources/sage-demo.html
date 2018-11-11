@@ -65,6 +65,20 @@ print f.integral(x,2,4) # definite integral
 </script>
 </div>
 
+<h2>Partial Differentiation</h2>
+Sage will find \(\frac{\partial f}{\partial x}\) given \(f(x,y) = x^3*y + 7^x\sin(y)\).
+Sage will also find \( \frac{\partial}{\partial y}( 5x + (xy)^4 - \cos(x+y+xy+x^5y^9) + 7^y)\).
+<div class="sage">
+<script type="text/x-sage">
+var('y') # use y as a variable
+f = x^3*y + 7^x*sin(y)
+
+print f.diff(x)
+print (5*x + (x*y)^4 - cos(x+y+x*y+x^5*y^9) + 7^y).diff(y)
+</script>
+</div>
+
+
 <h2>Three-dimensional graphing</h2>
 Sage can do <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/implicit_plot3d.html">three-dimensional implicit plots</a> and <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/plot3d.html">graphs of functions which require three dimensions</a>.
 The sage cell below shows a plot of \( z - 2.5 = 2 \sin(x) + 1.7 \cos(\frac{y}{3})\) for \(-20 \leq x \leq 20\) and \(-20 \leq y \leq 20\) and \(-8 \leq z \leq 8\)
