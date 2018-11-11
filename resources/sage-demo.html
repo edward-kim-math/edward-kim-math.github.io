@@ -10,6 +10,19 @@ title: Sage demo
 Here are some demonstrations of things that SageMath can do. Any of the scripts can be run "live" on the web by clicking "Evaluate."
 Moreover, you can modify a script and click "Evaluate" again, and your code will run!
 
+<h2>Function evaluation</h2>
+Sage can take the function \(f(x) = x^3\) and use this to evaluate \(f(2)\) and evaluate the difference quotient \( \dfrac{f(2+h)-f(2)}{h} \).
+<div class="sage">
+<script type="text/x-sage">
+f = x^3
+print f.subs(x=2)
+
+var('h') # define a variable called h
+diffquo = (f.subs(x=2+h) - f.subs(x=2))/h
+print diffquo.expand()
+</script>
+</div>
+
 
 <h2>Two-dimensional graphing</h2>
 Sage can <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot.html#sage.plot.plot.plot">plot</a> the graph the function \(f(x) = (x-3)^2 + 4\) for \(-30 \leq x \leq 30\) and \(-30 \leq y \leq 30\).
