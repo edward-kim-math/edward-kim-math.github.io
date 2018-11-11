@@ -10,6 +10,19 @@ title: Sage demo
 Here are some demonstrations of things that SageMath can do. Any of the scripts can be run "live" on the web by clicking "Evaluate."
 Moreover, you can modify a script and click "Evaluate" again, and your code will run!
 
+<h2>Expressions and special constants</h2>
+Sage will simplify expressions involving special constants such as \(\cos(\frac{\pi}{6})\) and \(\arccos(-\frac12)\).
+In addition, the value of an expression such as \(e^{\pi i}\) can be stored in a variable to be used later (or printed to screen).
+<div class="sage">
+<script type="text/x-sage">
+print cos(pi/6)
+print arccos(-1/2)
+
+eulersspecialnumber = e^(pi*i)
+print eulersspecialnumber
+</script>
+</div>
+
 <h2>Solving equations</h2>
 Sage can solve for \(x\) in the equation \(x^2 + 3x = -2\).
 <div class="sage">
