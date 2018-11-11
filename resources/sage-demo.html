@@ -10,6 +10,14 @@ title: Sage demo
 Here are some demonstrations of things that SageMath can do. Any of the scripts can be run "live" on the web by clicking "Evaluate."
 Moreover, you can modify a script and click "Evaluate" again, and your code will run!
 
+<h2>Solving equations</h2>
+Sage can solve for \(x\) in the equation \(x^2 + 3x = -2\).
+<div class="sage">
+<script type="text/x-sage">
+print solve(x^2 + 3*x == -2, x)
+</script>
+</div>
+
 <h2>Function evaluation</h2>
 Sage can take the function \(f(x) = x^3\) and use this to evaluate \(f(2)\) and evaluate the difference quotient \( \dfrac{f(2+h)-f(2)}{h} \).
 <div class="sage">
