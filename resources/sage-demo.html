@@ -14,7 +14,7 @@ Moreover, you can modify a script and click "Evaluate" again, and your code will
 Sage can solve for \(x\) in the equation \(x^2 + 3x = -2\).
 <div class="sage">
 <script type="text/x-sage">
-print solve(x^2 + 3*x == -2, x)
+print solve(x^2 + 3*x == -2, x) # Notice the double equal sign
 </script>
 </div>
 
@@ -71,6 +71,26 @@ f = x^3 + 10*x^6
 print f.integral(x) # integrate with respect to x
 print f.integral(x,2,4) # definite integral
 </script>
+</div>
+
+<h2>Taylor polynomials</h2>
+Using a for loop, we can have Sage compute several Taylor polynomials of the function \(f(x) = \sin(x) + \cos(x)\).
+<div class="sage">
+<script type="text/x-sage">
+f = sin(x)+cos(x)
+largestdegree = 5 # change this to a larger number to see more Taylor polynomials
+
+taylorpolynomial = 0
+allgraphs = plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30, rgbcolor=(0,0,0)) # allgraphs will eventuall have several graphs, but start with the original function
+
+for taylorpolynomialdegree in range(largestdegree+1):
+    taylorpolynomial = taylorpolynomial + f.diff(x,taylorpolynomialdegree).subs(x=0)*x^taylorpolynomialdegree/factorial(taylorpolynomialdegree) # add the next term
+
+    print "The Taylor polynomial of order", taylorpolynomialdegree, "is", taylorpolynomial
+    allgraphs = allgraphs + plot(taylorpolynomial, xmin=-30, xmax=30, ymin=-30, ymax=30, rgbcolor=(0,1,taylorpolynomialdegree/largestdegree)) # add the graph of this Taylor polynomial to allgraphs
+
+allgraphs.show() # now that allgraphs is properly set, show allgraphs
+  </script>
 </div>
 
 <h2>Partial Differentiation</h2>
