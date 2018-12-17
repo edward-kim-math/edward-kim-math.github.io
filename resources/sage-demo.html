@@ -169,7 +169,7 @@ print "The vector", 10*u+3*v, "is a linear combination of u and v"
 </div>
 
 <h2>Linear algebra: consruct matrix for Gaussian elimination practice</h2>
-This example constructs a \(2 \times 4\) matrix of rank \(2\) whose reduced row-echelon form has only integer values, followed by a LaTeX version.
+This example constructs a \(3 \times 4\) matrix of rank \(2\) whose reduced row-echelon form has only integer values, followed by a LaTeX version.
 <div class="sage">
 <script type="text/x-sage">
 A = random_matrix(QQ, 3, 4, algorithm='echelonizable',rank=2);
@@ -203,6 +203,28 @@ print latex(A)
 print A.rref()
 
 print latex(A.rref())
+</script>
+</div>
+
+
+<h2>Linear algebra: Compute kernel, null space</h2>
+This example constructs a \(7 \times 9\) matrix of rank \(5\) and finds a basis for its kernel.
+We need to use right_kernel for what is generally consider the null space (or kernel) of a matrix.
+<div class="sage">
+<script type="text/x-sage">
+A = random_matrix(QQ, 7, 9, algorithm='echelonizable',rank=5);
+
+print A
+print "" # leave an extra line of space in the output
+
+# Set up how LaTeX code should look
+latex.matrix_delimiters(left='[', right=']')
+latex.matrix_column_alignment('c')
+
+print latex(A)
+
+print "The null space (or kernel) of the matrix:"
+print A.right_kernel()
 </script>
 </div>
 
