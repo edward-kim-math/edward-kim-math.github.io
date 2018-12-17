@@ -168,13 +168,51 @@ print "The vector", 10*u+3*v, "is a linear combination of u and v"
 </script>
 </div>
 
+<h2>Linear algebra: consruct matrix for Gaussian elimination practice</h2>
+This example constructs a \(2 \times 4\) matrix of rank \(2\) whose reduced row-echelon form has only integer values, followed by a LaTeX version.
+<div class="sage">
+<script type="text/x-sage">
+A = random_matrix(QQ, 3, 4, algorithm='echelonizable',rank=2);
+
+print A
+print "" # leave an extra line of space in the output
+
+# Set up how LaTeX code should look
+latex.matrix_delimiters(left='[', right=']')
+latex.matrix_column_alignment('c')
+
+print latex(A)
+</script>
+</div>
+
+<h2>Linear algebra: Gaussian elimination</h2>
+This example constructs a \(5 \times 9\) matrix of rank \(3\) whose reduced row-echelon form has only integer values, followed by a LaTeX version.
+<div class="sage">
+<script type="text/x-sage">
+A = random_matrix(QQ, 5, 9, algorithm='echelonizable',rank=3);
+
+print A
+print "" # leave an extra line of space in the output
+
+# Set up how LaTeX code should look
+latex.matrix_delimiters(left='[', right=']')
+latex.matrix_column_alignment('c')
+
+print latex(A)
+
+print A.rref()
+
+print latex(A.rref())
+</script>
+</div>
+
+
 <h2>Linear algera: construct random diagonalizeable matrix</h2>
 This example constructs a \(4 \times 4\) diagonalizable matrix with eigenvalues \(5\), and \(3\) with multiplicity \(1\), and eigenvalue \(-6\) with multiplicity \(2\), displaying the matrix in sage's standard output, followed by a LaTeX version.
 <div class="sage">
 <script type="text/x-sage">
 # Construct a random 4 by 4 diagonalizable matrix
 A = random_matrix(QQ, 4, algorithm='diagonalizable', eigenvalues=[5,3,-6],dimensions=[1,1,2]);
-var('t') # use t as a variable
 
 print A
 print "" # leave an extra line of space in the output
@@ -184,4 +222,38 @@ latex.matrix_delimiters(left='[', right=']')
 latex.matrix_column_alignment('c')
 
 print latex(A)</script>
+</div>
+
+
+<h2>Linear algera: computations on a diagonalizeable matrix</h2>
+This example constructs a \(4 \times 4\) diagonalizable matrix \(A\) with eigenvalues \(2\), and \(3\) with multiplicity \(1\), and eigenvalue \(-6\) with multiplicity \(2\).
+Then, the characteristic polynomial is computed and displayed both in native Sage form, and in LaTeX output.
+Then, we display the factored version of the characteristic polynomial.
+<div class="sage">
+<script type="text/x-sage">
+# Construct a random 4 by 4 diagonalizable matrix
+A = random_matrix(QQ, 4, algorithm='diagonalizable', eigenvalues=[2,3,-6],dimensions=[1,1,2]);
+var('lam', latex_name="\\lambda") # use lam as a variable (since lambda is a reserved word)
+
+print A
+print "" # leave an extra line of space in the output
+
+# Set up how LaTeX code should look
+latex.matrix_delimiters(left='[', right=']')
+latex.matrix_column_alignment('c')
+
+print A-lam*matrix.identity(4)
+print latex(A-lam*matrix.identity(4))
+
+charpol = det(A-lam*matrix.identity(4))
+
+print charpol # print the characteristic polynomial using Sage's variable
+print latex(charpol) # print a nice version for use in LaTeX
+
+print charpol.factor()
+print latex(charpol.factor())
+
+print A.eigenvalues()
+print A.eigenvectors_right()
+</script>
 </div>
