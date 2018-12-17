@@ -84,6 +84,28 @@ implicit_plot((x-3)^2 + (y+4)^2 == 7, (x,-10,10), (y,-10,10)) # Notice the doubl
 </script>
 </div>
 
+<h2>Limits</h2>
+Sage can take the function \(g(x) = \frac{\sin(x)}{x}\) and use this to find \( \displaystyle \lim_{x \to 0} g(x)\).
+Sage can also take the function \(f(x) = x^3 + \frac1x\) and use this to find \( \displaystyle \lim_{h \to 0} \dfrac{f(a+h)-f(a)}{h} \) and \( \displaystyle \lim_{h \to 0} \dfrac{f(x+h)-f(x)}{h} \), the derivative via definition.
+<div class="sage">
+<script type="text/x-sage">
+g = sin(x)/x
+print g.limit(x=0)
+
+f = x^3 + 1/x
+var('a') # define 
+var('h') # define a variable called h
+
+diffquo = (f.subs(x=a+h) - f.subs(x=a))/h
+#print diffquo.expand()
+print diffquo.limit(h = 0)
+
+diffquo = (f.subs(x=x+h) - f.subs(x=x))/h
+#print diffquo.expand()
+print diffquo.limit(h = 0)
+</script>
+</div>
+
 <h2>Differentiation</h2>
 Sage will find the derivative of \(f(x) = x^3 + 7^x\) and \(g(x) = \sin(\sin(\sin(\sin(\sin(\sin(5x))))))\).
 <div class="sage">
@@ -251,7 +273,7 @@ print A.right_kernel()
 </div>
 
 
-<h2>Linear algera: construct random diagonalizeable matrix</h2>
+<h2>Linear algera: construct random diagonalizable matrix</h2>
 This example constructs a \(4 \times 4\) diagonalizable matrix with eigenvalues \(5\), and \(3\) with multiplicity \(1\), and eigenvalue \(-6\) with multiplicity \(2\), displaying the matrix in sage's standard output, followed by a LaTeX version.
 <div class="sage">
 <script type="text/x-sage">
@@ -269,7 +291,7 @@ print latex(A)</script>
 </div>
 
 
-<h2>Linear algera: computations on a diagonalizeable matrix</h2>
+<h2>Linear algera: computations on a diagonalizable matrix</h2>
 This example constructs a \(4 \times 4\) diagonalizable matrix \(A\) with eigenvalues \(2\), and \(3\) with multiplicity \(1\), and eigenvalue \(-6\) with multiplicity \(2\).
 Then, the characteristic polynomial is computed and displayed both in native Sage form, and in LaTeX output.
 Then, we display the factored version of the characteristic polynomial.
