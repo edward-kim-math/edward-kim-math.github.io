@@ -168,6 +168,28 @@ print "The vector", 10*u+3*v, "is a linear combination of u and v"
 </script>
 </div>
 
+<h2>Matrix algebra (powers of a matrix)</h2>
+This example specifies a \(3 \times 3\) matrix \(A\) and asks Sage to compute \(A^5\)
+<div class="sage">
+<script type="text/x-sage">
+A = matrix(QQ, [[1,1,2],[2,3,3],[4,0,-5]])
+
+# Set up how LaTeX code should look
+latex.matrix_delimiters(left='[', right=']')
+latex.matrix_column_alignment('c')
+
+print A
+print "" # leave an extra line of space in the output
+print latex(A)
+print "" # leave an extra line of space in the output
+print "Then the fifth power of the matrix is"
+print "" # leave an extra line of space in the output
+print A^5
+print "" # leave an extra line of space in the output
+print latex(A)    
+</script>
+</div>
+
 <h2>Linear algebra: consruct matrix for Gaussian elimination practice</h2>
 This example constructs a \(3 \times 4\) matrix of rank \(2\) whose reduced row-echelon form has only integer values, followed by a LaTeX version.
 <div class="sage">
