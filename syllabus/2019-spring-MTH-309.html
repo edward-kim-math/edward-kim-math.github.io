@@ -1,0 +1,467 @@
+---
+layout: plain
+title: MTH 309 (Spring 2019) Syllabus
+---
+
+<div class="well">
+
+	<!-- https://github.com/davidshimjs/qrcodejs -->
+	<script type="text/javascript" src="/qrcode.js"></script>
+
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+	var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: window.location.href,
+	width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+	});
+	</script>
+	<!-- 
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+	new QRCode(document.getElementById("qrcode"), window.location.href);
+	</script> -->
+
+	<h2>MTH 309 (Spring 2019) Syllabus</h2>
+	Linear Algebra with Differential Equations (4 credits)<br>
+	University of Wisconsin-La Crosse
+	<table>
+		<tr><td>Section</td><td>Class number</td><td>Days / Times / Location</td></tr>
+		<tr><td>309-01</td><td>1924</td><td> MoTuWeTh 9:55a-10:50a, Centennial 3102</td></tr>
+		<tr><td>309-02</td><td>1925</td><td> MoTuWeTh 11:00a-11:55a, Centennial 3102</td></tr>
+	</table>
+	
+	<br><img src="/img/happy16.png" onclick="this.src='/img/welcome-team.jpg'"><br>
+
+		
+	<h3>Instructor Information</h3>
+	Instructor: Dr. Edward D. Kim<br />
+	Office: 1018 Cowley Hall<br />
+	Phone: 608-785-6613<br />
+	Email:  <span class="emailspan"><img src="/shh/a42659826.gif" alt="-" class="email" /><img src="/shh/a71093256.gif" alt="-" class="email" /><img src="/shh/a1208752339807.gif" alt="-" class="email" /><img src="/shh/a1092352398.gif" alt="-" class="email" />@uwlax.edu</span><br />
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/call-me.jpg'"><br>
+
+	<h3>Office Hours</h3>
+	{% include syllabus-office-hours-2019-spring.html %}
+
+	<h3>Course Description</h3>
+
+	<h4>Catalog Description</h4>
+	A systematic study of linear algebra, and its interactions with differential equations. Topics include: vectors, matrices, systems of linear equations, determinants, vector spaces, subspaces, basis and dimension, linear transformations and their matrix representations, similar matrices and diagonalization, systems of first order linear differential equations, and higher order linear differential equations.
+
+
+	<!-- 
+	<h4>Overview</h4>
+	Enter a course overview if different from course catalog description
+ 	 -->
+ 
+	<h4>Prerequisites</h4>
+	<!-- [enter prerequisites here or state none]-->
+	Grade of "C" or better in MTH 208.
+	
+	<h4>Course Learning Outcomes</h4>
+	Department-wide objectives for this course are to study the basics of linear algebra and its interactions with differential equations. The overall goal of this course is to develop an understanding of linear systems/vector equations/matrix equations, 
+	vector spaces, and linear transformations as well as be exposed to a selection of applied problems linear algebra 
+	can help solve (including differential equations).
+	Specifically, by the end of this course, you will be able to:
+	<ul>
+  	<li>use algorithms and perform computations with vectors and matrices and then use theory to draw conclusions from the computations. </li>
+		<li>convert between equivalent ways of viewing objects in linear algebra (e.g. system of linear equations vs. vector equation, intersecting lines/planes vs. combining vectors, geometry vs. algebra, etc.).</li>
+		<li>answer two of a mathematician's favorite questions, in the context of solving systems of linear equations: Does a solution exist? If so, is it unique? </li>
+		<li>clearly justify reasoning using proof techniques such as 1) checking the hypotheses of a theorem; 2) coming up with a counterexample; 3) working through a computation using arbitrary vectors satisfying a given condition.</li>
+		<li>understand the axiomatic definition of a vector space and know some examples of vector spaces other than \(\mathbb{R}^n\) (vector space of polynomials, vector space of matrices etc.)</li>
+		<li>find the kernel, rank, range and nullity of a linear transformation</li>
+		<li>compute the characteristic polynomial of a matrix, find eigenvalues and eigenvectors of the matrix, and use such to find solutions to small linear systems of ordinary differential equations. </li>
+		<li>compute the inner product of vectors in \(\mathbb{R}^n\), determine if a set of vectors in \(\mathbb{R}^n\) is orthogonal, compute the projection of a vector onto a subspace, and orthogonalize a set of vectors using the Gram-Schmidt process.</li>
+	</ul>
+	
+	<br><img src="/img/happy16.png" onclick="this.src='/img/find-x.jpg'"><br>
+
+	<h4>Materials and Tools</h4>
+	Textbook: David C. Lay, Steven R. Lay, Judi J. McDonald. <i>Linear Algebra and Its Applications</i>.
+	5th Edition. Pearson. Boston.
+  <!-- Note whether available from Textbook Rental or need to be purchased. -->
+	This textbook will be available from Textbook Rental.
+	
+	<br><img src="/img/happy16.png" onclick="this.src='/img/book.jpg'"><br>
+
+  <!-- 
+  <h4>General Education Program</h4>
+  MTH AAA is a course in the `Mathematics' list of <a href="http://catalog.uwlax.edu/undergraduate/generaleducation/#generaleducationrequirementstext">GE 02</a>.
+  -->	
+	<h4>Format</h4>
+	This is a face-to-face course. You may be asked to reference materials or participate online through the learning 
+	management system, Canvas. If that is the case, you will need your UWL NetID to login to the course from 
+	the <a href="http://www.uwlax.edu/canvas/">Canvas homepage</a>.
+
+	<h3>Grading Policies</h3>
+	Your overall course grade is determined by the following components, with the weights given:
+
+	<ul>
+
+	<li>Writing assignments: 10% of your grade.
+AAAAAAAAAAAAA
+    There will be three writing assignment for this course.
+		More information will be made available by March 8.
+		In summary, you will write a technical report on an <i>approved</i> linear algebra application of your choice.
+		You must have submitted an initial topic idea by April 5, and have have your topic approved by April 12.
+		Your written assignment is due on April 26.
+		</li>
+
+	<li>Homework: 15% of your grade. Homework will be assigned weekly due on Tuesdays.
+		An assignment due on a particular Wednesday will cover material in class up to the previous Wednesday.
+		(For example, the assignment due on Tuesday February 13 will make use of material through the end of class on Wednesday February 7.)
+		Assignments will be turned into Gradescope: you may either type assignments (submit the PDF from LaTeX) or you may <i>neatly</i> handwrite work (convert your work into a PDF using an app such as Cam Scanner.)
+		E-mail is not a good format for discussing mathematics, so visit office hours instead!</li>
+
+	<li>Quizzes: 15% of your grade. There are 10 in-class quizzes which will take place in the last 10 minutes of 
+		class on Wednesdays in weeks without an exam. 
+		The cutoff of material for a Wednesday quiz is what was covered in class the previous Wednesday. 
+		(For example, the quiz on Wednesday February 14 will make use of metarial through the end of class on Wednesday February 7.)
+		The lowest 2 quizzes will be dropped. 
+		There are no make-up quizzes, except in extreme circumstances determined by the instructor.</li>
+
+	<li>In-class exams: 40% of your grade. Other than the final, there are three in-class exams of 55 minutes, 
+		each of equal weight.
+		<ul>
+		<li>Exam 1 (on Thr AAAFeb 22) covers material from Jan 22 through the end of class on Feb 15.</li>
+		<li>Exam 2 (on Thr AAAMar 22) covers material from Jan 22 through the end of class on Mar 8, with emphasis on material after Feb 15.</li>
+		<li>Exam 3 (on Thr AAAApr 19) covers material from Jan 22 through the end of class on Apr 12, with emphasis on material after Mar 8.</li>
+		</ul>
+		While exams generally emphasize later material, mathematics is inherently cumulative so the <b>exams are cumulative too</b>.
+		Exams must be taken on the scheduled day unless prior arrangements have been made for extreme circumstances.</li>
+
+	<li>Final Exam: 20% of your grade. The final exam is comprehensive (covers all sections which we covered).
+		In accordance with the 
+		<a href="https://www.uwlax.edu/records/faculty-staff-resources/final-exam-schedule/#tab-spring-2019">final exam schedule</a>,
+		the final exam is on Thursday, May 16, 2019.
+		The exam starts at 2:30pm and is two hours long.
+		In accordance with the growth mindset policy of this class,
+		if your percentage on the final is higher than your percentage on an in-class exam,
+		the score for one of your in-class exams will be replaced with the final exam percentage.</li>
+	</ul>
+		
+	Every quiz and every exam will have one or more conceptual question.
+	Sample solutions are provided for the conceptual questions, but instead of just memorizing the solutions, 
+	I urge you to <i>understand</i> the answer to each question!
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/turn-in-all-the-things.jpg'"><br>
+
+	<h4>Late Assignments, Missed Exams</h4>
+	Assignments are due on the dates indicated in the Course Schedule. For extenuating circumstances that impact your ability 
+	to meet deadlines or participate in class activities, you are responsible for alerting me as soon as possible. 
+
+	<!-- [explain how students should notify you if they are, e.g., ill on an exam day, and, as required by the Faculty Senate 
+	Syllabus Policy, your policy on missed course work, including exams or other graded in-class work] -->
+
+	If a situation should arise (e.g., ill on an exam day), please notify me by e-mail as soon as possible:
+	a determination of alternate arrangements will be made on a case-by-case basis, but the instructor has the final determination
+	for what absences are eligible, which is why it is important to alert the instructor as soon as you know of an absence
+	which would affect an assignment deadline or test date.
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/late-work.jpg'"><br>
+
+
+	<h4>Attendance and Participation</h4>
+	There are no points in the course grading policies assigned to attendance or participation. Though attendance and 
+	participation do not have a direct effect on your grade, attendance and participation are required for success with 
+	homeworks, quizzes, and exams. I strongly recommend that you attend and participate every class session! If you have 
+	any extenuating circumstance that may prevent full attendance or participation, please let me know as soon as possible.
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/attendance.jpg'"><br>
+	
+	
+	<h3>Expectations for Graded Work</h3>
+	<div>I provide students feedback and/or scores on assignments that require individualized grading.  Generally, I return 
+		work that requires individual feedback within 21 days from the date the work was due. I will notify you if I am 
+		unable to grade the work within the 21-day timeframe, and will identify a revised return date. If you submit work 
+		after the due date, it may not be accepted for credit, and it may not be returned within 21 days.</div><br>
+ 
+	<div>The grades for any work that is graded electronically, such as scanned examinations, will be accessible to you within 
+		14 days of the due date for the work. If you submit electronically graded work after the due date, it will not be 
+		accepted for credit except under extreme circumstances determined by the instructor.</div><br>
+ 
+	<div>Your graded coursework will be returned in compliance with FERPA regulations, such as in class, during my office hours, 
+		via the course management system through which only you will have access to your grades, or using Gradescope.
+		Assignments will be returned as soon as possible but due to the nature of mathematics assignments (especially where 
+		a consecutive assignment can be started prior to the previous assignment being due), it is not possible to return 
+		work prior to a similar assignment being due, but you should generally have returned work with feedback within the 
+		subsequent assignment being due.</div><br>
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/feedback.jpg'"><br>
+	
+	<h3>Grading Scale</h3>
+
+	To be guaranteed a given grade, a student needs to obtain at least the following overall percentage:
+
+	<table>
+		<tr><td>Letter Grade</td><td>Minimum Percentage</td></tr>
+		<tr><td>A</td><td>91%</td></tr>
+		<tr><td>AB</td><td>88%</td></tr>
+		<tr><td>B</td><td>82%</td></tr>
+		<tr><td>BC</td><td>78%</td></tr>
+		<tr><td>C</td><td>70%</td></tr>
+		<tr><td>D</td><td>60%</td></tr>
+	</table>
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/youre-going-to-rock.jpg'"><br>
+
+	<h2>Course Outline and Schedule</h2>
+	Please note that the timing of activities and topics listed below may change.
+	I will give you timely notice of any major changes in the syllabus through email, on Canvas, in class, or some combination 
+	of methods.
+
+	<table>
+	
+		<tr>
+			<td><b>Monday</b></td>
+			<td><b>Tuesday</b></td>
+			<td><b>Wednesday</b></td>
+			<td><b>Thursday</b></td>
+		</tr>
+		
+		<tr><!-- Week 1 -->
+			<td><abbr title="Session 1">Jan 22</abbr><br>Intro</td>
+			<td><abbr title="Session 2">Jan 23</abbr><br>1.1: systems</td>
+			<td><abbr title="Session 3">Jan 24</abbr><br>1.2: row reduction</td>
+			<td><abbr title="Session 4">Jan 25</abbr><br>1.2: row reduction</td>
+		</tr>
+	
+		<tr><!-- Week 2 -->
+			<td><abbr title="Session 5">Jan 29</abbr><br>1.3: vector equations</td>
+			<td><abbr title="Session 6">Jan 30</abbr><br>1.3: vector equations<br>HW 01 due</td>
+			<td><abbr title="Session 7">Jan 31</abbr><br>1.4: matrix equation<br>Quiz 1</td>
+			<td><abbr title="Session 8">Feb 1</abbr><br>1.4: matrix equation</td>
+		</tr>
+	
+		<tr><!-- Week 3 -->
+			<td><abbr title="Session 9">Feb 5</abbr><br>1.5: solution sets</td>
+			<td><abbr title="Session 10">Feb 6</abbr><br>1.5: solution sets<br>HW 02 due</td>
+			<td><abbr title="Session 11">Feb 7</abbr><br>1.7: lin. indp<br>Quiz 2</td>
+			<td><abbr title="Session 12">Feb 8</abbr><br>1.7: lin. indp</td>
+		</tr>
+	
+		<tr><!-- Week 4 -->
+			<td><abbr title="Session 13">Feb 12</abbr><br>1.8: lin. transf</td>
+			<td><abbr title="Session 14">Feb 13</abbr><br>1.8: lin. transf<br>HW 03 due</td>
+			<td><abbr title="Session 15">Feb 14</abbr><br>1.9: matrix of LT<br>Quiz 3</td>
+			<td><abbr title="Session 16">Feb 15</abbr><br>1.9: matrix of LT</td>
+		</tr>
+	
+		<tr><!-- Week 5 -->
+			<td><abbr title="Session 17">Feb 19</abbr><br>2.1: matrix ops</td>
+			<td><abbr title="Session 18">Feb 20</abbr><br>2.1: matrix ops<br>HW 04 due</td>
+			<td><abbr title="Session 19">Feb 21</abbr><br>2.2: inverse</td>
+			<td><abbr title="Exam day">Feb 22</abbr><br><b>EXAM 1</b></td>
+		</tr>
+	
+		<tr><!-- Week 6 -->
+			<td><abbr title="Session 20">Feb 26</abbr><br>2.2: inverse</td>
+			<td><abbr title="Session 21">Feb 27</abbr><br>2.3: characterizations<br>HW 05 due</td>
+			<td><abbr title="Session 22">Feb 28</abbr><br>2.3: characterizations<br>Quiz 4</td>
+			<td><abbr title="Session 23">Mar 1</abbr><br>2.8/2.9: subspaces, dim</td>
+		</tr>
+	
+		<tr><!-- Week 7 -->
+			<td><abbr title="Session 24">Mar 5</abbr><br>2.8/2.9: subspaces, dim</td>
+			<td><abbr title="Session 25">Mar 6</abbr><br>2.8/2.9: subspaces, dim<br>HW 06 due</td>
+			<td><abbr title="Session 26">Mar 7</abbr><br>3.1/3.2: determinants<br>Quiz 5</td>
+			<td><abbr title="Session 27">Mar 8</abbr><br>3.1/3.2: determinants</td>
+		</tr>
+
+		<tr>
+			<td><i>Break</i></td>
+			<td><i>Break</i></td>
+			<td><i>Break</i></td>
+			<td><i>Break</i></td>
+		</tr>
+		
+		<tr><!-- Week 8 -->
+			<td><abbr title="Session 28">Mar 19</abbr><br>3.1/3.2: determinants</td>
+			<td><abbr title="Session 29">Mar 20</abbr><br>4.1: vector spaces<br>HW 07 due</td>
+			<td><abbr title="Session 30">Mar 21</abbr><br>4.1/4.2: NS, CS</td>
+			<td><abbr title="Exam day">Mar 22</abbr><br><b>EXAM 2</b></td>
+		</tr>
+	
+		<tr><!-- Week 9 -->
+			<td><abbr title="Session 31">Mar 26</abbr><br>4.2: NS, CS</td>
+			<td><abbr title="Session 32">Mar 27</abbr><br>4.3: bases<br>HW 08 due</td>
+			<td><abbr title="Session 33">Mar 28</abbr><br>4.3: bases<br>Quiz 6</td>
+			<td><abbr title="Session 34">Mar 29</abbr><br>4.4: coordinate systems</td>
+		</tr>
+	
+		<tr><!-- Week 10 -->
+			<td><abbr title="Session 35">Apr 2</abbr><br>4.5: dimension</td>
+			<td><abbr title="Session 36">Apr 3</abbr><br>4.6: rank<br>HW 09 due</td>
+			<td><abbr title="Session 37">Apr 4</abbr><br>4.6: rank<br>Quiz 7</td>
+			<td><abbr title="Session 38">Apr 5</abbr><br>5.1: eigenvectors<br><b>Writing Asgn topic due</b></td>
+		</tr>
+	
+		<tr><!-- Week 11 -->
+			<td><abbr title="Session 39">Apr 9</abbr><br>5.1: eigenvectors</td>
+			<td><abbr title="Session 40">Apr 10</abbr><br>5.2: characteristic eq<br>HW 10 due</td>
+			<td><abbr title="Session 41">Apr 11</abbr><br>5.3: diagonalization<br>Quiz 8</td>
+			<td><abbr title="Session 42">Apr 12</abbr><br>5.3: diagonalization<br><b>Writing Asgn topic finalized</b></td>
+		</tr>
+	
+		<tr><!-- Week 12 -->
+			<td><abbr title="Session 43">Apr 16</abbr><br>5.4: eigenvec and LT</td>
+			<td><abbr title="Session 44">Apr 17</abbr><br>5.4: eigenvec and LT<br>HW 11 due</td>
+			<td><abbr title="Session 45">Apr 18</abbr><br>5.5: complex eigenval</td>
+			<td><abbr title="Exam day">Apr 19</abbr><br><b>EXAM 3</b></td>
+		</tr>
+	
+		<tr><!-- Week 13 -->
+			<td><abbr title="Session 46">Apr 23</abbr><br>5.7: diff eq</td>
+			<td><abbr title="Session 47">Apr 24</abbr><br>5.7: diff eq<br>HW 12 due</td>
+			<td><abbr title="Session 48">Apr 25</abbr><br>6.1: IP<br>Quiz 9</td>
+			<td><abbr title="Session 49">Apr 26</abbr><br>6.1: IP<br><b>Writing Asgn due</b></td>
+		</tr>
+	
+		<tr><!-- Week 14 -->
+			<td><abbr title="Session 50">Apr 30</abbr><br>6.2: orthogonal sets</td>
+			<td><abbr title="Session 51">May 1</abbr><br>6.3: orthogonal proj<br>HW 13 due</td>
+			<td><abbr title="Session 52">May 2</abbr><br>6.4: Gram-Schmidt<br>Quiz 10</td>
+			<td><abbr title="Session 53">May 3</abbr><br>6.5: least-squares</td>
+		</tr>
+	
+		<!-- 
+		<tr>
+			<td><abbr title="Session number">Date</abbr><br>Section: Topic<br>Major deadline</td>
+			<td><abbr title="Session number">Date</abbr><br>Section: Topic<br>Major deadline</td>
+			<td><abbr title="Session number">Date</abbr><br>Section: Topic<br>Major deadline</td>
+			<td><abbr title="Session number">Date</abbr><br>Section: Topic<br>Major deadline</td>
+		</tr>
+		  -->	
+	</table>
+
+	This calendar shows what we will tentatively cover in class each day.
+	
+	<br><img src="/img/happy16.png" onclick="this.src='/img/class-calendar.jpg'"><br>
+
+	
+	<h2>Homework</h2>
+	This class will have collected and uncollected homework.
+	<ul>
+		<li>
+	Collected homework will be submitted online (in Gradescope), will be reviewed for a grade and returned to you.
+	After content is covered in class, relevant collected homework is due a week later.
+	The collected assignments will be posted in Canvas. (Some of the exercises may overlap with the uncollected exercises in the table below.)
+	The gap is meant to give you time to absorb the material and visit office hours. If you are always completing 
+	assignments on the due date, you are always behind in material in the class! To succeed in this class, you should 
+	regularly complete assignments immediately after the topic has been covered in class. Do not always complete 
+	assignments at the last minute.
+			
+	Several policies/guidelines/expectations:
+		<ul>
+			<li>Do not skip the uncollected homework. The only reason there is a separation into collected versus uncollected homework is so that you will get feedback in a timely manner.</li>
+			<li>While you may work together, you may not copy each others' work, in any sense of the term. If typing solutions, you may not share LaTeX files with each other. Whether typing or not, any group should disband without having fully written solutions. In fact, any work done as a group should be thrown in a trash bin.
+			If you are tempted to take any notes from a group meeting with you because you "might forget" how the solution goes, you do not yet have sufficient understanding. You are cheating yourself of the knowledge and skills you need.</li>
+			<li>For each assignment in which you work in a group, you must write the names of all persons you have collaborated with (after the last problem).</li>
+			<li>Any failure to abide by the group work policies is a serious concern and is considered academic dishonesty. The purpose of these expectations/policies is not to be punitive: the only way you succeed in this class is if you have put in your own efforts/struggles towards the homework. If your submitted work does not represent your work (the majority is your work, the minority is others' inspiration), then you neither deserve homework credit nor should expect to suceed on quizzes/tests.</li>
+		</ul>
+		</li>
+		<li>Uncollected homework is found in the table below. Though these assignments are not collected, you should do as many as possible
+	as practice problems. The first column shows the textbook section.
+	The next column shows exercises assigned from the textbook. Exercises marked with an asterisk (*) 
+	are the <b>only</b> problems for which you should use a calculator or computer. 
+	(For problems without an asterisk, use of technology only to <b>check</b> answers is suggested.) 
+	Though textbook exercises are not collected or graded, to encourage you to do the book problems, 
+	<b>each exam will contain at least one problem from the list of problems in the table below</b>.</li>
+	</ul>
+
+	The column of the left shows the section number in the book.
+	The next two columns show the textbook exercises to do for the section: the middle column has computational exercises, while the column on the right has conceptual exercises.
+	You should not exclusively do one type of exercise or the other. The nature of linear algebra is computational AND coneceptual! Spend half your time on computational exercises and half your time on conceptual exercises.
+<table>
+<tr><td>Section</td><td>Computational Exercises</td><td>Conceptual Exercises</td></tr>
+
+<tr><td>1.1</td><td>3-21 (odd), 25, 31</td><td>23, 24, 33</td></tr>
+<tr><td>1.2</td><td>1-19 (odd), 33</td><td>21-26,  28-31</td></tr>
+<tr><td>1.3</td><td>5-13 (odd), 17-19</td><td>21-26, 32-34</td></tr>
+<tr><td>1.4</td><td>3-15 (odd), 17-20, 25, 26, 39-41</td><td>21-24, 29-34 </td></tr>
+<tr><td>1.5</td><td>5, 7, 11, 13, 14, 15-21(odd), 36</td><td>23-34, 39, 40</td></tr>
+<tr><td>1.7</td><td>7-13 (odd), 15-20, 23-29</td><td>21, 22, 30, 33-40, 41, 43</td></tr>
+<tr><td>1.8</td><td>1-15 (odd), 17-20, 23-30, 33</td><td>21, 22, 24, 25, 29, 31, 34-36</td></tr>
+<tr><td>1.9</td><td>1-13, 17, 20, 21, *37-40</td><td>23, 24, 25, 27, 31-35</td></tr>
+
+<tr><td>2.1</td><td>2, 7, 8, 11, 12, 27-28, 39, 40</td><td>15, 16, 17-22, 23-24, 29, 33</td></tr>
+<tr><td>2.2</td><td>3, 6, 8, 31, 33, 35</td><td>9-10, 14-24</td></tr>
+<tr><td>2.3</td><td>3, 5, 7, 15-24, 33</td><td>11-12, 13, 26-32, 38</td></tr>
+<tr><td>2.8</td><td>1-4, 5-10, 11, 13, 15-20, 23, 25</td><td>21-22, 31-36</td></tr>
+<tr><td>2.9</td><td>2-4, 6, 7-8, 9-16</td><td>17-18, 19-26, 27-28  </td></tr>
+
+<tr><td>3.1</td><td> 1, 3, 4, 5, 9, 10, 11, 37-38</td><td>39-40, 41-42</td></tr>
+<tr><td>3.2</td><td>5-10, 15-18, 23, 25, 39-40</td><td>27-28, 31-35</td></tr>
+<tr><td>3.3</td><td>1-2, 19-20, 23-24</td><td>29-30</td></tr>
+
+<tr><td>4.1</td><td>1, 3, 5-14, 15-18</td><td>19-28, 31-34</td></tr>
+<tr><td>4.2</td><td>2, 6, 7-15 (odd), 23-24</td><td>25-26, 29-30, 31-36</td></tr>
+<tr><td>4.3</td><td>1-14, 15, 19-20</td><td>21-28, 29-30, 31-32, 33-34, 35</td></tr>
+<tr><td>4.4</td><td>1-11(odd), 13-14, 29, 31(a), 32</td><td>15-16</td></tr>
+<tr><td>4.5</td><td>4, 6-11, 13, 15, 17</td><td>19-20, 21, 23, 25-28, 29-30, 31-32</td></tr>
+<tr><td>4.6</td><td>4, 5-16</td><td>17-18, 19-25 (odd), 27-30</td></tr>
+<tr><td>4.7</td><td>1-5, 9, 11-14</td><td></td></tr>
+
+<tr><td>5.1</td><td>1, 2, 6, 7, 13, 14, 16, 18-20</td><td>21-22, 23-25, 27, 29-33</td></tr>
+<tr><td>5.2</td><td>7, 8, 13, 17</td><td>18-22, 24, 25, 27</td></tr>
+<tr><td>5.3</td><td>1, 4-6, 7-9, 15, 17, 20 </td><td>21-29, 31-32</td></tr>
+<tr><td>5.4</td><td>1, 2, 5, 6, 10, 13, 15</td><td>19-23</td></tr>
+<tr><td>5.5</td><td> 1,3 7, 9, 13, 15</td><td>23, 24, 26</td></tr>
+<tr><td>5.7</td><td>1, 2, 4-8, 9-14 <a href="http://bluffton.edu/homepages/facstaff/nesterd/java/slopefields.html?flags=2&ODE=x,y&SYS=t,x,y&dydx=x+y&dxdt=x+y&dydt=x-y&x=-4,4,20&y=-3,3,20&method=euler&h=0.1">Java Applet</a></td><td></td></tr> 
+
+<tr><td>6.1</td><td>5, 7, 12, 13, 17, 18</td><td>19-20, 24, 28-31</td></tr>
+<tr><td>6.2</td><td>5, 6, 8, 10, 20 </td><td>23-24, 25-27, 33</td></tr>
+<tr><td>6.3</td><td>2, 6, 9, 12, 16</td><td>17-19</td></tr>
+<tr><td>6.4</td><td>8, 9, 11, 14, 16</td><td>22</td></tr>
+<tr><td>6.5</td><td>3, 5, 7, 11, 13, 14</td><td>17-24</td></tr>
+	
+</table>
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/do-homework.jpg'"><br>
+
+
+	
+	<h2>General expectations for math courses</h2>
+	<ul>
+		<li>Calculators are not allowed on quizzes or exams. We will talk about what a calculator-less answer to a quiz/exam question looks.</li>
+		<li>Do not start late. To be up to date, you must do exercises each day.</li>
+	</ul>
+	
+	<h2>How to learn mathematics</h2>
+	<ul>
+    <li>Use mathematical language and grammar. It is my expectation that you work every day not just on *doing* mathematics, but speaking and thinking in standard mathematical grammar. You should expect this of yourself.</li>
+		<li>As you do mathematics, work on explaining what you are doing in complete sentences. Avoid using the word "it".</li>
+		<li>Be sure to read the book section before class and after class. Your before read should be quick. Your after read should be thorough.</li>
+		<li>There is no replacement for your effort.</li>
+		<li>Do not work on things last minute.</li>
+		<li>Keep an honest and accurate log of your study time for class. Be sure to "clock out" when your mind wanders to something else (social media, etc.)</li>
+		<li>Take thorough notes in class. If it's written on the board, be sure to have it written in your notebook.</li>
+		<li>Review your notebook after every class. The best way to review your notebook is to write a new copy of everything you wrote in your original notebook. This gives you the chance to review, and if even notice when you don't fully understand something. If you notice that you don't fully understand something, drop by office hours and ask for clarification.</li>
+		<li>Get help at the first sign of trouble: office hours are times reserved for you to get help. It is normal to use office hours!</li>
+		<li>Be sure to read the book section to supplement the things we discuss in class.</li>
+		<li>To succeed, you should do the textbook exercises.</li>
+		<li>Each day's class is likely to rely on the previous day's material: it is not a good habit to wait to do homework until the day it is due (or the day before).</li>
+		<li>Commit to learning something soon after it is discussed in class: then you earn points for it on a quiz, an exam, a later exam, and a final. If you learn it only later, you can only earn points for it later.</li>
+		<li>It is not a secret to me that Google and Wolfram Alpha exist. If you use these resources, you remove the struggle for yourself and it will reflect in your quizzes and exams.</li>
+		<li>Mathematics requires attention to detail, and use of precise mathematical notation and wording. These things are important to me as I assess your work, so please make them important to you.</li>
+		<li>If you commit yourself to understanding each topic in time, then you don't really have to "study" for an exam. If you commit to only "halfway understanding" each topic, then you will need to spend an unnecesary amount of time before each exam "studying", but this cramming does not lead to in-depth knowledge or long-term recall.</li>
+	</ul>
+
+	<h2>Gradescope 'how to' videos</h2>
+	<ul>
+		<li><a href="https://youtu.be/RLpiQIBt6uo">Setting up your GradeScope account</a></li>
+		<li><a href="https://youtu.be/95gp8mKeeT8">Gradescope feedback</a></li>
+		<li><a href="https://youtu.be/oHvYPaYVhpo">Submitting an assignment in Gradescope</a></li>
+	</ul>
+	
+	<hr>
+	
+	{% include syllabus-my-math-policies.html %}
+	{% include syllabus-uwl-policies.html %}
+		
+</div>
