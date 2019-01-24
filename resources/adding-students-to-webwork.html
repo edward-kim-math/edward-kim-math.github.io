@@ -1,0 +1,41 @@
+---
+layout: default
+title: Adding students to WeBWorK
+---
+<h1>{{ page.title }}</h1>
+
+These instructions are based on information that I found at <a href="http://webwork.maa.org/wiki/Classlist_Files#.XEov4FxKiUk">the classlist file documentation</a> of the WeBWorK Wiki.
+
+<h2>Step 1: Create a comma-separated file in the correct format</h2>
+The file should have the following data in each row:
+<ul>
+<li>Data 1: student id (Do not use the UWL student ID. Instead, use the portion of the e-mail before the "at" sign.)</li>
+<li>Data 2: last name</li>
+<li>Data 3: first name</li>
+<li>Data 4: status. Just use the letter C which means "current"</li>
+<li>Data 5: comment: you can have text here, but it's optional</li>
+<li>Data 6: section: you can have text here, but it's optional</li>
+<li>Data 7: recitation: you can have text here, but it's optional</li>
+<li>Data 8: e-mail address</li>
+<li>Data 9: user id (use the portion of the e-mail before the "at" sign)</li>
+</ul>
+
+Suppose you had a student named Alice Doe with e-mail address doe.alice@uwlax.edu whose student ID was 12345678.
+Suppose you had a student named Jay Park with e-mail address park.jay@uwlax.edu whose student ID was 98765432.
+Then, create a file that looks like this:
+{% highlight text linenos %}
+doe.alice,Doe,Alice,C,,,,doe.alice@uwlax.edu,doe.alice 
+park.jay,Park,Jay,C,,,,park.jay@uwlax.edu,park.jay 
+{% endhighlight %}
+In particular, notice that the student ID is <b>not</b> part of this file at all. The e-mail address in full appears once, while a portion of it appears in two other places.
+It is recommended to create this using Excel and export as a CSV file.
+
+<h2>Step 2: Rename the file</h2>
+Rename the file so that the ending after the dot is "lst" instead of "csv". This is a requirement of WeBWorK.
+
+<h2>Step 3: Upload the file in your WeBWorK course</h2>
+After signing in to WeBWorK, click 'File Manager' from the left navigation bar, 
+and then upload the "lst" file into the present folder (called "templates").
+
+<h2>Step 4: Import users from this file</h2>
+Click on "Classlist Editor" from the left navigation bar, choose the import tab. Select the file you just uploaded for the "Import users from what file" question.
