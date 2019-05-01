@@ -129,18 +129,6 @@ print f.integral(x,2,4) # definite integral
 </script>
 </div>
 
-
-<h2>Multiple Integrals</h2>
-Given \(f(x,y)=x^3-2x\sin(y)\), Sage can find the double integral \( \displaystyle \int_{-\pi/2}^{\pi/3}\int_2^4 f(x,y)\,dx\,dy\).
-<div class="sage">
-<script type="text/x-sage">
-var('y')
-f = x^3 - 2*x*sin(y)
-
-print f.integral(x,2,4).integral(y,-pi/2,pi/3)
-</script>
-</div>
-
 <h2>Taylor polynomials</h2>
 Using a for loop, we can have Sage compute several Taylor polynomials of the function \(f(x) = \sin(x) + \cos(x)\).
 <div class="sage">
@@ -171,6 +159,18 @@ f = x^3*y + 7^x*sin(y)
 
 print f.diff(x)
 print (5*x + (x*y)^4 - cos(x+y+x*y+x^5*y^9) + 7^y).diff(y)
+</script>
+</div>
+
+<h2>Multiple Integrals and Hessians for functions of several variables</h2>
+Given \(f(x,y)=x^3-2x\sin(y)\), Sage can find the double integral \( \displaystyle \int_{-\pi/2}^{\pi/3}\int_2^4 f(x,y)\,dx\,dy\) and the Hessian of \(f(x,y)\).
+<div class="sage">
+<script type="text/x-sage">
+var('y')
+f = x^3 - 2*x*sin(y)
+
+print "The double integral is", f.integral(x,2,4).integral(y,-pi/2,pi/3)
+print "The Hessian is", f.hessian()
 </script>
 </div>
 
