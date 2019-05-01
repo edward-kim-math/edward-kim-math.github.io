@@ -216,6 +216,27 @@ allgraphs.show() # now that allgraphs is properly set, show allgraphs
   </script>
 </div>
 
+
+<h2>Sliders: Taylor polynomials</h2>
+Sliders can be used to see how similar a Taylor polynomial for \(f(x) = \sin(x) + \cos(x)\) begins to look more like the graph of \(f(x)\) itself.
+<div class="sage">
+<script type="text/x-sage">
+@interact
+def _(
+	n = slider(0, 9, 1, default=0, label="Degree \(n\) = "),
+):
+    f = sin(x)+cos(x)
+
+    taylorpolynomial = 0
+    allgraphs = plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30, rgbcolor=(0,0,0)) # allgraphs will eventuall have several graphs, but start with the original function
+
+    for taylorpolynomialdegree in range(n+1):
+        taylorpolynomial = taylorpolynomial + f.diff(x,taylorpolynomialdegree).subs(x=0)*x^taylorpolynomialdegree/factorial(taylorpolynomialdegree) # add the next term
+        
+    show(plot(taylorpolynomial, xmin=-30, xmax=30, ymin=-30, ymax=30) + plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30, rgbcolor=(1,0,0)))
+</script>
+</div>
+
 <h2>Partial Differentiation</h2>
 Sage will find \(\frac{\partial f}{\partial x}\) given \(f(x,y) = x^3y + 7^x\sin(y)\).
 Sage will also find \( \frac{\partial}{\partial y}( 5x + (xy)^4 - \cos(x+y+xy+x^5y^9) + 7^y)\).
