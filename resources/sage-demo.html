@@ -74,6 +74,23 @@ plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30)
 </script>
 </div>
 
+
+
+<h2>Sliders: Exploring graph transformations</h2>
+Sage can take a value of \(h\) and \(k\) from the user (with sliders) and plot \(y = (x-h)^2 + k\)
+<div class="sage">
+<script type="text/x-sage">
+@interact
+def _(
+	h = slider(-10, 10, 0.01, default=1, label="Pick \(h\) = "),
+	k = slider(-10, 10, 0.01, default=0, label="Pick \(k\) = "),
+):
+    f = (x-h)^2 + k
+    show(plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30))
+</script>
+</div>
+
+
 <h2>Two-dimensional graphing: plot equation in two variables</h2>
 Sage will provide an <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/contour_plot.html">implicit plot</a> of an equation in \(x\) and \(y\).
 For example, here we ask Sage to sketch the plot of the equation \((x-3)^2+(y+4)^2=7\), a circle centered at \(3,-4\) of radius \(\sqrt{7}\).
