@@ -169,7 +169,7 @@ def _(
 	ytop = input_box(ytop, label="\(y\) max = ",type=SR),
 	a = input_box(a, label="Fix \(a\) = ",type=SR),
 	L = input_box(L, label="Guess \(L\) = ",type=SR),
-	epsilon = slider(.001, 5, .001, default=epsilon, label="Pick \(\varepsilon\) = "),
+	epsilon = slider(.001, 5, .001, default=epsilon, label="Pick \(\epsilon\) = "),
 	delta = slider(.001, 5, .001, default=delta, label="Adjust \(\delta\) = "),
 ):
 
@@ -187,9 +187,9 @@ def _(
 
 	pretty_print(html('The graph of $f(x)=%s$ is shown in blue with $x$ range from $%s$ to $%s$ and $y$ range from $%s$ to $%s$.'%( latex(f), xleft, xright, ybottom, ytop )))
 	pretty_print(html('The purple vertical line is $x = a = %s$ and the purple horizontal line is $y = L = %s$.'%( a, L )))
-	pretty_print(html('The dotted horizontal lines are $y = L \pm \varepsilon$. Based on your choices, these are $y = %s \pm %s$.'%( L,epsilon )))
+	pretty_print(html('The dotted horizontal lines are $y = L \pm \epsilon$. Based on your choices, these are $y = %s \pm %s$.'%( L,epsilon )))
 	pretty_print(html('The dotted vertical lines are $x = a \pm \delta$. Based on your choices, these are $x = %s \pm %s$.'%( a, delta )))
-	pretty_print(html('The shaded red regions are determined by the gray lines. If your guess that $\displaystyle\\lim_{x \\rightarrow %s} f(x) = %s$ is right, then no matter how small you pick $\varepsilon > 0$ (even if you choose a value for $\varepsilon$ that is smaller than $%s$, as long as it\'s positive), you should be able to pick a value for $\delta > 0$ so that the blue graph does not enter the two red regions. Therefore, once you\'re successful getting the blue graph to avoid the red region, pick a value for $\varepsilon$ that is bigger than $0$ but smaller than $%s$ and adjust $\delta$.' % (a, L, epsilon, epsilon)))
+	pretty_print(html('The shaded red regions are determined by the gray lines. If your guess that $\displaystyle\\lim_{x \\rightarrow %s} f(x) = %s$ is right, then no matter how small you pick $\epsilon > 0$ (even if you choose a value for $\epsilon$ that is smaller than $%s$, as long as it\'s positive), you should be able to pick a value for $\delta > 0$ so that the blue graph does not enter the two red regions. Therefore, once you\'re successful getting the blue graph to avoid the red region, pick a value for $\epsilon$ that is bigger than $0$ but smaller than $%s$ and adjust $\delta$.' % (a, L, epsilon, epsilon)))
 	show(fPlot + epsilon_line_1 + epsilon_line_2 + bad_region_1 + bad_region_2 + delta_line_1 + delta_line_2 + horizontal_line + vertical_line)
 </script>
 </div>
@@ -299,7 +299,7 @@ implicit_plot3d(z - 2.5 == 2*sin(x) +1.7*cos(y/3), [x,-20,20], [y,-20,20], [z,-8
 
 
 <h2>Plot a slope field</h2>
-Sage can plot a slope field for \(\frac{dy}{dx} = \sin(x+y) + \cos(x+y)\).
+Sage can plot a <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html">slope field</a> for \(\frac{dy}{dx} = \sin(x+y) + \cos(x+y)\).
 <div class="sage">
 <script type="text/x-sage">
 x,y = var('x y')
@@ -308,7 +308,7 @@ plot_slope_field(sin(x+y) + cos(x+y), (x,-3,3), (y,-3,3))
 </div>
 
 <h2>Plot a vector field</h2>
-Sage can plot the vector field \({\bf F}(x,y) = \langle y, (\sin x)(\cos x - 2) \rangle \).
+Sage can plot the <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html">vector field</a> \({\bf F}(x,y) = \langle y, (\sin x)(\cos x - 2) \rangle \).
 <div class="sage">
 <script type="text/x-sage">
 x,y = var('x y')
