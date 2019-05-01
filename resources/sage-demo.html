@@ -223,7 +223,8 @@ Sage can solve a system of linear equations such as \(y+3x=-2\) and \(x-2y = 5\)
 Of course, Sage can also solve the same system by producing the rref of the appropriate augmented matrix.
 <div class="sage">
 <script type="text/x-sage">
-solve([y + 3*x == -2, x - 2*y == 5], x,y)
+var('y') # declare y to be a variable
+print solve([y + 3*x == -2, x - 2*y == 5], x,y)
 
 A = matrix([[3,1,-2],[1,-2,5]])
 print A.rref()
