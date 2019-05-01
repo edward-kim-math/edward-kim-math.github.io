@@ -162,7 +162,7 @@ print (5*x + (x*y)^4 - cos(x+y+x*y+x^5*y^9) + 7^y).diff(y)
 </script>
 </div>
 
-<h2>Three-dimensional graphing</h2>
+<h2>Graphing a two-dimensional surface in three-dimensional space</h2>
 Sage can do <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/implicit_plot3d.html">three-dimensional implicit plots</a> and <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/plot3d.html">graphs of functions which require three dimensions</a>.
 The sage cell below shows a plot of \( z - 2.5 = 2 \sin(x) + 1.7 \cos(\frac{y}{3})\) for \(-20 \leq x \leq 20\) and \(-20 \leq y \leq 20\) and \(-8 \leq z \leq 8\)
 <div class="sage">
@@ -215,6 +215,22 @@ print latex(A)
 print 2*A + 3*C + 4000*matrix.identity(3)
 </script>
 </div>
+
+
+
+<h2>Solving a system of linear equations</h2>
+Sage can solve a system of linear equations such as \(y+3x=-2\) and \(x-2y = 5\).
+Of course, Sage can also solve the same system by producing the rref of the appropriate augmented matrix.
+<div class="sage">
+<script type="text/x-sage">
+solve([y + 3*x == -2, x - 2*y == 5], x,y)
+
+A = matrix([[3,1,-2],[1,-2,5]])
+print A.rref()
+</script>
+</div>
+
+
 
 <h2>Linear algebra: construct matrix for Gaussian elimination practice</h2>
 This example constructs a \(3 \times 4\) matrix of rank \(2\) whose reduced row-echelon form has only integer values, followed by a LaTeX version.
