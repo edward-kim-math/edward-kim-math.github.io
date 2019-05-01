@@ -9,10 +9,6 @@ title: Sage demo
 
 <!-- 
 
-Vector fields: http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html
-
-Jacobian
-
 SVD: yes http://www.cfm.brown.edu/people/dobrush/am34//sage/svd.html
 
 Markov: yes http://www.cfm.brown.edu/people/dobrush/am34//sage/markov.html
@@ -284,6 +280,19 @@ print "The Hessian is"
 print f.hessian()
 </script>
 </div>
+
+
+<h2>Jacobian for change of variables</h2>
+Sage can compute the <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/functions.html">Jacobian</a>
+for the change of variables \(u = x^3 \sin(y)\) and \(v = 4x^y\) with respect to the variables \(x\) and \(y\).
+<div class="sage">
+<script type="text/x-sage">
+x,y = var('x,y')
+jacobian( (x^3*sin(y),4*x^y), (x,y) )
+</script>
+</div>
+
+
 
 <h2>Graphing a two-dimensional surface in three-dimensional space</h2>
 Sage can do <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/implicit_plot3d.html">three-dimensional implicit plots</a> and <a href="http://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/plot3d.html">graphs of functions which require three dimensions</a>.
