@@ -297,6 +297,26 @@ implicit_plot3d(z - 2.5 == 2*sin(x) +1.7*cos(y/3), [x,-20,20], [y,-20,20], [z,-8
 </script>
 </div>
 
+
+<h2>Plot a slope field</h2>
+Sage can plot a slope field for \(\frac{dy}{dx} = \sin(x+y) + \cos(x+y)\).
+<div class="sage">
+<script type="text/x-sage">
+x,y = var('x y')
+plot_slope_field(sin(x+y) + cos(x+y), (x,-3,3), (y,-3,3))
+</script>
+</div>
+
+<h2>Plot a vector field</h2>
+Sage can plot the vector field \({\bf F}(x,y) = \langle y, (\sin x)(\cos x - 2) \rangle \).
+<div class="sage">
+<script type="text/x-sage">
+x,y = var('x y')
+plot_vector_field((y,sin(x)*(cos(x)-2) ), (x,-pi,pi), (y,-pi,pi))
+</script>
+</div>
+
+
 <h2>Vector geometry</h2>
 Given vectors \({\bf u}=3{\bf i} + 4{\bf j} + 5{\bf k}\) and \({\bf v} = {\bf i} -3{\bf k}\), 
 Sage will compute the dot product \({\bf u} \cdot {\bf v}\),
