@@ -190,11 +190,14 @@ print "The vector", 10*u+3*v, "is a linear combination of u and v"
 </script>
 </div>
 
-<h2>Matrix algebra (powers of a matrix)</h2>
-This example specifies a \(3 \times 3\) matrix \(A\) and asks Sage to compute \(A^5\)
+<h2>Matrix algebra/operations: powers of a matrix, transpose, linear combination, identity</h2>
+This example specifies a \(3 \times 3\) matrix \(A\) and asks Sage to compute \(A^5\).
+This example also specifies a \(2 \times 3\) matrix \(B\), defines \(C\) to be \(B^TB\), then asks Sage to compute \(2A+3C+4000I\), where \(I\) is the \(3 \times 3\) identity matrix.
 <div class="sage">
 <script type="text/x-sage">
 A = matrix(QQ, [[1,1,2],[2,3,3],[4,0,-5]])
+B = matrix(QQ, [[5,6,7],[0,9,8]])
+C = B.transpose() * B
 
 # Set up how LaTeX code should look
 latex.matrix_delimiters(left='[', right=']')
@@ -208,7 +211,8 @@ print "Then the fifth power of the matrix is"
 print "" # leave an extra line of space in the output
 print A^5
 print "" # leave an extra line of space in the output
-print latex(A^5)    
+print latex(A)
+print 2*A + 3*C + 4000*matrix.identity(3)
 </script>
 </div>
 
