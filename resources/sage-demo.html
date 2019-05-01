@@ -323,3 +323,42 @@ print A.eigenvalues()
 print A.eigenvectors_right()
 </script>
 </div>
+
+
+<h2>Visualizing a graph</h2>
+Sage can provide a visual representation of the complete graph \(K_5\) on \(5\) vertices. The same visual representation can be exported as TikZ code.
+<div class="sage">
+<script type="text/x-sage">
+K5 = graphs.CompleteGraph(5)
+K5.show()
+print latex(K5)
+</script>
+</div>
+
+
+<h2>Graph properties</h2>
+Sage can construct a random graph \(G\) on \(n=9\) vertices, with each edge inserted independently with probability \(p=.3\).
+Sage can present <a href="http://doc.sagemath.org/html/en/reference/graphs/sage/graphs/graph.html">many computations</a> related to the graph \(G\),
+such as its adjacency matrix, Tutte polynomial, matching polynomial, chromatic polynomial, chromatic number (even finding a proper coloring for you), and a maximum independent set.
+Since the graph \(G\) was constructed randomly, running this script again will produce different results each time.
+<div class="sage">
+<script type="text/x-sage">
+G = graphs.RandomGNP(9,.3)
+G.show()
+print "Here is the adjacency matrix for the graph:"
+print G.adjacency_matrix()
+print "The Tutte polynomial of the graph is", G.tutte_polynomial()
+print "The matching polynomial of the graph is", G.matching_polynomial()
+print "The chromatic polynomial of the graph is", G.chromatic_polynomial()
+print "A proper vertex coloring of the graph is", G.coloring(), "and the minimum number of colors needed is", G.chromatic_number()
+print "A maximum independent set of the graph is", G.independent_set()
+</script>
+</div>
+
+
+
+
+
+
+
+
