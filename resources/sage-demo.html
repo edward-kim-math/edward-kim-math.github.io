@@ -170,7 +170,8 @@ var('y')
 f = x^3 - 2*x*sin(y)
 
 print "The double integral is", f.integral(x,2,4).integral(y,-pi/2,pi/3)
-print "The Hessian is", f.hessian()
+print "The Hessian is"
+print f.hessian()
 </script>
 </div>
 
