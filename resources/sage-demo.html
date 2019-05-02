@@ -15,14 +15,14 @@ The coding style for Sage is based on the well-known language Python, whereas Ma
 <ul>
 	<li>Sage may be freely <a href="http://www.sagemath.org/download.html">downloaded</a> and installed for Windows, Mac, Linux, etc.</li>
 	<li>Sage may be freely run in the cloud at <a href="https://cocalc.com/">CoCalc</a>, formely the SageMathCloud. (For more processing power, paid subscriptions are available.)</li>
-	<li>... and a thing I call "Sage on webpages". That is, live scripts can be embedded into webpages (like all of the examples shown later on this webpage) using the <a href="https://sagecell.sagemath.org/">Sage Cell Server</a>. While I have developed the rest of this webpage as a general showcase of Sage's capabilities, there is a nice <a href="http://linear.ups.edu/html/fcla.html">online linear algebra web-textbook</a> which nicely incorporates "Sage on webpages" within the text.
-	Some additional interactive scripts (system of inequalities, Leontief input-output analysis, portfolio balancing problem) are found <a href="http://gregorybard.com/interacts.html">here</a>.</li>
+	<li>... and a thing I call "Sage on webpages". Live scripts can be embedded into webpages (like all of the examples shown later on this webpage) using the <a href="https://sagecell.sagemath.org/">Sage Cell Server</a>. While I have developed the rest of this webpage as a general showcase of Sage's capabilities, there is a nice <a href="http://linear.ups.edu/html/fcla.html">online linear algebra web-textbook</a> which nicely incorporates "Sage on webpages" within the text.
+	<a href="http://gregorybard.com/interacts.html">Gregory Bard has nice interactive scripts</a> covering system of inequalities, Leontief input-output analysis, the portfolio balancing problem, etc.</li>
 </ul>
 </p>
 
 <p>Here are some demonstrations of things that Sage can do. Any of the scripts can be run "live" on the web by clicking "Evaluate."
 Moreover, you can modify a script and click "Evaluate" again, and your code will run! (In some situations, it would be confusing to the user to see
-	code, so it is also possible to "hide" the code. See an example for <a href="https://edward-kim-math.github.io/resources/linearization.html">linearization</a> or for <a href="https://edward-kim-math.github.io/resources/approximating-area.html">Riemann sums</a>)</p>
+	code, so it is also possible to "hide" the code. See an example for <a href="https://edward-kim-math.github.io/resources/linearization.html">linearization</a> or for <a href="https://edward-kim-math.github.io/resources/approximating-area.html">Riemann sums</a>.)</p>
 
 <h2>Decimal approximation</h2>
 Sage can provide a decimal approximation of a number such as \(\sqrt{5}\). Note that .n() is an an alias for <a href="http://doc.sagemath.org/html/en/reference/misc/sage/misc/functional.html">numerical_approx()</a>.
@@ -214,7 +214,7 @@ print diffquo.limit(h = 0)
 </div>
 
 <h2>Sliders: exploring the precise definition of a limit</h2>
-Here is a script, run completely from the web, which allows a student to use sliders to explore what's really happenining the \(\varepsilon-\delta\) definition of a limit.
+Here is a script, run completely from the web, which allows a student to use sliders to explore what's really happenining the \(\varepsilon\)-\(\delta\) definition of a limit.
 <div class="sage">
 <script type="text/x-sage">
 var('x')
