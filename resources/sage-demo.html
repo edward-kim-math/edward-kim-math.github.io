@@ -309,6 +309,57 @@ implicit_plot3d(z - 2.5 == 2*sin(x) +1.7*cos(y/3), [x,-20,20], [y,-20,20], [z,-8
 </div>
 
 
+<h2>Three-dimensional visualization</h2>
+Sage can plot the sphere \(x^2 + y^2 + z^2 = 4\) for \(-3 \leq x \leq 3\) and \(-3 \leq y \leq 3\) and \(-3 \leq z \leq 3\).
+<div class="sage">
+<script type="text/x-sage">
+var('x') # use x as a variable
+var('y') # use y as a variable
+var('z') # use z as a variable
+implicit_plot3d(x^2+y^2+z^2==4, (x,-3,3), (y,-3,3), (z,-3,3))
+</script>
+</div>
+
+Sage can plot a heart-shaped surface \((x^2+\frac94y^2+z^2-1)^3 - x^2z^3 - \frac{9}{80}y^2z^3 = 0\) in red.
+<div class="sage">
+<script type="text/x-sage">
+var('x') # use x as a variable
+var('y') # use y as a variable
+var('z') # use z as a variable
+F = (x^2+9/4*y^2+z^2-1)^3 - x^2*z^3 - 9/(80)*y^2*z^3
+r = 1.5
+implicit_plot3d(F, (x,-r,r), (y,-r,r), (z,-r,r), plot_points=80, color='red', smooth=False).show()
+</script>
+</div>
+
+Sage can plot the surface defined by \( x^2 + y^2 + z^2 + sin(4x) + sin(4y) + sin(4z) - 1 = 0\) in lavender blush.
+<div class="sage">
+<script type="text/x-sage">
+var('x') # use x as a variable
+var('y') # use y as a variable
+var('z') # use z as a variable
+F = x^2 + y^2 + z^2 + sin(4*x) + sin(4*y) + sin(4*z) - 1
+implicit_plot3d(F, (x,-2,2), (y,-2,2), (z,-2,2), color='lavenderblush')
+</script>
+</div>
+
+Sage can plot a Klein bottle.
+<div class="sage">
+<script type="text/x-sage">
+var('x') # use x as a variable
+var('y') # use y as a variable
+var('z') # use z as a variable
+G = x^2 + y^2 + z^2
+F = (G+2*y-1)*((G-2*y-1)^2-8*z^2) + 16*x*z*(G-2*y-1)
+implicit_plot3d(F, (x,-3,3), (y,-3.1,3.1), (z,-4,4), color='moccasin')
+</script>
+</div>
+
+
+
+
+
+
 <h2>Plot a slope field</h2>
 Sage can plot a <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot_field.html">slope field</a> for \(\frac{dy}{dx} = \sin(x+y) + \cos(x+y)\).
 <div class="sage">
@@ -382,7 +433,29 @@ desolve(x^2*diff(y,x)==a+b*x^n+c*x^2*y^2,y,ivar=x,contrib_ode=True)
 </script>
 </div>
 
-<h2>Solving a system of first-order ordinary differential equations</h2>
+
+
+<h2>Solving a linear system of first-order ordinary differential equations</h2>
+Sage can solve <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html#sage.calculus.desolvers.desolve_system">a system of differential equations</a>
+such as \( x_1' = -99x_1 + 306x_2 \) and \(x_2' =-51x_1 + 156x_2\).
+<div class="sage">
+<script type="text/x-sage">
+t = var('t')
+x1 = function('x1')(t)
+x2 = function('x2')(t)
+# [-99 306]
+#[-51 156]
+de1 = diff(x1,t) == -99*x1 + 306*x2
+de2 = diff(x2,t) == -51*x1 + 156*x2
+desolve_system([de1, de2], [x1, x2])
+</script>
+</div>
+
+
+
+
+
+<h2>Solving an (affine linear) system of first-order ordinary differential equations</h2>
 Sage can solve <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html#sage.calculus.desolvers.desolve_system">a system of differential equations</a>
 such as \( x_1'(t) + x_2(t) - 1 = 0\) and \(x_2'(t) - x_1(t) + 1 = 0\).
 <div class="sage">
