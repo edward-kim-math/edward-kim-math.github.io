@@ -8,7 +8,6 @@ title: Sage demo
 <script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
 
 <!-- 
-Markov: yes http://www.cfm.brown.edu/people/dobrush/am34//sage/markov.html
 Leontief: yes http://www.gregorybard.com/
 -->
 
@@ -776,6 +775,60 @@ print "U is the matrix"
 print U
 </script>
 </div>
+
+
+<h2>Discrete Markov Chains</h2>
+Sage can find the steady state distribution for a <a href="https://vknight.org/OR_Methods/Markov_Chains/Markov_Chains_Sage_Sheet_Solutions.pdf">discrete Markov chain</a>.
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[.8,.2,0],[.1,.7,.2],[.1,.3,.6]])
+
+var("pi1,pi2,pi3")
+
+solve([A[0,0]*pi1+A[1,0]*pi2+A[2,0]*pi3==pi1,
+A[0,1]*pi1+A[1,1]*pi2+A[2,1]*pi3==pi2,
+A[0,2]*pi1+A[1,2]*pi2+A[2,2]*pi3==pi3,
+pi1+pi2+pi3==1],[pi1,pi2,pi3])
+</script>
+</div>
+
+
+
+<h2>Continuous Markov Chains</h2>
+Sage can find the steady state probabilities for a <a href="https://vknight.org/OR_Methods/Markov_Chains/Markov_Chains_Sage_Sheet_Solutions.pdf">continuous Markov chain</a>.
+<div class="sage">
+<script type="text/x-sage">
+Q=matrix([[-3,3,0,0],[4,-7,3,0],[0,4,-7,3],[0,0,4,-4]])
+
+var("pi1,pi2,pi3,pi4")
+
+solve([Q[0,0]*pi1+Q[1,0]*pi2+Q[2,0]*pi3+Q[3,0]*pi4==0,
+Q[0,1]*pi1+Q[1,1]*pi2+Q[2,1]*pi3+Q[3,1]*pi4==0,
+Q[0,2]*pi1+Q[1,2]*pi2+Q[2,2]*pi3+Q[3,2]*pi4==0,
+Q[0,3]*pi1+Q[1,3]*pi2+Q[2,3]*pi3+Q[3,3]*pi4==0,
+pi1+pi2+pi3+pi4==1],[pi1,pi2,pi3,pi4])
+</script>
+</div>
+
+
+
+<h2>Markov Chain visualization</h2>
+Sage can visualize the states of <a href="https://gist.github.com/drvinceknight/7b479fd1cd0868e4590c">Markov chains</a>.
+<div class="sage">
+<script type="text/x-sage">
+@interact
+def _(A=matrix(RDF,3,3,[8,2,0,1,7,2,1,3,6])/10,x_init=("$\pi^{(0)}$",vector([.2,.5,.3]))):
+    x_init = vector(x_init)
+    data = [x_init * (A^i) for i in range(20)]
+    pi = zip(*data)
+    p = line(enumerate(pi[0]),color='red',legend_label='$\pi_1$',thickness=3)
+    p += line(enumerate(pi[1]),color='blue',legend_label='$\pi_2$',thickness=3)
+    p += line(enumerate(pi[2]),color='green',legend_label='$\pi_3$',thickness=3)
+    p.ymax(1)
+    show(p)
+</script>
+</div>
+
 
 
 
