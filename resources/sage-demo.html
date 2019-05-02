@@ -11,7 +11,6 @@ title: Sage demo
 Markov: yes http://www.cfm.brown.edu/people/dobrush/am34//sage/markov.html
 Leontief: yes http://www.gregorybard.com/
 combinatorial search?
-INTERACT: direct input mixed with sliders
 -->
 
 <p><a href="http://www.sagemath.org/">Sage</a> is a free and open source computer algebra system (CAS). It is a viable alternative to Maple, Mathematica, and Magma. It may be a wokrable alternative to Matlab, but <a href="https://www.gnu.org/software/octave/">Octave</a> might be a better alternative.
@@ -27,7 +26,7 @@ Sage is probably not the tool for every mathematical computation: for quick two-
 
 <p>Here are some demonstrations of things that Sage can do. Any of the scripts can be run "live" on the web by clicking "Evaluate."
 Moreover, you can modify a script and click "Evaluate" again, and your code will run! (In some situations, it would be confusing to the user to see
-	code, so it is also possible to "hide" the code. For example, see an example for <a href="https://edward-kim-math.github.io/resources/linearization.html">linearization</a> or for <a href="https://edward-kim-math.github.io/resources/approximating-area.html">Riemann sums</a>)</p>
+	code, so it is also possible to "hide" the code. See an example for <a href="https://edward-kim-math.github.io/resources/linearization.html">linearization</a> or for <a href="https://edward-kim-math.github.io/resources/approximating-area.html">Riemann sums</a>)</p>
 
 <h2>Decimal approximation</h2>
 Sage can provide a decimal approximation of a number such as \(\sqrt{5}\). Note that .n() is an an alias for <a href="http://doc.sagemath.org/html/en/reference/misc/sage/misc/functional.html">numerical_approx()</a>.
@@ -106,6 +105,26 @@ def _(
 ):
     f = (x-h)^2 + k
     show(plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30))
+</script>
+</div>
+
+
+<h2>Sliders and text input boxes: Exploring graph transformations</h2>
+Sage can take a function defined by the user, by default \(f(x) = x^2 + \frac12\sin(18x)\), and apply a vertical shift by \(a\) units. Both the definition of \(f\) and the value of \(a\) may be modified.
+For instance, with no coding whatsoever, the user may choose to use the function \(f(x) = \cos(x)\) simply by typing in the input box within the green box.
+<div class="sage">
+<script type="text/x-sage">
+var('x')
+f = x^2 + 1/2*sin(18*x)
+
+@interact
+def _(
+	f = input_box(f, label="\(f(x)\) = ",type=SR),
+	a = slider(-5, 5, 1, default=0, label="Pick \(a\) = "),
+):
+	# Plot function
+	fPlot = plot(f+a,(x,-10,10), ymin=-10, ymax=10, thickness=2,aspect_ratio='automatic')
+	show(fPlot)
 </script>
 </div>
 
