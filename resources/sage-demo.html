@@ -355,6 +355,38 @@ desolve(diff(x,t) + x - 1, x)
 </script>
 </div>
 
+<h2>Solving separable differential equations</h2>
+Sage can solve separable <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html">differential equations</a>
+such as \( \frac{dy}{dx}\syn(y) = \cos(x)\).
+<div class="sage">
+<script type="text/x-sage">
+desolve(diff(y,x)*sin(y) == cos(x),y)
+</script>
+</div>
+
+<h2>Solving second-order differential equations</h2>
+Sage can solve second order <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html">differential equations</a>
+such as \(y'' - y = x\).
+<div class="sage">
+<script type="text/x-sage">
+x = var('x')
+y = function('y')(x)
+de = diff(y,x,2) - y == x
+desolve(de, y)
+</script>
+</div>
+
+<h2>Solving differential equations with multiple variables</h2>
+Sage can solve <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html">differential equations</a>
+involving more variables. For example, let's solve \(x^2 \frac{dy}{dx} = a + b x^n + cx^2y^2\) for \(y\) with independent variable \(x\).
+<div class="sage">
+<script type="text/x-sage">
+a,b,c,n = var('a b c n')
+desolve(x^2*diff(y,x)==a+b*x^n+c*x^2*y^2,y,ivar=x,contrib_ode=True)
+</script>
+</div>
+
+
 
 <h2>Vector geometry</h2>
 Given vectors \({\bf u}=3{\bf i} + 4{\bf j} + 5{\bf k}\) and \({\bf v} = {\bf i} -3{\bf k}\), 
