@@ -336,6 +336,26 @@ plot_vector_field((y,sin(x)*(cos(x)-2) ), (x,-pi,pi), (y,-pi,pi))
 </div>
 
 
+<h2>Solving differential equations</h2>
+Sage can solve the <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html">differential equation</a> \(y'(x) + y(x) - 1 = 0\).
+<div class="sage">
+<script type="text/x-sage">
+x = var('x') # say x is a variable
+y = function('y')(x) # say y is a function of x
+desolve(diff(y,x) + y - 1, y)
+</script>
+</div>
+
+The same <a href="http://doc.sagemath.org/html/en/tutorial/tour_algebra.html#solving-differential-equations">differential equation</a> is written with different variables as \(x'(t)+x(t)-1=0\), and Sage can handle different roles for variables.
+<div class="sage">
+<script type="text/x-sage">
+t = var('t') # say t is a variable
+x = function('x')(t) # say x is a function of t
+desolve(diff(x,t) + x - 1, x)
+</script>
+</div>
+
+
 <h2>Vector geometry</h2>
 Given vectors \({\bf u}=3{\bf i} + 4{\bf j} + 5{\bf k}\) and \({\bf v} = {\bf i} -3{\bf k}\), 
 Sage will compute the dot product \({\bf u} \cdot {\bf v}\),
@@ -513,8 +533,14 @@ Sage can compute <a href="http://www.cfm.brown.edu/people/dobrush/am34//sage/svd
 <div class="sage">
 <script type="text/x-sage">
 A=matrix(RDF,[[4,2,5],[0,16,0],[0,14,9]]) # RDF stands for "real double field"
-print A.eigenvalues()
-print A.SVD()
+print "The eigenvalues of A are", A.eigenvalues()
+U, Sigma, V = A.SVD()
+print "U is the matrix"
+print U
+print "Sigma is the matrix"
+print Sigma
+print "V is the matrix"
+print V
 </script>
 </div>
 
@@ -529,8 +555,11 @@ A = matrix(QQ, [[1, -1,  0,  2,  4,  7, -1],
                 [1,  0, -1,  8, -1, -1, -3],
                 [1,  1,  2, -2, -1,  1,  3]])
 P, L, U = A.LU(pivot='nonzero')
+print "P is the matrix"
 print P
+print "L is the matrix"
 print L
+print "U is the matrix"
 print U
 </script>
 </div>
