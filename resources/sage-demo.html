@@ -8,19 +8,11 @@ title: Sage demo
 <script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
 
 <!-- 
-
 Markov: yes http://www.cfm.brown.edu/people/dobrush/am34//sage/markov.html
-
 Leontief: yes http://www.gregorybard.com/
-
-DEs: yes http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html
-
 combinatorial search?
-
 3D plots: https://doc.sagemath.org/html/en/reference/plot3d/sage/plot/plot3d/implicit_plot3d.html
-
 INTERACT: direct input mixed with sliders
-
 -->
 
 <p><a href="http://www.sagemath.org/">Sage</a> is a free and open source computer algebra system (CAS). It is a viable alternative to Maple, Mathematica, and Magma. It may be a wokrable alternative to Matlab, but <a href="https://www.gnu.org/software/octave/">Octave</a> might be a better alternative.
@@ -357,9 +349,11 @@ desolve(diff(x,t) + x - 1, x)
 
 <h2>Solving separable differential equations</h2>
 Sage can solve separable <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html">differential equations</a>
-such as \( \frac{dy}{dx}\syn(y) = \cos(x)\).
+such as \( \frac{dy}{dx}\sin(y) = \cos(x)\).
 <div class="sage">
 <script type="text/x-sage">
+x = var('x') # say x is a variable
+y = function('y')(x) # say y is a function of x
 desolve(diff(y,x)*sin(y) == cos(x),y)
 </script>
 </div>
@@ -381,11 +375,26 @@ Sage can solve <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/
 involving more variables. For example, let's solve \(x^2 \frac{dy}{dx} = a + b x^n + cx^2y^2\) for \(y\) with independent variable \(x\).
 <div class="sage">
 <script type="text/x-sage">
-a,b,c,n = var('a b c n')
+x = var('x') # say x is a variable
+y = function('y')(x) # say y is a function of x
+a,b,c,n = var('a b c n') # declare some more variables
 desolve(x^2*diff(y,x)==a+b*x^n+c*x^2*y^2,y,ivar=x,contrib_ode=True)
 </script>
 </div>
 
+<h2>Solving a system of first-order ordinary differential equations</h2>
+Sage can solve <a href="http://doc.sagemath.org/html/en/reference/calculus/sage/calculus/desolvers.html#sage.calculus.desolvers.desolve_system">a system of differential equations</a>
+such as \( x_1'(t) + x_2(t) - 1 = 0\) and \(x_2'(t) - x_1(t) + 1 = 0\).
+<div class="sage">
+<script type="text/x-sage">
+t = var('t')
+x1 = function('x1')(t)
+x2 = function('x2')(t)
+de1 = diff(x1,t) + x2 - 1 == 0
+de2 = diff(x2,t) - x1 + 1 == 0
+desolve_system([de1, de2], [x1, x2])
+</script>
+</div>
 
 
 <h2>Vector geometry</h2>
