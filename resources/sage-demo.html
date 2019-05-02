@@ -9,8 +9,6 @@ title: Sage demo
 
 <!-- 
 
-SVD: yes http://www.cfm.brown.edu/people/dobrush/am34//sage/svd.html
-
 Markov: yes http://www.cfm.brown.edu/people/dobrush/am34//sage/markov.html
 
 Leontief: yes http://www.gregorybard.com/
@@ -508,6 +506,35 @@ print A.eigenvalues()
 print A.eigenvectors_right()
 </script>
 </div>
+
+
+<h2>Singular Value Decomposition</h2>
+Sage can compute <a href="http://www.cfm.brown.edu/people/dobrush/am34//sage/svd.html">SVD</a> for a matrix.
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(RDF,[[4,2,5],[0,16,0],[0,14,9]]) # RDF stands for "real double field"
+print A.eigenvalues()
+print A.SVD()
+</script>
+</div>
+
+
+<h2>LU Decomposition</h2>
+Sage can compute <a href="http://doc.sagemath.org/html/en/reference/matrices/sage/matrix/matrix2.html">LU</a> for a matrix.
+<div class="sage">
+<script type="text/x-sage">
+A = matrix(QQ, [[1, -1,  0,  2,  4,  7, -1],
+                [2, -1,  0,  6,  4,  8, -2],
+                [2,  0,  1,  4,  2,  6,  0],
+                [1,  0, -1,  8, -1, -1, -3],
+                [1,  1,  2, -2, -1,  1,  3]])
+P, L, U = A.LU(pivot='nonzero')
+print P
+print L
+print U
+</script>
+</div>
+
 
 
 <h2>Visualizing a graph</h2>
