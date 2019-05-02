@@ -470,8 +470,6 @@ such as \( x_1' = -99x_1 + 306x_2 \) and \(x_2' =-51x_1 + 156x_2\).
 t = var('t')
 x1 = function('x1')(t)
 x2 = function('x2')(t)
-# [-99 306]
-#[-51 156]
 de1 = diff(x1,t) == -99*x1 + 306*x2
 de2 = diff(x2,t) == -51*x1 + 156*x2
 desolve_system([de1, de2], [x1, x2])
