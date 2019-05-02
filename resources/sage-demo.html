@@ -294,6 +294,16 @@ jacobian( (x^3*sin(y),4*x^y), (x,y) )
 </script>
 </div>
 
+<h2>Contour plot</h2>
+Sage can visualize a <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/contour_plot.html">contour plot</a> for \(f(x,y) = y^2 + 1 - x^3 - x\).
+<div class="sage">
+<script type="text/x-sage">
+var('y')
+P = contour_plot(y^2 + 1 - x^3 - x, (x,-pi,pi), (y,-pi,pi), fill=False, cmap='hsv', labels=True, label_inline=False)
+P.show()
+</script>
+</div>
+
 
 
 <h2>Graphing a two-dimensional surface in three-dimensional space</h2>
@@ -309,7 +319,7 @@ implicit_plot3d(z - 2.5 == 2*sin(x) +1.7*cos(y/3), [x,-20,20], [y,-20,20], [z,-8
 </div>
 
 
-<h2>Three-dimensional visualization</h2>
+<h2>Three-dimensional visualization: sphere</h2>
 Sage can plot the sphere \(x^2 + y^2 + z^2 = 4\) for \(-3 \leq x \leq 3\) and \(-3 \leq y \leq 3\) and \(-3 \leq z \leq 3\).
 <div class="sage">
 <script type="text/x-sage">
@@ -320,6 +330,7 @@ implicit_plot3d(x^2+y^2+z^2==4, (x,-3,3), (y,-3,3), (z,-3,3))
 </script>
 </div>
 
+<h2>Three-dimensional visualization: heart-shaped surface</h2>
 Sage can plot a heart-shaped surface \((x^2+\frac94y^2+z^2-1)^3 - x^2z^3 - \frac{9}{80}y^2z^3 = 0\) in red.
 <div class="sage">
 <script type="text/x-sage">
@@ -332,6 +343,7 @@ implicit_plot3d(F, (x,-r,r), (y,-r,r), (z,-r,r), plot_points=80, color='red', sm
 </script>
 </div>
 
+<h2>Three-dimensional visualization: blob shape</h2>
 Sage can plot the surface defined by \( x^2 + y^2 + z^2 + sin(4x) + sin(4y) + sin(4z) - 1 = 0\) in lavender blush.
 <div class="sage">
 <script type="text/x-sage">
@@ -343,6 +355,7 @@ implicit_plot3d(F, (x,-2,2), (y,-2,2), (z,-2,2), color='lavenderblush')
 </script>
 </div>
 
+<h2>Three-dimensional visualization: Klein bottle</h2>
 Sage can plot a Klein bottle.
 <div class="sage">
 <script type="text/x-sage">
@@ -355,7 +368,7 @@ implicit_plot3d(F, (x,-3,3), (y,-3.1,3.1), (z,-4,4), color='moccasin')
 </script>
 </div>
 
-
+<h2>Three-dimensional visualization with color gradients</h2>
 Sage can plot a surface using another function (a coloring function) to provide pretty gradients.
 In this example, we see all points \((x,y,z)\) satisfying the property that \(x^2+y^2+z^2\) is equal to \(4\),
 with the color determined by the expression \((\sin 3z)^2\).
