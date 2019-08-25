@@ -1,0 +1,408 @@
+---
+layout: plain
+title: MTH 225 (Fall 2017) Syllabus
+---
+
+<div class="well">
+
+	<!-- https://github.com/davidshimjs/qrcodejs -->
+	<script type="text/javascript" src="/qrcode.js"></script>
+
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+	var qrcode = new QRCode(document.getElementById("qrcode"), {
+	text: window.location.href,
+	width: 128,
+	height: 128,
+	colorDark : "#000000",
+	colorLight : "#ffffff",
+	correctLevel : QRCode.CorrectLevel.H
+	});
+	</script>
+	<!-- 
+	<div id="qrcode"></div>
+	<script type="text/javascript">
+	new QRCode(document.getElementById("qrcode"), window.location.href);
+	</script> -->
+
+	<h2>MTH 225 (Fall 2017) Syllabus</h2>
+	Foundations of Advanced Mathematics (4 credits)<br>
+	University of Wisconsin-La Crosse
+	<table border="1" cellpadding="4" cellspacing="0">
+		<tr><td>Section</td><td>Class number</td><td>Days / Times / Location</td></tr>
+		<tr><td>225-01</td><td>2224</td><td> MoTuWeTh 1:10p-2:05p, Centennial 3311</td></tr>
+	</table>
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/welcome-team.jpg'"><br>
+
+	<h3>Instructor Information</h3>
+	Instructor: Dr. Edward D. Kim<br />
+	Office: 1018 Cowley Hall<br />
+	Phone: 608-785-6613<br />
+	Email:  <span class="emailspan"><img src="/shh/a42659826.gif" alt="-" class="email" /><img src="/shh/a71093256.gif" alt="-" class="email" /><img src="/shh/a1208752339807.gif" alt="-" class="email" /><img src="/shh/a1092352398.gif" alt="-" class="email" />@uwlax.edu</span><br />
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/call-me.jpg'"><br>
+
+	<h3>Office Hours</h3>
+	{% include syllabus-office-hours-2017-fall.html %}
+	<!--	
+	Physical Office hours: <days and times, locations if not your office>
+	Virtual Office hours: <days and times, how to contact you (e.g., D2L, email, etc.; required for online-only courses, 
+	optional for in-person and hybrid courses)
+	-->
+
+	<h3>Course Description</h3>
+
+	<h4>Catalog Description</h4>
+	An introduction to mathematical reasoning. Mathematical logic, including quantification and the predicate calculus is introduced and used to discuss set theory, relations, functions, counting, graphs, and algorithms. Elementary proofs, including proofs by induction are stressed. Prerequisite: grade of "C" or better in MTH 175 or MTH 207. Course not open to those who have credit in CS 225. Offered Fall, Spring.
+	
+	<!-- 
+	<h4>Overview</h4>
+	Enter a course overview if different from course catalog description
+ 	 -->
+	<h4>Overview</h4>
+	This course inherits students who have done computational mathematics courses (such as algebra, trigonometry, pre-calculus, and calculus) and trains students to be able to take a course in modern mathematics that uses proof as the only method of discourse. Similar courses at other universities are called "bridge" courses or a "transition to advanced mathematics" because the course activities and assessments prepare students who are unfamiliar with proof to be able to understand the proof-based standard in which mathematicians operate.
+
+	<h4>Prerequisites</h4>
+	<!-- [enter prerequisites here or state none]-->
+	Grade of "C" or better in MTH 175 or MTH 207.
+
+	<h4>Course Learning Outcomes</h4>
+	<!-- 225 objectives From CIM -->
+	By the end of this course, you will be able to:
+	<ul>
+		<li>Understand the language and symbolism used in logic and proofs.</li>
+		<li>Apply various proof techniques including direct, indirect, contradiction, induction and cases.</li>
+		<li>Construct proofs of logical and including set theory, relations, functions, combinatorics and number theory.</li>
+		<li>Recognize and apply the appropriate proof strategy in a variety of mathematical areas.</li>
+	</ul>
+<!-- 
+Course Learning Outcomes	Major/Minor Outcomes	General Education or external standards Outcomes (delete column if appropriate)
+By the end of this course, you will be able to:	By the end of this course, you will be able to:	By the end of this course, you will be able to:
+Objective/Outcome 1	Objective/Outcome 1	Objective/Outcome 1
+Objective/Outcome 2	Objective/Outcome 2	Objective/Outcome 2
+Objective/Outcome 3	Objective/Outcome 3	Objective/Outcome 3 -->
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/find-x.jpg'"><br>
+
+	<h4>Materials and Tools</h4>
+	Textbook:  Kenneth H. Rosen. <i>Discrete Mathematics and its Applications</i>. 5th Edition. McGraw-Hill.
+	
+	<!-- Note whether available from Textbook Rental or need to be purchased. -->
+	This textbook will be available from Textbook Rental.
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/book.jpg'"><br>
+
+	<h4>Format</h4>
+	This is a face-to-face course. You may be asked to reference materials or participate online through the learning 
+	management system, Desire2Learn (D2L). If that is the case, you will need your UWL NetID to login to the course from 
+	the <a href="http://www.uwlax.edu/d2l/">D2L homepage</a>.
+
+	<h2>Grading Policies</h2>
+
+	Your overall course grade is determined by the following components, with the weights given:
+	
+<ul>
+
+	<li>Homework: 20% of your grade. 
+		To succeed in this class, you should regularly complete assignments immediately after the topic has been 
+		covered in class. Do not always complete assignments at the last minute. Homework is due on Fridays, with 
+		one exception: HW00 is a LaTeX training assignment, and is due on Monday, Sep 11 due to the timing of the 
+		beginning of the semester. All homework assignments from HW01 through HW13 cover material from the previous 
+		week. For instance, HW03 is due on Friday, Sep 29. The last material on HW03 is from Thursday, Sep 21.<br><br>
+
+		Note that Quiz 03 and HW03 have the same material cutoff of Sep 21. HW03 is due on Sep 29 
+		(as opposed to on Sep 28 or 27) only so that you have some time to finish minor detials. 
+		Sep 27 would NOT be a good day to start HW03. Similarly, Exam 1 and HW04 both have the same cutoff 
+		of Sep 28, even though HW04 is due after Exam 1 occurs.</li>
+
+	<li>Blurb: 5% of your grade.
+		Blurbs are due every Tuesday, covering a crucial concept, typically from the previous week. 
+		A typical blurb will be about a half page, typed in LaTeX. The PDF file made from LaTeX should 
+		be uploaded to GradeScope.</li>
+	
+	<li>Quizzes: 15% of your grade. There are 9 in-class quizzes which will take place in the last 10 minutes of 
+		class on Thursdays which do not have an exam, as shown in the calendar (next page). A Thursday quiz 
+		will cover up to last Thursday's material. (For example, Quiz 03 has a material cutoff of Sep 21.  
+		If you complete HW in a timely manner without waiting until the last minute to start, then you will 
+		be on pace for the quizzes.)<br><br>
+
+		The lowest 2 quizzes will be dropped. There are no make-up quizzes, except in extreme 
+		circumstances determined by the instructor. The questions from the quizzes are based on the homework.</li>
+	
+	<li>In-class exams: 40% of your grade.
+		Other than the final, there are three in-class exams of 55 minutes, each of equal weight:
+
+		<ul>
+			<li>Exam 1 (on Thr Oct 5) covers material from Sep 5 through the end of class on Sep 28.</li>
+			<li>Exam 2 (on Thr Oct 26) covers material from Sep 5 through the end of class on Oct 19, with emphasis on material after Sep 28.</li>
+			<li>Exam 3 (on Thr Nov 16) covers material from Sep 5 through the end of class on Nov 9, with emphasis on material after Oct 19.</li>
+		</ul>
+			
+		While exams generally emphasize later material, mathematics is inherently cumulative so the {\bf exams are cumulative too}.
+		Exams must be taken on the scheduled day unless prior arrangements have been made for extreme circumstances.</li>
+
+	<li>Final Exam: 20% of your grade.
+		The final exam is comprehensive (covers all sections which we covered).
+		In accordance with the 
+		<a href="https://www.uwlax.edu/records/faculty-staff-resources/final-exam-schedule/#tab-fall-2017">final exam schedule</a>,
+		the final exam is on Monday, December 18, 2017. 
+		The exam starts at 7:45am and is two hours long. 
+		In accordance with the growth mindset policy of this class, 
+		if your percentage on the final is higher than your percentage on an in-class exam, 
+		the score for one of your in-class exams will be replaced with the final exam percentage.
+
+	</ul>
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/turn-in-all-the-things.jpg'"><br>
+
+
+	<h3>Expectations for homework in upper-level classes</h3>
+	All homework assignments are due on Fridays.
+	You will need to submit two files to two separate locations.
+	All homework must be completed using \(\LaTeX\), with no exceptions.
+	The <tt>.tex</tt> file you submit must compile without errors.
+	(Warnings from TeX are okay, but errors are not.)
+	The <tt>.tex</tt> file should be submitted in the D2L Dropbox.
+	The PDF file should be submitted to GradeScope.
+	The PDF submitted to grade scope should have each numbered homework question on its own page:
+	when submitting the PDF, identify which page corresponds to which question.
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/do-homework.jpg'"><br>
+
+	<h3>Expectations for blurbs in upper-level classes</h3>
+	All blurbs must be completed using \(\LaTeX\), with no exceptions.
+	The <tt>.tex</tt> file you create must compile without errors.
+	(Warnings from TeX are okay, but errors are not.)
+	Unlike for the homework assignments, you will only turn in the PDF for blurbs, not the LaTeX file.
+	The PDF file should be submitted to GradeScope.
+
+	<h3>Late Assignments, Missed Exams</h3>
+	Assignments are due on the dates indicated in the Course Schedule. For extenuating circumstances that impact your ability 
+	to meet deadlines or participate in class activities, you are responsible for alerting me as soon as possible.
+
+	<!-- [explain how students should notify you if they are, e.g., ill on an exam day, and, as required by the Faculty Senate 
+	Syllabus Policy, your policy on missed course work, including exams or other graded in-class work] -->
+
+	If a situation should arise (e.g., ill on an exam day), please notify me by e-mail as soon as possible:
+	a determination of alternate arrangements will be made on a case-by-case basis, but the instructor has the final determination
+	for what absences are eligible, which is why it is important to alert the instructor as soon as you know of an absence
+	which would affect an assignment deadline or test date.
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/late-work.jpg'"><br>
+
+
+	<h3>Attendance and Participation</h3>
+	There are no points in the course grading policies assigned to attendance or participation. Though attendance and 
+	participation do not have a direct effect on your grade, attendance and participation are required for success with 
+	homeworks, quizzes, and exams. I strongly recommend that you attend and participate every class session! If you have 
+	any extenuating circumstance that may prevent full attendance or participation, please let me know as soon as possible.
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/attendance.jpg'"><br>
+
+	<h3>Expectations for Graded Work</h3>
+	<div>I provide students feedback and/or scores on assignments that require individualized grading.  Generally, I return 
+		work that requires individual feedback within 21 days from the date the work was due. I will notify you if I am 
+		unable to grade the work within the 21-day timeframe, and will identify a revised return date. If you submit work 
+		after the due date, it may not be accepted for credit, and it may not be returned within 21 days.</div>
+ 
+	<div>The grades for any work that is graded electronically, such as scanned examinations, will be accessible to you within 
+		14 days of the due date for the work. If you submit electronically graded work after the due date, it will not be 
+		accepted for credit except under extreme circumstances determined by the instructor.</div>
+ 
+	<div>Your graded coursework will be returned in compliance with FERPA regulations, such as in class, during my office hours, 
+		via the course management system through which only you will have access to your grades, or using Gradescope.
+		Assignments will be returned as soon as possible but due to the nature of mathematics assignments (especially where 
+		a consecutive assignment can be started prior to the previous assignment being due), it is not possible to return 
+		work prior to a similar assignment being due, but you should generally have returned work with feedback within the 
+		subsequent assignment being due.</div>
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/feedback.jpg'"><br>
+
+
+	<h3>Grading Scale</h3>
+
+	To be guaranteed a given grade, a student needs to obtain at least the following overall percentage:
+
+	<table border="1" cellpadding="4" cellspacing="0">
+		<tr><td>Letter Grade</td><td>Minimum Percentage</td></tr>
+		<tr><td>A</td><td>91%</td></tr>
+		<tr><td>AB</td><td>88%</td></tr>
+		<tr><td>B</td><td>82%</td></tr>
+		<tr><td>BC</td><td>78%</td></tr>
+		<tr><td>C</td><td>70%</td></tr>
+		<tr><td>D</td><td>60%</td></tr>
+	</table>
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/youre-going-to-rock.jpg'"><br>
+
+	<h2>Course Outline and Schedule</h2>
+	Please note that the timing of activities and topics listed below may change.
+	I will give you timely notice of any major changes in the syllabus through email, on D2L, in class, or some combination 
+	of methods.
+
+<table>
+		<tr>
+			<td><b>Monday</b></td>
+			<td><b>Tuesday</b></td>
+			<td><b>Wednesday</b></td>
+			<td><b>Thursday</b></td>
+			<td><b>Friday</b></td>
+		</tr>
+		
+		<tr><!-- Week 1 -->
+			<td><abbr title="No class">Sep 4</abbr><br>No class</td>
+			<td><abbr title="Session 1">Sep 5</abbr><br>Introductions</td>
+			<td><abbr title="Session 2">Sep 6</abbr><br>1.1: logic</td>
+			<td><abbr title="Session 3">Sep 7</abbr><br>1.1: logic</td>
+			<td><abbr title="Friday">Sep 8</abbr><br></td>
+		</tr>
+	
+		<tr><!-- Week 2 -->
+			<td><abbr title="Session 4">Sep 11</abbr><br>1.1: logic<br>HW00 due</td>
+			<td><abbr title="Session 5">Sep 12</abbr><br>1.2: propositional equivalence<br>Blurb 01</td>
+			<td><abbr title="Session 6">Sep 13</abbr><br>1.2: propositional equivalence<br></td>
+			<td><abbr title="Session 7">Sep 14</abbr><br>1.3: predicates and quantifiers<br>Quiz 01</td>
+			<td><abbr title="Friday">Sep 15</abbr><br>HW01 due</td>
+		</tr>
+	
+		<tr><!-- Week 3 -->
+			<td><abbr title="Session 8">Sep 18</abbr><br>1.3: predicates and quantifiers<br></td>
+			<td><abbr title="Session 9">Sep 19</abbr><br>1.3: predicates and quantifiers<br>Blurb 02</td>
+			<td><abbr title="Session 10">Sep 20</abbr><br>1.4: nested quantifiers<br></td>
+			<td><abbr title="Session 11">Sep 21</abbr><br>1.4: nested quantifiers<br>Quiz 02</td>
+			<td><abbr title="Friday">Sep 22</abbr><br>HW02 due</td>
+		</tr>
+	
+		<tr><!-- Week 4 -->
+			<td><abbr title="Session 12">Sep 25</abbr><br>1.5/2.4: methods of proof<br></td>
+			<td><abbr title="Session 13">Sep 26</abbr><br>1.5/2.4: methods of proof<br>Blurb 03</td>
+			<td><abbr title="Session 14">Sep 27</abbr><br>1.5/2.4: methods of proof<br></td>
+			<td><abbr title="Session 15">Sep 28</abbr><br>1.5/2.4: methods of proof<br>Quiz 03</td>
+			<td><abbr title="Friday">Sep 29</abbr><br>HW03 due</td>
+		</tr>
+	
+		<tr><!-- Week 5 -->
+			<td><abbr title="Session 16">Oct 2</abbr><br>1.5/2.4: methods of proof<br></td>
+			<td><abbr title="Session 17">Oct 3</abbr><br>1.5/2.4: methods of proof<br>Blurb 04</td>
+			<td><abbr title="Session 18">Oct 4</abbr><br>1.5/2.4: methods of proof<br></td>
+			<td><abbr title="Exam">Oct 5</abbr><br><b>EXAM 1</b></td>
+			<td><abbr title="Friday">Oct 6</abbr><br>HW04 due</td>
+		</tr>
+	
+		<tr><!-- Week 6 -->
+			<td><abbr title="Session 19">Oct 9</abbr><br>1.5/2.4: methods of proof<br></td>
+			<td><abbr title="Session 20">Oct 10</abbr><br>1.5/2.4: methods of proof<br>Blurb 05</td>
+			<td><abbr title="Session 21">Oct 11</abbr><br>1.6: sets<br></td>
+			<td><abbr title="Session 22">Oct 12</abbr><br>1.6: sets<br>Quiz 04</td>
+			<td><abbr title="Friday">Oct 13</abbr><br>HW05 due</td>
+		</tr>
+	
+		<tr><!-- Week 7 -->
+			<td><abbr title="Session 23">Oct 16</abbr><br>1.7: set operations<br></td>
+			<td><abbr title="Session 24">Oct 17</abbr><br>1.7: set operations<br>Blurb 06</td>
+			<td><abbr title="Session 25">Oct 18</abbr><br>7.1: relations<br></td>
+			<td><abbr title="Session 26">Oct 19</abbr><br>7.1: relations<br>Quiz 05</td>
+			<td><abbr title="Friday">Oct 20</abbr><br>HW06 due</td>
+		</tr>
+	
+		<tr><!-- Week 8 -->
+			<td><abbr title="Session 27">Oct 23</abbr><br>7.5: equivalence relations<br></td>
+			<td><abbr title="Session 28">Oct 24</abbr><br>7.5: equivalence relations<br>Blurb 07</td>
+			<td><abbr title="Session 29">Oct 25</abbr><br>1.8: functions<br></td>
+			<td><abbr title="Exam">Oct 26</abbr><br><b>EXAM 2</b></td>
+			<td><abbr title="Friday">Oct 27</abbr><br>HW07 due</td>
+		</tr>
+	
+		<tr><!-- Week 9 -->
+			<td><abbr title="Session 30">Oct 30</abbr><br>1.8: functions<br></td>
+			<td><abbr title="Session 31">Oct 31</abbr><br>1.8: functions<br>Blurb 08</td>
+			<td><abbr title="Session 32">Nov 1</abbr><br>1.8: functions<br></td>
+			<td><abbr title="Session 33">Nov 2</abbr><br>3.2: cardinality<br>Quiz 06</td>
+			<td><abbr title="Friday">Nov 3</abbr><br>HW08 due</td>
+		</tr>
+	
+		<tr><!-- Week 10 -->
+			<td><abbr title="Session 34">Nov 6</abbr><br>3.2: cardinality<br></td>
+			<td><abbr title="Session 35">Nov 7</abbr><br>3.3: induction<br>Blurb 09</td>
+			<td><abbr title="Session 36">Nov 8</abbr><br>3.3: induction<br></td>
+			<td><abbr title="Session 37">Nov 9</abbr><br>4.1: basic counting<br>Quiz 07</td>
+			<td><abbr title="Friday">Nov 10</abbr><br>HW09 due</td>
+		</tr>
+	
+		<tr><!-- Week 11 -->
+			<td><abbr title="Session 38">Nov 13</abbr><br>4.1: basic counting<br></td>
+			<td><abbr title="Session 39">Nov 14</abbr><br>4.1: basic counting<br>Blurb 10</td>
+			<td><abbr title="Session 40">Nov 15</abbr><br>4.2: pigeonhole<br></td>
+			<td><abbr title="Exam">Nov 16</abbr><br><b>EXAM 3</b></td>
+			<td><abbr title="Friday">Nov 17</abbr><br>HW10 due</td>
+		</tr>
+	
+		<tr><!-- Week 12 -->
+			<td><abbr title="Session 41">Nov 20</abbr><br>4.3: permutations/combinations<br></td>
+			<td><abbr title="Session 42">Nov 21</abbr><br>4.3: permutations/combinations<br></td>
+			<td><abbr title="No class">Nov 22</abbr><br><i>No class</i></td>
+			<td><abbr title="No class">Nov 23</abbr><br><i>No class</i></td>
+			<td><abbr title="Friday">Nov 24</abbr><br><i>No HW due</i></td>
+		</tr>
+	
+		<tr><!-- Week 13 -->
+			<td><abbr title="Session 43">Nov 27</abbr><br>4.4: binomial coefficients<br></td>
+			<td><abbr title="Session 44">Nov 28</abbr><br>4.4: combinatorial proof<br>Blurb 11</td>
+			<td><abbr title="Session 45">Nov 29</abbr><br>4.4: combinatorial proof<br></td>
+			<td><abbr title="Session 46">Nov 30</abbr><br>proof practice<br>Quiz 08</td>
+			<td><abbr title="Friday">Dec 1</abbr><br>HW11 due</td>
+		</tr>
+	
+		<tr><!-- Week 14 -->
+			<td><abbr title="Session 47">Dec 4</abbr><br>proof practice<br></td>
+			<td><abbr title="Session 48">Dec 5</abbr><br>proof practice<br>Blurb 12</td>
+			<td><abbr title="Session 49">Dec 6</abbr><br>proof practice<br></td>
+			<td><abbr title="Session 50">Dec 7</abbr><br>proof practice<br>Quiz 09</td>
+			<td><abbr title="Friday">Dec 8</abbr><br>HW12 due</td>
+		</tr>
+	
+		<tr><!-- Week 15 -->
+			<td><abbr title="Session 51">Dec 11</abbr><br>proof practice<br></td>
+			<td><abbr title="Session 52">Dec 12</abbr><br>proof practice<br>Blurb 13</td>
+			<td><abbr title="Session 53">Dec 13</abbr><br>proof practice<br></td>
+			<td><abbr title="No classes">Dec 14</abbr><br><i>No class</i></td>
+			<td><abbr title="Friday">Dec 15</abbr><br>HW13 due</td>
+		</tr>
+	
+		<!-- 
+		<tr>
+			<td><abbr title="Session number">Date</abbr><br>Section: Topic<br>Major deadline</td>
+			<td><abbr title="Session number">Date</abbr><br>Section: Topic<br>Major deadline</td>
+			<td><abbr title="Session number">Date</abbr><br>Section: Topic<br>Major deadline</td>
+			<td><abbr title="Session number">Date</abbr><br>Section: Topic<br>Major deadline</td>
+		</tr>
+		  -->	
+	</table>
+
+	<br><img src="/img/happy16.png" onclick="this.src='/img/class-calendar.jpg'"><br>
+	
+	<h2>How to learn mathematics</h2>
+	<ul>
+		<li>As you do mathematics, work on explaining what you are doing in complete sentences. Avoid using the word "it".</li>
+		<li>There is no replacement for your effort.</li>
+		<li>Do not work on things last minute.</li>
+		<li>Keep an honest and accurate log of your study time for class. Be sure to "clock out" when your mind wanders to something else (social media, etc.)</li>
+		<li>Take thorough notes in class. If it's written on the board, be sure to have it written in your notebook.</li>
+		<li>Review your notebook after every class. The best way to review your notebook is to write a new copy of everything you wrote in your original notebook. This gives you the chance to review, and if even notice when you don't fully understand something. If you notice that you don't fully understand something, drop by office hours and ask for clarification.</li>
+		<li>Get help at the first sign of trouble: office hours are times reserved for you to get help. It is normal to use office hours!</li>
+		<li>Be sure to read the book section to supplement the things we discuss in class.</li>
+		<li>Each day's class is likely to rely on the previous day's material: it is not a good habit to wait to do homework until the day it is due (or the day before).</li>
+		<li>Commit to learning something soon after it is discussed in class: then you earn points for it on a quiz, an exam, a later exam, and a final. If you learn it only later, you can only earn points for it later.</li>
+		<li>It is not a secret to me that Google exists. If you use these resources, you remove the struggle for yourself and it will reflect in your quizzes and exams.</li>
+		<li>Mathematics requires attention to detail, and use of precise mathematical notation and wording. These things are important to me as I assess your work, so please make them important to you.</li>
+		<li>If you commit yourself to understanding each topic in time, then you don't really have to "study" for an exam. If you commit to only "halfway understanding" each topic, then you will need to spend an unnecesary amount of time before each exam "studying", but this cramming does not lead to in-depth knowledge or long-term recall.</li>
+	</ul>
+	
+	
+	<hr>
+	
+	{% include syllabus-my-math-policies.html %}	
+	{% include syllabus-uwl-policies.html %}
+		
+</div>
