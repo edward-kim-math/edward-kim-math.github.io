@@ -1,0 +1,56 @@
+---
+layout: default
+title: Canvas Roster Export
+---
+<h1>{{ page.title }}</h1>
+
+This is based on <a href="https://community.canvaslms.com/message/76979-export-student-email">https://community.canvaslms.com/message/76979-export-student-email</a>.
+
+Navigate to the People page, then open the console (also known as Developer Tools) of your browser. (Often found by hitting F12.) Then paste the script below:
+{% highlight javascript linenos %}
+var url = '/api/v1/courses/' + (typeof ENV.COURSE !== 'undefined' ? ENV.COURSE.id : ENV.course.id) + '/users';
+$.getJSON(url, 'per_page=100&include[]=email', function(d) {
+  console.log(d.map(function(e) {
+    return [ 'sortable_name', 'email' ].map(function(f) {
+      return e[f];
+    }).join('\t');
+  }).join('\n'));
+});
+{% endhighlight %}
+
+Instead of the two fields (sortable name, email) you may want other fields. Most likely might be [ 'name', 'sortable_name', 'login_id', 'email' ] or for a full list, from the <a href="https://canvas.instructure.com/doc/api/users.html">API documentation</a> for user objects:
+{% highlight javascript linenos %}
+// A Canvas user, e.g. a student, teacher, administrator, observer, etc.
+{
+  "id": 2, // The ID of the user.
+  "name": "Sheldon Cooper", // The name of the user.
+  "sortable_name": "Cooper, Sheldon", // The name of the user that is should be used for sorting groups of users, such as in the gradebook.
+  "short_name": "Shelly",   // A short name the user has selected, for use in conversations or other less formal places through the site.
+  "sis_user_id": "SHEL93921",   // The SIS ID associated with the user.  This field is only included if the user came from a SIS import and has permissions to view SIS information.
+  "sis_import_id": 18,   // The id of the SIS import.  This field is only included if the user came from a SIS import and has permissions to manage SIS information.
+  "integration_id": "ABC59802",   // The integration_id associated with the user.  This field is only included if the user came from a SIS import and has permissions to view SIS information.
+  "login_id": "sheldon@caltech.example.com",   // The unique login id for the user.  This is what the user uses to log in to Canvas.
+  "avatar_url": "https://en.gravatar.com/avatar/d8cb8c8cd40ddf0cd05241443a591868?s=80&r=g", // If avatars are enabled, this field will be included and contain a url to retrieve the user's avatar.
+
+  // Optional: This field can be requested with certain API calls, and will return
+  // a list of the users active enrollments. See the List enrollments API for more
+  // details about the format of these records.
+  "enrollments": null,
+  // Optional: This field can be requested with certain API calls, and will return
+  // the users primary email address.
+  "email": "sheldon@caltech.example.com",
+  // Optional: This field can be requested with certain API calls, and will return
+  // the users locale in RFC 5646 format.
+  "locale": "tlh",
+  // Optional: This field is only returned in certain API calls, and will return a
+  // timestamp representing the last time the user logged in to canvas.
+  "last_login": "2012-05-30T17:45:25Z",
+  // Optional: This field is only returned in certain API calls, and will return
+  // the IANA time zone name of the user's preferred timezone.
+  "time_zone": "America/Denver",
+  // Optional: The user's bio.
+  "bio": "I like the Muppets."
+}
+
+{% endhighlight %}
+
