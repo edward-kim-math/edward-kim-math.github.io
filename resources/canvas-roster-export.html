@@ -20,7 +20,6 @@ $.getJSON(url, 'per_page=100&include[]=email', function(d) {
 
 Instead of the two fields (sortable name, email) you may want other fields. Most likely might be [ 'name', 'sortable_name', 'login_id', 'email' ] or for a full list, from the <a href="https://canvas.instructure.com/doc/api/users.html">API documentation</a> for user objects:
 {% highlight javascript linenos %}
-// A Canvas user, e.g. a student, teacher, administrator, observer, etc.
 {
   "id": 2, // The ID of the user.
   "name": "Sheldon Cooper", // The name of the user.
@@ -32,25 +31,12 @@ Instead of the two fields (sortable name, email) you may want other fields. Most
   "login_id": "sheldon@caltech.example.com",   // The unique login id for the user.  This is what the user uses to log in to Canvas.
   "avatar_url": "https://en.gravatar.com/avatar/d8cb8c8cd40ddf0cd05241443a591868?s=80&r=g", // If avatars are enabled, this field will be included and contain a url to retrieve the user's avatar.
 
-  // Optional: This field can be requested with certain API calls, and will return
-  // a list of the users active enrollments. See the List enrollments API for more
-  // details about the format of these records.
-  "enrollments": null,
-  // Optional: This field can be requested with certain API calls, and will return
-  // the users primary email address.
-  "email": "sheldon@caltech.example.com",
-  // Optional: This field can be requested with certain API calls, and will return
-  // the users locale in RFC 5646 format.
-  "locale": "tlh",
-  // Optional: This field is only returned in certain API calls, and will return a
-  // timestamp representing the last time the user logged in to canvas.
-  "last_login": "2012-05-30T17:45:25Z",
-  // Optional: This field is only returned in certain API calls, and will return
-  // the IANA time zone name of the user's preferred timezone.
-  "time_zone": "America/Denver",
-  // Optional: The user's bio.
-  "bio": "I like the Muppets."
+  "enrollments": null,  // Optional: This field can be requested with certain API calls, and will return a list of the users active enrollments. See the List enrollments API for more details about the format of these records.
+  "email": "sheldon@caltech.example.com",  // Optional: This field can be requested with certain API calls, and will return the users primary email address.
+  "locale": "tlh",  // Optional: This field can be requested with certain API calls, and will return the users locale in RFC 5646 format.
+  "last_login": "2012-05-30T17:45:25Z",  // Optional: This field is only returned in certain API calls, and will return a timestamp representing the last time the user logged in to canvas.
+  "time_zone": "America/Denver",  // Optional: This field is only returned in certain API calls, and will return the IANA time zone name of the user's preferred timezone.
+  "bio": "I like the Muppets."  // Optional: The user's bio.
 }
-
 {% endhighlight %}
 
