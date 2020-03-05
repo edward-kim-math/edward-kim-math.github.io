@@ -96,8 +96,8 @@ Sage can take a value of \(h\) and \(k\) from the user (with sliders) and plot \
 <script type="text/x-sage">
 @interact
 def _(
-	h = slider(-10, 10, 0.01, default=1, label="Pick \(h\) = "),
-	k = slider(-10, 10, 0.01, default=0, label="Pick \(k\) = "),
+	h = slider(-10, 10, 0.01, default=1, label="Pick h = "),
+	k = slider(-10, 10, 0.01, default=0, label="Pick k = "),
 ):
     f = (x-h)^2 + k
     show(plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30))
@@ -115,8 +115,8 @@ f = x^2 + 1/2*sin(18*x)
 
 @interact
 def _(
-	f = input_box(f, label="\(f(x)\) = ",type=SR),
-	a = slider(-5, 5, 1, default=0, label="Pick \(a\) = "),
+	f = input_box(f, label="f(x) = ",type=SR),
+	a = slider(-5, 5, 1, default=0, label="Pick a = "),
 ):
 	# Plot function
 	fPlot = plot(f+a,(x,-10,10), ymin=-10, ymax=10, thickness=2,aspect_ratio='automatic')
@@ -299,7 +299,7 @@ allgraphs = plot(f, xmin=-30, xmax=30, ymin=-30, ymax=30, rgbcolor=(0,0,0)) # al
 for taylorpolynomialdegree in range(largestdegree+1):
     taylorpolynomial = taylorpolynomial + f.diff(x,taylorpolynomialdegree).subs(x=0)*x^taylorpolynomialdegree/factorial(taylorpolynomialdegree) # add the next term
 
-    print("The Taylor polynomial of order " + taylorpolynomialdegree + " is " + taylorpolynomial)
+    print("The Taylor polynomial of order " + str(taylorpolynomialdegree) + " is " + str(taylorpolynomial))
     allgraphs = allgraphs + plot(taylorpolynomial, xmin=-30, xmax=30, ymin=-30, ymax=30, rgbcolor=(0,1,taylorpolynomialdegree/largestdegree)) # add the graph of this Taylor polynomial to allgraphs
 
 allgraphs.show() # now that allgraphs is properly set, show allgraphs
