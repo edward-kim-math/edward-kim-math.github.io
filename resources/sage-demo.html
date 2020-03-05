@@ -576,9 +576,9 @@ and the linear combination \(10{\bf u} + 3{\bf v}\).
 u = vector([3,4,5])
 v = vector([1,0,-3])
 
-print("The dot product is" + u.dot_product(v))
-print("The cross product is" + u.cross_product(v))
-print("The vector" + 10*u+3*v + "is a linear combination of u and v")
+print("The dot product is" + str(u.dot_product(v)))
+print("The cross product is" + str(u.cross_product(v)))
+print("The vector" + str(10*u+3*v) + "is a linear combination of u and v")
 </script>
 </div>
 
@@ -599,7 +599,7 @@ print(A)
 print("") # leave an extra line of space in the output
 print(latex(A))
 print("") # leave an extra line of space in the output
-print "Then the fifth power of the matrix is"
+print("Then the fifth power of the matrix is")
 print("") # leave an extra line of space in the output
 print(A^5)
 print("") # leave an extra line of space in the output
