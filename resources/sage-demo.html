@@ -347,7 +347,7 @@ Given \(f(x,y)=x^3-2x\sin(y)\), Sage can find the double integral \( \displaysty
 var('y')
 f = x^3 - 2*x*sin(y)
 
-print("The double integral is" + f.integral(x,2,4).integral(y,-pi/2,pi/3))
+print("The double integral is" + str(f.integral(x,2,4).integral(y,-pi/2,pi/3)))
 print("The Hessian is")
 print(f.hessian())
 </script>
@@ -576,9 +576,9 @@ and the linear combination \(10{\bf u} + 3{\bf v}\).
 u = vector([3,4,5])
 v = vector([1,0,-3])
 
-print("The dot product is" + str(u.dot_product(v)))
-print("The cross product is" + str(u.cross_product(v)))
-print("The vector" + str(10*u+3*v) + "is a linear combination of u and v")
+print("The dot product is " + str(u.dot_product(v)))
+print("The cross product is " + str(u.cross_product(v)))
+print("The vector " + str(10*u+3*v) + " is a linear combination of u and v")
 </script>
 </div>
 
@@ -648,18 +648,18 @@ This example constructs a \(5 \times 9\) matrix of rank \(3\) whose reduced row-
 <script type="text/x-sage">
 A = random_matrix(QQ, 5, 9, algorithm='echelonizable',rank=3);
 
-print A
-print "" # leave an extra line of space in the output
+print(A)
+print("") # leave an extra line of space in the output
 
 # Set up how LaTeX code should look
 latex.matrix_delimiters(left='[', right=']')
 latex.matrix_column_alignment('c')
 
-print latex(A)
+print(latex(A))
 
-print A.rref()
+print(A.rref())
 
-print latex(A.rref())
+print(latex(A.rref()))
 </script>
 </div>
 
@@ -671,17 +671,17 @@ We need to use right_kernel for what is generally consider the null space (or ke
 <script type="text/x-sage">
 A = random_matrix(QQ, 7, 9, algorithm='echelonizable',rank=5);
 
-print A
-print "" # leave an extra line of space in the output
+print(A)
+print("") # leave an extra line of space in the output
 
 # Set up how LaTeX code should look
 latex.matrix_delimiters(left='[', right=']')
 latex.matrix_column_alignment('c')
 
-print latex(A)
+print(latex(A))
 
 print "The null space (or kernel) of the matrix:"
-print A.right_kernel()
+print(A.right_kernel())
 </script>
 </div>
 
@@ -693,14 +693,14 @@ This example constructs a \(4 \times 4\) diagonalizable matrix with eigenvalues 
 # Construct a random 4 by 4 diagonalizable matrix
 A = random_matrix(QQ, 4, algorithm='diagonalizable', eigenvalues=[5,3,-6],dimensions=[1,1,2]);
 
-print A
-print "" # leave an extra line of space in the output
+print(A)
+print("") # leave an extra line of space in the output
 
 # Set up how LaTeX code should look
 latex.matrix_delimiters(left='[', right=']')
 latex.matrix_column_alignment('c')
 
-print latex(A)</script>
+print(latex(A))</script>
 </div>
 
 
@@ -714,26 +714,26 @@ Then, we display the factored version of the characteristic polynomial.
 A = random_matrix(QQ, 4, algorithm='diagonalizable', eigenvalues=[2,3,-6],dimensions=[1,1,2]);
 var('lam', latex_name="\\lambda") # use lam as a variable (since lambda is a reserved word)
 
-print A
-print "" # leave an extra line of space in the output
+print(A)
+print("") # leave an extra line of space in the output
 
 # Set up how LaTeX code should look
 latex.matrix_delimiters(left='[', right=']')
 latex.matrix_column_alignment('c')
 
-print A-lam*matrix.identity(4)
-print latex(A-lam*matrix.identity(4))
+print(A-lam*matrix.identity(4))
+print(latex(A-lam*matrix.identity(4)))
 
 charpol = det(A-lam*matrix.identity(4))
 
-print charpol # print the characteristic polynomial using Sage's variable
-print latex(charpol) # print a nice version for use in LaTeX
+print(charpol) # print the characteristic polynomial using Sage's variable
+print(latex(charpol)) # print a nice version for use in LaTeX
 
-print charpol.factor()
-print latex(charpol.factor())
+print(charpol.factor())
+print(latex(charpol.factor()))
 
-print A.eigenvalues()
-print A.eigenvectors_right()
+print(A.eigenvalues())
+print(A.eigenvectors_right())
 </script>
 </div>
 
@@ -745,12 +745,12 @@ Sage can compute <a href="http://www.cfm.brown.edu/people/dobrush/am34//sage/svd
 A=matrix(RDF,[[4,2,5],[0,16,0],[0,14,9]]) # RDF stands for "real double field"
 print "The eigenvalues of A are", A.eigenvalues()
 U, Sigma, V = A.SVD()
-print "U is the matrix"
-print U
-print "Sigma is the matrix"
-print Sigma
-print "V is the matrix"
-print V
+print("U is the matrix")
+print(U)
+print("Sigma is the matrix")
+print(Sigma)
+print("V is the matrix")
+print(V)
 </script>
 </div>
 
@@ -765,12 +765,12 @@ A = matrix(QQ, [[1, -1,  0,  2,  4,  7, -1],
                 [1,  0, -1,  8, -1, -1, -3],
                 [1,  1,  2, -2, -1,  1,  3]])
 P, L, U = A.LU(pivot='nonzero')
-print "P is the matrix"
-print P
-print "L is the matrix"
-print L
-print "U is the matrix"
-print U
+print("P is the matrix")
+print(P)
+print("L is the matrix")
+print(L)
+print("U is the matrix")
+print(U)
 </script>
 </div>
 
@@ -836,7 +836,7 @@ Sage can provide a visual representation of the complete graph \(K_5\) on \(5\) 
 <script type="text/x-sage">
 K5 = graphs.CompleteGraph(5)
 K5.show()
-print latex(K5)
+print(latex(K5))
 </script>
 </div>
 
@@ -850,13 +850,13 @@ Since the graph \(G\) was constructed randomly, running this script again will p
 <script type="text/x-sage">
 G = graphs.RandomGNP(9,.3)
 G.show()
-print "Here is the adjacency matrix for the graph:"
-print G.adjacency_matrix()
-print "The Tutte polynomial of the graph is", G.tutte_polynomial()
-print "The matching polynomial of the graph is", G.matching_polynomial()
-print "The chromatic polynomial of the graph is", G.chromatic_polynomial()
-print "A proper vertex coloring of the graph is", G.coloring(), "and the minimum number of colors needed is", G.chromatic_number()
-print "A maximum independent set of the graph is", G.independent_set()
+print("Here is the adjacency matrix for the graph:")
+print(G.adjacency_matrix())
+print("The Tutte polynomial of the graph is " + str(G.tutte_polynomial()))
+print("The matching polynomial of the graph is" + str(G.matching_polynomial()))
+print("The chromatic polynomial of the graph is " + str(G.chromatic_polynomial()))
+print("A proper vertex coloring of the graph is " + str(G.coloring()) + str(" and the minimum number of colors needed is ") + str(G.chromatic_number()))
+print("A maximum independent set of the graph is" + str(G.independent_set()))
 </script>
 </div>
 
