@@ -21,10 +21,10 @@ A = U + U.transpose()
 B = V + V.transpose()
 C = A + t*B;
 
-print "A is\n", A
-print "B is\n", B
+print("A is\n"+str(A))
+print("B is\n"+str(B))
 p = (C^m).trace().expand();
-print p
+print(p)
 </script>
 </div>
 
@@ -43,7 +43,7 @@ for i in range(10):
   C = A + t*B;
 
   p = (C^m).trace().expand();
-  print p
-  print '--------------------'
+  print(p)
+  print('--------------------')
 </script>
 </div>
