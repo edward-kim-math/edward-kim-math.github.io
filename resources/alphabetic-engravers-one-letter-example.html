@@ -10,6 +10,8 @@ title: Example of engraving one letter
 You may modify the sage code and run to see results. Nothing you do here can break a computer.
 On the other hand, none of the work you do here will directly save: instead, if you have something you'd like to hold on to, copy-paste this to a file on your computer.
 <br><br>
+If you need the picture to be smoother, use plot_points=400 or plot_points=500 .... etc.
+<br><br>
 <b>Using this web version, only one plot will show at a time (the last plot, which by default is the 3D plot). To show a different plot, comment out three of the four plot lines at the bottom using the # symbol.</b>
 <div class="sage">
 <script type="text/x-sage">
@@ -71,6 +73,6 @@ plot(yoft,t,0,7)
 plot(zoft,t,0,7)
 
 # Show the path formed in 3-dimensional space given by the parametrization
-parametric_plot3d([xoft,yoft,zoft], (t,0,7))
+parametric_plot3d([xoft,yoft,zoft], (t,0,7), plot_points=300)
 </script>
 </div>
