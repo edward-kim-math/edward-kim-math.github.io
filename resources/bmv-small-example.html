@@ -11,7 +11,7 @@ title: BMV small example
 <script type="text/x-sage">
 m = 4 # Power to raise, must be even (and bigger than 3)!
 n = 2 # Matrix size
-r = 2 # Examine coefficient of t^r
+r = 2
 
 # define variables for matrix entries, and for t
 # Define a polynomial ring over t and the generic matrix variables
@@ -33,7 +33,7 @@ print("C is the matrix\n" + str(C) + "\n")
 p = (C^m).trace();
 print("p is " + str(expand(p)) + "\n")
 
-q = bmvpolynomial.coefficient(t^r)
+q = p.coefficient(t^r)
 print("q is " + str(q) + "\n")
 
 #########################
@@ -69,7 +69,7 @@ print("The SDP will consist of finding a matrix Q of size " + str(SDPmatsize) + 
 ## Side exploration
 
 var('q11', 'q12', 'q13', 'q14', 'q15', 'q16', 'q17', 'q18', 'q19', 'q22', 'q23', 'q24', 'q25', 'q26', 'q27', 'q28', 'q29', 'q33', 'q34', 'q35', 'q36', 'q37', 'q38', 'q39', 'q44', 'q45', 'q46', 'q47', 'q48', 'q49', 'q55', 'q56', 'q57', 'q58', 'q59', 'q66', 'q67', 'q68', 'q69', 'q77', 'q78', 'q79', 'q88', 'q89', 'q99')
-Qgeneric = matrix([
+Y = matrix([
 [q11,q12,q13,q14,q15,q16,q17,q18,q19],
 [q12,q22,q23,q24,q25,q26,q27,q28,q29],
 [q13,q23,q33,q34,q35,q36,q37,q38,q39],
@@ -166,6 +166,5 @@ result = (matrix(Zvec) * roundedQmatrix * matrix(Zvec).transpose())[0][0]
 print("So the only entry of Z^TQZ using the roundedQmatrix is " + str(result) + "\n")
 
 print("How is this different from $q$? It's not. The difference between the two is zero: " + str(result-q) + "\n")
-
 </script>
 </div>
