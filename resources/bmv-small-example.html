@@ -1,0 +1,171 @@
+---
+layout: plain
+title: BMV Sage demo
+---
+<h1>{{ page.title }}</h1>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
+
+<div class="sage">
+<script type="text/x-sage">
+m = 4 # Power to raise, must be even (and bigger than 3)!
+n = 2 # Matrix size
+r = 2
+
+# define variables for matrix entries, and for t
+# Define a polynomial ring over t and the generic matrix variables
+MyRing.<t, a11, a12, a13, a14, a15, a16, a17, a18, a19, a22, a23, a24, a25, a26, a27, a28, a29, a33, a34, a35, a36, a37, a38, a39, a44, a45, a46, a47, a48, a49, a55, a56, a57, a58, a59, a66, a67, a68, a69, a77, a78, a79, a88, a89, a99, b11, b12, b13, b14, b15, b16, b17, b18, b19, b22, b23, b24, b25, b26, b27, b28, b29, b33, b34, b35, b36, b37, b38, b39, b44, b45, b46, b47, b48, b49, b55, b56, b57, b58, b59, b66, b67, b68, b69, b77, b78, b79, b88, b89, b99> = QQ[];
+
+# Define our matrices
+M = MatrixSpace(MyRing, n);
+A = M();
+B = M();
+avars = [];
+bvars = [];
+A = matrix([[a11,a12],[a12,a22]])
+B = matrix([[b11,b12],[b12,b22]])
+C = A + t*B;
+print("A is the matrix\n" + str(A) + "\n")
+print("B is the matrix\n" + str(B) + "\n")
+print("C is the matrix\n" + str(C) + "\n")
+
+p = (C^m).trace();
+print("p is " + str(expand(p)) + "\n")
+
+q = bmvpolynomial.coefficient(t^r)
+print("q is " + str(q) + "\n")
+
+#########################
+
+# Set up SDP
+
+print("We will prove q is a sum of squares by setting up an SDP.\n")
+from cvxopt.base import matrix as cvxmatrix
+from cvxopt.base import spmatrix
+from cvxopt import solvers
+RealNumber=float
+Integer=int
+
+cvxG0 = []; # LP part of dual-SDP: Make zero
+constrmats = [];
+constrconsts = [];
+
+# Construct avarsm4 and bvarsm4
+# ... lists of monomials with a-deg m/4 and b-deg m/4, resp.
+
+# Make the Z-vector
+Zvec = [];
+for amonom in [a11,a12,a22]:
+    for bmonom in [b11,b12,b22]:
+        Zvec.append(amonom*bmonom);
+
+print("The Z vector is" + str(Zvec) + "\n")
+
+SDPmatsize = len(Zvec); # Size of SDP
+
+print("The SDP will consist of finding a matrix Q of size " + str(SDPmatsize) + "\n")
+
+## Side exploration
+
+var('q11', 'q12', 'q13', 'q14', 'q15', 'q16', 'q17', 'q18', 'q19', 'q22', 'q23', 'q24', 'q25', 'q26', 'q27', 'q28', 'q29', 'q33', 'q34', 'q35', 'q36', 'q37', 'q38', 'q39', 'q44', 'q45', 'q46', 'q47', 'q48', 'q49', 'q55', 'q56', 'q57', 'q58', 'q59', 'q66', 'q67', 'q68', 'q69', 'q77', 'q78', 'q79', 'q88', 'q89', 'q99')
+Qgeneric = matrix([
+[q11,q12,q13,q14,q15,q16,q17,q18,q19],
+[q12,q22,q23,q24,q25,q26,q27,q28,q29],
+[q13,q23,q33,q34,q35,q36,q37,q38,q39],
+[q14,q24,q34,q44,q45,q46,q47,q48,q49],
+[q15,q25,q35,q45,q55,q56,q57,q58,q59],
+[q16,q26,q36,q46,q56,q66,q67,q68,q69],
+[q17,q27,q37,q47,q57,q67,q77,q78,q79],
+[q18,q28,q38,q48,q58,q68,q78,q88,q89],
+[q19,q29,q39,q49,q59,q69,q79,q89,q99],
+])
+
+d = expand((matrix(Zvec) * Y * matrix(Zvec).transpose())[0][0])
+
+print("What is Z^TQZ generically? " + str(d) + "\n")
+
+print("Let's pick on one coefficient as an example.")
+print("The coefficient of a11*a12*b11*b12 in $d$ is " + str(d.coefficient(a11*a12*b11*b12)))
+print("The coefficient of a11*a12*b11*b12 in $q$ is " + str(q.coefficient(a11*a12*b11*b12)))
+print("")
+
+###### Stop exploration. Really build SDP (automated)
+
+# Start with a hash of where the terms are (to group like terms)
+termsdic = {}
+for i in range(len(Zvec)): # want index number AND value
+    for j in range(len(Zvec)):
+        monom = Zvec[i] * Zvec[j];
+        if (monom in termsdic):
+            termsdic[monom].append((i,j));
+        else:
+            termsdic[monom] = [];
+            termsdic[monom].append((i,j));
+
+cvxn2vec = [];
+# Pad the matrix with zeroes
+for i in range(SDPmatsize):
+    for j in range(SDPmatsize):
+        cvxn2vec.append(0.);
+
+print("Note, in what follows, (3,6) is indexed computer-style, so this means $q_{47}$.")
+for monom, matrixentries in termsdic.items():
+    RHSvalue = q.coefficient(monom);
+
+    # Set up matrix
+    ConstraintMatrix = Matrix(SDPmatsize,SDPmatsize);
+    for ij in matrixentries:
+        i=ij[0]
+        j=ij[1]
+        ConstraintMatrix[i,j] = 1;
+
+    # Set up vector form needed for CVXOPT
+    ConstraintMatrixVector = []
+    for i in range(SDPmatsize):
+        for j in range(SDPmatsize):
+            ConstraintMatrixVector.append(RealNumber(ConstraintMatrix[i,j]));
+
+    # Add to list of constraints
+    cvxG0.append(cvxn2vec);
+    constrmats.append(ConstraintMatrixVector);
+    constrconsts.append(RealNumber(-RHSvalue));
+
+    print("The coefficient of "+str(monom)+" in $q$ is "+str(RHSvalue)+" so this should be the sum of the following entries in matrix Q "+str(matrixentries))
+
+# Solve the SDP
+c = cvxmatrix(constrconsts)
+G = [ cvxmatrix(cvxG0) ]
+G += [ cvxmatrix(constrmats) ]
+
+cvxZvec = [];
+for i in range(SDPmatsize):
+    cvxZvec.append(0.);
+cvxZvecvec = [];
+for i in range(SDPmatsize):
+    cvxZvecvec.append(cvxZvec);
+h = [ cvxmatrix(cvxZvecvec) ]
+h += [ cvxmatrix(cvxZvecvec) ]
+
+# Now that SDP is set up, run it
+sol = solvers.sdp(c, Gs=G, hs=h)
+
+Qmatrix = sol['zs'][1]
+
+print("The computer provides the followng Q matrix:")
+print(Qmatrix)
+
+roundedQmatrix = matrix(SDPmatsize,SDPmatsize);
+for i in range(SDPmatsize):
+    for j in range(SDPmatsize):
+        roundedQmatrix[i,j] = round(Qmatrix[i,j]);
+print("The matrix Q below is a positive semidefinite certificate that $p$ is a sum of squares.")
+print(roundedQmatrix.str())
+
+result = (matrix(Zvec) * roundedQmatrix * matrix(Zvec).transpose())[0][0]
+print("So the only entry of Z^TQZ using the roundedQmatrix is " + str(result) + "\n")
+
+print("How is this different from $q$? It's not. The difference between the two is zero: " + str(result-q) + "\n")
+
+</script>
+</div>
