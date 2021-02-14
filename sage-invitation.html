@@ -1,0 +1,383 @@
+<html>
+
+<head>
+
+<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>
+$(function () {
+sagecell.makeSagecell({inputLocation: '.sage',
+languages: sagecell.allLanguages,
+autoeval: true,
+defaultLanguage: 'sage' ,
+hide: ["editor", "editorToggle", "language","evalButton"],
+//Focus the editor
+callback: function() {$('#sagecell').find(".CodeMirror").get(0).CodeMirror.focus();}});
+});
+</script>
+
+</head>
+
+<body id="sagecell_main" onLoad="onLoadPage()">
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
+
+<h2>What is sage?</h2>
+Sage (google for SAGEMATH to get the software instead of the herb) is a viable free and open source alternative to Maple, Mathematica, and Matlab. 
+<ul>
+<li>Maple and Mathematica are computer algebra systems (CAS). Matlab is a computing environment primarly revolving around matrices.</li>
+<li>Maple costs $99 for student edition (need to verify you're a student every year), and $2390 if you're not a student.</li>
+<li>Mathematica costs $166 for student edition and $354 for math hobbyists.</li>
+<li>Matlab costs $99 for student edition, and $149 for home edition with no add-ons.</li>
+</ul>
+
+<h2>Various ways to use Sage</h2>
+<ul>
+<li>Modify code inside sage cells built into webpages. (None of your work will be saved, so you have to copy any code you really want to keep into a file on your own to manage.) Good for quick explorations, or to demo a computation to someone when they won't likely need to modify code. No installation necessary -- all implemented in a webpage that author designs. This tutorial consists of Sage cells.</li>
+<li>Create a free account at cocalc. Your account can create projects, and you can create sage scripts in collaboration with others in the cloud. Free, and good for collaborating with others. There are paid subscriptions that give you priority access to CPUs, so clearly the free accounts get the "leftovers" for computation resources. Good for collaboration, and no installation needed: your start up is just to create a free account.</li>
+<li>Install sage on your own computer. It's a large download. Once installed on your own computer, you can run commands in a shell, or you can load script files you have made. Fastest, but collaboration is more challenging (unless your scripts are in a shared Dropbox or Google Drive folder). Requires a considerable amount of disk space.</li>
+</ul>
+
+<h2>Hello, world!</h2>
+In programming, "print" means to show text on screen, and a string means human-readable text. Sage can print a string.
+<div class="sage">
+<script type="text/x-sage">
+print("Hello, world!")
+</script>
+</div>
+<b>Task</b>: Change this code to say hello to the whole universe.
+
+<h2>Hello, galaxy</h2>
+To concatenate (glue) one string to another, use the plus sign between strings.
+<div class="sage">
+<script type="text/x-sage">
+print("Hello," + "galaxy!")
+</script>
+</div>
+<b>Task</b>: Fix this code so the printed text has a space after the comma.
+
+<h2>Derivatives</h2>
+Sage knows the Chain Rule! Note multiplication signs are required: sin(3*x) is understood but sin(3x) is not.
+<div class="sage">
+<script type="text/x-sage">
+f = sin(3*x)
+g = f.diff()
+h = f.diff().diff()  # Any text in a line after a hash symbol is a comment. We could have also written h = g.diff()
+print("The derivative is")
+print(g)
+print("The second derivative is")
+print(h)
+</script>
+</div>
+<b>Task</b>: Have Sage compute the derivative of \(\sin(\sin(\sin(\ln(x))))\)
+
+<h2>Sage quirk: cannot concatenate a string and a function</h2>
+<div class="sage">
+<script type="text/x-sage">
+f = sin(3*x)
+g = f.diff()
+print("The derivative is " + g)
+</script>
+</div>
+<b>Task</b>: Fix this. Using str(g) provides a human-readable string version of \(g\)
+
+<h2>Sage shortcut</h2>
+<div class="sage">
+<script type="text/x-sage">
+f = sin(3*x)
+print("The derivative is " + str(f.diff()))
+</script>
+</div>
+<b>Task</b>: How could you modify the second line to show \(f''(x)\)?
+
+<h2>Solve equations</h2>
+Sage can solve the equation \( x^2 - x = 3x+6\). Note the double equal sign.
+<div class="sage">
+<script type="text/x-sage">
+solutions = solve(x^2 - x == 3*x+6,x)
+print(solutions)
+</script>
+</div>
+<b>Task</b>: Push the limits on computation. What kind of equations can Sage solve? Are there any equations you can solve that Sage can't seem to solve?
+
+<h2>Two-dimensional graphing: plot function</h2>
+Sage can <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot.html#sage.plot.plot.plot">plot</a> the graph the function \(f(x) = x^2 - x\) for \(-25 \leq x \leq 25\) and \(-25 \leq y \leq 25\).
+<div class="sage">
+<script type="text/x-sage">
+f = x^2 - x
+plot(f, xmin=-25, xmax=25, ymin=-25, ymax=25)
+</script>
+</div>
+
+<h2>Two-dimensional graphing: plot function</h2>
+Sage can <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot.html#sage.plot.plot.plot">plot</a> the graph the function \(f(x) = x^2 - x\) and \(g(x)=3x+6\) so that the intersections of the graphs correspond to solutions of the equation just solved earlier. (Here, the first input to PLOT is a LIST of functions.)
+<div class="sage">
+<script type="text/x-sage">
+f = x^2 - x
+g = 3*x+6
+plot([f,g], xmin=-25, xmax=25, ymin=-25, ymax=25)
+</script>
+</div>
+<b>Task</b>: How can you graph a third function simultaneously? How many times can you get two graphs to intersect each other for \(x \in [-25,25]\)?
+
+<h2>Two-dimensional graphing: plot equation in two variables</h2>
+Sage will provide an <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/contour_plot.html">implicit plot</a> of an equation in \(x\) and \(y\).
+For example, here we ask Sage to sketch the plot of the equation \((x-3)^2+(y+4)^2=7\), a circle centered at \(3,-4\) of radius \(\sqrt{7}\).
+<div class="sage">
+<script type="text/x-sage">
+var('x y') # declare variables
+implicit_plot((x-3)^2 + (y+4)^2 == 7, (x,-10,10), (y,-10,10)) # Notice the double equal sign
+</script>
+</div>
+<b>Task</b>: What's the coolest shape you can make?
+
+<h2>Three-dimensional visualization: sphere</h2>
+Sage can plot the sphere \(x^2 + y^2 + z^2 = 4\) for \(-3 \leq x \leq 3\) and \(-3 \leq y \leq 3\) and \(-3 \leq z \leq 3\).
+<div class="sage">
+<script type="text/x-sage">
+var('x') # use x as a variable
+var('y') # use y as a variable
+var('z') # use z as a variable
+implicit_plot3d(x^2+y^2+z^2==4, (x,-3,3), (y,-3,3), (z,-3,3))
+</script>
+</div>
+
+<h2>Three-dimensional visualization: heart-shaped surface</h2>
+Sage can plot a heart-shaped surface \((x^2+\frac94y^2+z^2-1)^3 - x^2z^3 - \frac{9}{80}y^2z^3 = 0\) in red.
+<div class="sage">
+<script type="text/x-sage">
+var('x') # use x as a variable
+var('y') # use y as a variable
+var('z') # use z as a variable
+F = (x^2+9/4*y^2+z^2-1)^3 - x^2*z^3 - 9/(80)*y^2*z^3
+r = 1.5
+implicit_plot3d(F, (x,-r,r), (y,-r,r), (z,-r,r), plot_points=80, color='red', smooth=False).show()
+</script>
+</div>
+<b>Task</b>: What's the coolest 3D shape you can make?
+
+<h2>Expressions and special constants</h2>
+Sage will simplify expressions involving special constants such as \(\cos(\frac{\pi}{6})\) and \(\arccos(-\frac12)\).
+In addition, the value of an expression such as \(e^{\pi i}\) can be stored in a variable to be used later (or printed to screen).
+<div class="sage">
+<script type="text/x-sage">
+print(cos(pi/6))
+print(arccos(-1/2))
+
+eulersspecialnumber = e^(pi*i)
+print(eulersspecialnumber)
+</script>
+</div>
+
+<h2>Expanding and factoring expressions</h2>
+Sage can expand the expression \((x-1)^8\) or factor the expression \(x^3+4x^2+8x+32\).
+<div class="sage">
+<script type="text/x-sage">
+powerofbinomial = (x-1)^8
+print(powerofbinomial.expand())
+
+print('---------------------') # print some separating text
+
+polynomial = x^3 + 4*x^2 + 8*x + 32
+print(polynomial.factor())
+</script>
+</div>
+
+<h2>Function evaluation</h2>
+Sage can take the function \(f(x) = x^3\) and use this to evaluate \(f(2)\) and evaluate the difference quotient \( \dfrac{f(2+h)-f(2)}{h} \).
+<div class="sage">
+<script type="text/x-sage">
+f = x^3
+print(f.subs(x=2))
+
+var('h') # define a variable called h
+diffquo = (f.subs(x=2+h) - f.subs(x=2))/h
+print(diffquo.expand())
+</script>
+</div>
+<b>Task</b>: Using subs and diff, how can you get \(f'(\pi)\) if \(f(x) = \sin(3x)\)?
+
+
+<h2>Integration</h2>
+Given \(f(x) = x^3 + 10x^6\), Sage can find the indefinite integral \( \displaystyle \int f(x)\,dx\) and the definite integral  \( \displaystyle \int_2^4 f(x)\,dx\).
+<div class="sage">
+<script type="text/x-sage">
+f = x^3 + 10*x^6
+
+print(f.integral(x)) # integrate with respect to x
+print(f.integral(x,2,4)) # definite integral
+</script>
+</div>
+<b>Task</b>: If you've taken Calculus 3, can you modify the code above to compute a double integral or a triple integral?
+
+
+
+<h2>Vector geometry</h2>
+Given vectors \({\bf u}=3{\bf i} + 4{\bf j} + 5{\bf k}\) and \({\bf v} = {\bf i} -3{\bf k}\), 
+Sage will compute the dot product \({\bf u} \cdot {\bf v}\),
+the cross product \({\bf u} \times {\bf v}\),
+and the linear combination \(10{\bf u} + 3{\bf v}\).
+<div class="sage">
+<script type="text/x-sage">
+u = vector([3,4,5])
+v = vector([1,0,-3])
+
+print("The dot product is " + str(u.dot_product(v)))
+print("The cross product is " + str(u.cross_product(v)))
+print("The vector " + str(10*u+3*v) + " is a linear combination of u and v")
+</script>
+</div>
+<b>Task</b>: What would you need to add to have Sage compute the angle between vectors \({\bf u}=3{\bf i} + 4{\bf j} + 5{\bf k}\) and \({\bf v} = {\bf i} -3{\bf k}\)?
+
+
+<h2>Solving a system of linear equations</h2>
+Sage can solve a system of linear equations such as \(y+3x=-2\) and \(x-2y = 5\).
+Of course, Sage can also solve the same system by producing the rref of the appropriate augmented matrix (and print the LaTeX form).
+<div class="sage">
+<script type="text/x-sage">
+var('y') # declare y to be a variable
+print(solve([y + 3*x == -2, x - 2*y == 5], x,y))
+
+A = matrix([[3,1,-2],[1,-2,5]])
+print(A.rref())
+
+# Set up how LaTeX code should look
+latex.matrix_delimiters(left='[', right=']')
+latex.matrix_column_alignment('c')
+
+print(latex(A))
+print("The reduced row echelon form is")
+print(latex(A.rref()))
+</script>
+</div>
+<b>Task</b>: What else can you wrap in a latex( ) command in Sage?
+
+
+<h2>Decimal approximation</h2>
+Sage can provide a decimal approximation of a number such as \(\sqrt{5}\). Note that .n() is an an alias for <a href="http://doc.sagemath.org/html/en/reference/misc/sage/misc/functional.html">numerical_approx()</a>.
+<div class="sage">
+<script type="text/x-sage">
+print(sqrt(5))
+print(sqrt(5).n())
+</script>
+</div>
+
+<h2>For loops</h2>
+A for loop will allow the same block of code (the indented code) to run with the value of a variable going through consecutive integers. All of the indented code needs to be intended by the same number of spaces.
+<div class="sage">
+<script type="text/x-sage">
+# k will take on values from 0 to 9
+for k in range(10):
+    print("k is now " + str(k))
+
+# m will take on values from 1 to 14
+for m in range(1,15):
+    print("m is now " + str(m))
+</script>
+</div>
+<b>Task</b>: Can you have a for loop in a for loop? Apply this technique to print every ordered pair of the form \((x,y)\) where \(x\) is an integer between \(0\) and \(9\), and \(y\) is an integer between \(1\) and \(50\).
+
+
+<h2>If</h2>
+An if/else block allows for a block of code (the indented code) to run sometimes (and other code to run sometimes)
+<div class="sage">
+<script type="text/x-sage">
+a = 4
+if a % 2 == 0:
+    print("The remainder of a divided by 2 is 0, so a is even integer.")
+else:
+    print("The remainder of a divided by 2 is not 0, so a is not even integer.")
+
+b = 5
+if b % 2 == 0:
+    print("The remainder of b divided by 2 is 0, so b is even integer.")
+else:
+    print("The remainder of b divided by 2 is not 0, so b is not even integer.")
+</script>
+</div>
+
+<h2>While loops</h2>
+A while loop does not manage as much for you. You can use a while loop to set a condition determining if the block of code should run again.
+<div class="sage">
+<script type="text/x-sage">
+c = 0
+while c < 20:
+    print("c is still less than 20, so this code is running. In fact, c is now " + str(c))
+    c = c + 3 # increase the value of c by 3
+print("We have reached the point where the loop is not running, so c < 20 must be false. In fact, c is now " + str(c))
+</script>
+</div>
+
+<h2>Sum of integers</h2>
+Let's compute \(\displaystyle \sum_{k=1}^n k\) for various values of \(n\)
+<div class="sage">
+<script type="text/x-sage">
+sum = 0
+n = 6
+k = 1
+while k <= n:
+    sum = sum + k
+    print("The sum of the first " + str(k) + " integers is " + str(sum))
+    k = k + 1 # increase the value of k
+</script>
+</div>
+<b>Task</b>: Do you know a formula for the sum of the first \(n\) terms? If so, could you modify the code so that the difference between the formula you know and the sum given by the computer would always be zero (and would be reported as such by the computer)? What about the sum of the first \(n\) square numbers?
+
+<h2>Sum of terms of the form 1/k^2</h2>
+Let's compute \(\displaystyle \sum_{k=1}^n \frac{1}{k^2}\) for various values of \(n\)
+<div class="sage">
+<script type="text/x-sage">
+sum = 0
+k = 1
+while k <= 20:
+    sum = sum + 1/k^2
+    print("The sum of the first " + str(k) + " terms is " + str(sum) + " which is approximately " + str(sum.n()) )
+    k = k + 1 # increase the value of k
+</script>
+</div>
+<b>Task</b>: The code by default shows the sum of the first 20 terms. How close is this to \(\frac{\pi^2}{6}\)? How much better do things get when you have more than 20 terms? (You may want to print something only AFTER the while loop is done, and comment out printing something each time the while loop runs.) Can you get within \(0.001\) of \(\frac{\pi^2}{6}\)? What is the minimum number of terms needed so that the partial sum is within \(0.001\) of \(\frac{\pi^2}{6}\)?
+
+
+<h2>The harmonic series</h2>
+Let's compute \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) for various values of \(n\)
+<div class="sage">
+<script type="text/x-sage">
+sum = 0
+k = 1
+while k <= 20:
+    sum = sum + 1/k
+    print("The sum of the first " + str(k) + " terms is approximately " + str(sum.n()) )
+    k = k + 1 # increase the value of k
+</script>
+</div>
+<b>Task</b>: 
+What must \(n\) be for \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) to be greater than \(4\)?
+What must \(n\) be for \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) to be greater than \(5\)?
+What must \(n\) be for \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) to be greater than \(6\)?
+What must \(n\) be for \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) to be greater than \(7\)?
+What must \(n\) be for \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) to be greater than \(70\)?
+
+
+<h2>The alternating harmonic series</h2>
+Let's compute \(\displaystyle \sum_{k=1}^n \frac{(-1)^k}{k}\) for various values of \(n\)
+<div class="sage">
+<script type="text/x-sage">
+sum = 0
+k = 1
+while k <= 20:
+    if k%2 == 0:
+        # k is even, so add 1/k
+        sum = sum + 1/k
+    else:
+        # k is odd, so subtract 1/k
+        sum = sum - 1/k
+    print("The sum of the first " + str(k) + " terms is " + str(sum) + " which is approximately " + str(sum.n()) )
+    k = k + 1 # increase the value of k
+</script>
+</div>
+
+</body>
+
+</html>
