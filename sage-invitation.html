@@ -49,6 +49,9 @@ print("Hello, world!")
 </div>
 <b>Task</b>: Change this code to say hello to the whole universe.
 
+<hr>
+<hr>
+
 <h2>Hello, galaxy</h2>
 To concatenate (glue) one string to another, use the plus sign between strings.
 <div class="sage">
@@ -57,6 +60,26 @@ print("Hello," + "galaxy!")
 </script>
 </div>
 <b>Task</b>: Fix this code so the printed text has a space after the comma.
+
+<hr>
+<hr>
+
+<h2>Two kinds of equals</h2>
+Sage syntax is Python-based, and like most programming languages, = is used to assign values, while == results in true or false depending on whether the quantities on each side of == are equal or not.
+<div class="sage">
+<script type="text/x-sage">
+u = 5
+
+if u == 6:
+    print("u is equal to ...")
+else:
+    print("u is not equal to...")
+</script>
+</div>
+<b>Task</b>: Change this code to print the other text.
+
+<hr>
+<hr>
 
 <h2>Derivatives</h2>
 Sage knows the Chain Rule! Note multiplication signs are required: sin(3*x) is understood but sin(3x) is not.
@@ -73,6 +96,9 @@ print(h)
 </div>
 <b>Task</b>: Have Sage compute the derivative of \(\sin(\sin(\sin(\ln(x))))\)
 
+<hr>
+<hr>
+
 <h2>Sage quirk: cannot concatenate a string and a function</h2>
 <div class="sage">
 <script type="text/x-sage">
@@ -83,6 +109,9 @@ print("The derivative is " + g)
 </div>
 <b>Task</b>: Fix this. Using str(g) provides a human-readable string version of \(g\)
 
+<hr>
+<hr>
+
 <h2>Sage shortcut</h2>
 <div class="sage">
 <script type="text/x-sage">
@@ -91,6 +120,26 @@ print("The derivative is " + str(f.diff()))
 </script>
 </div>
 <b>Task</b>: How could you modify the second line to show \(f''(x)\)?
+
+<hr>
+<hr>
+
+<h2>Store variable or output directly?</h2>
+<div class="sage">
+<script type="text/x-sage">
+a = 3
+b = 4
+print("Here is the sum directly:")
+print(a+b)
+
+thesum = a+b
+print("The value of thesum is:")
+print(thesum)
+</script>
+</div>
+
+<hr>
+<hr>
 
 <h2>Solve equations</h2>
 Sage can solve the equation \( x^2 - x = 3x+6\). Note the double equal sign.
@@ -102,6 +151,9 @@ print(solutions)
 </div>
 <b>Task</b>: Push the limits on computation. What kind of equations can Sage solve? Are there any equations you can solve that Sage can't seem to solve?
 
+<hr>
+<hr>
+
 <h2>Two-dimensional graphing: plot function</h2>
 Sage can <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot.html#sage.plot.plot.plot">plot</a> the graph the function \(f(x) = x^2 - x\) for \(-25 \leq x \leq 25\) and \(-25 \leq y \leq 25\).
 <div class="sage">
@@ -110,6 +162,9 @@ f = x^2 - x
 plot(f, xmin=-25, xmax=25, ymin=-25, ymax=25)
 </script>
 </div>
+
+<hr>
+<hr>
 
 <h2>Two-dimensional graphing: plot function</h2>
 Sage can <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/plot.html#sage.plot.plot.plot">plot</a> the graph the function \(f(x) = x^2 - x\) and \(g(x)=3x+6\) so that the intersections of the graphs correspond to solutions of the equation just solved earlier. (Here, the first input to PLOT is a LIST of functions.)
@@ -122,6 +177,9 @@ plot([f,g], xmin=-25, xmax=25, ymin=-25, ymax=25)
 </div>
 <b>Task</b>: How can you graph a third function simultaneously? How many times can you get two graphs to intersect each other for \(x \in [-25,25]\)?
 
+<hr>
+<hr>
+
 <h2>Two-dimensional graphing: plot equation in two variables</h2>
 Sage will provide an <a href="http://doc.sagemath.org/html/en/reference/plotting/sage/plot/contour_plot.html">implicit plot</a> of an equation in \(x\) and \(y\).
 For example, here we ask Sage to sketch the plot of the equation \((x-3)^2+(y+4)^2=7\), a circle centered at \(3,-4\) of radius \(\sqrt{7}\).
@@ -133,6 +191,9 @@ implicit_plot((x-3)^2 + (y+4)^2 == 7, (x,-10,10), (y,-10,10)) # Notice the doubl
 </div>
 <b>Task</b>: What's the coolest shape you can make?
 
+<hr>
+<hr>
+
 <h2>Three-dimensional visualization: sphere</h2>
 Sage can plot the sphere \(x^2 + y^2 + z^2 = 4\) for \(-3 \leq x \leq 3\) and \(-3 \leq y \leq 3\) and \(-3 \leq z \leq 3\).
 <div class="sage">
@@ -143,6 +204,9 @@ var('z') # use z as a variable
 implicit_plot3d(x^2+y^2+z^2==4, (x,-3,3), (y,-3,3), (z,-3,3))
 </script>
 </div>
+
+<hr>
+<hr>
 
 <h2>Three-dimensional visualization: heart-shaped surface</h2>
 Sage can plot a heart-shaped surface \((x^2+\frac94y^2+z^2-1)^3 - x^2z^3 - \frac{9}{80}y^2z^3 = 0\) in red.
@@ -158,6 +222,9 @@ implicit_plot3d(F, (x,-r,r), (y,-r,r), (z,-r,r), plot_points=80, color='red', sm
 </div>
 <b>Task</b>: What's the coolest 3D shape you can make?
 
+<hr>
+<hr>
+
 <h2>Expressions and special constants</h2>
 Sage will simplify expressions involving special constants such as \(\cos(\frac{\pi}{6})\) and \(\arccos(-\frac12)\).
 In addition, the value of an expression such as \(e^{\pi i}\) can be stored in a variable to be used later (or printed to screen).
@@ -170,6 +237,9 @@ eulersspecialnumber = e^(pi*i)
 print(eulersspecialnumber)
 </script>
 </div>
+
+<hr>
+<hr>
 
 <h2>Expanding and factoring expressions</h2>
 Sage can expand the expression \((x-1)^8\) or factor the expression \(x^3+4x^2+8x+32\).
@@ -185,6 +255,9 @@ print(polynomial.factor())
 </script>
 </div>
 
+<hr>
+<hr>
+
 <h2>Function evaluation</h2>
 Sage can take the function \(f(x) = x^3\) and use this to evaluate \(f(2)\) and evaluate the difference quotient \( \dfrac{f(2+h)-f(2)}{h} \).
 <div class="sage">
@@ -199,6 +272,8 @@ print(diffquo.expand())
 </div>
 <b>Task</b>: Using subs and diff, how can you get \(f'(\pi)\) if \(f(x) = \sin(3x)\)?
 
+<hr>
+<hr>
 
 <h2>Integration</h2>
 Given \(f(x) = x^3 + 10x^6\), Sage can find the indefinite integral \( \displaystyle \int f(x)\,dx\) and the definite integral  \( \displaystyle \int_2^4 f(x)\,dx\).
@@ -212,7 +287,8 @@ print(f.integral(x,2,4)) # definite integral
 </div>
 <b>Task</b>: If you've taken Calculus 3, can you modify the code above to compute a double integral or a triple integral?
 
-
+<hr>
+<hr>
 
 <h2>Vector geometry</h2>
 Given vectors \({\bf u}=3{\bf i} + 4{\bf j} + 5{\bf k}\) and \({\bf v} = {\bf i} -3{\bf k}\), 
@@ -231,6 +307,40 @@ print("The vector " + str(10*u+3*v) + " is a linear combination of u and v")
 </div>
 <b>Task</b>: What would you need to add to have Sage compute the angle between vectors \({\bf u}=3{\bf i} + 4{\bf j} + 5{\bf k}\) and \({\bf v} = {\bf i} -3{\bf k}\)?
 
+<hr>
+<hr>
+
+<h2>Eigenstuff, looping over lists in Sage</h2>
+<div class="sage">
+<script type="text/x-sage">
+A = matrix([[3,1,-2],[0,-2,5],[0,0,6]])
+print(A)
+
+print("Here are the eigenvalues of A provided as a Sage list:")
+print(A.eigenvalues())
+
+var("lamb") # Create a variable called lamb
+mypolynomial = det(A - lamb*identity_matrix(3))
+print("The characteristic polynomial of A is ")
+print(mypolynomial)
+#print("which when expanded is")
+#print(mypolynomial.expand())
+
+print("Here are the eigenvalues of A^2 provided as a Sage list:")
+B = A^2
+print(B.eigenvalues())
+
+print("Here are the eigenvalues of A^2 given individually:")
+eigenvaluelist = B.eigenvalues() # first, store a list for the for loop
+
+for individualeigenvalue in eigenvaluelist:
+    print("lambda = " + str(individualeigenvalue) + " is an eigenvalue of A^2")
+</script>
+</div>
+<b>Task</b>: While we did directly ask Sage for the eigenvalues of \(A\), what are (at least) two techniques you could have applied to mypolynomial (and how could these be implemented in Sage) to find and/or verify the eigenvalues?
+
+<hr>
+<hr>
 
 <h2>Solving a system of linear equations</h2>
 Sage can solve a system of linear equations such as \(y+3x=-2\) and \(x-2y = 5\).
@@ -254,6 +364,8 @@ print(latex(A.rref()))
 </div>
 <b>Task</b>: What else can you wrap in a latex( ) command in Sage?
 
+<hr>
+<hr>
 
 <h2>Decimal approximation</h2>
 Sage can provide a decimal approximation of a number such as \(\sqrt{5}\). Note that .n() is an an alias for <a href="http://doc.sagemath.org/html/en/reference/misc/sage/misc/functional.html">numerical_approx()</a>.
@@ -264,8 +376,11 @@ print(sqrt(5).n())
 </script>
 </div>
 
+<hr>
+<hr>
+
 <h2>For loops</h2>
-A for loop will allow the same block of code (the indented code) to run with the value of a variable going through consecutive integers. All of the indented code needs to be intended by the same number of spaces.
+A for loop will allow the same block of code (the indented code) to run with the value of a variable going through consecutive integers. All of the indented code needs to be intended by the same number of spaces. <b>Depending on the system, a tab may work, but it may not. (Also, a tab might get converted to four spaces.)</b>
 <div class="sage">
 <script type="text/x-sage">
 # k will take on values from 0 to 9
@@ -279,6 +394,25 @@ for m in range(1,15):
 </div>
 <b>Task</b>: Can you have a for loop in a for loop? Apply this technique to print every ordered pair of the form \((x,y)\) where \(x\) is an integer between \(0\) and \(9\), and \(y\) is an integer between \(1\) and \(50\).
 
+<hr>
+<hr>
+
+<h2>For loops, if/else blocks, etc.: indenting in Sage</h2>
+All of the indented code needs to be intended by the same number of spaces. <b>Depending on the system, a tab may work, but it may not. (Also, a tab might get converted to four spaces.)</b>
+<div class="sage">
+<script type="text/x-sage">
+thesum = 0
+
+for k in range(10):
+    print("k is now " + str(k))
+    thesum = thesum + k
+   print("thesum is now " + str(thesum))
+</script>
+</div>
+<b>Task</b>: As provided, the code doesn't work due to an indentation error. Fix it. Then, can you get the computer to tell you the sum of the first 100 integers? What about the sum of the first 10000 integers? (How could you redo this so that very little text prints to your screen, but you could still see the final result?)
+
+<hr>
+<hr>
 
 <h2>If</h2>
 An if/else block allows for a block of code (the indented code) to run sometimes (and other code to run sometimes)
@@ -298,6 +432,9 @@ else:
 </script>
 </div>
 
+<hr>
+<hr>
+
 <h2>While loops</h2>
 A while loop does not manage as much for you. You can use a while loop to set a condition determining if the block of code should run again.
 <div class="sage">
@@ -309,6 +446,9 @@ while c < 20:
 print("We have reached the point where the loop is not running, so c < 20 must be false. In fact, c is now " + str(c))
 </script>
 </div>
+
+<hr>
+<hr>
 
 <h2>Sum of integers</h2>
 Let's compute \(\displaystyle \sum_{k=1}^n k\) for various values of \(n\)
@@ -325,6 +465,9 @@ while k <= n:
 </div>
 <b>Task</b>: Do you know a formula for the sum of the first \(n\) terms? If so, could you modify the code so that the difference between the formula you know and the sum given by the computer would always be zero (and would be reported as such by the computer)? What about the sum of the first \(n\) square numbers?
 
+<hr>
+<hr>
+
 <h2>Sum of terms of the form 1/k^2</h2>
 Let's compute \(\displaystyle \sum_{k=1}^n \frac{1}{k^2}\) for various values of \(n\)
 <div class="sage">
@@ -339,6 +482,8 @@ while k <= 20:
 </div>
 <b>Task</b>: The code by default shows the sum of the first 20 terms. How close is this to \(\frac{\pi^2}{6}\)? How much better do things get when you have more than 20 terms? (You may want to print something only AFTER the while loop is done, and comment out printing something each time the while loop runs.) Can you get within \(0.001\) of \(\frac{\pi^2}{6}\)? What is the minimum number of terms needed so that the partial sum is within \(0.001\) of \(\frac{\pi^2}{6}\)?
 
+<hr>
+<hr>
 
 <h2>The harmonic series</h2>
 Let's compute \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) for various values of \(n\)
@@ -359,6 +504,8 @@ What must \(n\) be for \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) to be greater 
 What must \(n\) be for \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) to be greater than \(7\)?
 What must \(n\) be for \(\displaystyle \sum_{k=1}^n \frac{1}{k}\) to be greater than \(70\)?
 
+<hr>
+<hr>
 
 <h2>The alternating harmonic series</h2>
 Let's compute \(\displaystyle \sum_{k=1}^n \frac{(-1)^k}{k}\) for various values of \(n\)
@@ -377,6 +524,24 @@ while k <= 20:
     k = k + 1 # increase the value of k
 </script>
 </div>
+
+<hr>
+<hr>
+
+<h2>String manipulations</h2>
+<div class="sage">
+<script type="text/x-sage">
+samplestring = "abcdefg"
+# In the string above, the "a" is in position 0, the "b" is in position 1, and so on
+print(samplestring[0:3]) # samplestring[0:3] gets the substring consisting of all positions satisfying 0 <= i < 3
+
+fruitlist = ["apple","banana","cranberry","durian","elderberry"]
+
+for fruit in fruitlist:
+    print("For breakfast today, I had a " + fruit)
+</script>
+</div>
+<b>Task</b>: Modify this (hint: if/else) to be use grammatically correct articles (a vs an).
 
 </body>
 
