@@ -21,7 +21,7 @@ $.getJSON(url, 'per_page=100&include[]=email', function(d) {
 <h2>Application to bulk-importing students to WeBWorK</h2>
 After running the 8-line code above, the result will be name (Last name comma First name) followed by a tab followed by e-mail address. To import students to WeBWorK, you need to get a CSV file in <a href="https://webwork.maa.org/wiki/Classlist_Files">WeBWorK's classlist file format</a>. To do this,
 <ul>
-  <li>Paste the result above into a text editor (Notepad on Windows, TextEdit on Mac)</li>
+  <li>Run the above, and copy/paste the result into a text editor (Notepad on Windows, TextEdit on Mac)</li>
   <li>Search-replace every ", " with a tab. (To do this, first generate a tab in the text editor, and store this in the clipboard to paste on the find/replace screen.)</li>
   <li>Store each student's default password in Column A of an Excel</li>
   <li>Store student's last name in Column B of Excel</li>
