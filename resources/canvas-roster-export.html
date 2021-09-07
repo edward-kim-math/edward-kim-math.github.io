@@ -18,6 +18,24 @@ $.getJSON(url, 'per_page=100&include[]=email', function(d) {
 });
 {% endhighlight %}
 
+<h2>Application to bulk-importing students to WeBWorK</h2>
+After running the 8-line code above, the result will be name (Last name comma First name) followed by a tab followed by e-mail address. To import students to WeBWorK, you need to get a CSV file in <a href="https://webwork.maa.org/wiki/Classlist_Files">WeBWorK's classlist file format</a>. To do this,
+<ul>
+  <li>Paste the result above into a text editor (Notepad on Windows, TextEdit on Mac)</li>
+  <li>Search-replace every ", " with a tab. (To do this, first generate a tab in the text editor, and store this in the clipboard to paste on the find/replace screen.)</li>
+  <li>Store each student's default password in Column A of an Excel</li>
+  <li>Store student's last name in Column B of Excel</li>
+  <li>Store student's first name in Column C of Excel</li>
+  <li>Store student's e-mail address in Column H of Excel</li>
+  <li>Store student's user name for WeBWorK in Column I of Excel</li>
+  <li>Leave all other columns (D, E, F, G, J, K) blank.</li>
+  <li>Export this Excel as a CSV file.</li>
+  <li>Rename the CSV file to end in LST instead.</li>
+  <li>Upload the LST file to WeBWorK in the File Browser.</li>
+  <li>Import the LST file in the "Classlist Editor" section of WeBWorK.</li>
+</ul>
+
+<h2>Documentation/comments about the script above</h2>
 Instead of the two fields (sortable name, email) you may want other fields. Most likely might be [ 'name', 'sortable_name', 'login_id', 'email' ] or for a full list, from the <a href="https://canvas.instructure.com/doc/api/users.html">API documentation</a> for user objects:
 {% highlight javascript linenos %}
 {
