@@ -46,7 +46,7 @@ and the linear combination \(10u + 3v\).
 u = vector([3,4,5])
 v = vector([1,0,-3])
 
-print("The dot product is")
+print("The dot product is") # text you wish to print is in double-quotes
 print(u.dot_product(v))
 print("The cross product is")
 print(u.cross_product(v))
@@ -64,20 +64,20 @@ A = matrix(QQ, [[1,1,2],[2,3,3],[4,0,-5]])
 B = matrix(QQ, [[5,6,7],[0,9,8]])
 C = B.transpose() * B
 
-# Set up how LaTeX code should look
-latex.matrix_delimiters(left='[', right=']')
-latex.matrix_column_alignment('c')
+# Set up how LaTeX code should look for the format of a matrix
+latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
+latex.matrix_column_alignment('c') # can use l, c, or r for column alignment
 
+print("The matrix A is")
 print(A)
-print("") # leave an extra line of space in the output
+print("The LaTeX version of A is")
 print(latex(A))
-print("") # leave an extra line of space in the output
-print("Then the fifth power of the matrix is")
-print("") # leave an extra line of space in the output
+print("Then A^5 is")
 print(A^5)
-print("") # leave an extra line of space in the output
-print(latex(A))
-print(2*A + 3*C + 4000*matrix.identity(3))
+print("The LaTeX version of A^5 is")
+print(latex(A^5))
+print("Here's 2 times matrix A, plus 3 times matrix C, plus 4000 times the 3-by-3 identity matrix:)
+print(2*A + 3*C + 4000*identity_matrix(3))
 </script>
 </div>
 
@@ -127,13 +127,14 @@ print(det(A))
 # Set up how LaTeX code should look for the format of a matrix
 latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
 latex.matrix_column_alignment('c') # can use l, c, or r for column alignment
+
 print("For insertion in LaTeX, the matrix A is")
 print(latex(A))
 
 print("Building the characteristic polynomial by hand, we have")
 print(det(A-x*identity_matrix(4)))
 
-print("Sage also has a built-in charateristic polynomial function:")
+print("Sage also has a built-in charateristic polynomial feature:")
 print(A.characteristic_polynomial())
 </script>
 </div>
