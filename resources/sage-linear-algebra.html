@@ -158,11 +158,40 @@ print(C*D)
 </div>
 
 
+<h2>Matrix multiplication</h2>
+This example defines a \(3 \times 4\) matrix \(C\) and a vector \(v\) in \(\mathbb{R}^4\) and computes the product \(Cv\).
+In Sage, there is an object type called vector.
+We can alternately create the same vector \(v\) as a \(4 \times 1\) matrix (though Sage then views this as a matrix instead of a vector). We will use \(w\) in the code below for the matrix version of \(v\).
+<div class="sage">
+<script type="text/x-sage">
+C = matrix([[-3, 0, -99, 10], [3, -1, 0, -20], [0, -1, -1, 1]])
+v = vector([3,4,-5,2])
+w = matrix([[3],[4],[-5],[2]])
+
+print("C is")
+print(C)
+
+print("v is a thing that Sage calls a vector, namely v=")
+print(v)
+print("C*v is a thing that Sage calls a vector, namely Cv=")
+print(C*v)
+
+print("w is a thing that Sage calls a matrix, namely w=")
+print(w)
+print("C*w is a thing that Sage calls a vector, namely Cw=")
+print(C*w)
+</script>
+</div>
+
+
+
+
 
 <h2>Computations on a square matrix</h2>
 This example defines a \(4 \times 4\) matrix \(A\).
-We have the system compute the determinant and the trace of \(A\), outputting both of these on screen.
-We also have Sage compute the characteristic polynomial of \(A\).
+We have the system compute the determinant and the trace of \(A\), outputting both of these on screen. 
+<b>Note that Sage's notation for the trace does not look like Sage's notation for the determinant.</b>
+We also have Sage compute the characteristic polynomial of \(A\) in a home-made fashion, and then compare this to Sage's built-in characteristic polynomial feature.
 <div class="sage">
 <script type="text/x-sage">
 A = matrix([[42, 45, -189, -276], [40, 48, -174, -296], [8, 9, -39, -52], [8, 9, -33, -58]])
@@ -174,7 +203,7 @@ print("The determinant of A is")
 print(det(A))
 
 print("The trace of A is")
-print(trace(A))
+print(A.trace())
 
 # Set up how LaTeX code should look for the format of a matrix
 latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
