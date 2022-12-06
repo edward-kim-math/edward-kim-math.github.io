@@ -55,31 +55,30 @@ print(10*u+3*v)
 </script>
 </div>
 
-<h2>Matrix algebra/operations: powers of a matrix, transpose, linear combination, identity</h2>
-This example specifies a \(3 \times 3\) matrix \(A\) and asks Sage to compute \(A^5\).
-This example also specifies a \(2 \times 3\) matrix \(B\), defines \(C\) to be \(B^TB\), then asks Sage to compute \(2A+3C+4000I\), where \(I\) is the \(3 \times 3\) identity matrix.
+
+
+<h2>Transpose of a matrix</h2>
+This example specifies a \(2 \times 3\) matrix \(B\), then computes the transpose of \(B\).
 <div class="sage">
 <script type="text/x-sage">
-A = matrix(QQ, [[1,1,2],[2,3,3],[4,0,-5]])
 B = matrix(QQ, [[5,6,7],[0,9,8]])
-C = B.transpose() * B
 
 # Set up how LaTeX code should look for the format of a matrix
 latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
 latex.matrix_column_alignment('c') # can use l, c, or r for column alignment
 
-print("The matrix A is")
-print(A)
-print("The LaTeX version of A is")
-print(latex(A))
-print("Then A^5 is")
-print(A^5)
-print("The LaTeX version of A^5 is")
-print(latex(A^5))
-print("Here's 2 times matrix A, plus 3 times matrix C, plus 4000 times the 3-by-3 identity matrix:)
-print(2*A + 3*C + 4000*identity_matrix(3))
+print("The matrix B is")
+print(B)
+print("The LaTeX version of B is")
+print(latex(B))
+print("The transpose of B is")
+print(B.transpose())
+print("The LaTeX version of the transpose of B is is")
+print(latex(B.transpose()))
 </script>
 </div>
+
+
 
 
 <h2>Solving a system of linear equations</h2>
@@ -110,10 +109,44 @@ print(latex(A.rref()))
 
 
 
-<h2>Linear algera: computations on a diagonalizable matrix</h2>
-This example constructs a \(4 \times 4\) diagonalizable matrix \(A\) with eigenvalues \(2\), and \(3\) with multiplicity \(1\), and eigenvalue \(-6\) with multiplicity \(2\).
-Then, the characteristic polynomial is computed and displayed both in native Sage form, and in LaTeX output.
-Then, we display the factored version of the characteristic polynomial.
+
+
+<h2>Matrix algebra/operations: linear combination, identity</h2>
+This example defines \(3 \times 3\) matrices \(A\) and \(B\).
+Then is asked to compute the linear combination \(2A+3B+4000I\), where \(I\) is the \(3 \times 3\) identity matrix.
+<div class="sage">
+<script type="text/x-sage">
+A = matrix(QQ, [[1,1,2],[2,3,3],[4,0,-5]])
+B = matrix(QQ, [[5,6,7],[0,9,8],[10,11,1/2])
+
+# Set up how LaTeX code should look for the format of a matrix
+latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
+latex.matrix_column_alignment('c') # can use l, c, or r for column alignment
+
+print("The matrix A is")
+print(A)
+print("The LaTeX version of A is")
+print(latex(A))
+
+print("The matrix B is")
+print(B)
+print("The LaTeX version of B is")
+print(latex(B))
+
+print("2A+3B+4000I is a linear combination of A, B, and I, and it is")
+print(2*A + 3*B + 4000*identity_matrix(3))
+print("Formatted for LaTeX, this is")
+print(latex(2*A + 3*B + 4000*identity_matrix(3)))
+</script>
+</div>
+
+
+
+
+<h2>Linear algera: computations on a square matrix</h2>
+This example defines a \(4 \times 4\) matrix \(A\).
+We have the system compute the determinant and the trace of \(A\), outputting both of these on screen.
+We also have Sage compute the characteristic polynomial of \(A\).
 <div class="sage">
 <script type="text/x-sage">
 A = matrix([[42, 45, -189, -276], [40, 48, -174, -296], [8, 9, -39, -52], [8, 9, -33, -58]])
@@ -123,6 +156,9 @@ print(A)
 
 print("The determinant of A is")
 print(det(A))
+
+print("The trace of A is")
+print(trace(A))
 
 # Set up how LaTeX code should look for the format of a matrix
 latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
@@ -134,8 +170,13 @@ print(latex(A))
 print("Building the characteristic polynomial by hand, we have")
 print(det(A-x*identity_matrix(4)))
 
-print("Sage also has a built-in charateristic polynomial feature:")
+print("Sage also has a built-in charateristic polynomial feature, which gives:")
 print(A.characteristic_polynomial())
+
+print("A^5 is")
+print(A^5)
+print("and formatted for LaTeX, A^5 is")
+print(latex(A^5))
 </script>
 </div>
 
