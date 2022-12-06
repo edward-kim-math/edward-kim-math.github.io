@@ -46,9 +46,9 @@ and the linear combination \(10u + 3v\).
 u = vector([3,4,5])
 v = vector([1,0,-3])
 
-print("The dot product is") # text you wish to print is in double-quotes
+print("The dot product of u and v is") # text you wish to print is in double-quotes
 print(u.dot_product(v))
-print("The cross product is")
+print("The cross product of u and v is")
 print(u.cross_product(v))
 print("The following vector is a linear combination of u and v:")
 print(10*u+3*v)
@@ -73,12 +73,10 @@ print("The LaTeX version of B is")
 print(latex(B))
 print("The transpose of B is")
 print(B.transpose())
-print("The LaTeX version of the transpose of B is is")
+print("The LaTeX version of the transpose of B is")
 print(latex(B.transpose()))
 </script>
 </div>
-
-
 
 
 <h2>Solving a system of linear equations</h2>
@@ -106,12 +104,25 @@ print("and having this formatted for LaTeX, the rref is")
 print(latex(A.rref()))
 </script>
 </div>
+If you do not modify the input, as the final part of the output, you will see
+<pre>
+\left(\begin{array}{ccc}
+1 & 0 & \frac{1}{7} \\
+0 & 1 & -\frac{17}{7}
+\end{array}\right)
+</pre>
+If you wish to have a vertical bar before the last column, manually insert the vertical bar in {ccc}. That is, once pasting the output into your LaTeX project, modify the code by insertion of one character, producing
+<pre>
+\left(\begin{array}{cc|c}
+1 & 0 & \frac{1}{7} \\
+0 & 1 & -\frac{17}{7}
+\end{array}\right)
+</pre>
 
 
 
 
-
-<h2>Matrix algebra/operations: linear combination, identity</h2>
+<h2>Matrix algebra/operations: linear combination of matrices, including the identity matrix</h2>
 This example defines \(3 \times 3\) matrices \(A\) and \(B\).
 Then is asked to compute the linear combination \(2A+3B+4000I\), where \(I\) is the \(3 \times 3\) identity matrix.
 <div class="sage">
