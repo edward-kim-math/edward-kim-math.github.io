@@ -116,30 +116,25 @@ Then, the characteristic polynomial is computed and displayed both in native Sag
 Then, we display the factored version of the characteristic polynomial.
 <div class="sage">
 <script type="text/x-sage">
-# Construct a random 4 by 4 diagonalizable matrix
-A = random_matrix(QQ, 4, algorithm='diagonalizable', eigenvalues=[2,3,-6],dimensions=[1,1,2]);
-var('lam', latex_name="\\lambda") # use lam as a variable (since lambda is a reserved word)
+A = matrix([[42, 45, -189, -276], [40, 48, -174, -296], [8, 9, -39, -52], [8, 9, -33, -58]])
 
+print("The matrix A is")
 print(A)
-print("") # leave an extra line of space in the output
 
-# Set up how LaTeX code should look
-latex.matrix_delimiters(left='[', right=']')
-latex.matrix_column_alignment('c')
+print("The determinant of A is")
+print(det(A))
 
-print(A-lam*matrix.identity(4))
-print(latex(A-lam*matrix.identity(4)))
+# Set up how LaTeX code should look for the format of a matrix
+latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
+latex.matrix_column_alignment('c') # can use l, c, or r for column alignment
+print("For insertion in LaTeX, the matrix A is")
+print(latex(A))
 
-charpol = det(A-lam*matrix.identity(4))
+print("Building the characteristic polynomial by hand, we have")
+print(det(A-x*identity_matrix(4)))
 
-print(charpol) # print the characteristic polynomial using Sage's variable
-print(latex(charpol)) # print a nice version for use in LaTeX
-
-print(charpol.factor())
-print(latex(charpol.factor()))
-
-print(A.eigenvalues())
-print(A.eigenvectors_right())
+print("Sage also has a built-in charateristic polynomial function:")
+print(A.characteristic_polynomial())
 </script>
 </div>
 
