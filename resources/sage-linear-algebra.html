@@ -1,0 +1,236 @@
+---
+layout: default
+title: Sage demo
+---
+<h1>{{ page.title }}</h1>
+
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
+
+<p><a href="http://www.sagemath.org/">Sage</a> is a free and open source computer algebra system (CAS). It is a viable alternative to Maple, Mathematica, and Magma. It may be a workable alternative to Matlab, but <a href="https://www.gnu.org/software/octave/">Octave</a> might be a better alternative.
+Sage is probably not the tool for every mathematical computation: for quick two-dimensional plotting, perhaps <a href="https://www.desmos.com/">Desmos</a> is more ideal, while <a href="https://www.geogebra.org/">GeoGebra</a> is an ideal tool for exploring/understanding the algebra-geometry correspondence.
+The coding style for Sage is based on the well-known language Python, whereas Maple and Mathematica are proprietary languages.</p>
+
+<p>Computing in Sage can be done in three ways:
+<ul>
+	<li>Sage may be freely <a href="http://www.sagemath.org/download.html">downloaded</a> and installed for Windows, Mac, Linux, etc.</li>
+	<li>Sage may be freely run in the cloud at <a href="https://cocalc.com/">CoCalc</a>, formely the SageMathCloud. (For more processing power, paid subscriptions are available.)</li>
+	<li>... and a thing I call "Sage on webpages". Live scripts can be embedded into webpages (like all of the examples shown later on this webpage) using the <a href="https://sagecell.sagemath.org/">Sage Cell Server</a>. While I have developed the rest of this webpage as a general showcase of Sage's capabilities, there is a nice <a href="http://linear.ups.edu/html/fcla.html">online linear algebra web-textbook</a> which nicely incorporates "Sage on webpages" within the text.
+	<a href="http://gregorybard.com/interacts.html">Gregory Bard has nice interactive scripts</a> covering system of inequalities, Leontief input-output analysis, the portfolio balancing problem, etc.</li>
+</ul>
+</p>
+
+<p>Here are some demonstrations of things that Sage can do. Any of the scripts can be run "live" on the web by clicking "Evaluate."
+Moreover, you can modify a script and click "Evaluate" again, and your code will run! (In some situations, it would be confusing to the user to see
+	code, so it is also possible to "hide" the code. See an example for <a href="https://edward-kim-math.github.io/resources/linearization.html">linearization</a> or for <a href="https://edward-kim-math.github.io/resources/approximating-area.html">Riemann sums</a>.)</p>
+
+<h2>Expanding and factoring expressions</h2>
+Sage can expand the expression \((x-1)^8\) or factor the expression \(x^3+4x^2+8x+32\). Note that the multiplication asterisk is REQUIRED by sage between the \(4\) and \(x^2\), as well as between the \(8\) and the \(x\).
+<div class="sage">
+<script type="text/x-sage">
+powerofbinomial = (x-1)^8
+print(powerofbinomial.expand())
+
+polynomial = x^3 + 4*x^2 + 8*x + 32
+print(polynomial.factor())
+</script>
+</div>
+
+<h2>Vector geometry</h2>
+Given vectors \(u = (3,4,5) and v = \(1,0,-3\),
+Sage will compute the dot product \(u \cdot v\),
+the cross product \(u \times v\),
+and the linear combination \(10u + 3v\).
+<div class="sage">
+<script type="text/x-sage">
+u = vector([3,4,5])
+v = vector([1,0,-3])
+
+print("The dot product is")
+print(u.dot_product(v))
+print("The cross product is"
+print(u.cross_product(v))
+print("The following vector is a linear combination of u and v:")
+print(10*u+3*v)
+</script>
+</div>
+
+<h2>Matrix algebra/operations: powers of a matrix, transpose, linear combination, identity</h2>
+This example specifies a \(3 \times 3\) matrix \(A\) and asks Sage to compute \(A^5\).
+This example also specifies a \(2 \times 3\) matrix \(B\), defines \(C\) to be \(B^TB\), then asks Sage to compute \(2A+3C+4000I\), where \(I\) is the \(3 \times 3\) identity matrix.
+<div class="sage">
+<script type="text/x-sage">
+A = matrix(QQ, [[1,1,2],[2,3,3],[4,0,-5]])
+B = matrix(QQ, [[5,6,7],[0,9,8]])
+C = B.transpose() * B
+
+# Set up how LaTeX code should look
+latex.matrix_delimiters(left='[', right=']')
+latex.matrix_column_alignment('c')
+
+print(A)
+print("") # leave an extra line of space in the output
+print(latex(A))
+print("") # leave an extra line of space in the output
+print("Then the fifth power of the matrix is")
+print("") # leave an extra line of space in the output
+print(A^5)
+print("") # leave an extra line of space in the output
+print(latex(A))
+print(2*A + 3*C + 4000*matrix.identity(3))
+</script>
+</div>
+
+
+<h2>Solving a system of linear equations</h2>
+Sage can solve a system of linear equations such as \(y+3x=-2\) and \(x-2y = 5\).
+Of course, Sage can also solve the same system by producing the rref of the appropriate augmented matrix.
+<div class="sage">
+<script type="text/x-sage">
+var('y') # declare y to be a variable. By default, x is always a variable.
+print(solve([y + 3*x == -2, x - 2*y == 5], x,y))
+
+A = matrix([[3,1,-2],[1,-2,5]])
+print(A.rref())
+
+# Set up how LaTeX code should look for the format of a matrix
+latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
+latex.matrix_column_alignment('c') # can use l, c, or r for column alignment
+
+print("The original matrix A is ")
+print(A)
+print("and having this formatted for LaTeX, A is")
+print(latex(A))
+print("The rref of A is ")
+print(A.rref())
+print("and having this formatted for LaTeX, the rref is")
+print(latex(A.rref()))
+</script>
+</div>
+
+
+
+<h2>Linear algera: computations on a diagonalizable matrix</h2>
+This example constructs a \(4 \times 4\) diagonalizable matrix \(A\) with eigenvalues \(2\), and \(3\) with multiplicity \(1\), and eigenvalue \(-6\) with multiplicity \(2\).
+Then, the characteristic polynomial is computed and displayed both in native Sage form, and in LaTeX output.
+Then, we display the factored version of the characteristic polynomial.
+<div class="sage">
+<script type="text/x-sage">
+# Construct a random 4 by 4 diagonalizable matrix
+A = random_matrix(QQ, 4, algorithm='diagonalizable', eigenvalues=[2,3,-6],dimensions=[1,1,2]);
+var('lam', latex_name="\\lambda") # use lam as a variable (since lambda is a reserved word)
+
+print(A)
+print("") # leave an extra line of space in the output
+
+# Set up how LaTeX code should look
+latex.matrix_delimiters(left='[', right=']')
+latex.matrix_column_alignment('c')
+
+print(A-lam*matrix.identity(4))
+print(latex(A-lam*matrix.identity(4)))
+
+charpol = det(A-lam*matrix.identity(4))
+
+print(charpol) # print the characteristic polynomial using Sage's variable
+print(latex(charpol)) # print a nice version for use in LaTeX
+
+print(charpol.factor())
+print(latex(charpol.factor()))
+
+print(A.eigenvalues())
+print(A.eigenvectors_right())
+</script>
+</div>
+
+
+<h2>Singular Value Decomposition</h2>
+Sage can compute <a href="http://www.cfm.brown.edu/people/dobrush/am34//sage/svd.html">SVD</a> for a matrix.
+<div class="sage">
+<script type="text/x-sage">
+A=matrix(RDF,[[4,2,5],[0,16,0],[0,14,9]]) # RDF stands for "real double field"
+print "The eigenvalues of A are", A.eigenvalues()
+U, Sigma, V = A.SVD()
+print("U is the matrix")
+print(U)
+print("Sigma is the matrix")
+print(Sigma)
+print("V is the matrix")
+print(V)
+</script>
+</div>
+
+
+<h2>LU Decomposition</h2>
+Sage can compute <a href="http://doc.sagemath.org/html/en/reference/matrices/sage/matrix/matrix2.html">LU</a> for a matrix.
+<div class="sage">
+<script type="text/x-sage">
+A = matrix(QQ, [[1, -1,  0,  2,  4,  7, -1],
+                [2, -1,  0,  6,  4,  8, -2],
+                [2,  0,  1,  4,  2,  6,  0],
+                [1,  0, -1,  8, -1, -1, -3],
+                [1,  1,  2, -2, -1,  1,  3]])
+P, L, U = A.LU(pivot='nonzero')
+print("P is the matrix")
+print(P)
+print("L is the matrix")
+print(L)
+print("U is the matrix")
+print(U)
+</script>
+</div>
+
+
+<h2>Discrete Markov Chains</h2>
+Sage can find the steady state distribution for a <a href="https://vknight.org/OR_Methods/Markov_Chains/Markov_Chains_Sage_Sheet_Solutions.pdf">discrete Markov chain</a>.
+<div class="sage">
+<script type="text/x-sage">
+A=matrix([[.8,.2,0],[.1,.7,.2],[.1,.3,.6]])
+
+var("pi1,pi2,pi3")
+
+solve([A[0,0]*pi1+A[1,0]*pi2+A[2,0]*pi3==pi1,
+A[0,1]*pi1+A[1,1]*pi2+A[2,1]*pi3==pi2,
+A[0,2]*pi1+A[1,2]*pi2+A[2,2]*pi3==pi3,
+pi1+pi2+pi3==1],[pi1,pi2,pi3])
+</script>
+</div>
+
+
+
+<h2>Continuous Markov Chains</h2>
+Sage can find the steady state probabilities for a <a href="https://vknight.org/OR_Methods/Markov_Chains/Markov_Chains_Sage_Sheet_Solutions.pdf">continuous Markov chain</a>.
+<div class="sage">
+<script type="text/x-sage">
+Q=matrix([[-3,3,0,0],[4,-7,3,0],[0,4,-7,3],[0,0,4,-4]])
+
+var("pi1,pi2,pi3,pi4")
+
+solve([Q[0,0]*pi1+Q[1,0]*pi2+Q[2,0]*pi3+Q[3,0]*pi4==0,
+Q[0,1]*pi1+Q[1,1]*pi2+Q[2,1]*pi3+Q[3,1]*pi4==0,
+Q[0,2]*pi1+Q[1,2]*pi2+Q[2,2]*pi3+Q[3,2]*pi4==0,
+Q[0,3]*pi1+Q[1,3]*pi2+Q[2,3]*pi3+Q[3,3]*pi4==0,
+pi1+pi2+pi3+pi4==1],[pi1,pi2,pi3,pi4])
+</script>
+</div>
+
+
+
+<h2>Markov Chain visualization</h2>
+Sage can visualize the states of <a href="https://gist.github.com/drvinceknight/7b479fd1cd0868e4590c">Markov chains</a>.
+<div class="sage">
+<script type="text/x-sage">
+@interact
+def _(A=matrix(RDF,3,3,[8,2,0,1,7,2,1,3,6])/10,x_init=("$\pi^{(0)}$",vector([.2,.5,.3]))):
+    x_init = vector(x_init)
+    data = [x_init * (A^i) for i in range(20)]
+    pi = zip(*data)
+    p = line(enumerate(pi[0]),color='red',legend_label='$\pi_1$',thickness=3)
+    p += line(enumerate(pi[1]),color='blue',legend_label='$\pi_2$',thickness=3)
+    p += line(enumerate(pi[2]),color='green',legend_label='$\pi_3$',thickness=3)
+    p.ymax(1)
+    show(p)
+</script>
+</div>
+
+
