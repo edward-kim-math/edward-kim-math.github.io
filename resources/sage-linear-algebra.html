@@ -162,9 +162,9 @@ print( (C.transpose()) * (D.transpose()) )
 </div>
 
 
-<h2>Matrix multiplication</h2>
+<h2>Matrix times vector</h2>
 This example defines a \(3 \times 4\) matrix \(C\) and a vector \(v\) in \(\mathbb{R}^4\) and computes the product \(Cv\).
-In Sage, there is an object type called vector.
+In Sage, there is an object type called vector. (On paper, we can think of a vector as being a matrix of one column, but sage treats matrices and vectors as different/distinct objects.)
 We can alternately create the same vector \(v\) as a \(4 \times 1\) matrix (though Sage then views this as a matrix instead of a vector). We will use \(w\) in the code below for the matrix version of \(v\).
 <div class="sage">
 <script type="text/x-sage">
