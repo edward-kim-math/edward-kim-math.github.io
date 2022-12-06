@@ -111,6 +111,36 @@ If you wish to have a vertical bar before the last column, manually insert the v
 
 
 
+<h2>Solving a system of linear equations, including using variables for the right-hand-side</h2>
+Suppose that \(y_1\) and \(y_2\) were numbers (but mysteries to us).
+We can have Sage solve the system of linear equations \(5x_1 + 6x_2 = y_1\) and \(7x_1 + 8x_2 = y_2\) by first introducing variables \(y_1\) and \(y_2\).
+Then, we can set up an approirate augmented matrix and have Sage do the computation.
+<div class="sage">
+<script type="text/x-sage">
+# Set up how LaTeX code should look for the format of a matrix
+latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
+latex.matrix_column_alignment('c') # can use l, c, or r for column alignment
+
+var('y1') # create a variable called y1
+var('y2') # create a variable called y2
+
+A = matrix([[5,6,y1],[7,8,y2]])
+
+print("The matrix A is")
+print(A)
+print("In LaTeX form, A is")
+print(latex(A))
+
+print("The rref of A is")
+print(A.rref())
+print("In LaTeX form, the RREF of A is")
+print(latex(A.rref()))
+</script>
+</div>
+
+
+
+
 
 <h2>Matrix algebra/operations: linear combination of matrices, including the identity matrix</h2>
 This example defines \(3 \times 3\) matrices \(A\) and \(B\).
