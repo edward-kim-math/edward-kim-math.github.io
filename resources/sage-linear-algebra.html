@@ -47,12 +47,11 @@ print(10*u+3*v)
 </div>
 
 
-
 <h2>Transpose of a matrix</h2>
 This example specifies a \(2 \times 3\) matrix \(B\), then computes the transpose of \(B\).
 <div class="sage">
 <script type="text/x-sage">
-B = matrix(QQ, [[5,6,7],[0,9,8]])
+B = matrix([[5,6,7],[0,9,8]])
 
 # Set up how LaTeX code should look for the format of a matrix
 latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
@@ -118,8 +117,8 @@ This example defines \(3 \times 3\) matrices \(A\) and \(B\).
 Then is asked to compute the linear combination \(2A+3B+4000I\), where \(I\) is the \(3 \times 3\) identity matrix.
 <div class="sage">
 <script type="text/x-sage">
-A = matrix(QQ, [[1,1,2],[2,3,3],[4,0,-5]])
-B = matrix(QQ, [[5,6,7],[0,9,8],[10,11,1/2])
+A = matrix([[1,1,2],[2,3,3],[4,0,-5]])
+B = matrix([[5,6,7],[0,9,8],[10,11,7/3]])
 
 # Set up how LaTeX code should look for the format of a matrix
 latex.matrix_delimiters(left='(', right=')') # using either parens or square brackets is typical for a matrix
@@ -142,10 +141,25 @@ print(latex(2*A + 3*B + 4000*identity_matrix(3)))
 </script>
 </div>
 
+<h2>Matrix multiplication</h2>
+This example defines a \(3 \times 4\) matrix \(C\) and a \(4 \times 2\) matrix \(D\) and computes the product \(CD\).
+<div class="sage">
+<script type="text/x-sage">
+C = matrix([[-3, 0, -99, 10], [3, -1, 0, -20], [0, -1, -1, 1]])
+D = matrix([[1, -2], [-3, -1], [0, -1], [1, -2]])
+
+print("C is")
+print(C)
+print("D is")
+print(D)
+print("CD is")
+print(C*D)
+</script>
+</div>
 
 
 
-<h2>Linear algera: computations on a square matrix</h2>
+<h2>Computations on a square matrix</h2>
 This example defines a \(4 \times 4\) matrix \(A\).
 We have the system compute the determinant and the trace of \(A\), outputting both of these on screen.
 We also have Sage compute the characteristic polynomial of \(A\).
