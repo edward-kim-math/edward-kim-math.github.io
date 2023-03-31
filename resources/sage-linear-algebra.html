@@ -221,7 +221,7 @@ print(C*w)
 
 
 
-<h2>Computations on a square matrix</h2>
+<h2>Computations on a square matrix: rank, determinant, trace</h2>
 This example defines a \(4 \times 4\) matrix \(A\).
 We have the system compute the determinant and the trace of \(A\), outputting both of these on screen. 
 <b>Note that Sage's notation for the trace does not look like Sage's notation for the determinant.</b>
@@ -232,6 +232,9 @@ A = matrix([[42, 45, -189, -276], [40, 48, -174, -296], [8, 9, -39, -52], [8, 9,
 
 print("The matrix A is")
 print(A)
+
+print("The rank of A is")
+print(rank(A))
 
 print("The determinant of A is")
 print(det(A))
