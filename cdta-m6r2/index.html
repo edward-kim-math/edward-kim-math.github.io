@@ -4,21 +4,26 @@
 <h1>Appendices to: Further techniques on a polynomial positivity question of Collins, Dykema, and Torres-Ayala</h1>
 
 <ul>
-<li><a href="appendix-p-equals-yUzR.sage">Quick verification: the coefficient of \(t^2\) in \(\mathsf{trace}((A+tB)^6)\) is a sum of squares</a></li>
 
+<li><a href="base-cdta.sage">base-cdta.sage</a> contains all user-defined functions. This file is required by all sage files below.</li>
+  
+<li><a href="appendix-p-equals-yUzR.sage">appendix-p-equals-yUzR.sage</a> gives a direct (quick) verification that the coefficient of \(t^2\) in \(\mathsf{trace}((A+tB)^6)\) is a sum of squares</a></li>
+
+<li>Powers of \(U\) and the minimum polynomial of \(U\)
+<ul>
 <li><a href="https://www.overleaf.com/read/qcdkmnvjdpkd">Detail for selected entries of \(U^2\)</a></li>
+<li><a href="appendix-min-poly.sage">appendix-min-poly.sage</a> verifies that \(U\) satisfies \(\mu) for small \(n\). Code depends on <a href="appendix-min-poly-U-data.sage">appendix-min-poly-U-data.sage</a></li>
+</ul>
+</li>
 
 <li>Exhaustive verification (by monomial type) that the coefficient of \(t^2\) in \(\mathsf{trace}((A+tB)^6)\) is SOS</li>
 <ul>
-
-<li><a href="appendix-all-monomial-types-p-equals-SOS.sage">Verifying code</a></li>
+<li>The sage file <a href="appendix-all-monomial-types-p-equals-SOS.sage">appendix-all-monomial-types-p-equals-SOS.sage</a> groups monomials in the coefficient of \(t^2\) in \(\mathsf{trace}((A+tB)^6)\) by type, then accounts for each monomial (by type) by examining each entry of \(U\) and each entry in each copy of \(R\) exactly once.</li>
 <li>Results for \(n=3\) <a href="all-monomial-types-p-equals-SOS-n3.tex"></a> <a href="all-monomial-types-p-equals-SOS-n3.pdf">PDF</a></li>
 <li>Results for \(n=6\) <a href="all-monomial-types-p-equals-SOS-n6.tex"></a> <a href="all-monomial-types-p-equals-SOS-n6.pdf">PDF</a> <a href="saved_monomialtypes-n6.sobj">Saved computation of classifying monomials of \(p\) by type</a></li>
 </ul>
 
-<li>appendix-min-poly-U-data.sage</li>
-<li>appendix-min-poly.sage</li>
-<li>appendix-R-is-psd.sage</li>
+<li><a href="appendix-R-is-psd.sage">appendix-R-is-psd.sage</a> follows the details of our proof that \(R\) is positive semidefinite.</li>
 
 </ul>
 
