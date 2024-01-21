@@ -4,6 +4,16 @@ title: LaTeX resources for an intro to proofs class
 ---
 <h1>{{ page.title }}</h1>
 
+<h2>Logical operations</h2>
+{% highlight latex linenos %}
+Negation: $\neg p$
+Conjunction: $p \wedge q$
+Disjunction: $p \vee q$
+Implication: $p \rightarrow q$
+Biconditiona: $p \leftrightarrow q$
+{% endhighlight %}
+
+
 <h2>Truth table</h2>
 {% highlight latex linenos %}
 \begin{center}
@@ -16,3 +26,28 @@ $F$ & $F$ & $F$
 \end{tabular}
 \end{center}
 {% endhighlight %}
+The version above has $ surrounding each T or F value, but this may be too tedious. Feel free to instead leave out the $s for Ts and Fs as in the following example:
+{% highlight latex linenos %}
+\begin{center}
+\begin{tabular}{c|c||c}
+$p$ & $q$ & $p \rightarrow q$ \\ \hline
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T
+\end{tabular}
+\end{center}
+{% endhighlight %}
+In the { } after \begin{tabular}, you see c for centered text, followed by | for drawing a vertical line, a c for centered text, || for double vertical line (use just one vertical line if you don't like the look of the double vertical line), followed again by c for centering. The double-backslash gets a new row of the table, while \hline creates a horizontal line.
+
+<h2>How do I get alignment of mathematical notation?</h2>
+Use the & symbol to get alignment to happen. Below is a sample bit of code:
+{% highlight latex linenos %}
+\begin{align*}
+a &= b \\
+&= c \\
+&\leq d
+\end{align*}
+{% endhighlight %}
+You can copy-paste the above into your code to see that the first line will be a=b, the next line has =c and the last line will be "less than or equal to d". Because the & is right in front of equal signs and the \leq, it is these three symbols (one per line) which will be aligned vertically.
+
