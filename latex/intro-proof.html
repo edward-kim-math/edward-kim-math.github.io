@@ -1,0 +1,18 @@
+---
+layout: default
+title: LaTeX resources for an intro to proofs class
+---
+<h1>{{ page.title }}</h1>
+
+<h2>Truth table</h2>
+{% highlight latex linenos %}
+\begin{center}
+\begin{tabular}{c|c||c}
+$p$ & $q$ & $p \wedge q$ \\ \hline
+$T$ & $T$ & $T$ \\
+$T$ & $F$ & $F$ \\
+$F$ & $T$ & $F$ \\
+$F$ & $F$ & $F$
+\end{tabular}
+\end{center}
+{% endhighlight %}
