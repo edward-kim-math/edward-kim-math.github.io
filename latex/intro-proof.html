@@ -4,15 +4,28 @@ title: LaTeX resources for an intro to proofs class
 ---
 <h1>{{ page.title }}</h1>
 
-<h2>Logical operations</h2>
+<h2>Logical operations; Quantifiers</h2>
 {% highlight latex %}
 Negation: $\neg p$
 Conjunction: $p \wedge q$
 Disjunction: $p \vee q$
 Implication: $p \rightarrow q$
 Biconditional: $p \leftrightarrow q$
+Universal quantifier: $\forall x \in S [P(x)]$
+Existential quantifier: $\exists x \in S [P(x)]$
 {% endhighlight %}
 
+<h2>Sets</h2>
+Note, for any of the <u>\mathbb</u> things to work, you need to have <u>\usepackage{amsfonts}</u> as a line after the <u>\documentclass</u> line, but before the <u>\begin{document}</u> line:
+{% highlight latex %}
+The set of all integers: $\mathbb{Z}$
+The set of all rational numbers: $\mathbb{Q}$
+The set of all real numbers: $\mathbb{R}$
+The set of all complex numbers: $\mathbb{C}$
+
+Union: $A \cup B$
+Intersection: $A \cap B$
+{% endhighlight %}
 
 <h2>Truth table</h2>
 {% highlight latex %}
