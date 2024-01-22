@@ -8,11 +8,11 @@ title: WeBWorK errors (for administrators)
 User (typically instructor) forgot their password.
 <ul><li>
 From the bash shell, run
-{% highlight %}
+{% highlight plaintext %}
 newpassword [course name] [username] [new password]
 {% endhighlight %}
 For example,
-{% highlight %}
+{% highlight plaintext %}
 newpassword MTH456-Kim ekim 12345678
 {% endhighlight %}
 </li></ul>
@@ -22,29 +22,29 @@ From <a href="https://webworkcanvas.uwlax.edu/webwork2/admin/">Course Administra
 
 <h2>Adding a symbolic link to the Open Problems Library</h2>
 From the bash shell, run
-{% highlight %}
+{% highlight plaintext %}
 cd /opt/webwork/courses/[course name]/templates
 ln -s /opt/webwork/libraries/webwork-open-problem-library/OpenProblemLibrary Library
 {% endhighlight %}
 For example,
-{% highlight %}
+{% highlight plaintext %}
 cd /opt/webwork/courses/MTH456-Kim/templates
 ln -s /opt/webwork/libraries/webwork-open-problem-library/OpenProblemLibrary Library
 {% endhighlight %}
 
 <h2>Restarting apache</h2>
 From the bash shell, run
-{% highlight %}
+{% highlight plaintext %}
 sudo apachectl restart
 {% endhighlight %}
 or
-{% highlight %}
+{% highlight plaintext %}
 sudo service apache2 restart
 {% endhighlight %}
 
 <h2>Starting or restarting the Rserve server, the connection that WeBWorK has to R</h2>
 If the error in looking at an individual problem looks like this:
-{% highlight %}
+{% highlight plaintext %}
 ERRORS from evaluating PG file: 
  connect: Connection refused at line 129 of [PG]/macros/RserveClient.pl
    Died within Carp::croak called at line 27 of /usr/local/share/perl/5.34.0/Statistics/R/IO/Rserve.pm
@@ -56,7 +56,7 @@ ERRORS from evaluating PG file:
    from within QuantitativeUWL::percentile_table called at line 74 of (eval 2627)
 {% endhighlight %}
 then from the bash shell, run
-{% highlight %}
+{% highlight plaintext %}
 R CMD Rserve
 {% endhighlight %}
 
