@@ -16,3 +16,18 @@ For example,
 newpassword MTH456-Kim ekim 12345678
 {% endhighlight %}
 </li></ul>
+
+<h2>Unhiding courses</h2>
+From <a href="https://webworkcanvas.uwlax.edu/webwork2/admin/">Course Administration</a>, click on hide courses. Sort courses alphabetically. Select the appropriate course. Then select the button to hide or unhide the course.
+
+<h2>Adding a symbolic link to the Open Problems Library</h2>
+From the bash shell, run
+{% highlight latex %}
+cd /opt/webwork/courses/[course name]/templates
+ln -s /opt/webwork/libraries/webwork-open-problem-library/OpenProblemLibrary Library
+{% endhighlight %}
+For example,
+{% highlight latex %}
+cd /opt/webwork/courses/MTH456-Kim/templates
+ln -s /opt/webwork/libraries/webwork-open-problem-library/OpenProblemLibrary Library
+{% endhighlight %}
