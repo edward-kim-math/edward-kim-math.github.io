@@ -15,8 +15,21 @@ Hiding a course keeps all the content there. In fact, it is still possible for y
 </ul>
 
 <h2>Many/most/all of my problems from a past semester are not showing</h2>
-<p>If you see this error<br>
-<img src="missing-pg-file.png" width="300"><br>
+<p>If you see an error which looks like this
+{% highlight plaintext %}
+        Problem5
+1. ERROR caught by Translator while processing problem file:Library/CollegeOfIdaho/setAlgebra_01_04_SolveLinearEq/14IntAlg_09_SolveLinear.pg
+****************
+ERROR:  This problem file was empty!
+
+****************
+
+------Input Read
+
+-----
+{% endhighlight %}
+which is (for example) shown in the screenshot below (click to see it larger)<br>
+<a href="missing-pg-file.png"><img src="missing-pg-file.png" width="500"></a><br>
 and note the text that says <u>This problem file was empty!</u>, then the pg file is missing. (There is actually VERY little data that webwork stores for your homework set. In the homework set, webwork keeps track of "problem 1 is this PG file, and Problem 2 is this PG file" and so on. For example, in the screenshot above, there is a homework set called <u>Homework04</u> and the 5th problem is looking for a file called <u>Library/CollegeOfIdaho/setAlgebra_01_04_SolveLinearEq/14IntAlg_09_SolveLinear.pg</u> but this is not found.)
 </p>
 <p>In this case, in the File Manager area, there is no folder called <u>Library</u>, and no subfolder called <u>CollegeOfIdaho</u>. The detials of your situation may be a little different, but the <u>This problem file was empty!</u> error is about not being able to find the PG file in the expected location. You can look for the NEW location of this problem, and fix it in the homework sets editor, or find a REPLACEMENT problem. But for one other option, you may just need a "link" to <u>Library</u> to be made as a shortcut to the Open Problem Library. The administrator can create this link for you, and that may solve all of the problems where the missing file was in a top-level folder called <u>Library</u>. </p>
