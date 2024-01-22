@@ -5,6 +5,13 @@ title: WeBWorK errors (for instructors)
 <h1>{{ page.title }}</h1>
 There is also a <a href="admin.html">WeBWorK errors (for administrators)</a> page.
 
+<hr>
+
+<h2>The web response is unbearably slow</h2>
+The administrator may need to restart Apache. If that restart doesn't help, the administrator may need to restart the computer/machine altogether.
+
+<hr>
+
 <h2>All problems are not showing, even in the Library Browser</h2>
 If the view in the Library Browser has the error
 {% highlight plaintext %}
@@ -55,6 +62,7 @@ and note the text that says <u>This problem file was empty!</u>, then the pg fil
 </p>
 <p>In this case, in the File Manager area, there is no folder called <u>Library</u>, and no subfolder called <u>CollegeOfIdaho</u>. The detials of your situation may be a little different, but the <u>This problem file was empty!</u> error is about not being able to find the PG file in the expected location. You can look for the NEW location of this problem, and fix it in the homework sets editor, or find a REPLACEMENT problem. But for one other option, you may just need a "link" to <u>Library</u> to be made as a shortcut to the Open Problem Library. The administrator can create this link for you, and that may solve all of the problems where the missing file was in a top-level folder called <u>Library</u>. </p>
 
+<hr>
 
 <h2>While most problems in the Library Browser are showing, some statistics problems are not</h2>
 It is probably related to the R server. To confirm this, from the Library Browser, click the "eye" icon to preview the problem (or, you might already be in a single problem in a homework set). If the error you see looks like this:
@@ -70,7 +78,9 @@ ERRORS from evaluating PG file:
    from within QuantitativeUWL::percentile_table called at line 74 of (eval 2627)
 {% endhighlight %}
 with the key thing being the second line saying <u>RserveClient.pl</u> and the third line saying <u>Rserve.pm</u> then ask the administrator to start/restart the Rserve server.
- 
+
+<hr>
+
 <h2>I can access my course, but it's not showing up in course list</h2>
 I am able to log in, but my course is not shown on the <a href="https://webworkcanvas.uwlax.edu/webwork2/">course list</a>.
 <ul>
