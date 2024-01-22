@@ -13,3 +13,19 @@ since they will access direct links from your Canvas. Nevertheless, if you want 
 <li>Courses can be hidden or shown. (It is typical to hide a course when it hasn't been used for a while, so that the list of courses is not cluttered.
 Hiding a course keeps all the content there. In fact, it is still possible for you and for your students to log in.)</li>
 </ul>
+
+<h2>While most problems in the Library Browser are showing, some statistics problems are not</h2>
+It is probably related to the R server. To confirm this, from the Library Browser, click the "eye" icon to preview the problem (or, you might already be in a single problem in a homework set). If the error you see looks like this:
+{% highlight %}
+ERRORS from evaluating PG file: 
+ connect: Connection refused at line 129 of [PG]/macros/RserveClient.pl
+   Died within Carp::croak called at line 27 of /usr/local/share/perl/5.34.0/Statistics/R/IO/Rserve.pm
+   from within Statistics::R::IO::Rserve::fh called at line 323 of /usr/local/share/perl/5.34.0/Statistics/R/IO/Rserve.pm
+   from within Statistics::R::IO::Rserve::_send_command called at line 234 of /usr/local/share/perl/5.34.0/Statistics/R/IO/Rserve.pm
+   from within Statistics::R::IO::Rserve::eval called at line 129 of [PG]/macros/RserveClient.pl
+   from within main::rserve_start called at line 144 of [PG]/macros/RserveClient.pl
+   from within main::rserve_eval called at line 307 of [PG]/macros/uwlQuantitative.pl
+   from within QuantitativeUWL::percentile_table called at line 74 of (eval 2627)
+{% endhighlight %}
+with the key thing being the second line saying <u>RserveClient.pl</u> and the third line saying <u>Rserve.pm</u> then ask the administrator to start/restart the Rserve server.
+
