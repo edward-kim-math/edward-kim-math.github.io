@@ -5,14 +5,35 @@ title: WeBWorK errors (for instructors)
 <h1>{{ page.title }}</h1>
 There is also a <a href="admin.html">WeBWorK errors (for administrators)</a> page.
 
-<h2>I can access my course, but it's not showing up in course list</h2>
-I am able to log in, but my course is not shown on the <a href="https://webworkcanvas.uwlax.edu/webwork2/">course list</a>.
-<ul>
-<li>Everything will actually run just fine, and students are not looking at the left navigation bar or the course list page anyway,
-since they will access direct links from your Canvas. Nevertheless, if you want it to show, ask the administrator to "unhide" your course.</li>
-<li>Courses can be hidden or shown. (It is typical to hide a course when it hasn't been used for a while, so that the list of courses is not cluttered.
-Hiding a course keeps all the content there. In fact, it is still possible for you and for your students to log in.)</li>
-</ul>
+<h2>All problems are not showing, even in the Library Browser</h2>
+If the view in the Library Browser has the error
+{% highlight plaintext %}
+/webwork2/html2xml: Unexpected token '<', "
+Webwor"... is not valid JSON
+{% endhighlight}
+on each problem, as shown in the screenshot below (click to see it larger)<br>
+<a href="json-library-browser.png"><img src="json-library-browser.png" width="500"></a><br>
+and the view of a specific problem shows the following error
+{% highlight plaintext %}
+WeBWorK error
+An error occured while processing your request.
+For help, please send mail to this site's webmaster (webmaster@localhost), including all of the following information as well as what what you were doing when the error occured.
+
+Error record identifier
+5cb15bc7-d42b-5be7-bb5c-ee249e546918::fe3f5c6d-4091-11ee-938c-d2e20e136e41
+
+Warning messages
+Error messages
+xmlrpcCall to searchLib returned no result for
+
+Call stack
+The following information can help locate the source of the problem.
+in WeBWorK::ContentGenerator::instructorXMLHandler::content called at line 218 of /opt/webwork/webwork2/lib/WeBWorK/ContentGenerator.pm
+in WeBWorK::ContentGenerator::go called at line 371 of /opt/webwork/webwork2/lib/WeBWorK.pm
+{% endhighlight}
+as shown in the screenshot below (click to see it larger)<br>
+<a href="json-individual-problem.png"><img src="json-individual-problem.png" width="500"></a><br>
+then there is probably a JSON error, and the server needs to be restarted by the administrator. (That is, the machine should be restarted, not just the Apache service.)
 
 <h2>Many/most/all of my problems from a past semester are not showing</h2>
 <p>If you see an error which looks like this
@@ -50,3 +71,11 @@ ERRORS from evaluating PG file:
 {% endhighlight %}
 with the key thing being the second line saying <u>RserveClient.pl</u> and the third line saying <u>Rserve.pm</u> then ask the administrator to start/restart the Rserve server.
  
+<h2>I can access my course, but it's not showing up in course list</h2>
+I am able to log in, but my course is not shown on the <a href="https://webworkcanvas.uwlax.edu/webwork2/">course list</a>.
+<ul>
+<li>Everything will actually run just fine, and students are not looking at the left navigation bar or the course list page anyway,
+since they will access direct links from your Canvas. Nevertheless, if you want it to show, ask the administrator to "unhide" your course.</li>
+<li>Courses can be hidden or shown. (It is typical to hide a course when it hasn't been used for a while, so that the list of courses is not cluttered.
+Hiding a course keeps all the content there. In fact, it is still possible for you and for your students to log in.)</li>
+</ul>
