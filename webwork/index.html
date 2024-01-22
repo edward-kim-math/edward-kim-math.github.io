@@ -10,7 +10,7 @@ If the view in the Library Browser has the error
 {% highlight plaintext %}
 /webwork2/html2xml: Unexpected token '<', "
 Webwor"... is not valid JSON
-{% endhighlight}
+{% endhighlight %}
 on each problem, as shown in the screenshot below (click to see it larger)<br>
 <a href="json-library-browser.png"><img src="json-library-browser.png" width="500"></a><br>
 and the view of a specific problem shows the following error
@@ -30,7 +30,7 @@ Call stack
 The following information can help locate the source of the problem.
 in WeBWorK::ContentGenerator::instructorXMLHandler::content called at line 218 of /opt/webwork/webwork2/lib/WeBWorK/ContentGenerator.pm
 in WeBWorK::ContentGenerator::go called at line 371 of /opt/webwork/webwork2/lib/WeBWorK.pm
-{% endhighlight}
+{% endhighlight %}
 as shown in the screenshot below (click to see it larger)<br>
 <a href="json-individual-problem.png"><img src="json-individual-problem.png" width="500"></a><br>
 then there is probably a JSON error, and the server needs to be restarted by the administrator. (That is, the machine should be restarted, not just the Apache service.)
