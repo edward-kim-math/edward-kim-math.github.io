@@ -1,0 +1,17 @@
+---
+layout: default
+title: WeBWorK errors (for administrators)
+---
+<h1>{{ page.title }}</h1>
+
+<h2>Reset the password someone uses to access WeBWorK on the web</h2>
+User (typically instructor) forgot their password.
+
+From the bash shell, run
+{% highlight latex %}
+newpassword [course name] [username] [new password]
+{% endhighlight %}
+For example,
+{% highlight latex %}
+newpassword MTH456-Kim ekim 12345678
+{% endhighlight %}
