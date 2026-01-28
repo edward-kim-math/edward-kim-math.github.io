@@ -30,15 +30,29 @@
     select {
         margin: 2px;
     }
-    #display {
-        text-align: center;
-        font-size: 3em;
+
+    #mainDisplay {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 4em;
     }
+
+    .timeBlock {
+        width: 45%;
+    }
+
+    .label {
+        font-size: 0.4em;
+        margin-top: 10px;
+    }
+
     #progressContainer {
-        width: 80%;
+        width: 97%;
         height: 30px;
         border: 2px solid black;
-        margin-top: 20px;
+        margin-top: 30px;
     }
     #progressBar {
         height: 100%;
@@ -46,14 +60,20 @@
         background-color: green;
         transition: width 1s linear;
     }
+
+    #message {
+        font-size: 3em;
+        text-align: center;
+    }
+
     #clock {
         position: fixed;
         bottom: 15px;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 1.8em;
+        font-size: 4em;
         background: rgba(255,255,255,0.8);
-        padding: 6px 12px;
+        padding: 6px 14px;
         border-radius: 6px;
     }
 </style>
@@ -84,7 +104,20 @@
     </div>
 </div>
 
-<div id="display">Waiting...</div>
+<div id="message">Waiting...</div>
+
+<div id="mainDisplay">
+    <div class="timeBlock" style="text-align:left;">
+        <div id="usedTime">0:00</div>
+        <div class="label">Used</div>
+    </div>
+
+    <div class="timeBlock" style="text-align:right;">
+        <div id="remainingTime">0:00</div>
+        <div class="label">Remaining</div>
+    </div>
+</div>
+
 <div id="progressContainer">
     <div id="progressBar"></div>
 </div>
@@ -97,8 +130,35 @@
 // ===============================
 const presets = [
     { label: "Custom...", start: null, end: null },
-    { label: "7:45am – 8:40am", start: "7:45 AM", end: "8:40 AM" },
-    { label: "8:50am – 9:45am", start: "8:50 AM", end: "9:45 AM" }
+
+    { label: "7:45am – 8:40am (55 minutes)", start: "7:45 AM", end: "8:40 AM" },
+    { label: "8:50am – 9:45am (55 minutes)", start: "8:50 AM", end: "9:45 AM" },
+    { label: "9:55am – 10:50am (55 minutes)", start: "9:55 AM", end: "10:50 AM" },
+    { label: "11:00am – 11:55am (55 minutes)", start: "11:00 AM", end: "11:55 AM" },
+    { label: "12:05pm – 1:00pm (55 minutes)", start: "12:05 PM", end: "1:00 PM" },
+    { label: "1:10pm – 2:05pm (55 minutes)", start: "1:10 PM", end: "2:05 PM" },
+    { label: "2:15pm – 3:10pm (55 minutes)", start: "2:15 PM", end: "3:10 PM" },
+    { label: "3:20pm – 4:15pm (55 minutes)", start: "3:20 PM", end: "4:15 PM" },
+    { label: "4:25pm – 5:20pm (55 minutes)", start: "4:25 PM", end: "5:20 PM" },
+    { label: "5:30pm – 6:25pm (55 minutes)", start: "5:30 PM", end: "6:25 PM" },
+    // { label: "6:35pm – 7:30pm (55 minutes)", start: "6:35 PM", end: "7:30 PM" },
+    // { label: "7:40pm – 8:35pm (55 minutes)", start: "7:40 PM", end: "8:35 PM" },
+
+    //
+    //
+    { label: "85 minute presets", start: null, end: null },
+
+    { label: "7:45am – 9:10am (85 minutes)", start: "7:45 AM", end: "9:10 AM" },
+    { label: "9:25am – 10:50am (85 minutes)", start: "9:25 AM", end: "10:50 AM" },
+
+    { label: "11:00am – 12:25pm (85 minutes)", start: "11:00 AM", end: "12:25 PM" },
+    { label: "12:40pm – 2:05pm (85 minutes)", start: "12:40 PM", end: "2:05 PM" },
+
+    { label: "2:15pm – 3:40pm (85 minutes)", start: "2:15 PM", end: "3:40 PM" },
+    { label: "3:55pm – 5:20pm (85 minutes)", start: "3:55 PM", end: "5:20 PM" },
+
+    { label: "5:30pm – 6:55pm (85 minutes)", start: "5:30 PM", end: "6:55 PM" },
+
 ];
 
 // ===============================
@@ -215,30 +275,34 @@ function updateTimer() {
 
     if(end <= start) end = new Date(end.getTime()+24*60*60*1000);
 
-    const display = document.getElementById("display");
-    const progressBar = document.getElementById("progressBar");
     const body = document.body;
     const clock = document.getElementById("clock");
+    const message = document.getElementById("message");
+    const usedEl = document.getElementById("usedTime");
+    const remainEl = document.getElementById("remainingTime");
+    const progressBar = document.getElementById("progressBar");
 
-    // Always update current time display
+    // Always update clock
     clock.textContent = formatClock(now);
 
     if(now < start) {
-        display.textContent = "Starts in " + formatMS(start-now);
+        message.textContent = "Starts in " + formatMS(start-now);
+        usedEl.textContent = "0:00";
+        remainEl.textContent = formatMS(end-start);
         progressBar.style.width="0%";
         body.style.backgroundColor="white";
         return;
     }
 
     if(now >= start && now <= end) {
+        message.textContent = "";
+
         let elapsed = now-start;
         let total = end-start;
         let remaining = end-now;
 
-        display.innerHTML =
-            `Used: ${formatMS(elapsed)}<br>` +
-            `Remaining: ${formatMS(remaining)}`;
-
+        usedEl.textContent = formatMS(elapsed);
+        remainEl.textContent = formatMS(remaining);
         progressBar.style.width = (elapsed/total)*100 + "%";
 
         let tenMin = 10*60*1000;
@@ -253,7 +317,10 @@ function updateTimer() {
         return;
     }
 
-    display.textContent = "Presentation Ended";
+    // After end
+    message.textContent = "Time's up, buddy!";
+    usedEl.textContent = formatMS(end-start);
+    remainEl.textContent = "0:00";
     progressBar.style.width="100%";
     flashState = !flashState;
     body.style.backgroundColor = flashState ? "red" : "yellow";
