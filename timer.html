@@ -1,546 +1,269 @@
-<!--
-Standard Classes (MWF)                	Standard X-Classes (T/Th)  
-Period 1        7:45-8:40 am	Period 1-2     7:45-9:10 am
-Period 2        8:50-9:45 am	Period 2-3     9:25-10:50 am
-Period 3        9:55-10:50 am	Period 3-4     11:00-12:25 am
-Period 4        11:00-11:55 pm	Period 4-5     12:40-14:05 pm
-Period 5        12:05-1:00 pm	Period 5-6      2:15-3:40 pm
-Period 6        1:10-2:05 pm	Period 6-7      3:55-5:20 pm
-Period 7        2:15-3:10 pm	 
-Period 8        3:20-4:15 pm	 
-Period 9        4:25-5:20 pm	 
-Period 945sum		9:45a-11:25a 	 
-Evening Courses: (3 credit course/weekly)	 
-5:30-8:15pm or 6:00-8:45pm or 6:30-9:15pm	 
--->
-
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Class timer (UW-L Schedule)</title>
-
-<script language="JavaScript">
-var start_stamp;
-var end_stamp;
-var remaining_seconds;
-var bgtoggle;
-var redtime;
-var yellowtime;
-function bodyload() {
-  redtime = 60*2;
-  yellowtime = 60*10;
-  //document.getElementById("start_time_text").value = h + ":" + m;
-  //document.getElementById("end_time_text").value = (h+1) + ":" + m;
-  //var now_stamp =   new Date();
-  //set();
-  //document.getElementById("out").value = "oaehah"; //now_stamp.getTime();
-  var now_stamp = new Date();
-  var today=new Date();
-  var h=today.getHours();
-  var m=today.getMinutes();
-  //start_stamp = new Date(now_stamp.getFullYear(), now_stamp.getMonth(), now_stamp.getDate(), h, m, 0, 0);
-  //end_stamp =   new Date(now_stamp.getFullYear(), now_stamp.getMonth(), now_stamp.getDate(), h, m+1, 0, 0);
-  bgtoggle = 1;
-  //document.getElementById("out").value = now_stamp.getTime();
-  //end_stamp.getTime() ;
-  document.getElementById("before").style.display = "none";
-  document.getElementById("during").style.display = "none";
-  document.getElementById("after").style.display = "none";
-  document.getElementById("intervalerror").style.display = "none";
-  setInterval(function(){update()}, 0.5*1000);
-}
-function set() {
-  var today=new Date();
-  start_stamp = new Date(today.getFullYear(), today.getMonth(), today.getDate(), document.getElementById("start_hour").value, document.getElementById("start_minute").value, 0, 0);
-  end_stamp =   new Date(today.getFullYear(), today.getMonth(), today.getDate(), document.getElementById("end_hour").value, document.getElementById("end_minute").value, 0, 0);
-  //document.getElementById("out").value = document.getElementById("start_hour").value + ":" + document.getElementById("start_minute").value + " to " + document.getElementById("end_hour").value + ":" + document.getElementById("end_minute").value;
-  //document.getElementById("out").value = end_stamp.getTime();
-}
-function preset() {
-  //document.getElementById("out").value = document.getElementById("presetdrop").value;
-  if ( document.getElementById("presetdrop").value == 700   ) {
-    document.getElementById("start_hour").value = 7;
-    document.getElementById("start_minute").value = 45;
-    document.getElementById("end_hour").value = 8;
-    document.getElementById("end_minute").value = 32;
-  }
-  if ( document.getElementById("presetdrop").value == 800 ) {
-    document.getElementById("start_hour").value = 8;
-    document.getElementById("start_minute").value = 50;
-    document.getElementById("end_hour").value = 9;
-    document.getElementById("end_minute").value = 37;
-  }
-  if ( document.getElementById("presetdrop").value == 7 ) {
-    document.getElementById("start_hour").value = 7;
-    document.getElementById("start_minute").value = 45;
-    document.getElementById("end_hour").value = 8;
-    document.getElementById("end_minute").value = 40;
-  }
-  if ( document.getElementById("presetdrop").value == 8 ) {
-    document.getElementById("start_hour").value = 8;
-    document.getElementById("start_minute").value = 50;
-    document.getElementById("end_hour").value = 9;
-    document.getElementById("end_minute").value = 45;
-  }
-  if ( document.getElementById("presetdrop").value == 9 ) {
-    document.getElementById("start_hour").value = 9;
-    document.getElementById("start_minute").value = 55;
-    document.getElementById("end_hour").value = 10;
-    document.getElementById("end_minute").value = 50;
-  }
-  if ( document.getElementById("presetdrop").value == 11 ) {
-    document.getElementById("start_hour").value = 11;
-    document.getElementById("start_minute").value = 0;
-    document.getElementById("end_hour").value = 11;
-    document.getElementById("end_minute").value = 55;
-  }
-  if ( document.getElementById("presetdrop").value == 12 ) {
-    document.getElementById("start_hour").value = 12;
-    document.getElementById("start_minute").value = 05;
-    document.getElementById("end_hour").value = 13;
-    document.getElementById("end_minute").value = 0;
-  }
-  if ( document.getElementById("presetdrop").value == 1 ) {
-    document.getElementById("start_hour").value = 13;
-    document.getElementById("start_minute").value = 10;
-    document.getElementById("end_hour").value = 14;
-    document.getElementById("end_minute").value = 5;
-  }
-  if ( document.getElementById("presetdrop").value == 2 ) {
-    document.getElementById("start_hour").value = 14;
-    document.getElementById("start_minute").value = 15;
-    document.getElementById("end_hour").value = 15;
-    document.getElementById("end_minute").value = 10;
-  }
-  if ( document.getElementById("presetdrop").value == 3 ) {
-    document.getElementById("start_hour").value = 15;
-    document.getElementById("start_minute").value = 20;
-    document.getElementById("end_hour").value = 16;
-    document.getElementById("end_minute").value = 15;
-  }
-  if ( document.getElementById("presetdrop").value == 4 ) {
-    document.getElementById("start_hour").value = 16;
-    document.getElementById("start_minute").value = 25;
-    document.getElementById("end_hour").value = 17;
-    document.getElementById("end_minute").value = 20;
-  }
-  if ( document.getElementById("presetdrop").value == "945sum" ) {
-    document.getElementById("start_hour").value = 9;
-    document.getElementById("start_minute").value = 45;
-    document.getElementById("end_hour").value = 11;
-    document.getElementById("end_minute").value = 25;
-  }
-  set();
-}
-function flashwhenfinished() {
-  if (document.getElementById("flashwhenfinisheddrop").value == "1") {
-    bgtoggle=1;
-  }
-  if (document.getElementById("flashwhenfinisheddrop").value == "0") {
-    bgtoggle=0;
-  }
-  return;
-}
-function update() {
-  var now_stamp =   new Date();
-  var interval = end_stamp.getTime() - start_stamp.getTime();
-  var elapsed = now_stamp.getTime() - start_stamp.getTime();
-  var remaining = interval - elapsed;
-  var percent_elapsed = 100*elapsed / interval;
-  var percent_remaining = 100-percent_elapsed;
-  document.getElementById("currenttime").innerHTML = now_stamp.getHours() + ":" + now_stamp.getMinutes() + ":" + now_stamp.getSeconds();
-  // Set widths in timer bar
-  var elapsed_width = percent_elapsed + "%";
-  var remaining_width = percent_remaining + "%";
-  document.getElementById("left").style.width = elapsed_width;
-  document.getElementById("right").style.width = remaining_width;
-  // Get number of minutes, seconds remaining
-  var elapsed_seconds = elapsed / 1000;
-  var remaining_seconds = remaining / 1000;
-  if (remaining_seconds <= yellowtime) {
-    if (remaining_seconds <= redtime) {
-      document.body.style.backgroundColor="red";
-    } else {
-      document.body.style.backgroundColor="yellow";
-    }
-  }
-  //document.getElementById("out").value = remaining_seconds + " :-) " + bgtoggle;
-  document.getElementById("preslength").innerHTML = seconds_to_formatted(interval / 1000);
-  if (interval <= 0 ) {
-    document.getElementById("before").style.display = "none";
-    document.getElementById("during").style.display = "none";
-    document.getElementById("after").style.display = "none";
-    document.getElementById("intervalerror").style.display = "block";
-  } else if (now_stamp.getTime() < start_stamp.getTime()) {
-    document.getElementById("before").style.display = "block";
-    document.getElementById("during").style.display = "none";
-    document.getElementById("after").style.display = "none";
-    document.getElementById("intervalerror").style.display = "none";
-    // Presentation has not begun yet!
-    document.body.style.backgroundColor="white";
-    document.getElementById("countdown").innerHTML = Math.round( (start_stamp.getTime() - now_stamp.getTime())  / 1000 );
-  } else {
-    // Current time is after presentation start time
-    document.getElementById("before").style.display = "none";
-    document.getElementById("during").style.display = "block";
-    document.getElementById("after").style.display = "none";
-    document.getElementById("intervalerror").style.display = "none";
-    if (remaining_seconds >= 0) {
-      document.getElementById("elapsed").innerHTML = seconds_to_formatted(elapsed_seconds);
-      document.getElementById("remaining").innerHTML = seconds_to_formatted(remaining_seconds);
-      document.body.style.backgroundColor="white";
-    } else if ((remaining_seconds < 0) && (remaining_seconds >= -60*60) ) {
-      // TIME IS UP!
-      if (bgtoggle==1) {
-        document.body.style.backgroundColor="red";
-        bgtoggle = 2;
-      } else if (bgtoggle == 2) {
-        document.body.style.backgroundColor="yellow";
-        bgtoggle = 1;
-      }
-    }
-  }
-}
-function seconds_to_formatted(seconds) {
-  var out = Math.floor(seconds/60) + ":" + second_format(Math.round((seconds%60)));
-  return out;
-}
-function second_format(second) {
-  if (second == 0) {
-    return "00";
-  } else if (second < 10) {
-    return "0" + second;
-  } else {
-    return second;
-  }
-}
-</script>
-
+<meta charset="UTF-8">
+<title>Presentation Timer</title>
 <style>
-.large {font-size: 90pt;}
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 1s linear;
+    }
+    #controls {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        background: rgba(255,255,255,0.9);
+        padding: 10px;
+        border-radius: 6px;
+        box-shadow: 0 0 5px #999;
+        z-index: 10;
+    }
+    select {
+        margin: 2px;
+    }
+    #display {
+        text-align: center;
+        font-size: 3em;
+    }
+    #progressContainer {
+        width: 80%;
+        height: 30px;
+        border: 2px solid black;
+        margin-top: 20px;
+    }
+    #progressBar {
+        height: 100%;
+        width: 0%;
+        background-color: green;
+        transition: width 1s linear;
+    }
+    #clock {
+        position: fixed;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.8em;
+        background: rgba(255,255,255,0.8);
+        padding: 6px 12px;
+        border-radius: 6px;
+    }
 </style>
-
 </head>
+<body>
 
-<body onLoad="bodyload()">
+<div id="controls">
 
-<form>
+    <div>
+        <strong>Preset:</strong><br>
+        <select id="presetSelect"></select>
+    </div>
 
-<table border=1 cellpadding=4 cellspacing=0>
-<tr valign=top>
+    <hr>
 
-<td>
-UW-L Presets:
-<select id="presetdrop" onChange="preset()">
-<option></option>
-<option value="700">QUIZ 7:45am-8:32am</option>
-<option value="800">QUIZ 8:50am-9:37am</option>
-<option value="7">7:45am-8:40am</option>
-<option value="8">8:50am-9:45am</option>
-<option value="9">9:55am-10:50am</option>
-<option value="11">11:00am-11:55am</option>
-<option value="12">12:05pm-1:00pm</option>
-<option value="1">1:10pm-2:05pm</option>
-<option value="2">2:15pm-3:10pm</option>
-<option value="3">3:20pm-4:15pm</option>
-<option value="4">4:25pm-5:20pm</option>
-<option value="945sum">9:45am-11:25am SUMMER</option>
-</select>
+    <div>
+        <strong>Start Time:</strong><br>
+        <select id="startHour"></select> :
+        <select id="startMinute"></select>
+        <select id="startAMPM"></select>
+    </div>
 
-<br>
+    <div style="margin-top:5px;">
+        <strong>End Time:</strong><br>
+        <select id="endHour"></select> :
+        <select id="endMinute"></select>
+        <select id="endAMPM"></select>
+    </div>
+</div>
 
-Flash when finished
-<select id="flashwhenfinisheddrop" onChange="flashwhenfinished()">
-<option value="1">yes</option>
-<option value="0">no</option>
-</select>
+<div id="display">Waiting...</div>
+<div id="progressContainer">
+    <div id="progressBar"></div>
+</div>
 
-</td>
+<div id="clock">--:--:--</div>
 
-<td>
+<script>
+// ===============================
+// PRESET DEFINITIONS
+// ===============================
+const presets = [
+    { label: "Custom...", start: null, end: null },
+    { label: "7:45am – 8:40am", start: "7:45 AM", end: "8:40 AM" },
+    { label: "8:50am – 9:45am", start: "8:50 AM", end: "9:45 AM" }
+];
 
-Start time:
-<select id="start_hour" onChange="set()">
-<option value="0">12 am</option>
-<option value="1">1 am</option>
-<option value="2">2 am</option>
-<option value="3">3 am</option>
-<option value="4">4 am</option>
-<option value="5">5 am</option>
-<option value="6">6 am</option>
-<option value="7">7 am</option>
-<option value="8">8 am</option>
-<option value="9">9 am</option>
-<option value="10">10 am</option>
-<option value="11">11 am</option>
-<option value="12">12 pm</option>
-<option value="13">1 pm</option>
-<option value="14">2 pm</option>
-<option value="15">3 pm</option>
-<option value="16">4 pm</option>
-<option value="17">5 pm</option>
-<option value="18">6 pm</option>
-<option value="19">7 pm</option>
-<option value="20">8 pm</option>
-<option value="21">9 pm</option>
-<option value="22">10 pm</option>
-<option value="23">11 pm</option>
-</select>
-:
-<select id="start_minute" onChange="set()">
-<option value="0">00</option>
-<option value="1">01</option>
-<option value="2">02</option>
-<option value="3">03</option>
-<option value="4">04</option>
-<option value="5">05</option>
-<option value="6">06</option>
-<option value="7">07</option>
-<option value="8">08</option>
-<option value="9">09</option>
-<option>10</option>
-<option>11</option>
-<option>12</option>
-<option>13</option>
-<option>14</option>
-<option>15</option>
-<option>16</option>
-<option>17</option>
-<option>18</option>
-<option>19</option>
-<option>20</option>
-<option>21</option>
-<option>22</option>
-<option>23</option>
-<option>24</option>
-<option>25</option>
-<option>26</option>
-<option>27</option>
-<option>28</option>
-<option>29</option>
-<option>30</option>
-<option>31</option>
-<option>32</option>
-<option>33</option>
-<option>34</option>
-<option>35</option>
-<option>36</option>
-<option>37</option>
-<option>38</option>
-<option>39</option>
-<option>40</option>
-<option>41</option>
-<option>42</option>
-<option>43</option>
-<option>44</option>
-<option>45</option>
-<option>46</option>
-<option>47</option>
-<option>48</option>
-<option>49</option>
-<option>50</option>
-<option>51</option>
-<option>52</option>
-<option>53</option>
-<option>54</option>
-<option>55</option>
-<option>56</option>
-<option>57</option>
-<option>58</option>
-<option>59</option>
-</select>
+// ===============================
 
-<br>
+function populatePresetDropdown() {
+    const sel = document.getElementById("presetSelect");
+    presets.forEach((p, idx) => {
+        let o = document.createElement("option");
+        o.value = idx;
+        o.text = p.label;
+        sel.add(o);
+    });
 
-End time:
-<select id="end_hour" onChange="set()">
-<option value="0">12 am</option>
-<option value="1">1 am</option>
-<option value="2">2 am</option>
-<option value="3">3 am</option>
-<option value="4">4 am</option>
-<option value="5">5 am</option>
-<option value="6">6 am</option>
-<option value="7">7 am</option>
-<option value="8">8 am</option>
-<option value="9">9 am</option>
-<option value="10">10 am</option>
-<option value="11">11 am</option>
-<option value="12">12 pm</option>
-<option value="13">1 pm</option>
-<option value="14">2 pm</option>
-<option value="15">3 pm</option>
-<option value="16">4 pm</option>
-<option value="17">5 pm</option>
-<option value="18">6 pm</option>
-<option value="19">7 pm</option>
-<option value="20">8 pm</option>
-<option value="21">9 pm</option>
-<option value="22">10 pm</option>
-<option value="23">11 pm</option>
-</select>
-:
-<select id="end_minute" onChange="set()">
-<option value="0">00</option>
-<option value="1">01</option>
-<option value="2">02</option>
-<option value="3">03</option>
-<option value="4">04</option>
-<option value="5">05</option>
-<option value="6">06</option>
-<option value="7">07</option>
-<option value="8">08</option>
-<option value="9">09</option>
-<option>10</option>
-<option>11</option>
-<option>12</option>
-<option>13</option>
-<option>14</option>
-<option>15</option>
-<option>16</option>
-<option>17</option>
-<option>18</option>
-<option>19</option>
-<option>20</option>
-<option>21</option>
-<option>22</option>
-<option>23</option>
-<option>24</option>
-<option>25</option>
-<option>26</option>
-<option>27</option>
-<option>28</option>
-<option>29</option>
-<option>30</option>
-<option>31</option>
-<option>32</option>
-<option>33</option>
-<option>34</option>
-<option>35</option>
-<option>36</option>
-<option>37</option>
-<option>38</option>
-<option>39</option>
-<option>40</option>
-<option>41</option>
-<option>42</option>
-<option>43</option>
-<option>44</option>
-<option>45</option>
-<option>46</option>
-<option>47</option>
-<option>48</option>
-<option>49</option>
-<option>50</option>
-<option>51</option>
-<option>52</option>
-<option>53</option>
-<option>54</option>
-<option>55</option>
-<option>56</option>
-<option>57</option>
-<option>58</option>
-<option>59</option>
-</select>
-</td>
-<!-- <td>
-Debug: <input type="text" id="out"><br>
-</td>
--->
-</td>
-<td>
+    sel.addEventListener("change", () => {
+        const p = presets[sel.value];
+        if(p.start && p.end) {
+            applyTimeString("start", p.start);
+            applyTimeString("end", p.end);
+        }
+    });
+}
 
-Presentation length: <span id="preslength"></span>
+function populateTimeDropdowns() {
+    const hours = [...Array(12)].map((_,i)=>i+1);
+    const minutes = [...Array(60)].map((_,i)=>String(i).padStart(2,'0'));
+    const ampm = ["AM","PM"];
 
-</td>
-</tr>
-</table>
+    ["startHour","endHour"].forEach(id=>{
+        const sel=document.getElementById(id);
+        hours.forEach(h=>{
+            let o=document.createElement("option");
+            o.value=h;
+            o.text=h;
+            sel.add(o);
+        });
+    });
 
-</form>
+    ["startMinute","endMinute"].forEach(id=>{
+        const sel=document.getElementById(id);
+        minutes.forEach(m=>{
+            let o=document.createElement("option");
+            o.value=m;
+            o.text=m;
+            sel.add(o);
+        });
+    });
 
+    ["startAMPM","endAMPM"].forEach(id=>{
+        const sel=document.getElementById(id);
+        ampm.forEach(a=>{
+            let o=document.createElement("option");
+            o.value=a;
+            o.text=a;
+            sel.add(o);
+        });
+    });
 
-<p id="during">
+    const now = new Date();
+    setDropdownFromDate("start", new Date(now.getTime()+60000));
+    setDropdownFromDate("end", new Date(now.getTime()+21*60000));
+}
 
-<table cellpadding=0 cellspacing=0 width=100%>
-<tr>
-<td width=1></td>
-<td id="left" bgcolor="blue" align="center">.<br>.<br>.</td>
-<td id="right" bgcolor="black" align="center">.</td>
-<td width=1></td>
-</tr>
-</table>
+function setDropdownFromDate(prefix, date) {
+    let h = date.getHours();
+    let ap = (h>=12) ? "PM" : "AM";
+    h = h%12; if(h===0) h=12;
+    document.getElementById(prefix+"Hour").value = h;
+    document.getElementById(prefix+"Minute").value = String(date.getMinutes()).padStart(2,'0');
+    document.getElementById(prefix+"AMPM").value = ap;
+}
 
-<br>
+function applyTimeString(prefix, str) {
+    let [time, ap] = str.split(" ");
+    let [h, m] = time.split(":");
+    document.getElementById(prefix+"Hour").value = parseInt(h);
+    document.getElementById(prefix+"Minute").value = m;
+    document.getElementById(prefix+"AMPM").value = ap;
+}
 
-<table width=100%>
-<tr>
-<td>
-<span class="large">
-	<span id="elapsed"></span><br>used
-</span>
-</td>
-<td align="right">
-<span class="large">
-	<span id="remaining"></span><br>left
-</span>
-</td>
-</tr>
-</table>
+function getTimeFromDropdown(prefix) {
+    let h = parseInt(document.getElementById(prefix+"Hour").value);
+    let m = parseInt(document.getElementById(prefix+"Minute").value);
+    let ap = document.getElementById(prefix+"AMPM").value;
+    if(ap==="PM" && h!==12) h+=12;
+    if(ap==="AM" && h===12) h=0;
+    let d = new Date();
+    d.setHours(h,m,0,0);
+    return d;
+}
 
-</p>
+function formatMS(ms) {
+    if(ms<0) ms=0;
+    let totalSec = Math.floor(ms/1000);
+    let min = Math.floor(totalSec/60);
+    let sec = totalSec%60;
+    return `${min}:${String(sec).padStart(2,'0')}`;
+}
 
+function formatClock(date) {
+    let h = date.getHours();
+    let m = date.getMinutes();
+    let s = date.getSeconds();
+    let ap = (h>=12) ? "PM" : "AM";
+    h = h%12; if(h===0) h=12;
+    return `${h}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} ${ap}`;
+}
 
+let flashState = false;
 
+function updateTimer() {
+    const now = new Date();
+    let start = getTimeFromDropdown("start");
+    let end = getTimeFromDropdown("end");
 
-<p id="before">
-<span class="large">
-	Time til presentation:<br><span id="countdown"></span> seconds<br><br>
-</span>
-</p>
+    if(end <= start) end = new Date(end.getTime()+24*60*60*1000);
 
-<p id="after">
-<span class="large">
-TIME IS OVER!!!!!!!!!!!!!!!!!!!!!!!!!
-</span>
-</p>
+    const display = document.getElementById("display");
+    const progressBar = document.getElementById("progressBar");
+    const body = document.body;
+    const clock = document.getElementById("clock");
 
-<p id="intervalerror">
-<span class="large">
-Change the end time so that it is after the start time.
-</span>
-</p>
+    // Always update current time display
+    clock.textContent = formatClock(now);
 
-<center>
-<span class="large">
-Current time:<br>
-<span id="currenttime"></span>
-</span>
-</center>
+    if(now < start) {
+        display.textContent = "Starts in " + formatMS(start-now);
+        progressBar.style.width="0%";
+        body.style.backgroundColor="white";
+        return;
+    }
 
+    if(now >= start && now <= end) {
+        let elapsed = now-start;
+        let total = end-start;
+        let remaining = end-now;
 
+        display.innerHTML =
+            `Used: ${formatMS(elapsed)}<br>` +
+            `Remaining: ${formatMS(remaining)}`;
 
-<!-- Start of StatCounter Code for Default Guide -->
-<script type="text/javascript">
-//<![CDATA[
-var sc_project=9133248;
-var sc_invisible=1;
-var sc_security="153003b8";
-var scJsHost = (("https:" == document.location.protocol) ?
-"https://secure." : "http://www.");
-document.write("<sc"+"ript type='text/javascript' src='" +
-scJsHost+
-"statcounter.com/counter/counter_xhtml.js'></"+"script>");
-//]]>
+        progressBar.style.width = (elapsed/total)*100 + "%";
+
+        let tenMin = 10*60*1000;
+        if(remaining > tenMin) {
+            body.style.backgroundColor="white";
+        } else {
+            let t = 1 - (remaining/tenMin);
+            let r = 255;
+            let g = Math.floor(255*(1-t));
+            body.style.backgroundColor = `rgb(${r},${g},0)`;
+        }
+        return;
+    }
+
+    display.textContent = "Presentation Ended";
+    progressBar.style.width="100%";
+    flashState = !flashState;
+    body.style.backgroundColor = flashState ? "red" : "yellow";
+}
+
+// Initialize
+populatePresetDropdown();
+populateTimeDropdowns();
+setInterval(updateTimer,1000);
+updateTimer();
 </script>
-<noscript><div class="statcounter"><a title="hit counter"
-href="http://statcounter.com/" class="statcounter"><img
-class="statcounter"
-src="http://c.statcounter.com/9133248/0/153003b8/1/"
-alt="hit counter" /></a></div></noscript>
-<!-- End of StatCounter Code for Default Guide -->
-
 </body>
-
-
-
 </html>
