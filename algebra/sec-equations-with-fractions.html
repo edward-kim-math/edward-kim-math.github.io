@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: denver                         *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Equations with Fractions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Algebra">
+<meta property="book:author" content="
+      Edward D. Kim">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.11.1';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.49eb29f446982553.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.731d8387162b79c1.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.f4ab138da65f4203.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="dmoi-4" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href="http://discrete.openmathbooks.org/dmoi4.html"><img src="external/images/cover4.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="dmoi4.html"><span class="title">Algebra</span> <span class="subtitle">Applications and Strategies</span></a></h1>
+<p class="byline">Edward D. Kim</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"><button id="embed-button" class="embed-button button" title="Embed this page"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe86f;</span><span class="name">Embed</span></button><div class="embed-popup hidden" id="embed-popup">
+<p>Copy the code below to embed this page in your own website or LMS page.</p>
+<div class="embed-code-container">
+<textarea class="embed-code-textbox" id="embed-code-textbox" readonly aria-label="textbox"><iframe src="https://example.com/embed" width="100%" height="1000"></iframe></textarea><button class="copy-embed-button button" id="copy-embed-button" title="Copy embed code"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe14d;</span><span class="name">Copy</span></button>
+</div>
+</div>
+<button id="light-dark-button" class="light-dark-button button" title="Dark Mode"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe51c;</span><span class="name">Dark Mode</span></button></span><span class="treebuttons"><a class="previous-button button" href="sec-solving-equations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-expressions-equations.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-exponents.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\usepackage{cancel}
+\def\d{\displaystyle} 
+\def\N{\mathbb N} 
+\def\B{\mathbf B} 
+\def\Z{\mathbb Z} 
+\def\Q{\mathbb Q} 
+\def\R{\mathbb R} 
+\def\C{\mathbb C} 
+\def\U{\mathcal U} 
+\def\x{\mathbf{x}}
+\def\y{\mathbf{y}}
+\def\X{\mathcal{X}}
+\def\Y{\mathcal{Y}}
+\def\pow{\mathcal P} 
+\def\inv{^{-1}} 
+\def\st{:} 
+\def\iff{\leftrightarrow} 
+\def\Iff{\Leftrightarrow} 
+\def\imp{\rightarrow} 
+\def\Imp{\Rightarrow} 
+\def\isom{\cong} 
+
+\def\bar{\overline} 
+\def\card#1{\left| #1 \right|} 
+\def\twoline#1#2{\begin{pmatrix}#1 \\ #2 \end{pmatrix}} 
+
+\def\mchoose#1#2{
+  \left.\mathchoice
+    {\left(\kern-0.48em\binom{#1}{#2}\kern-0.48em\right)}
+    {\big(\kern-0.30em\binom{\smash{#1}}{\smash{#2}}\kern-0.30em\big)}
+    {\left(\kern-0.30em\binom{\smash{#1}}{\smash{#2}}\kern-0.30em\right)}
+    {\left(\kern-0.30em\binom{\smash{#1}}{\smash{#2}}\kern-0.30em\right)}
+  \right.}
+\def\o{\circ}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth3 focused" data-preexpanded-levels="1" data-max-levels="3"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="preface.html" class="internal"><span class="title">Preface to the student</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Preface to the instructor</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-expressions-equations.html" class="internal"><span class="codenumber">1</span> <span class="title">Expressions and Equations</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-operations.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Operations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operations.html#sec-operations-8" class="internal"><span class="title">Order of Operations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operations.html#sec-operations-11" class="internal"><span class="title">Order of Operations with variables</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operations.html#sec-operations-12" class="internal"><span class="title">Language</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operations.html#sec-operations-13" class="internal"><span class="title">Pictures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operations.html#sec-operations-14" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-operations.html#sec-operations-15" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-expressions-with-fractions.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Expressions with Fractions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#subsec-fraction-applications" class="internal"><span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#sec-expressions-with-fractions-4" class="internal"><span class="title">Representation and Equal/Unequal Fractions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#subsec-adding-subtracting-fractions" class="internal"><span class="title">Adding and subtracting fractions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#subsec-multiplying-fractions" class="internal"><span class="title">Multiplying fractions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#subsec-dividing-fractions" class="internal"><span class="title">Dividing fractions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#subsec-additional-practice" class="internal"><span class="title">Additional practice</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#subsec-clarifications-and-details" class="internal"><span class="title">Clarifications and details</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#subsec-fraction-applications-revisited" class="internal"><span class="title">Applications Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#sec-expressions-with-fractions-11" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-expressions-with-fractions.html#sec-expressions-with-fractions-12" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-solving-equations.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Solving Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations.html#subsec-solving-equations-applications" class="internal"><span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations.html#subsec-introduction-to-equations" class="internal"><span class="title">Introduction to Equations</span></a></div></li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="sec-solving-equations.html#sec-solving-equations-5" class="internal"><span class="title">Equations when the variable is written once</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="sec-solving-equations.html#subsubsec-equations-with-several-operations" class="internal"><span class="title">Equations with several operations</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations.html#sec-solving-equations-6" class="internal"><span class="title">Comments and clarifications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations.html#sec-solving-equations-7" class="internal"><span class="title">Equations when the variable is written more than once</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations.html#subsec-TITLE-applications-revisited" class="internal"><span class="title">Applications Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations.html#sec-solving-equations-9" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations.html#sec-solving-equations-10" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-equations-with-fractions.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Equations with Fractions</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equations-with-fractions.html#subsec-24375623987698" class="internal"><span class="title">A new strategy</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equations-with-fractions.html#sec-equations-with-fractions-4" class="internal"><span class="title">Clarifications, Cautions, and Connections</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equations-with-fractions.html#sec-equations-with-fractions-5" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-equations-with-fractions.html#sec-equations-with-fractions-6" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-exponents.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Exponents and Radicals</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-exponents.html#sec-exponents-3" class="internal"><span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-exponents.html#sec-exponents-4" class="internal"><span class="title">Exponents</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-exponents.html#subsec-radicals" class="internal"><span class="title">Radicals</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-exponents.html#sec-exponents-6" class="internal"><span class="title">Clarifications and techniques</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-exponents.html#sec-exponents-7" class="internal"><span class="title">Applications Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-exponents.html#sec-exponents-8" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-exponents.html#sec-exponents-9" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-factoring-and-expansion.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Factoring and Expansion</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-factoring-and-expansion.html#sec-factoring-and-expansion-3" class="internal"><span class="title">Expansion</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-factoring-and-expansion.html#sec-factoring-and-expansion-4" class="internal"><span class="title">Factoring</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-factoring-and-expansion.html#subsec-special-cases" class="internal"><span class="title">Special cases</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-factoring-and-expansion.html#subsec-additional-factoring-techniques" class="internal"><span class="title">Additional factoring techniques</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-factoring-and-expansion.html#subsec-" class="internal"><span class="title">Factoring quadratics revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-factoring-and-expansion.html#sec-factoring-and-expansion-8" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-factoring-and-expansion.html#sec-factoring-and-expansion-9" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-fractions-revisited.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Fractions Revisited</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fractions-revisited.html#sec-fractions-revisited-5" class="internal"><span class="title">Rational Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fractions-revisited.html#sec-fractions-revisited-6" class="internal"><span class="title">Compound Fractions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fractions-revisited.html#sec-fractions-revisited-7" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-fractions-revisited.html#sec-fractions-revisited-8" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-solving-equations-revisited.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Expressions and Equations Revisited</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-3" class="internal"><span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-4" class="internal"><span class="title">Expressions representing contextual quantities</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-5" class="internal"><span class="title">Equations involving percentages</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-6" class="internal"><span class="title">Systems of equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-7" class="internal"><span class="title">Distance, rate, and time</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-8" class="internal"><span class="title">Mixture</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-9" class="internal"><span class="title">Literal Equations</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-10" class="internal"><span class="title">Equations with Rational Expressions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-11" class="internal"><span class="title">Applications revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-12" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-solving-equations-revisited.html#sec-solving-equations-revisited-13" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-analytic-geometry.html" class="internal"><span class="codenumber">2</span> <span class="title">Analytic Geometry</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-xy-plane.html" class="internal"><span class="codenumber">2.1</span> <span class="title">The <span class="process-math">\(xy\)</span>-plane</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-xy-plane.html#sec-xy-plane-3" class="internal"><span class="title">Applications</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-xy-plane.html#sec-xy-plane-4" class="internal"><span class="title">subsection title</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-xy-plane.html#sec-xy-plane-5" class="internal"><span class="title">Applications Revisited</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-xy-plane.html#sec-xy-plane-6" class="internal"><span class="title">Summary</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-xy-plane.html#sec-xy-plane-7" class="internal"><span class="title">Exercises</span></a></div></li>
+</ul>
+</li></ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-gcf-lcm.html" class="internal"><span class="codenumber">A</span> <span class="title">Details on GCF and LCM</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-factoring-and-expansion-revisited.html" class="internal"><span class="codenumber">B</span> <span class="title">Factoring and Expansion Revisited</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-equations-with-fractions"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Equations with Fractions</span>
+</h2>
+<article class="objectives goal-like" id="sec-equations-with-fractions-2"><h3 class="heading"><span class="type">Objectives</span></h3>
+<div class="introduction" id="sec-equations-with-fractions-2-1"><div class="para" id="sec-equations-with-fractions-2-1-1">In this section, we learn how to:<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div></div>
+<ol class="decimal" id="sec-equations-with-fractions-2-2"><li id="sec-equations-with-fractions-2-2-1">
+<div class="para" id="sec-equations-with-fractions-2-2-1-1">Solve equations with fractions present.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Objective 1.4.1"><a href="#sec-equations-with-fractions-2-2-1" title="Copy heading and permalink for Objective 1.4.1" aria-label="Copy heading and permalink for Objective 1.4.1">🔗</a></div>
+</li></ol>
+<div class="autopermalink" data-description="Objectives 1.4"><a href="#sec-equations-with-fractions-2" title="Copy heading and permalink for Objectives 1.4" aria-label="Copy heading and permalink for Objectives 1.4">🔗</a></div></article><section class="subsection" id="subsec-24375623987698"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">A new strategy</span>
+</h3>
+<div class="para" id="subsec-24375623987698-2">In <a href="sec-expressions-with-fractions.html" class="internal" title="Section 1.2: Expressions with Fractions">Section 1.2</a>, we learned how to simplify expressions with fractions. In this section, we look beyond simplifying expressions with fractions, and instead look at solving equations with fractions. The last two sections discussed expressions with fractions followed by solving equations, so now it’s time to see efficient ways to solve equations with fractions. Recall from <a href="sec-expressions-with-fractions.html#warning-multiplying-fractions-does-not-need-common-denominator" class="xref" data-knowl="./knowl/xref/warning-multiplying-fractions-does-not-need-common-denominator.html" data-reveal-label="Reveal" data-close-label="Close" title="Warning 1.2.66">Warning 1.2.66</a> that simplifying expressions with fractions does not always require a common denominator. (More specifically, when asked to simplify the product of two fractions, we do not need a common denominator.) So, I invite you -- as we go through this section -- to be willing to question the idea that we’d always need a common denominator when solving equations with fractions. After all, it wasn’t every fractional expression that required common denominators: only some of them did.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="computation computation-like" id="strategy-equations-with-fractions"><h4 class="heading">
+<span class="type">Strategy</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Solving an equation with fractions.</span>
+</h4>
+<div class="para logical" id="strategy-equations-with-fractions-2">
+<ul class="disc" id="strategy-equations-with-fractions-2-1">
+<li id="strategy-equations-with-fractions-2-1-1">
+<div class="para" id="strategy-equations-with-fractions-2-1-1-1">
+<em class="alert">When does this strategy apply?</em> This strategy applies in any equation we are asked to solve when there is one or more fractions.<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equations-with-fractions-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#strategy-equations-with-fractions-2-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="strategy-equations-with-fractions-2-1-2">
+<div class="para logical" id="strategy-equations-with-fractions-2-1-2-1">
+<div class="para"><em class="alert">How to apply the strategy</em></div>
+<ol class="decimal" id="strategy-equations-with-fractions-2-1-2-1-2">
+<li id="strategy-equations-with-fractions-2-1-2-1-2-1">
+<div class="para" id="strategy-equations-with-fractions-2-1-2-1-2-1-1">Inventory all of the fractions, whether they appear on the left side, the right side, or both. In particular, identify all of the denominators present.<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equations-with-fractions-2-1-2-1-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#strategy-equations-with-fractions-2-1-2-1-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="strategy-equations-with-fractions-2-1-2-1-2-2">
+<div class="para" id="strategy-equations-with-fractions-2-1-2-1-2-2-1">Off to the side, compute the least common denominator (LCD) of all of the fractions. This phrase <dfn class="terminology">least common denominator</dfn> is shorthand to mean the <dfn class="terminology">least common multiple</dfn> of all of the denominators. (See APPENDIX for details on least common multiples.)<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equations-with-fractions-2-1-2-1-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#strategy-equations-with-fractions-2-1-2-1-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="strategy-equations-with-fractions-2-1-2-1-2-3">
+<div class="para" id="strategy-equations-with-fractions-2-1-2-1-2-3-1">Take the least common multiple computed in the previous step and multiply both sides of the equation by this expression. (Because we have to multiply the entire left side and the entire right side, it may be necessary to use parentheses due to the Order of Operations.)<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equations-with-fractions-2-1-2-1-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#strategy-equations-with-fractions-2-1-2-1-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="strategy-equations-with-fractions-2-1-2-1-2-4">
+<div class="para" id="strategy-equations-with-fractions-2-1-2-1-2-4-1">On each side, distribute if applicable.<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equations-with-fractions-2-1-2-1-2-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#strategy-equations-with-fractions-2-1-2-1-2-4" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="strategy-equations-with-fractions-2-1-2-1-2-5">
+<div class="para" id="strategy-equations-with-fractions-2-1-2-1-2-5-1">In each term on each side, cancel where applicable. This always results in an equation which has no fractions.<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equations-with-fractions-2-1-2-1-2-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#strategy-equations-with-fractions-2-1-2-1-2-5" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equations-with-fractions-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#strategy-equations-with-fractions-2-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equations-with-fractions-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Strategy 1.4.1: Solving an equation with fractions"><a href="#strategy-equations-with-fractions" title="Copy heading and permalink for Strategy 1.4.1: Solving an equation with fractions" aria-label="Copy heading and permalink for Strategy 1.4.1: Solving an equation with fractions">🔗</a></div></article><article class="example example-like" id="subsec-24375623987698-4"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsec-24375623987698-4-1-1">Solve <span class="process-math">\(\frac{x}{3} + \frac{2}{5} = \frac{3}{10}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="subsec-24375623987698-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para" id="subsec-24375623987698-4-2-1">We are being asked to solve an equation with fractions, so <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> applies. First, we inventory all of the fractions and identify the denominators, which are <span class="process-math">\(3\)</span> and <span class="process-math">\(5\)</span> and <span class="process-math">\(10\text{.}\)</span> The least common multiple of <span class="process-math">\(3\)</span> and <span class="process-math">\(5\)</span> and <span class="process-math">\(10\)</span> is <span class="process-math">\(30\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-24375623987698-4-2-2">
+<div class="para">We multiply both sides of the equation by <span class="process-math">\(30\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+30 \left( \frac{x}{3} + \frac{2}{5} \right) = 30 \cdot \frac{3}{10}.
+\end{equation*}
+</div>
+<div class="para">Note that on the left side of the equation, we used parentheses to ensure that the entire left side is multiplied by <span class="process-math">\(30\text{:}\)</span> the Order of Operations tells us that multiplication is performed before addition, so without parentheses, only the first fraction would be multiplied by <span class="process-math">\(30\text{.}\)</span> On the right side, we could have drawn parentheses around the entire right side, but because there is only one term on the right side, it was not necessary.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-4-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="subsec-24375623987698-4-2-3">
+<div class="para">Now, distribute on the left side:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+30 \cdot \frac{x}{3} + 30 \cdot \frac{2}{5} = 30 \cdot \frac{3}{10}.
+\end{equation*}
+</div>
+<div class="para">Next, we cancel where applicable. In the first term (all content before the first plus sign), the <span class="process-math">\(30\)</span> in the numerator partially cancels with the <span class="process-math">\(3\)</span> in the denominator, or said differently, after cancelling factor of <span class="process-math">\(3\)</span> on top and bottom, we are left with a factor of <span class="process-math">\(10\)</span> on top. In the second term (all content between the plus sign and the equal sign), the <span class="process-math">\(30\)</span> in the numerator partially cancels with the <span class="process-math">\(5\)</span> in the denominator, leaving a factor of <span class="process-math">\(6\)</span> on top. On the right side, the <span class="process-math">\(30\)</span> in the numerator partially cancels with the <span class="process-math">\(10\)</span> in the denominator, leaving a factor of <span class="process-math">\(3\)</span> on top. Here’s what it looks like with the cancellations written in:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cancel{3} \cdot 10 \cdot \frac{x}{\cancel{3}} + \cancel{5} \cdot 6 \cdot \frac{2}{\cancel{5}} = \cancel{10} \cdot 3 \cdot \frac{3}{\cancel{10}}.
+\end{equation*}
+</div>
+<div class="para">After performing the cancellations, we are left with:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+10x + 12 = 9.
+\end{equation*}
+</div>
+<div class="para">This is an equation with no fractions, so we can solve it using the strategies we have learned previously. Subtracting <span class="process-math">\(12\)</span> from both sides gives:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+10x = -3.
+\end{equation*}
+</div>
+<div class="para">Dividing both sides by <span class="process-math">\(10\)</span> gives:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x = -\frac{3}{10}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-4-2-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.2.1"><a href="#subsec-24375623987698-4-2" title="Copy heading and permalink for Solution 1.4.2.1" aria-label="Copy heading and permalink for Solution 1.4.2.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.2"><a href="#subsec-24375623987698-4" title="Copy heading and permalink for Example 1.4.2" aria-label="Copy heading and permalink for Example 1.4.2">🔗</a></div></article><article class="note remark-like" id="subsec-24375623987698-5"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.3</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="subsec-24375623987698-5-1">
+<div class="para">Before seeing more examples, let’s discuss why this strategy works:</div>
+<ul class="disc" id="subsec-24375623987698-5-1-1">
+<li id="subsec-24375623987698-5-1-1-1">
+<div class="para" id="subsec-24375623987698-5-1-1-1-1">We multiplied by the appropriate quantity (in our last example <span class="process-math">\(30\)</span>) which ensured that, after distributing where needed, all factors in the denominator would cancel. Using the least common multiple of the denominators as the number to multiply by on both sides ended up leading to this value appearing as a factor in the numerator of each term, allowing each copy to create all the necessary cancellations so that each denominator ends up being <span class="process-math">\(1\)</span> after cancellations occur. In other words, this ends up creating an equation without fractions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-5-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-24375623987698-5-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-24375623987698-5-1-1-2">
+<div class="para" id="subsec-24375623987698-5-1-1-2-1">For a fraction expression, there are not two sides, so to simplify adding fractions, a common denominator is needed. However, when you have an equation there are two sides. We can take avantage of the two sides by multiplying by the same thing on both sides! In the case of an expression, there aren’t “sides” in the first place.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-5-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-24375623987698-5-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-24375623987698-5-1-1-3">
+<div class="para" id="subsec-24375623987698-5-1-1-3-1">In an equation with fractions, multiplying both sides by the least common multilple of the denominators is the fastest way to get rid of fractions.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-5-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-24375623987698-5-1-1-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 1.4.3"><a href="#subsec-24375623987698-5" title="Copy heading and permalink for Note 1.4.3" aria-label="Copy heading and permalink for Note 1.4.3">🔗</a></div></article><article class="example example-like" id="subsec-24375623987698-6"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.4</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsec-24375623987698-6-1-1">Solve the equation <span class="process-math">\(\frac{x}{6} + \frac23 = \frac{3x}{4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="subsec-24375623987698-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-24375623987698-6-2-1">
+<div class="para">We are being asked to solve an equation with fractions, so <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> applies. The least common multiple of the denominators <span class="process-math">\(6\)</span> and <span class="process-math">\(3\)</span> and <span class="process-math">\(4\)</span> is <span class="process-math">\(12\text{.}\)</span> So we multiply both sides of the equation by <span class="process-math">\(12\text{:}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+12 \left( \frac{x}{6} + \frac{2}{3} \right) = 12 \cdot \frac{3x}{4}.
+\end{equation*}
+</div>
+<div class="para">Distributing on the left side gives:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+12 \cdot \frac{x}{6} + 12 \cdot \frac{2}{3} = 12 \cdot \frac{3x}{4}.
+\end{equation*}
+</div>
+<div class="para">Now we cancel where applicable.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+\cancel{6} \cdot 2 \cdot \frac{x}{\cancel{6}} + \cancel{3} \cdot 4 \cdot \frac{2}{\cancel{3}} = \cancel{4} \cdot 3 \cdot \frac{3x}{\cancel{4}}.
+\end{equation*}
+</div>
+<div class="para">After performing the cancellations, we are left with:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+2x + 8 = 9x.
+\end{equation*}
+</div>
+<div class="para">This is an equation with no fractions. Subtracting <span class="process-math">\(2x\)</span> from both sides gives:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+8 = 7x.
+\end{equation*}
+</div>
+<div class="para">Dividing both sides by <span class="process-math">\(7\)</span> gives:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+\frac{8}{7}=x.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.4.1"><a href="#subsec-24375623987698-6-2" title="Copy heading and permalink for Solution 1.4.4.1" aria-label="Copy heading and permalink for Solution 1.4.4.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.4"><a href="#subsec-24375623987698-6" title="Copy heading and permalink for Example 1.4.4" aria-label="Copy heading and permalink for Example 1.4.4">🔗</a></div></article><article class="example example-like" id="strategy-equation-with-fraction-one-denominator-is-LCD"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.5</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="strategy-equation-with-fraction-one-denominator-is-LCD-1-1">Solve the equation <span class="process-math">\(\frac{x}{6} + \frac{1}{2} = \frac{2}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#strategy-equation-with-fraction-one-denominator-is-LCD-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="strategy-equation-with-fraction-one-denominator-is-LCD-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="strategy-equation-with-fraction-one-denominator-is-LCD-2-1">
+<div class="para">The least common multiple of the denominators <span class="process-math">\(6\)</span> and <span class="process-math">\(2\)</span> and <span class="process-math">\(3\)</span> is <span class="process-math">\(6\text{.}\)</span> So we multiply both sides of the equation by <span class="process-math">\(6\text{,}\)</span> though Order of Operations requires us to wrap the left side in parentheses:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+6 \left( \frac{x}{6} + \frac{1}{2} \right) = 6 \cdot \frac{2}{3}.
+\end{equation*}
+</div>
+<div class="para">Distributing on the left side gives:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+6 \cdot \frac{x}{6} + 6 \cdot \frac{1}{2} = 6 \cdot \frac{2}{3}.
+\end{equation*}
+</div>
+<div class="para">Now we cancel where applicable.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cancel{6} \cdot 1 \cdot \frac{x}{\cancel{6}} + \cancel{2} \cdot 3 \cdot \frac{1}{\cancel{2}} = \cancel{3} \cdot 2 \cdot \frac{2}{\cancel{3}}.
+\end{equation*}
+</div>
+<div class="para">After performing the cancellations, we are left with:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x + 9 = 12.
+\end{equation*}
+</div>
+<div class="para">This is an equation with no fractions. Subtracting <span class="process-math">\(9\)</span> from both sides gives:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x = 3.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#strategy-equation-with-fraction-one-denominator-is-LCD-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.5.1"><a href="#strategy-equation-with-fraction-one-denominator-is-LCD-2" title="Copy heading and permalink for Solution 1.4.5.1" aria-label="Copy heading and permalink for Solution 1.4.5.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.5"><a href="#strategy-equation-with-fraction-one-denominator-is-LCD" title="Copy heading and permalink for Example 1.4.5" aria-label="Copy heading and permalink for Example 1.4.5">🔗</a></div></article><div class="para" id="subsec-24375623987698-8">You may have never heard of <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> before, but it is the fastest way to solve any equation that has fractions. You may be used to another method that works involving common denominators, but as a friendly reminder,  <a href="sec-expressions-with-fractions.html#warning-multiplying-fractions-does-not-need-common-denominator" class="xref" data-knowl="./knowl/xref/warning-multiplying-fractions-does-not-need-common-denominator.html" data-reveal-label="Reveal" data-close-label="Close" title="Warning 1.2.66">Warning 1.2.66</a> told us that even when we looked at fractional expressions, we didn’t always need common denominators. Let’s compare the two methods in the next example.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-8" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="first-example-ignoring-strategy-for-equations-with-fractions"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.6</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="first-example-ignoring-strategy-for-equations-with-fractions-1-1">Solve <span class="process-math">\(\frac{x}{6} + \frac{x-3}{10} = \frac43\)</span><div class="autopermalink" data-description="Paragraph"><a href="#first-example-ignoring-strategy-for-equations-with-fractions-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="first-example-ignoring-strategy-for-equations-with-fractions-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="first-example-ignoring-strategy-for-equations-with-fractions-2-1">
+<div class="para">Here’s what it looks like to solve <span class="process-math">\(\frac{x}{6} + \frac{x-3}{10} = \frac{4}{3}\)</span> by ignoring <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> and doing everything with common denominators instead:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+\frac{x}{6} + \frac{x-3}{10} = \frac{4}{3}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+\frac{5x}{30} + \frac{3(x-3)}{30} = \frac{40}{30}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+\frac{5x}{30} + \frac{3x-9}{30} = \frac{40}{30}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+\frac{5x + 3x - 9}{30} = \frac{40}{30}
+\end{equation*}
+</div>
+<div class="para">Multiply both sides by <span class="process-math">\(30\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+5x + 3x - 9 = 40
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+8x - 9 = 40
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+8x = 49
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+x = \frac{49}{8}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#first-example-ignoring-strategy-for-equations-with-fractions-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.6.1"><a href="#first-example-ignoring-strategy-for-equations-with-fractions-2" title="Copy heading and permalink for Solution 1.4.6.1" aria-label="Copy heading and permalink for Solution 1.4.6.1">🔗</a></div>
+</div></details><details id="first-example-ignoring-strategy-for-equations-with-fractions-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="first-example-ignoring-strategy-for-equations-with-fractions-3-1">
+<div class="para">Here’s what it looks like to solve <span class="process-math">\(\frac{x}{6} + \frac{x-3}{10} = \frac{4}{3}\)</span> by using <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>. First, the least common multiple of the denominators <span class="process-math">\(6\)</span> and <span class="process-math">\(10\)</span> and <span class="process-math">\(3\)</span> is <span class="process-math">\(30\text{,}\)</span> so we make our first step to multiply both sides by <span class="process-math">\(30\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+30\left(\frac{x}{6} + \frac{x-3}{10}\right) = 30 \cdot \frac{4}{3}
+\end{equation*}
+</div>
+<div class="para">On the left side, distribute <span class="process-math">\(30\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+30 \frac{x}{6} + 30 \frac{x-3}{10} = 30 \cdot \frac{4}{3}
+\end{equation*}
+</div>
+<div class="para">After cancelling, we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+5x + 3(x-3) = 10 \cdot 4
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+5x + 3x - 9 = 40
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+8x - 9 = 40
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+8x = 49
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+x = \frac{49}{8}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#first-example-ignoring-strategy-for-equations-with-fractions-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.6.2"><a href="#first-example-ignoring-strategy-for-equations-with-fractions-3" title="Copy heading and permalink for Solution 1.4.6.2" aria-label="Copy heading and permalink for Solution 1.4.6.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.4.6"><a href="#first-example-ignoring-strategy-for-equations-with-fractions" title="Copy heading and permalink for Example 1.4.6" aria-label="Copy heading and permalink for Example 1.4.6">🔗</a></div></article><div class="para" id="subsec-24375623987698-10">Let’s be clear that both answers to the previous question are completely valid. In both answers, it took multiplying by <span class="process-math">\(30\)</span> to get rid of the fractions. (I ask you to pause for a second and think about this: if we didn’t multiply by <span class="process-math">\(30\text{,}\)</span> we would not have been able to get rid of the fractions.) Since we have to multiply by <span class="process-math">\(30\)</span> anyway, why not do it right away and save ourselves some time? This saves us time because we don’t have to keep writing fractions. Fractions take longer to write than non-fractions (because fractions have a top and a bottom). To be clear, there are ways to skip some of the steps in both answers above (but for a fair comparison, both answers stated the original equation at the start of the answer).<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-10" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-24375623987698-11">
+<a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> works because an equation has two sides. If we only had an expression, then we don’t have two “sides” to work with.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-11" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="subsec-24375623987698-12"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.7</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsec-24375623987698-12-1-1">Simplify the expression <span class="process-math">\(\frac{x}{6} + \frac{x-3}{10}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-12-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="subsec-24375623987698-12-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{x}{6} + \frac{x-3}{10}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \frac{5x}{30} + \frac{3(x-3)}{30}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \frac{5x}{30} + \frac{3x-9}{30}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \frac{5x+3x-9}{30}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+= \frac{8x-9}{30}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Solution 1.4.7.1"><a href="#subsec-24375623987698-12-2" title="Copy heading and permalink for Solution 1.4.7.1" aria-label="Copy heading and permalink for Solution 1.4.7.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.7"><a href="#subsec-24375623987698-12" title="Copy heading and permalink for Example 1.4.7" aria-label="Copy heading and permalink for Example 1.4.7">🔗</a></div></article><div class="para" id="subsec-24375623987698-13">In the previous example, we could not use <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> because there is no second “side” to multiply by the least common multiple. Instead, we had to find a common denominator in order to simplify the addition of fractions. This is why <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> only applies to equations with fractions. However, when we have an equation with fractions, even if there is a plus sign between two fractions, there is no requirement to simplify the addition of fractions. Instead, we can use <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> to get rid of the fractions entirely.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-13" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="subsec-24375623987698-14"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.8</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsec-24375623987698-14-1-1">Solve the equation <span class="process-math">\(\frac{2x}{9} + \frac{3x+1}{10} = \frac{5x}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-14-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="subsec-24375623987698-14-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-24375623987698-14-2-1">
+<div class="para">An answer that ignores <span>(((xref without ref, first/last, or provisional attribute (check spelling))))</span> and uses common denominators instead looks like this:</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{2x}{9} + \frac{3x+1}{10} = \frac{5x}{6}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{20x}{90} + \frac{9(3x+1)}{90} = \frac{75x}{90}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{47x+9}{90} = \frac{75x}{90}
+\end{equation*}
+</div>
+<div class="para">Multiply both sides by <span class="process-math">\(90\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+47x + 9 = 75x
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+-28x = -9
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x = \frac{9}{28}
+\end{equation*}
+</div>
+<div class="para">To try to speed things up, we skipped writing several steps.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-14-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.8.1"><a href="#subsec-24375623987698-14-2" title="Copy heading and permalink for Solution 1.4.8.1" aria-label="Copy heading and permalink for Solution 1.4.8.1">🔗</a></div>
+</div></details><details id="subsec-24375623987698-14-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-24375623987698-14-3-1">
+<div class="para">An answer that uses <span>(((xref without ref, first/last, or provisional attribute (check spelling))))</span> first computes that the least common multiple of <span class="process-math">\(9\)</span> and <span class="process-math">\(10\)</span> and <span class="process-math">\(6\)</span> is <span class="process-math">\(90\text{.}\)</span> To create a fair comparison with the previous answer, we start by writing the original equation:</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+\frac{2x}{9} + \frac{3x+1}{10} = \frac{5x}{6}
+\end{equation*}
+</div>
+<div class="para">Now, if we were in the setting of a quiz or exam, this equation is probably already typed for you. For the multiplying by <span class="process-math">\(90\)</span> on both sides, you could actually handwrite the <span class="process-math">\(90\)</span> on both sides, surrounding the typed left side in parentheses. That is, by handwriting on top of the original equation, you could see this next equation without having to write it in full:</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+90 \left(\frac{2x}{9} + \frac{3x+1}{10}\right) = 90 \cdot \frac{5x}{6}
+\end{equation*}
+</div>
+<div class="para">In fact, the step that would appear after this involves distributing <span class="process-math">\(90\)</span> on the left, as we saw in previous examples using <span>(((xref without ref, first/last, or provisional attribute (check spelling))))</span>. Instead of writing the equation</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+90 \cdot \frac{2x}{9} + 90 \cdot \frac{3x+1}{10} = 90 \cdot \frac{5x}{6}
+\end{equation*}
+</div>
+<div class="para">we might just stare at each term to figure out what results after cancellation. In other words, by looking at <span class="process-math">\(\frac{2x}{9}\)</span> we could see that result of multiplying by <span class="process-math">\(90\)</span> is <span class="process-math">\(10 \cdot 2x\text{.}\)</span> Similarly, looking at the second term <span class="process-math">\(\frac{3x+1}{10}\text{,}\)</span> multiplying by <span class="process-math">\(90\)</span> gives <span class="process-math">\(9(3x+1)\text{.}\)</span> For the term on the right side, multiplying <span class="process-math">\(\frac{5x}{6}\)</span> by <span class="process-math">\(90\)</span> simplifies to <span class="process-math">\(15 \cdot 5x\text{.}\)</span> Thus, our first full equation to write could be this equation, which has no fractions:</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+20x + 9(3x+1) = 75x
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+20x + 27x + 9 = 75x
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+47x + 9 = 75x
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+-28x = -9
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ">
+\begin{equation*}
+x = \frac{9}{28}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-14-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.8.2"><a href="#subsec-24375623987698-14-3" title="Copy heading and permalink for Solution 1.4.8.2" aria-label="Copy heading and permalink for Solution 1.4.8.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.4.8"><a href="#subsec-24375623987698-14" title="Copy heading and permalink for Example 1.4.8" aria-label="Copy heading and permalink for Example 1.4.8">🔗</a></div></article><article class="example example-like" id="subsec-24375623987698-15"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.9</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="subsec-24375623987698-15-1-1">Solve <span class="process-math">\(\frac{2x+1}{3} - \frac{x-1}{4} = \frac{x+2}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-15-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="subsec-24375623987698-15-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-24375623987698-15-2-1">
+<div class="para">An answer that ignores <span>(((xref without ref, first/last, or provisional attribute (check spelling))))</span> and uses common denominators looks like this:</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{8(2x+1)}{24} - \frac{6(x-1)}{24} = \frac{4(x+2)}{24}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{16x+8 - 6x + 6}{24} = \frac{4x + 8}{24}
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+\frac{10x + 14}{24} = \frac{4x + 8}{24}
+\end{equation*}
+</div>
+<div class="para">Multiply both sides by <span class="process-math">\(24\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+10x + 14 = 4x + 8
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+6x = -6
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x = -1
+\end{equation*}
+</div>
+<div class="para">To try to minimize the amount of writing, some steps were skipped. Even with skipped steps, there were three equations written after the original equation which had fractions, and fractions take longer to write than non-fractions. (One common point of confusion is why the left side of the second equation has <span class="process-math">\(16x+8-6x+6\)</span> instead of <span class="process-math">\(16x+8-6x-6\text{.}\)</span> The reason for this is that the numerator on the left is really <span class="process-math">\(8(2x+1)-6(x-1)\)</span> before any distributing occured. Some people would prefer to distribute before combining fractions, in which case one numerator is <span class="process-math">\(16x+8\)</span> in a hidden set of parentheses and the second numerator is <span class="process-math">\((6x-6)\)</span> also in a hidden set of parentheses.)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-15-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.9.1"><a href="#subsec-24375623987698-15-2" title="Copy heading and permalink for Solution 1.4.9.1" aria-label="Copy heading and permalink for Solution 1.4.9.1">🔗</a></div>
+</div></details><details id="subsec-24375623987698-15-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="subsec-24375623987698-15-3-1">
+<div class="para">Using <span>(((xref without ref, first/last, or provisional attribute (check spelling))))</span>, the least common multiple of <span class="process-math">\(3\)</span> and <span class="process-math">\(4\)</span> and <span class="process-math">\(6\)</span> is <span class="process-math">\(12\text{.}\)</span> We could handwrite a <span class="process-math">\(12\)</span> on each side of the original typed equation, surrounding the left side in parentheses. Knowing that we will distribute <span class="process-math">\(12\)</span> on the left side anyway, we can really just think of what it means to multiply each term on each side by <span class="process-math">\(12\text{.}\)</span> Multiplying <span class="process-math">\(\frac{2x+1}{3}\)</span> by <span class="process-math">\(12\)</span> means that a factor of <span class="process-math">\(4\)</span> remains in the numerator from the <span class="process-math">\(12\)</span> so we’d have <span class="process-math">\(4(2x+1)\text{.}\)</span> Multiplying <span class="process-math">\(\frac{x-1}{4}\)</span> by <span class="process-math">\(12\)</span> means that a factor of <span class="process-math">\(3\)</span> remains in the numerator from the <span class="process-math">\(12\)</span> so we’d have <span class="process-math">\(3(x-1)\)</span> after the minus sign. Multiplying <span class="process-math">\(\frac{x+2}{6}\)</span> by <span class="process-math">\(12\)</span> means that a factor of <span class="process-math">\(2\)</span> remains in the numerator from the <span class="process-math">\(12\)</span> so we’d have <span class="process-math">\(2(x+2)\text{.}\)</span> So, the first full equation we write doesn’t have fractions:</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+4(2x+1)-3(x-1)=2(x+2)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+8x+4-3x+3=2x+4
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+5x+7=2x+4
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+3x=-3
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{equation*}
+x=-1
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-15-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.9.2"><a href="#subsec-24375623987698-15-3" title="Copy heading and permalink for Solution 1.4.9.2" aria-label="Copy heading and permalink for Solution 1.4.9.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.4.9"><a href="#subsec-24375623987698-15" title="Copy heading and permalink for Example 1.4.9" aria-label="Copy heading and permalink for Example 1.4.9">🔗</a></div></article><div class="para logical" id="subsec-24375623987698-16">
+<div class="para">In an attempt to make a fair comparison and skip as much as people might eventually feel comfortable in writing (just to compare how much writing there is, and how much time it takes), a certain aspect of the first answer may have been confusing. For that reason, outside of the comparison, I think it would be good for us to see the first several steps of the first answer without skipping any work. There are actually two subvariants of the first answer, and we’ll go through the steps of both subvariants. Spending the time to do this isn’t to persuade you to move away from <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>. Far from it. In fact, the subtle things that we’re about to dig into aren’t a problem by following <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>. That said, going into the details (as annoying as it might be) I hope will demystify some of the steps that are too often glossed over quickly (and I don’t blame people who are confused)! The throughout explanations we’re about to dig into are meant to ensure we don’t create confusion by shoving things under the rug.</div>
+<ul class="disc" id="subsec-24375623987698-16-3">
+<li id="subsec-24375623987698-16-3-1">
+<div class="para logical" id="subsec-24375623987698-16-3-1-1">
+<div class="para">Starting from <span class="process-math">\(\frac{2x+1}{3} - \frac{x-1}{4} = \frac{x+2}{6}\)</span> the usual work to create a common denominator leads to</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-distributing-negatives.html">
+\begin{equation*}
+\frac{8(2x+1)}{24} - \frac{6(x-1)}{24} = \frac{4(x+2)}{24}.
+\end{equation*}
+</div>
+<div class="para">At this moment, we can either distribute <span class="process-math">\(8\)</span> and distribute <span class="process-math">\(6\text{,}\)</span> or since we have common denominators on the left, we can combine the fractions. I don’t think it’s wise at this moment to try to do both at the same time. One thing at a time. So, let’s see what happens if we rewrite each denominator by distributing:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-distributing-negatives.html">
+\begin{equation*}
+\frac{16x+8}{24} - \frac{6x-6}{24} = \frac{4x+8}{24}
+\end{equation*}
+</div>
+<div class="para">Now, before doing the next step, something that tiny that can get easily ignored can lead to problems. Recall that the entire numerator and entire denominator of every fraction is in a set of parentheses. For this problem, we need to really think about this for the numerators (and don’t need to really think about it for the denominators). While we really actually need to think about these parentheses for the second numerator, let’s just draw in thoe hidden parentheses for all numerators, making visible those once-hidden parentheses:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-distributing-negatives.html">
+\begin{equation*}
+\frac{(16x+8)}{24} - \frac{(6x-6)}{24} = \frac{(4x+8)}{24}
+\end{equation*}
+</div>
+<div class="para">Now, on the left side, since we are subtracting fractions of a common denominator, we can combine this into one fraction: we leave in the parentheses for now, just to process one thing at a time.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-distributing-negatives.html">
+\begin{equation*}
+\frac{(16x+8)-(6x-6)}{24} = \frac{(4x+8)}{24}
+\end{equation*}
+</div>
+<div class="para">The first set of parentheses can be dropped. The parentheses on the right side can also be dropped. However, the second set of parentheses on the left side cannot be dropped because of the minus sign in front of it. In fact, we addressed the expression <span class="process-math">\((16x+8)-(6x-6)\)</span> in <a href="sec-operations.html#sec-distributing-negatives" class="xref" data-knowl="./knowl/xref/sec-distributing-negatives.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.1.92">Example 1.1.92</a>, so we can apply what we learned there:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-distributing-negatives.html">
+\begin{equation*}
+\frac{16x+8-6x+6}{24} = \frac{4x+8}{24}
+\end{equation*}
+</div>
+<div class="para">We’ll stop working on the problem here, because the previous equation appeared in the first answer we already provided.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-16-3-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-24375623987698-16-3-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-24375623987698-16-3-2">
+<div class="para logical" id="subsec-24375623987698-16-3-2-1">
+<div class="para">Starting over, once we got common denominators which gave the equation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{8(2x+1)}{24} - \frac{6(x-1)}{24} = \frac{4(x+2)}{24},
+\end{equation*}
+</div>
+<div class="para">instead of distributing first, we could have combined the fractions first:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{8(2x+1)-6(x-1)}{24} = \frac{4(x+2)}{24},
+\end{equation*}
+</div>
+<div class="para">Now, distributing <span class="process-math">\(8\)</span> and <span class="process-math">\(-6\)</span> and <span class="process-math">\(4\)</span> gives us the equation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{16x+8-6x+6}{24} = \frac{4x+8}{24},
+\end{equation*}
+</div>
+<div class="para">Again, we stop working on the problem here.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-16-3-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-24375623987698-16-3-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-24375623987698-16" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: A new strategy"><a href="#subsec-24375623987698" title="Copy heading and permalink for Subsection: A new strategy" aria-label="Copy heading and permalink for Subsection: A new strategy">🔗</a></div></section><section class="subsection" id="sec-equations-with-fractions-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Clarifications, Cautions, and Connections</span>
+</h3>
+<div class="para" id="sec-equations-with-fractions-4-2">We’ve seen a technique for solving equations that have fractions, but there are some things that we should clarify. I invite you to read through this section carefully. My hope is to really make sure everything that you’ve seen about equations with fractions is honored: we’ll discuss it all! Moreover, I hope that what you read is empowering, because we’ve worked hard together to lay a foundation for what’s happening step-by-step!<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="warning remark-like" id="sec-equations-with-fractions-4-3"><h4 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.10</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-equations-with-fractions-4-3-1">When being asked to solve an equation with fractions, a common error occurs among those who insist on a common denominator approach. What usually happens is that there is adding and/or subtracting on both sides to reach the goal of having one side of the equation becoming just zero. After achieving this, often the work shown will involve only looking at the busier side and simplifying the expression.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-equations-with-fractions-4-3-2">
+<div class="para">Let’s illustrate exactly what this looks like with an example. When asked to solve <span class="process-math">\(\frac{x}{6} + \frac{x-3}{10} = \frac{4}{3}\text{,}\)</span> someone might first subtract <span class="process-math">\(\frac43\text{,}\)</span> and their work in full might look like this:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{x}{6} + \frac{x-3}{10} = \frac{4}{3}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{x}{6} + \frac{x-3}{10} - \frac{4}{3} = 0
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+=\frac{5x}{30} + \frac{3x-9}{30} - \frac{40}{30}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+=\frac{5x+3x-9-40}{30}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+=\frac{8x-49}{30}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-3-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-equations-with-fractions-4-3-3">
+<div class="para">Doesn’t the end of this work seem a little strange? Normally, when we solve an equation, we expect the last line of work to look something like <span class="process-math">\(x=19\)</span> or perhaps <span class="process-math">\(x=\frac{31}{7}\text{.}\)</span> The end of the work didn’t tell us what number <span class="process-math">\(x\)</span> should be. Instead, our final work was an expression. How did this happen? Often, when people see a zero on one side (as you see in the work above), people feel like zero is insignificant, and feel no need to keep copying this from one line to the next. This mistake does not happen when using <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>, which gives another compelling reason (besides speed) to use that strategy. The mistake made earlier never seems to happen in an equation without fractions, but just to demonstrate and to intentionally try to create that error, if someone is asked to solve <span class="process-math">\(5x+6 = 3x -10\)</span> and someone shows as their steps</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+5x+6 = 3x-10
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+5x+6 - 3x + 10 = 0
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+=2x+16
+\end{equation*}
+</div>
+<div class="para">and declares that their final answer is <span class="process-math">\(2x+16\text{,}\)</span> that seems strange.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-3-3" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Warning 1.4.10"><a href="#sec-equations-with-fractions-4-3" title="Copy heading and permalink for Warning 1.4.10" aria-label="Copy heading and permalink for Warning 1.4.10">🔗</a></div></article><article class="example example-like" id="sec-equations-with-fractions-4-4"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.11</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-equations-with-fractions-4-4-1-1">Solve <span class="process-math">\(\frac{x}{6} + \frac{x-3}{10} = \frac{4}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-4-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-equations-with-fractions-4-4-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-equations-with-fractions-4-4-2-1">
+<div class="para">After multiplying both sides by <span class="process-math">\(30\text{,}\)</span> effectively, we can think about what cancellations are created by multiplying each term by <span class="process-math">\(30\text{.}\)</span> The new first term would be <span class="process-math">\(5x\text{,}\)</span> the new second term would be <span class="process-math">\(3(x-3)\text{,}\)</span> and the new third term would be <span class="process-math">\(10 \cdot 4\text{.}\)</span> So, we have:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+5x + 3(x-3) = 10 \cdot 4
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+5x + 3x - 9 = 40
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+8x - 9 = 40
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+8x = 49
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x = \frac{49}{8}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-4-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.11.1"><a href="#sec-equations-with-fractions-4-4-2" title="Copy heading and permalink for Solution 1.4.11.1" aria-label="Copy heading and permalink for Solution 1.4.11.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.11"><a href="#sec-equations-with-fractions-4-4" title="Copy heading and permalink for Example 1.4.11" aria-label="Copy heading and permalink for Example 1.4.11">🔗</a></div></article><div class="para logical" id="sec-equations-with-fractions-4-5">
+<div class="para">Just to be thorough, the steps that we didn’t show were right at the beginning, namely,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+30\left(\frac{x}{6} + \frac{x-3}{10}\right) = 30 \cdot \frac{4}{3}
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+30 \cdot \frac{x}{6} + 30 \cdot \frac{x-3}{10} = 30 \cdot \frac{4}{3}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-5" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="example example-like" id="sec-equations-with-fractions-4-6"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.12</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-equations-with-fractions-4-6-1-1">Solve <span class="process-math">\(\frac{2x+1}{3} - \frac{x-1}{4} = \frac{x+2}{6} + \frac{x}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-6-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-equations-with-fractions-4-6-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-equations-with-fractions-4-6-2-1">
+<div class="para">The least common multiple of <span class="process-math">\(3\)</span> and <span class="process-math">\(4\)</span> and <span class="process-math">\(6\)</span> and <span class="process-math">\(3\)</span> is <span class="process-math">\(12\text{.}\)</span> Multiplying both sides by <span class="process-math">\(12\)</span> gives:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+12\left(\frac{2x+1}{3} - \frac{x-1}{4}\right) = 12\left(\frac{x+2}{6} + \frac{x}{3}\right)
+\end{equation*}
+</div>
+<div class="para">Distributing on both sides gives:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+12 \cdot \frac{2x+1}{3} - 12 \cdot \frac{x-1}{4} = 12 \cdot \frac{x+2}{6} + 12 \cdot \frac{x}{3}
+\end{equation*}
+</div>
+<div class="para">After cancelling, we have:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4(2x+1) - 3(x-1) = 2(x+2) + 4x
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+8x + 4 - 3x + 3 = 2x + 4 + 4x
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+5x + 7 = 6x + 4
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+3=x
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-6-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.12.1"><a href="#sec-equations-with-fractions-4-6-2" title="Copy heading and permalink for Solution 1.4.12.1" aria-label="Copy heading and permalink for Solution 1.4.12.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.12"><a href="#sec-equations-with-fractions-4-6" title="Copy heading and permalink for Example 1.4.12" aria-label="Copy heading and permalink for Example 1.4.12">🔗</a></div></article><div class="para" id="sec-equations-with-fractions-4-7">The original equation was slightly different from our earlier examples in that the original equation had multiple fractions on each side. However, <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> still applies: the strategy applies to any equation with fractions, no matter how many fractions are on each side.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-7" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="principle theorem-like" id="expectation-variable-in-denominator"><h4 class="heading">
+<span class="type">Principle</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.13</span><span class="period heading-divison-mark heading-divison-mark__period">.</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Expectation: equations where the variable appears in the denominator.</span>
+</h4>
+<div class="para" id="expectation-variable-in-denominator-2">If the original equation had variables in the denominator, check to ensure there are no false solutions. (Any solution which causes division by zero to occur is a <dfn class="terminology">false solution</dfn>.)<div class="autopermalink" data-description="Paragraph"><a href="#expectation-variable-in-denominator-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Principle 1.4.13: Expectation: equations where the variable appears in the denominator"><a href="#expectation-variable-in-denominator" title="Copy heading and permalink for Principle 1.4.13: Expectation: equations where the variable appears in the denominator" aria-label="Copy heading and permalink for Principle 1.4.13: Expectation: equations where the variable appears in the denominator">🔗</a></div></article><article class="example example-like" id="example-equation-variable-denominator-first"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.14</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="example-equation-variable-denominator-first-1-1">Solve <span class="process-math">\(\frac{3}{2x-4} - \frac5{x+3} = \frac2{x-2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-equation-variable-denominator-first-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="example-equation-variable-denominator-first-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="example-equation-variable-denominator-first-2-1">
+<div class="para">Because the equation we are asked to solve has fractions, we use <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>. It will be easier to compute the least common multiple of the denominators if we factor the first denominator: <span class="process-math">\(2x-4=2(x-2)\text{.}\)</span> The least common multiple of <span class="process-math">\(2(x-2)\)</span> and <span class="process-math">\(x+3\)</span> and <span class="process-math">\(x-2\)</span> is <span class="process-math">\(2(x-2)(x+3)\text{.}\)</span> So we will multiply both sides by <span class="process-math">\(2(x-2)(x+3)\text{.}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+2(x-2)(x+3) \left( \frac{3}{2(x-2)} - \frac5{x+3} \right) = 2(x-2)(x+3) \cdot \frac2{x-2}
+\end{equation*}
+</div>
+<div class="para">Just a friendly reminder: the original left side had two terms, so due to Order of Operations, to indicate that we are multiplying the entire left side, we wrapped the original left side in parentheses. Now we distribute <span class="process-math">\(2(x-2)(x+3)\text{.}\)</span> The language being used here can be confusing: I don’t mean that we look at <span class="process-math">\(2(x-2)(x+3)\)</span> and expand this in any way, which is not only valid, this is a completely reasonable interpretation of distributing in this context. I mean that we place a copy of <span class="process-math">\(2(x-2)(x+3)\)</span> to the side of each of the original terms on the left.</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+2(x-2)(x+3) \cdot \frac{3}{2(x-2)} - 2(x-2)(x+3) \cdot \frac5{x+3} = 2(x-2)(x+3) \cdot \frac2{x-2}
+\end{equation*}
+</div>
+<div class="para">In the first term (which is everything before the minus sign), a factor of <span class="process-math">\(2\)</span> and a factor of <span class="process-math">\((x-2)\)</span> cancel on top and bottom. In the second term, a factor of <span class="process-math">\((x+3)\)</span> cancels. On the right side, a factor of <span class="process-math">\((x-2)\)</span> cancels. We are left with</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+(x+3) \cdot 3 - 2 \cdot 5 (x-2) = 2 \cdot 2 \cdot (x+3)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+3(x+3) -10(x-2) = 4(x+3)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+3x+9 - 10x + 20 = 4x + 12 
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+-7x + 29 = 4x + 12
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+17 = 11x
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+\frac{17}{11} = x
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-equation-variable-denominator-first-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="example-equation-variable-denominator-first-2-2">
+<div class="para">Since the original equation had the variable written in the denominator, <a href="sec-equations-with-fractions.html#expectation-variable-in-denominator" class="xref" data-knowl="./knowl/xref/expectation-variable-in-denominator.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.4.13: Expectation: equations where the variable appears in the denominator">Principle 1.4.13</a> applies, and we need to check that the solution that we got doesn’t cause any denominator to be zero.</div>
+<ul class="disc" id="example-equation-variable-denominator-first-2-2-2">
+<li id="example-equation-variable-denominator-first-2-2-2-1">
+<div class="para" id="example-equation-variable-denominator-first-2-2-2-1-1">The first denominator is <span class="process-math">\(2x-4\text{.}\)</span> When we put in <span class="process-math">\(x=\frac{17}{11}\text{,}\)</span> we see <span class="process-math">\(2 \cdot \frac{17}{11} - 4 \not= 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-equation-variable-denominator-first-2-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#example-equation-variable-denominator-first-2-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="example-equation-variable-denominator-first-2-2-2-2">
+<div class="para" id="example-equation-variable-denominator-first-2-2-2-2-1">When we put in <span class="process-math">\(x=\frac{17}{11}\)</span> into the second denominator <span class="process-math">\(x+3\text{,}\)</span> we see <span class="process-math">\(\frac{17}{11} + 3 \not= 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-equation-variable-denominator-first-2-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#example-equation-variable-denominator-first-2-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="example-equation-variable-denominator-first-2-2-2-3">
+<div class="para" id="example-equation-variable-denominator-first-2-2-2-3-1">When we put in <span class="process-math">\(x=\frac{17}{11}\)</span> into the third denominator <span class="process-math">\(x-2\text{,}\)</span> we see <span class="process-math">\(\frac{17}{11} - 2 \not= 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#example-equation-variable-denominator-first-2-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#example-equation-variable-denominator-first-2-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">We checked that <span class="process-math">\(x=\frac{17}{11}\)</span> does not cause any of the three denominators to simplify to zero. Therefore, <span class="process-math">\(x=\frac{17}{11}\)</span> is a solution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#example-equation-variable-denominator-first-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.14.1"><a href="#example-equation-variable-denominator-first-2" title="Copy heading and permalink for Solution 1.4.14.1" aria-label="Copy heading and permalink for Solution 1.4.14.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.14"><a href="#example-equation-variable-denominator-first" title="Copy heading and permalink for Example 1.4.14" aria-label="Copy heading and permalink for Example 1.4.14">🔗</a></div></article><article class="example example-like" id="sec-equations-with-fractions-4-10"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.15</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-equations-with-fractions-4-10-1-1">Solve <span class="process-math">\(\frac{3}{x+1} - \frac12 = \frac1{3x+3}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-10-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-equations-with-fractions-4-10-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-equations-with-fractions-4-10-2-1">
+<div class="para">The third denominator in factored form is <span class="process-math">\(3(x+1)\text{.}\)</span> The least common multiple of <span class="process-math">\(x+1\)</span> and <span class="process-math">\(2\)</span> and <span class="process-math">\(3(x+1)\)</span> is <span class="process-math">\(2 \cdot 3 \cdot (x+1)\text{,}\)</span> or in other words, <span class="process-math">\(6(x+1)\text{.}\)</span> We multiply both sides by <span class="process-math">\(6(x+1)\text{,}\)</span> noting that we have to wrap the left side in parentheses:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+6(x+1) \left(\frac{3}{x+1} - \frac12\right) = 6(x+1) \cdot \frac1{3(x+1)}
+\end{equation*}
+</div>
+<div class="para">Now we distribute <span class="process-math">\(6(x+1)\text{.}\)</span> By this, I’m not saying that we write <span class="process-math">\(6x+6\text{.}\)</span> Instead, I mean that a copy of <span class="process-math">\(6(x+1)\)</span> is written to the side of both fractinos on the left:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+6(x+1) \cdot \frac{3}{x+1} - 6(x+1) \cdot \frac12 = 6(x+1) \cdot \frac1{3(x+1)}
+\end{equation*}
+</div>
+<div class="para">After processing cancellations,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+18 - 3(x+1) = 2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+18 - 3x - 3 = 2
+\end{equation*}
+</div>
+<div class="para">Now, there are multiple ways to proceed, so don’t fret if your next steps look different from my next steps:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+15 -3x = 2
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+12 = 3x
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+4 = x
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-10-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-equations-with-fractions-4-10-2-2">
+<div class="para">Since the original equation had the variable written in the denominator, <a href="sec-equations-with-fractions.html#expectation-variable-in-denominator" class="xref" data-knowl="./knowl/xref/expectation-variable-in-denominator.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.4.13: Expectation: equations where the variable appears in the denominator">Principle 1.4.13</a> applies, and we need to check that the solution that we got doesn’t cause any denominator to be zero.</div>
+<ul class="disc" id="sec-equations-with-fractions-4-10-2-2-2">
+<li id="sec-equations-with-fractions-4-10-2-2-2-1">
+<div class="para" id="sec-equations-with-fractions-4-10-2-2-2-1-1">When we put in <span class="process-math">\(x=4\)</span> into the first denominator <span class="process-math">\(x+1\text{,}\)</span> we see <span class="process-math">\(4+1 \not= 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-10-2-2-2-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-equations-with-fractions-4-10-2-2-2-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-4-10-2-2-2-2">
+<div class="para" id="sec-equations-with-fractions-4-10-2-2-2-2-1">The second denominator is <span class="process-math">\(2\)</span> without needing to substitute for <span class="process-math">\(x\text{,}\)</span> since there was no <span class="process-math">\(x\)</span> in the second denominator. Note <span class="process-math">\(2 \not= 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-10-2-2-2-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-equations-with-fractions-4-10-2-2-2-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-4-10-2-2-2-3">
+<div class="para" id="sec-equations-with-fractions-4-10-2-2-2-3-1">When we put in <span class="process-math">\(x=4\)</span> into the third denominator <span class="process-math">\(3x+3\text{,}\)</span> we see <span class="process-math">\(3 \cdot 4 + 3 = 15 \not= 0\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-10-2-2-2-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-equations-with-fractions-4-10-2-2-2-3" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">We checked that <span class="process-math">\(x=4\)</span> does not cause any of the three denominators to become zero. Therefore, <span class="process-math">\(x=4\)</span> is a solution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-10-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.15.1"><a href="#sec-equations-with-fractions-4-10-2" title="Copy heading and permalink for Solution 1.4.15.1" aria-label="Copy heading and permalink for Solution 1.4.15.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.15"><a href="#sec-equations-with-fractions-4-10" title="Copy heading and permalink for Example 1.4.15" aria-label="Copy heading and permalink for Example 1.4.15">🔗</a></div></article><article class="example example-like" id="sec-equations-with-fractions-4-11"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.16</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-equations-with-fractions-4-11-1-1">Solve <span class="process-math">\(\frac{10x}{x-2} - \frac{13}{x-2} = \frac{14}{2x-4}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-11-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions"><details id="sec-equations-with-fractions-4-11-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-equations-with-fractions-4-11-2-1">
+<div class="para">The third denominator in factored form is <span class="process-math">\(2(x-2)\text{.}\)</span> The least common multiple of <span class="process-math">\(x-2\)</span> and <span class="process-math">\(x-2\)</span> and <span class="process-math">\(2x-4\)</span> is <span class="process-math">\(2(x-2)\text{.}\)</span> We multiply both sides by <span class="process-math">\(2(x-2)\text{,}\)</span> noting that we have to wrap the left side in parentheses:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/expectation-variable-in-denominator.html">
+\begin{equation*}
+2(x-2) \left( \frac{10x}{x-2} - \frac{13}{x-2} \right) = 2(x-2) \cdot \frac{14}{2(x-2)}
+\end{equation*}
+</div>
+<div class="para">Now we distribute <span class="process-math">\(2(x-2)\text{.}\)</span> By this, I’m not saying that we write <span class="process-math">\(2x-4\text{.}\)</span> Instead, I mean that a copy of <span class="process-math">\(2(x-2)\)</span> is written to the side of both fractions on the left:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/expectation-variable-in-denominator.html">
+\begin{equation*}
+2(x-2) \cdot \frac{10x}{x-2} - 2(x-2) \cdot \frac{13}{x-2} = 2(x-2) \cdot \frac{14}{2(x-2)}
+\end{equation*}
+</div>
+<div class="para">After processing cancellations,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/expectation-variable-in-denominator.html">
+\begin{equation*}
+2 \cdot 10x - 2 \cdot 13 = 14
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/expectation-variable-in-denominator.html">
+\begin{equation*}
+20x - 26 = 14
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/expectation-variable-in-denominator.html">
+\begin{equation*}
+20x = 40
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/expectation-variable-in-denominator.html">
+\begin{equation*}
+x = 2
+\end{equation*}
+</div>
+<div class="para">Since the original equation had the variable written in the denominator, <a href="sec-equations-with-fractions.html#expectation-variable-in-denominator" class="xref" data-knowl="./knowl/xref/expectation-variable-in-denominator.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.4.13: Expectation: equations where the variable appears in the denominator">Principle 1.4.13</a> applies, and we need to check that the solution that we got doesn’t cause any denominator to be zero. When we put in <span class="process-math">\(x=2\)</span> into the first denominator <span class="process-math">\(x-2\text{,}\)</span> we see <span class="process-math">\(2-2=0\text{.}\)</span> Therefore, <span class="process-math">\(x=2\)</span> is a false solution, and the equation has no solution. (We don’t even need to bother checking the other denominators: any time one or more denominators become zero, the solution is false.) It turns out that the equation <span class="process-math">\(\frac{10x}{x-2} - \frac{13}{x-2} = \frac{14}{2x-4}\)</span> has no solution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-11-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.16.1"><a href="#sec-equations-with-fractions-4-11-2" title="Copy heading and permalink for Solution 1.4.16.1" aria-label="Copy heading and permalink for Solution 1.4.16.1">🔗</a></div>
+</div></details></div>
+<div class="autopermalink" data-description="Example 1.4.16"><a href="#sec-equations-with-fractions-4-11" title="Copy heading and permalink for Example 1.4.16" aria-label="Copy heading and permalink for Example 1.4.16">🔗</a></div></article><article class="note remark-like" id="sec-equations-with-fractions-4-12"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.17</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="sec-equations-with-fractions-4-12-1">
+<div class="para">At this point, we have two different concepts of checking an equation. To be transparent with you, it’s time for some clarification. Let’s compare:</div>
+<ul class="disc" id="sec-equations-with-fractions-4-12-1-1">
+<li id="sec-equations-with-fractions-4-12-1-1-1">
+<div class="para" id="sec-equations-with-fractions-4-12-1-1-1-1">In <a href="sec-equations-with-fractions.html#expectation-variable-in-denominator" class="xref" data-knowl="./knowl/xref/expectation-variable-in-denominator.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.4.13: Expectation: equations where the variable appears in the denominator">Principle 1.4.13</a>, we gave an expectation, or really a requirement: after solving an equation where the variable appears in the denominator, we are required to check that the value(s) obtanied for <span class="process-math">\(x\)</span> do not cause any denominator to equal zero.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-12-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-equations-with-fractions-4-12-1-1-1" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-4-12-1-1-2">
+<div class="para" id="sec-equations-with-fractions-4-12-1-1-2-1">In <a href="sec-solving-equations.html#principle-checking-equation-solutions" class="xref" data-knowl="./knowl/xref/principle-checking-equation-solutions.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.3.40: Checking solutions to equations">Principle 1.3.40</a>, we mentioned that you can always see if the value(s) of <span class="process-math">\(x\)</span> make the left and right side of the original equation to be equal. This check is never required, but it is recommended. If we encounter a time when the left and right side do not end up being equal, we should scan our work for any errors. After all, we’re all human!<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-12-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-equations-with-fractions-4-12-1-1-2" title="Copy heading and permalink for Item" aria-label="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="para">The purpose of discussing this is to spell out that the two checks are checking for different things. In the first case, we’re just checking to see that denominators are never zero, and this check is required whenever the variable appears in the denominator. In the second, we’re checking for something else (do the left and right sides of the original equation equal each other), and only because getting different values for the left and right hints to us that there’s an error in our work, and we should go over it. In fact, we only completed the first kind of check in <a href="sec-equations-with-fractions.html#example-equation-variable-denominator-first" class="xref" data-knowl="./knowl/xref/example-equation-variable-denominator-first.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.14">Example 1.4.14</a>, and we didn’t do the second kind of check mentioned in <a href="sec-solving-equations.html#principle-checking-equation-solutions" class="xref" data-knowl="./knowl/xref/principle-checking-equation-solutions.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.3.40: Checking solutions to equations">Principle 1.3.40</a>. To illustrate that point more fully, we can check that putting in <span class="process-math">\(\frac{17}{11}\)</span> in for <span class="process-math">\(x\)</span> into both the left side <span class="process-math">\(\frac{3}{2x-4}-\frac{5}{x+3}\)</span> and the right side <span class="process-math">\(\frac{2}{x-2}\)</span> shows that both sides equal <span class="process-math">\(\frac{22}{-5}\)</span> or from a calculator, <span class="process-math">\(-4.4\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-equations-with-fractions-4-12-2">In summary, when the variable appears in the denominator, we must check that we never have zero in the denominator due to the value(s) of <span class="process-math">\(x\text{.}\)</span> In any equation, we can always check to see if the original left and right sides are equal for the sake of quality control.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-12-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 1.4.17"><a href="#sec-equations-with-fractions-4-12" title="Copy heading and permalink for Note 1.4.17" aria-label="Copy heading and permalink for Note 1.4.17">🔗</a></div></article><article class="warning remark-like" id="sec-equations-with-fractions-4-13"><h4 class="heading">
+<span class="type">Warning</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.18</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-equations-with-fractions-4-13-1">In an equation with fractions where all fractions have the same denominator, we cannot say that we are “deleting” all the denominators.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Warning 1.4.18"><a href="#sec-equations-with-fractions-4-13" title="Copy heading and permalink for Warning 1.4.18" aria-label="Copy heading and permalink for Warning 1.4.18">🔗</a></div></article><a href="sec-equations-with-fractions.html#first-example-ignoring-strategy-for-equations-with-fractions" class="xref" data-knowl="./knowl/xref/first-example-ignoring-strategy-for-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.6">Example 1.4.6</a><span>(((xref without ref, first/last, or provisional attribute (check spelling))))</span><div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/expectation-variable-in-denominator.html ./knowl/xref/expectation-variable-in-denominator.html ./knowl/xref/expectation-variable-in-denominator.html ./knowl/xref/expectation-variable-in-denominator.html ./knowl/xref/principle-checking-equation-solutions.html ./knowl/xref/example-equation-variable-denominator-first.html ./knowl/xref/principle-checking-equation-solutions.html ./knowl/xref/first-example-ignoring-strategy-for-equations-with-fractions.html  ./knowl/xref/principle-checking-equation-solutions.html ./knowl/xref/principle-checking-equation-solutions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/commutative-property-multiplication.html ./knowl/xref/fraction-multiplication.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equations-with-fractions.html ./knowl/xref/strategy-equation-with-fraction-one-denominator-is-LCD.html">
+\begin{equation*}
+\frac{5x}{30} + \frac{3x-9}{30} = \frac{40}{30}.
+\end{equation*}
+</div>
+<span class="process-math">\(5x+3x-9=40\text{,}\)</span>“just got rid of”looksmultiplied both sides by 30“got rid of denominators”<article class="example example-like" id="sec-equations-with-fractions-4-22"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.19</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="sec-equations-with-fractions-4-22-1-1">
+<div class="para">When asked to solve</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/principle-checking-equation-solutions.html">
+\begin{equation*}
+\frac{x}{5} \cdot \frac{3}{5} = \frac{2}{5}\text{,}
+\end{equation*}
+</div>
+<div class="para">a well-meaning but incorrect thought is to say that since all three fractions have the same denominator, we can “get rid of” the denominators. This is incorrect, but let’s follow through with this. This would lead to the equation <span class="process-math">\(x \cdot 3 = 2\text{,}\)</span> which eventually gets us to <span class="process-math">\(x=\frac{2}{3}\text{.}\)</span> Now we can follow up by checking the original equation like <a href="sec-solving-equations.html#principle-checking-equation-solutions" class="xref" data-knowl="./knowl/xref/principle-checking-equation-solutions.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.3.40: Checking solutions to equations">Principle 1.3.40</a> encourages us to do. Putting in <span class="process-math">\(\frac{2}{3}\)</span> for <span class="process-math">\(x\)</span> into the left side gives <span class="process-math">\(\frac{\frac{2}{3}}{5} \cdot \frac{3}{5} = \frac{2}{15}\text{.}\)</span> Putting in <span class="process-math">\(\frac{2}{3}\)</span> for <span class="process-math">\(x\)</span> into the right side gives <span class="process-math">\(\frac{2}{5}\text{.}\)</span> Since <span class="process-math">\(\frac{2}{15} \not= \frac{2}{5}\text{,}\)</span> we know that <span class="process-math">\(x=\frac{2}{3}\)</span> is not a solution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-22-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.4.19"><a href="#sec-equations-with-fractions-4-22" title="Copy heading and permalink for Example 1.4.19" aria-label="Copy heading and permalink for Example 1.4.19">🔗</a></div></article><article class="example example-like" id="sec-equations-with-fractions-4-23"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.20</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="sec-equations-with-fractions-4-23-1-1">
+<div class="para">When asked to solve the equation</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/principle-checking-equation-solutions.html">
+\begin{equation*}
+\frac{x}{2} \cdot \frac{5}{2} + \frac{7}{2} = \frac{3x}{2},
+\end{equation*}
+</div>
+<div class="para">a well-meaning but incorrect thought is to say that since all four fractions have the same denominator, we can “get rid of” the denominators. This is would lead to <span class="process-math">\(x \cdot 5 + 7 = 3x\)</span> which gives us <span class="process-math">\(5x+7=3x\)</span> so <span class="process-math">\(2x=-7\)</span> and <span class="process-math">\(x=-\frac{7}{2}\text{.}\)</span> Let’s following <a href="sec-solving-equations.html#principle-checking-equation-solutions" class="xref" data-knowl="./knowl/xref/principle-checking-equation-solutions.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.3.40: Checking solutions to equations">Principle 1.3.40</a>. Putting in <span class="process-math">\(-\frac{7}{2}\)</span> for <span class="process-math">\(x\)</span> into the left side gives <span class="process-math">\(\frac{-\frac{7}{2}}{2} \cdot \frac{5}{2} + \frac{7}{2} = -\frac74 \cdot \frac52 + \frac72 = -\frac{35}{8} + \frac{28}{8} = -\frac{7}{8}\text{.}\)</span> Putting in <span class="process-math">\(-\frac{7}{2}\)</span> for <span class="process-math">\(x\)</span> into the right side gives <span class="process-math">\(\frac{3 \cdot -\frac{7}{2}}{2} = -\frac{21}{4}\text{.}\)</span> Because the left and right sides simplified to different values, <span class="process-math">\(x=-\frac{7}{2}\)</span> is not a solution. The problem was created by the incorrect idea that we could “get rid of” the denominators.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-23-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.4.20"><a href="#sec-equations-with-fractions-4-23" title="Copy heading and permalink for Example 1.4.20" aria-label="Copy heading and permalink for Example 1.4.20">🔗</a></div></article><div class="para" id="sec-equations-with-fractions-4-24">The two examples above illustrate that we cannot say that we “get rid of” denominators when all fractions have the same denominator. (Our last two examples show that we can’t just “delete” denominators when they are all the same, and we certainly can’t delete denominators when fractions have different denominators). We’re never erasing denominators. Instead, we stick to the only tool we really have for equations: which is to apply the same action to both sides. The action of multiplying on both sides helps create the possibility that cancellations can occur: the newly introduced factor in the numerator (the number we multiply both sides by) works to cancel with factors in the denominator. In fact, the reason that <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> works is that we are multiplying both sides by the least common multiple of all denominators, and this quantity is guaranteed to have all the factors needed to create cancellations in every denominator.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-24" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="note remark-like" id="sec-equations-with-fractions-4-25"><h4 class="heading">
+<span class="type">Note</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.21</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para logical" id="sec-equations-with-fractions-4-25-1">
+<div class="para">Up until now, we have avoided talking about cross multiplying. The reason for waiting for so long to talk about this is that there is a common setting in which learners try to apply cross multiplying where the techinque is not valid. Specifically, given the task of simplifying the multiplying of two fractions, learners sometimes try to cross multiply. Let’s dig into an example:</div>
+<ol class="decimal" id="sec-equations-with-fractions-4-25-1-1">
+<li id="sec-equations-with-fractions-4-25-1-1-1">
+<div class="para" id="sec-equations-with-fractions-4-25-1-1-1-1">When asked to simplify <span class="process-math">\(\frac{2}{3} \cdot \frac{5}{7}\text{,}\)</span> a well-meaning but incorrect thought is to say that we can cross multiply. This is incorrect, but let’s follow through with this. This would lead to the expression <span class="process-math">\(\frac{2 \cdot 7}{3 \cdot 5} = \frac{14}{15}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-25-1-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-equations-with-fractions-4-25-1-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-4-25-1-1-2">
+<div class="para" id="sec-equations-with-fractions-4-25-1-1-2-1">Before immediately dismissing this answer, let’s talk about it. I believe that you have the background to follow the discussion we’re about to make, and taking the time to actively read this discussion will be empowering for building your confidence in math, and moreover, can help you avoid mistakes in the future.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-25-1-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-equations-with-fractions-4-25-1-1-2-2">
+<div class="para">Say we take the same problem about simplifying the product of fractions, but just switch the order of the fractions:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/commutative-property-multiplication.html">
+\begin{equation*}
+\frac{5}{7} \cdot \frac{2}{3}.
+\end{equation*}
+</div>
+<div class="para">Then, applying cross multiplying would lead to <span class="process-math">\(\frac{5 \cdot 3}{7 \cdot 2} = \frac{15}{14}\text{.}\)</span> This is a different answer from the previous answer of <span class="process-math">\(\frac{14}{15}\text{.}\)</span> This seems strange, because we know the multiplication is commutative, either from our everyday experience with examples like <span class="process-math">\(2 \cdot 3 = 3 \cdot 2\text{,}\)</span> or from giving a geometric argument that the Commutative Property of Multiplication in <a href="sec-operations.html#commutative-property-multiplication" class="xref" data-knowl="./knowl/xref/commutative-property-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.1.61: Commutative Property of Multiplication">Principle 1.1.61</a> is true in general. Because we got different results from cross multiplying, it’s reasonable for us to be suspicious of our two answers, and the technique in general. In a moment, we will in fact see that neither <span class="process-math">\(\frac{14}{15}\)</span> nor <span class="process-math">\(\frac{15}{14}\)</span> is the correct final answer. Cross multiplying is not a valid technique for simplifying the product of two fractions.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-25-1-1-2-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-equations-with-fractions-4-25-1-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-4-25-1-1-3">
+<div class="para logical" id="sec-equations-with-fractions-4-25-1-1-3-1">
+<div class="para">To simplify <span class="process-math">\(\frac{2}{3} \cdot \frac{5}{7}\text{,}\)</span> recall that <a href="sec-expressions-with-fractions.html#fraction-multiplication" class="xref" data-knowl="./knowl/xref/fraction-multiplication.html" data-reveal-label="Reveal" data-close-label="Close" title="Principle 1.2.56: Multiplying Fractions">Principle 1.2.56</a> tells us to multiply straight arcoss:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fraction-multiplication.html">
+\begin{equation*}
+\frac{2}{3} \cdot \frac{5}{7} = \frac{2 \cdot 5}{3 \cdot 7} = \frac{10}{21}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-25-1-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-equations-with-fractions-4-25-1-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="para">Cross multiplying is really just a special case of <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>. Cross multiplying only applies when there are two fractions in an equation, one on each side of the equal sign. In this case, the least common multiple of the two denominators is simply the product of the two denominators. So, cross multiplying is just multiplying both sides by the product of the two denominators. This is exactly what <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> tells us to do. So, cross multiplying is not a different technique, but rather a special case of <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>. Because cross multiplying is so limited in its application, and because it is just a special case of <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>, we have avoided talking about it. More importantly, we have avoided talking about it because of the common mistake of trying to apply it to simplify the multiplication of two fractions.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-25-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Note 1.4.21"><a href="#sec-equations-with-fractions-4-25" title="Copy heading and permalink for Note 1.4.21" aria-label="Copy heading and permalink for Note 1.4.21">🔗</a></div></article><article class="example example-like" id="sec-equations-with-fractions-4-26"><h4 class="heading">
+<span class="type">Example</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1.4.22</span><span class="period heading-divison-mark heading-divison-mark__period">.</span>
+</h4>
+<div class="para" id="sec-equations-with-fractions-4-26-1-1">Solve the equation <span class="process-math">\(\frac{2x-1}{3} = \frac{5x+6}{4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-26-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="solutions">
+<details id="sec-equations-with-fractions-4-26-2" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">1</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-equations-with-fractions-4-26-2-1">
+<div class="para">Because we have an equation with a single fraction on each side, we can use the cross multiplying technique that we have avoided talking about until now. This leads to <span class="process-math">\(4(2x-1) = 3(5x+6)\text{.}\)</span> So:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+8x - 4 = 15x + 18
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+-22 = 7x
+\end{equation*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x = -\frac{22}{7}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-26-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.22.1"><a href="#sec-equations-with-fractions-4-26-2" title="Copy heading and permalink for Solution 1.4.22.1" aria-label="Copy heading and permalink for Solution 1.4.22.1">🔗</a></div>
+</div></details><details id="sec-equations-with-fractions-4-26-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber">2</span><span class="period heading-divison-mark heading-divison-mark__period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para logical" id="sec-equations-with-fractions-4-26-3-1">
+<div class="para">Alternatively, we can use <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>. The least common multiple of <span class="process-math">\(3\)</span> and <span class="process-math">\(4\)</span> is <span class="process-math">\(12\text{.}\)</span> Multiplying both sides by <span class="process-math">\(3 \cdot 4\)</span> gives:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+3 \cdot 4 \cdot \frac{2x-1}{3} = 3\cdot 4 \cdot \frac{5x+6}{4}
+\end{equation*}
+</div>
+<div class="para">After cancelling, we have:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+4(2x-1) = 3(5x+6)
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+8x - 4 = 15x + 18
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+-22 = 7x
+\end{equation*}
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equations-with-fractions.html">
+\begin{equation*}
+x = -\frac{22}{7}
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-26-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Solution 1.4.22.2"><a href="#sec-equations-with-fractions-4-26-3" title="Copy heading and permalink for Solution 1.4.22.2" aria-label="Copy heading and permalink for Solution 1.4.22.2">🔗</a></div>
+</div></details>
+</div>
+<div class="autopermalink" data-description="Example 1.4.22"><a href="#sec-equations-with-fractions-4-26" title="Copy heading and permalink for Example 1.4.22" aria-label="Copy heading and permalink for Example 1.4.22">🔗</a></div></article><div class="para" id="sec-equations-with-fractions-4-27">In the last example, I admit that cross multiplying got us slightly faster to the equation <span class="process-math">\(4(2x-1) = 3(5x+6)\)</span> than <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a> did. However, the difference in speed is very small, and cross multiplying only applies in a very limited setting. People, both students and instructors alike, will differ in their opinions about cross multiplying. If you wish to use this techinque, it’s important to “read the fine print”. This would be like knowing the side effects of a medication: it’s just good to be informed. In the case of cross multiplying, it cannot be used to simplify the multiplication of two fractions, and it only applies to solving an equation when there are exactly two fractions in an equation, one on each side of the equal sign, and each side consists only of a fraction. Furthermore, cross multiplying is just a special case of <a href="sec-equations-with-fractions.html#strategy-equations-with-fractions" class="xref" data-knowl="./knowl/xref/strategy-equations-with-fractions.html" data-reveal-label="Reveal" data-close-label="Close" title="Strategy 1.4.1: Solving an equation with fractions">Strategy 1.4.1</a>, which applies to any equation with fractions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-27" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="assemblage assemblage-like" id="sec-equations-with-fractions-4-28"><h4 class="heading"><span class="title">A word on writing.</span></h4>
+<div class="para logical" id="sec-equations-with-fractions-4-28-2">
+<div class="para">When we worked on solving <span class="process-math">\(\frac{x}{6} + \frac{1}{2} = \frac{2}{3}\)</span> in <a href="sec-equations-with-fractions.html#strategy-equation-with-fraction-one-denominator-is-LCD" class="xref" data-knowl="./knowl/xref/strategy-equation-with-fraction-one-denominator-is-LCD.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.5">Example 1.4.5</a>, one of our first steps was:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equation-with-fraction-one-denominator-is-LCD.html">
+\begin{equation*}
+6 \left( \frac{x}{6} + \frac{1}{2} \right) = 6 \cdot \frac{2}{3}.
+\end{equation*}
+</div>
+<div class="para">We then distributed (which ended up removing the parentheses) then canceled. It would be strange to not yet distribute and write in cancellations like this:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/strategy-equation-with-fraction-one-denominator-is-LCD.html">
+\begin{equation*}
+\cancel{6} \left( \frac{x}{\cancel{6}} + \frac{1}{2} \right) = 6 \cdot \frac{2}{3}.
+\end{equation*}
+</div>
+<div class="para">Work that looks like this gets dangerous, since we need to distribute <span class="process-math">\(6\)</span> first. Distributing <span class="process-math">\(6\)</span> creates two copies of <span class="process-math">\(6\)</span> on the left, and it’s actually one of the copies from the distribution that cancels with the <span class="process-math">\(6\)</span> in the denominator of the first fraction. Let’s think of the parentheses for what they really are: we can say that these grouping symbols are protecting the content inside, and preventing this kind of cancellation.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-4-28-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Summary: A word on writing"><a href="#sec-equations-with-fractions-4-28" title="Copy heading and permalink for Summary: A word on writing" aria-label="Copy heading and permalink for Summary: A word on writing">🔗</a></div></article><div class="autopermalink" data-description="Subsection: Clarifications, Cautions, and Connections"><a href="#sec-equations-with-fractions-4" title="Copy heading and permalink for Subsection: Clarifications, Cautions, and Connections" aria-label="Copy heading and permalink for Subsection: Clarifications, Cautions, and Connections">🔗</a></div></section><section class="subsection" id="sec-equations-with-fractions-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Summary</span>
+</h3>
+<div class="para logical" id="sec-equations-with-fractions-5-2">
+<ol class="decimal" id="sec-equations-with-fractions-5-2-1">
+<li id="sec-equations-with-fractions-5-2-1-1">
+<div class="para" id="sec-equations-with-fractions-5-2-1-1-1">A technique that always works for solving equations with fractions is to first compute the least common multiple of all denominators, then multiply both sides by this least common multiple. (Insisting on common denominators is always more time consuming, and there are several types of errors that can occur when insisting on common denominators. When we discussed simplifying fractional expressions, we even saw back then that multiplying fractions does not require a common denominator.)<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-5-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-equations-with-fractions-5-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-5-2-1-2">
+<div class="para" id="sec-equations-with-fractions-5-2-1-2-1">Cross multiplying is a special case of multiplying both sides by the least common multiple of the denominators. This technique only applies when each side of the equation has exactly one fraction and nothing else. This technique is what sometimes people erroneously think of when working simplifying the product of fractions, which is why some people avoid talking about cross multiplying.<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-5-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-equations-with-fractions-5-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-5-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Summary"><a href="#sec-equations-with-fractions-5" title="Copy heading and permalink for Subsection: Summary" aria-label="Copy heading and permalink for Subsection: Summary">🔗</a></div></section><section class="subsection" id="sec-equations-with-fractions-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="codenumber"></span><span class="space heading-divison-mark heading-divison-mark__space"> </span><span class="title">Exercises</span>
+</h3>
+<div class="para logical" id="sec-equations-with-fractions-6-2">
+<ol class="decimal" id="sec-equations-with-fractions-6-2-1">
+<li id="sec-equations-with-fractions-6-2-1-1">
+<div class="para" id="sec-equations-with-fractions-6-2-1-1-1">Solve <span class="process-math">\(\frac{x}{2} = \frac{5}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-1-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-equations-with-fractions-6-2-1-1" title="Copy heading and permalink for Item 1" aria-label="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-2">
+<div class="para" id="sec-equations-with-fractions-6-2-1-2-1">Solve <span class="process-math">\(\frac{x}{3} + \frac{1}{6} = \frac{5}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-2-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-equations-with-fractions-6-2-1-2" title="Copy heading and permalink for Item 2" aria-label="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-3">
+<div class="para" id="sec-equations-with-fractions-6-2-1-3-1">Solve <span class="process-math">\(\frac{x+1}{4} + \frac{x-2}{3} = \frac{5}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-3-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-equations-with-fractions-6-2-1-3" title="Copy heading and permalink for Item 3" aria-label="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-4">
+<div class="para" id="sec-equations-with-fractions-6-2-1-4-1">Solve <span class="process-math">\(\frac{2x+1}{5} - \frac{x-1}{4} = \frac{x+2}{10} + \frac{x}{5}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-4-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sec-equations-with-fractions-6-2-1-4" title="Copy heading and permalink for Item 4" aria-label="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-5">
+<div class="para" id="sec-equations-with-fractions-6-2-1-5-1">Solve <span class="process-math">\(\frac{4x-1}{3} = \frac{2x+5}{4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-5-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 5"><a href="#sec-equations-with-fractions-6-2-1-5" title="Copy heading and permalink for Item 5" aria-label="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-6">
+<div class="para" id="sec-equations-with-fractions-6-2-1-6-1">Solve <span class="process-math">\(\frac{x}{5} + \frac{2}{3} = \frac{19}{15}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-6-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#sec-equations-with-fractions-6-2-1-6" title="Copy heading and permalink for Item 6" aria-label="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-7">
+<div class="para" id="sec-equations-with-fractions-6-2-1-7-1">Solve <span class="process-math">\(\frac{3}{x} = \frac{6}{5}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-7-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 7"><a href="#sec-equations-with-fractions-6-2-1-7" title="Copy heading and permalink for Item 7" aria-label="Copy heading and permalink for Item 7">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-8">
+<div class="para" id="sec-equations-with-fractions-6-2-1-8-1">Solve <span class="process-math">\(\frac{2}{x-1} = \frac{5}{x+2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-8-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 8"><a href="#sec-equations-with-fractions-6-2-1-8" title="Copy heading and permalink for Item 8" aria-label="Copy heading and permalink for Item 8">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-9">
+<div class="para" id="sec-equations-with-fractions-6-2-1-9-1">Solve <span class="process-math">\(\frac{x+3}{7} = \frac{2x-1}{5}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-9-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 9"><a href="#sec-equations-with-fractions-6-2-1-9" title="Copy heading and permalink for Item 9" aria-label="Copy heading and permalink for Item 9">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-10">
+<div class="para" id="sec-equations-with-fractions-6-2-1-10-1">Solve <span class="process-math">\(\frac{x}{4} - \frac{3}{8} = \frac{5}{8}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-10-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 10"><a href="#sec-equations-with-fractions-6-2-1-10" title="Copy heading and permalink for Item 10" aria-label="Copy heading and permalink for Item 10">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-11">
+<div class="para" id="sec-equations-with-fractions-6-2-1-11-1">Solve <span class="process-math">\(\frac{5}{x} + \frac{2}{3} = \frac{19}{6}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-11-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 11"><a href="#sec-equations-with-fractions-6-2-1-11" title="Copy heading and permalink for Item 11" aria-label="Copy heading and permalink for Item 11">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-12">
+<div class="para" id="sec-equations-with-fractions-6-2-1-12-1">Solve <span class="process-math">\(\frac{3}{x+2} - \frac{5}{x-1} = \frac{2}{x-4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-12-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 12"><a href="#sec-equations-with-fractions-6-2-1-12" title="Copy heading and permalink for Item 12" aria-label="Copy heading and permalink for Item 12">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-13">
+<div class="para" id="sec-equations-with-fractions-6-2-1-13-1">Solve <span class="process-math">\(\frac{x-4}{6} = \frac{2x+1}{9}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-13-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 13"><a href="#sec-equations-with-fractions-6-2-1-13" title="Copy heading and permalink for Item 13" aria-label="Copy heading and permalink for Item 13">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-14">
+<div class="para" id="sec-equations-with-fractions-6-2-1-14-1">Solve <span class="process-math">\(\frac{7}{2x} = \frac{3}{x+1}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-14-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 14"><a href="#sec-equations-with-fractions-6-2-1-14" title="Copy heading and permalink for Item 14" aria-label="Copy heading and permalink for Item 14">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-15">
+<div class="para" id="sec-equations-with-fractions-6-2-1-15-1">Solve <span class="process-math">\(\frac{2}{x} - \frac{3}{x+1} = \frac{1}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-15-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 15"><a href="#sec-equations-with-fractions-6-2-1-15" title="Copy heading and permalink for Item 15" aria-label="Copy heading and permalink for Item 15">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-16">
+<div class="para" id="sec-equations-with-fractions-6-2-1-16-1">Solve <span class="process-math">\(\frac{x+5}{x-2} = \frac{3}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-16-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 16"><a href="#sec-equations-with-fractions-6-2-1-16" title="Copy heading and permalink for Item 16" aria-label="Copy heading and permalink for Item 16">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-17">
+<div class="para" id="sec-equations-with-fractions-6-2-1-17-1">Solve <span class="process-math">\(\frac{2}{x-3} + \frac{1}{x+1} = \frac{3}{4}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-17-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 17"><a href="#sec-equations-with-fractions-6-2-1-17" title="Copy heading and permalink for Item 17" aria-label="Copy heading and permalink for Item 17">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-18">
+<div class="para" id="sec-equations-with-fractions-6-2-1-18-1">Solve <span class="process-math">\(\frac{x+1}{x-4} = \frac{x-2}{x+3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-18-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 18"><a href="#sec-equations-with-fractions-6-2-1-18" title="Copy heading and permalink for Item 18" aria-label="Copy heading and permalink for Item 18">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-19">
+<div class="para" id="sec-equations-with-fractions-6-2-1-19-1">Solve <span class="process-math">\(\frac{2x}{x-1} = \frac{3}{2}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-19-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 19"><a href="#sec-equations-with-fractions-6-2-1-19" title="Copy heading and permalink for Item 19" aria-label="Copy heading and permalink for Item 19">🔗</a></div>
+</li>
+<li id="sec-equations-with-fractions-6-2-1-20">
+<div class="para" id="sec-equations-with-fractions-6-2-1-20-1">Solve <span class="process-math">\(\frac{1}{x-2} + \frac{1}{x+2} = \frac{1}{3}\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2-1-20-1" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 20"><a href="#sec-equations-with-fractions-6-2-1-20" title="Copy heading and permalink for Item 20" aria-label="Copy heading and permalink for Item 20">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-equations-with-fractions-6-2" title="Copy heading and permalink for Paragraph" aria-label="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection: Exercises"><a href="#sec-equations-with-fractions-6" title="Copy heading and permalink for Subsection: Exercises" aria-label="Copy heading and permalink for Subsection: Exercises">🔗</a></div></section><div class="autopermalink" data-description="Section 1.4: Equations with Fractions"><a href="#sec-equations-with-fractions" title="Copy heading and permalink for Section 1.4: Equations with Fractions" aria-label="Copy heading and permalink for Section 1.4: Equations with Fractions">🔗</a></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-solving-equations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-exponents.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="feedback-link" href="mailto:oscar.levin@unco.edu" target="_blank">Feedback</a><a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+<!--Start: Google Global Site Tag code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***           GET YOUR OWN FROM GOOGLE             ***-->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-66485406-1"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-66485406-1');
+</script><!--End: Google Global Site Tag code-->
+</body>
+</html>
