@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[letterpaper, margin=1.0in]{geometry}
+\usepackage{xcolor}
+
+% If you want to type \Z instead of typing \mathbb{Z}, you can! In fact, you can use \newcommand following the format(s) below to define whatever you end up using over and over.
+\newcommand\Z{\mathbb{Z}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\C{\mathbb{C}}
+
+\begin{document}
+
+\begin{enumerate}
+
+\item Create a LaTeX file will produce a PDF that looks just like this five-page PDF (including this sentence), with the only difference being that the end of this paragraph should have your name. Since the purpose of this assignment is to train you to use LaTeX, you may not share code on this assignment with anyone. Download the template which uses one-inch margins, modify the LaTeX file, and upload the modified LaTeX file to Canvas. As you modify, do not copy-paste text from the PDF, because the PDF uses certain fonts which create special characters. Type instead. You will submit a LaTeX file, which must compile without errors (no red circle before line numbers in Overleaf). My name is [TYPE YOUR NAME HERE].
+
+To get an automatically-numbered list, use enumerate. Individual parts of the list follow the command called item. Notice that if you use 'single quote marks' that the PDF has both quote marks going the same way. To get the quote marks to `balance' properly, use the character in the upper left of the keyboard for the left quote mark. The same applies for ``double quotes'' by using the left quote symbol twice for the left part and the standard quote symbol twice for the right part.
+
+Mathematics in this class should be written in complete sentences. Grammar matters. Notation should always be in math mode. Notice the difference between x and $x$. The latter $x$ is in dollar signs, thus in notation mode. There are generally two levels of formality when writing mathematics. Handwritten mathematics with a time issue (your work on quizzes/tests, my writing on the board) will typically be informal, whereas everything else (including anything typed, such as homework) is more formal. Start a new page with the newpage command.
+
+\newpage
+
+\item Consider how much consecutive writing is notation, and minimize the usage of symbols meant to switch into and out of notation mode. Inline notation will use a dollar sign before and after. For example, when writing $x^2+x^3+x^4$, you should only use two dollar signs, not six. Do not overuse dollar signs. Mathematics can be inline such as $a^2+b^2=c^2$ or can be centered. Doing this helps in forming complete, coherent sentences. Centered math (which is obtained either by double dollar signs or by backslash and square bracket) is better for more complicated notation. We take the equation
+\[ ax^2+bx+c=0\]
+and divide by $a$ to get
+\[ x^2+\frac{bx}{a}+\frac{c}{a}=0.\]
+Notice that there is a period at the end of the second centered math but not the first. This is because the period still marks the end of a sentence. Type the period before the backslash and right square bracket.
+
+\newpage
+
+\item 
+Compare the following two sentences. For all $x$, $x^2=x \cdot x$. For all $x$, the equation $x^2=x \cdot x$ holds. While the second is a little longer, it is a little easier to read. In the first sentence, it is a little distracting (visually) to have notation right before the comma and immediately after the comma. In the second sentence, we put the words ``the equation'' to help separate notation from notation. Let $S$ be the set of all positive even integers less than $100$. For example, $98 \in S$. In formal math writing, a sentence never begins with notation. Compare the following two sentences. $S$ has $49$ elements. The set $S$ has $49$ elements. The previous sentence is the formal version. Informal math is fine for quizzes (to save you time) and the board, but formal math has tiny phrases (such as ``The set'') to help guide the reader.
+
+\newpage
+
+\item Lots of notation is available by introducing a backslash. Compare $cos^2\theta+sin^2\theta$ versus $\cos^2\theta+\sin^2\theta$. The second is correct, and you don't need to leave math mode to type this. Compare $ln(x)$ versus $\ln(x)$. The second is correct, obtained by typing a backslash in front of the logarithm. Let $T$ be the set of all television shows. Then $m \in T$ means that $m$ is a television show. Some upcoming notation uses the mathbb command, which requires the amsfonts package. We write $\mathbb{Z}$ for the set of all integers. So, $\mathbb{Z}=\{\dots,-3,-2,-1,0,1,2,3,\dots\}$. We use $\mathbb{Q}$ for the set of rational numbers. For instance, $\frac{3}{11} \in \mathbb{Q}$. We use $\mathbb{R}$ to denote the set of all real numbers. As an example, $\sqrt{\pi} \in \mathbb{R}$.
+
+\newpage
+
+\item To find the domain of 
+\[ f(x) = \frac{\sqrt{2x+10}}{x^2-x-90}\]
+we need to ensure that $2x + 10 \geq 0$ and that any solutions to $x^2-x-90=0$ are excluded. For the inequality, subtracting $10$ on both sides gives $2x \geq -10$, so $x \geq -5$. For the equation, we factor the left side to get $(x-10)(x+9)=0$, so $x=10$ or $x=-9$. While these two $x$-values must be avoided, we already avoid $-9$ since we require $x \geq -5$. Thus, the domain of the function $f$ is $[-5,10) \cup (10,\infty)$.
+
+\end{enumerate}
+
+\end{document}
