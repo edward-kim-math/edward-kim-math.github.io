@@ -11,7 +11,7 @@ Navigate to the People page, then open the console (also known as Developer Tool
 var url = '/api/v1/courses/' + (typeof ENV.COURSE !== 'undefined' ? ENV.COURSE.id : ENV.course.id) + '/users';
 $.getJSON(url, 'per_page=100&include[]=email', function(d) {
   console.log(d.map(function(e) {
-    return [ 'sortable_name', 'email' ].map(function(f) {
+    return [ 'sortable_name', 'email', 'id' ].map(function(f) {
       return e[f];
     }).join('\t');
   }).join('\n'));
@@ -19,7 +19,7 @@ $.getJSON(url, 'per_page=100&include[]=email', function(d) {
 {% endhighlight %}
 
 <h2>Application to bulk-importing students to WeBWorK</h2>
-After running the 8-line code above, the result will be name (Last name comma First name) followed by a tab followed by e-mail address. To import students to WeBWorK, you need to get a CSV file in <a href="https://webwork.maa.org/wiki/Classlist_Files">WeBWorK's classlist file format</a>. To do this,
+After running the 8-line code above, the result will be name (Last name comma First name) followed by a tab followed by e-mail address followed by a student's id that is internally used in Canvas (not the same as any other id number on campus). To import students to WeBWorK, you need to get a CSV file in <a href="https://webwork.maa.org/wiki/Classlist_Files">WeBWorK's classlist file format</a>. To do this,
 <ul>
   <li>Run the above, and copy/paste the result into a text editor (Notepad on Windows, TextEdit on Mac)</li>
   <li>Search-replace every ", " with a tab. (To do this, first generate a tab in the text editor, and store this in the clipboard to paste on the find/replace screen.)</li>
