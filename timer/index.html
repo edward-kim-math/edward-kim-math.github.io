@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+<!-- Sep 17, 2026 -->
 <head>
 <meta charset="UTF-8">
 <title>Presentation Timer</title>
@@ -224,6 +224,7 @@ function populateTimeDropdowns() {
     });
 
     // The next three lines make the default a 20 minute presentation that starts in the next minute.
+    // Uncomment in order to have this default, but I found that it was tricking me, since I start up the website well before the presentation start time.
     //const now = new Date();
     //setDropdownFromDate("start", new Date(now.getTime()+60000));
     //setDropdownFromDate("end", new Date(now.getTime()+21*60000));
